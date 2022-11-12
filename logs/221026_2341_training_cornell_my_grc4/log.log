@@ -1,0 +1,9 @@
+[23:41:38] {/home/lab/zzy/robotic-grasping/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[23:41:38] {train_network.py:247} INFO - Loading Cornell Dataset...
+[23:41:38] {train_network.py:256} INFO - Dataset size is 885
+[23:41:38] {train_network.py:265} INFO - Training size: 796
+[23:41:38] {train_network.py:266} INFO - Validation size: 89
+[23:41:38] {train_network.py:284} INFO - Done
+[23:41:38] {train_network.py:287} INFO - Loading Network...
+[23:41:41] {train_network.py:298} INFO - Done
+[23:41:41] {train_network.py:317} INFO - Beginning Epoch 00
