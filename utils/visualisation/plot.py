@@ -3,7 +3,8 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 import numpy as np
-
+import sys
+import os
 from utils.dataset_processing.grasp import detect_grasps
 
 warnings.filterwarnings("ignore")
@@ -116,7 +117,7 @@ def plot_grasp(
         fig.savefig('results/{}.png'.format(time))
 
 
-def save_results(rgb_img, grasp_q_img, grasp_angle_img, depth_img=None, no_grasps=1, grasp_width_img=None, save_path=None, save_type=0, model_type=None):
+def save_results(rgb_img, grasp_q_img, grasp_angle_img, depth_img=None, no_grasps=1, grasp_width_img=None, save_path=None, save_type=None, model_type=None):
     """
     Plot the output of a network
     :param rgb_img: RGB Image
@@ -130,18 +131,19 @@ def save_results(rgb_img, grasp_q_img, grasp_angle_img, depth_img=None, no_grasp
     """
     gs = detect_grasps(grasp_q_img, grasp_angle_img, width_img=grasp_width_img, no_grasps=no_grasps)
 
-    if save_type==0:
+    if save_type=='comp':
         fig = plt.figure(figsize=(5, 5))
         plt.ion()
         plt.clf()
-        ax = plt.plot(111)
+        ax = plt.subplot(111)
         ax.imshow(rgb_img)
         for g in gs:
             g.plot(ax)
         ax.set_title('Grasp')
         ax.axis('off')
         fig.savefig(save_path+'grasp'+model_type+'.png',bbox_inches='tight')
-    else:
+
+    elif save_type=='all':
         fig = plt.figure(figsize=(5, 5))
         plt.ion()
         plt.clf()
@@ -149,7 +151,7 @@ def save_results(rgb_img, grasp_q_img, grasp_angle_img, depth_img=None, no_grasp
         ax.imshow(rgb_img)
         ax.set_title('RGB')
         ax.axis('off')
-        fig.savefig(save_path+'rgb.png')
+        fig.savefig(save_path+'rgb'+model_type+'.png')
 
         if depth_img.any():
             fig = plt.figure(figsize=(5, 5))
@@ -161,7 +163,7 @@ def save_results(rgb_img, grasp_q_img, grasp_angle_img, depth_img=None, no_grasp
             #     g.plot(ax)
             ax.set_title('Depth')
             ax.axis('off')
-            fig.savefig(save_path+'depth.png')
+            fig.savefig(save_path+'depth'+model_type+'.png')
 
         fig = plt.figure(figsize=(5, 5))
         plt.ion()
@@ -172,7 +174,7 @@ def save_results(rgb_img, grasp_q_img, grasp_angle_img, depth_img=None, no_grasp
             g.plot(ax)
         ax.set_title('Grasp')
         ax.axis('off')
-        fig.savefig(save_path+'grasp.png',bbox_inches='tight')
+        fig.savefig(save_path+'grasp'+model_type+'.png',bbox_inches='tight')
 
         fig = plt.figure(figsize=(5, 5))
         plt.ion()
@@ -182,7 +184,7 @@ def save_results(rgb_img, grasp_q_img, grasp_angle_img, depth_img=None, no_grasp
         ax.set_title('Q')
         ax.axis('off')
         plt.colorbar(plot)
-        fig.savefig(save_path+'quality.png',bbox_inches='tight')
+        fig.savefig(save_path+'quality'+model_type+'.png',bbox_inches='tight')
 
         fig = plt.figure(figsize=(5, 5))
         plt.ion()
@@ -192,7 +194,7 @@ def save_results(rgb_img, grasp_q_img, grasp_angle_img, depth_img=None, no_grasp
         ax.set_title('Angle')
         ax.axis('off')
         plt.colorbar(plot)
-        fig.savefig(save_path+'angle.png',bbox_inches='tight')
+        fig.savefig(save_path+'angle'+model_type+'.png',bbox_inches='tight')
 
         fig = plt.figure(figsize=(5, 5))
         plt.ion()
@@ -202,7 +204,7 @@ def save_results(rgb_img, grasp_q_img, grasp_angle_img, depth_img=None, no_grasp
         ax.set_title('Width')
         ax.axis('off')
         plt.colorbar(plot)
-        fig.savefig(save_path+'width.png',bbox_inches='tight')
+        fig.savefig(save_path+'width'+model_type+'.png',bbox_inches='tight')
 
         fig.canvas.draw()
         plt.close(fig)

@@ -1,9 +1,11 @@
 import argparse
 import logging
 import time
-
+import datetime
 import numpy as np
 import torch.utils.data
+import os
+import sys
 
 from hardware.device import get_device
 from inference.post_process import post_process_output
@@ -38,8 +40,14 @@ def parse_args():
                         help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-shuffle', action='store_true', default=False,
                         help='Shuffle the dataset')
-    parser.add_argument('--ds-rotate', type=float, default=0.0,
+    parser.add_argument('--ds-rotate', type=float, default=0.5,
                         help='Shift the start point of the dataset to use a different test/train split')
+    parser.add_argument('--save_type', type=str, default='comp',
+                        help='type of savd pics:    comp   all')
+    parser.add_argument('--model_type', type=str, default='grc',
+                        help='type of model : grc   resu ')
+    parser.add_argument('--save', action='store_true',
+                        help='Visualise the network output')
     parser.add_argument('--num-workers', type=int, default=8,
                         help='Dataset workers')
 
@@ -105,10 +113,18 @@ if __name__ == '__main__':
     )
     logging.info('Done')
 
-    save_count = 0
+    if args.save:
+        logging.info('save_type: {}'.format(args.save_type))
+        logging.info('model_type: {}'.format(args.model_type))
+        logging.info('ds_rotate: {}'.format(args.ds_rotate))
+        save_path = os.path.join('results/results_jac_'+'{}'.format(args.ds_rotate) + args.model_type)
+        logging.info('results save path: {}'.format(save_path))
+        if not os.path.exists(save_path):
+            os.makedirs(save_path)
+            logging.info('create results save path: {}'.format(save_path))
+        save_count = 0
     for network in args.network:
         logging.info('\nEvaluating model {}'.format(network))
-
         # Load Network
         net = torch.load(network)
 
@@ -120,7 +136,6 @@ if __name__ == '__main__':
                 pass
 
         start_time = time.time()
-
         with torch.no_grad():
             for idx, (x, y, didx, rot, zoom) in enumerate(test_data):
                 xc = x.to(device)
@@ -148,7 +163,7 @@ if __name__ == '__main__':
                             f.write(test_data.dataset.get_jname(didx) + '\n')
                             f.write(g.to_jacquard(scale=1024 / 300) + '\n')
                 
-                if args.vis:
+                if args.save:
                     save_results(
                         rgb_img=test_data.dataset.get_rgb(didx, rot, zoom, normalise=False),
                         depth_img=test_data.dataset.get_depth(didx, rot, zoom),
@@ -156,28 +171,20 @@ if __name__ == '__main__':
                         grasp_angle_img=ang_img,
                         no_grasps=args.n_grasps,
                         grasp_width_img=width_img,
-                        save_path = 'results/results_grc_jac/{}'.format(save_count),
-                        save_type = 0,
-                        model_type = 'grc'
+                        save_path = save_path + '/{}'.format(save_count),
+                        save_type = args.save_type,
+                        model_type = args.model_type
                     )
                     save_count+=1
-                    # evaluation.plot_output(
-                    #     rgb_img=test_data.dataset.get_rgb(didx, rot, zoom, normalise=False),
-                    #     depth_img=test_data.dataset.get_depth(didx, rot, zoom),
-                    #     grasp_q_img=q_img,
-                    #     grasp_angle_img=ang_img,
-                    #     no_grasps=args.n_grasps,
-                    #     grasp_width_img=width_img
-                    # )
-
-                    # evaluation.plot_output(rgb_img = test_data.dataset.get_rgb(didx, rot, zoom, normalise=False),
-                    #                     depth_img = test_data.dataset.get_depth(didx, rot, zoom),
-                    #                     grasp_q_img = q_img,
-                    #                     grasp_angle_img = ang_img,
-                    #                     no_grasps = args.n_grasps, 
-                    #                     grasp_width_img = width_img)
-                
-
+                if args.vis:
+                    evaluation.plot_output(
+                        rgb_img=test_data.dataset.get_rgb(didx, rot, zoom, normalise=False),
+                        depth_img=test_data.dataset.get_depth(didx, rot, zoom),
+                        grasp_q_img=q_img,
+                        grasp_angle_img=ang_img,
+                        no_grasps=args.n_grasps,
+                        grasp_width_img=width_img
+                    )
 
         avg_time = (time.time() - start_time) / len(test_data)
         logging.info('Average evaluation time per image: {}ms'.format(avg_time * 1000))
