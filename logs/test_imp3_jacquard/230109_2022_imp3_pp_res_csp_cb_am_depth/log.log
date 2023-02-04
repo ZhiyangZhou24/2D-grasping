@@ -1,0 +1,27 @@
+[20:22:27] {/home/lab/zzy/grasp/2D-grasping-my/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[20:22:27] {train_network_jac.py:258} INFO - Loading Jacquard Dataset...
+[20:22:27] {train_network_jac.py:267} INFO - Dataset size is 54485
+[20:22:27] {train_network_jac.py:277} INFO - Training size: 49036
+[20:22:27] {train_network_jac.py:278} INFO - Validation size: 5449
+[20:22:27] {train_network_jac.py:298} INFO - Done
+[20:22:27] {train_network_jac.py:301} INFO - Loading Network...
+[20:22:27] {train_network_jac.py:317} INFO - Done from zero model
+[20:22:29] {train_network_jac.py:329} INFO - optimizer adam Done
+[20:22:29] {train_network_jac.py:345} INFO - Beginning Epoch 00, lr=0.001
+[20:22:39] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 100, Loss: 0.0300
+[20:22:47] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 200, Loss: 0.0221
+[20:22:56] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 300, Loss: 0.0225
+[20:23:05] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 400, Loss: 0.0201
+[20:23:13] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 500, Loss: 0.0278
+[20:23:22] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 600, Loss: 0.0160
+[20:23:31] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 700, Loss: 0.0135
+[20:23:40] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 800, Loss: 0.0240
+[20:23:48] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 900, Loss: 0.0159
+[20:23:57] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 1000, Loss: 0.0136
+[20:24:06] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 1100, Loss: 0.0106
+[20:24:15] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 1200, Loss: 0.0182
+[20:24:23] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 1300, Loss: 0.0110
+[20:24:32] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 1400, Loss: 0.0170
+[20:24:41] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 1500, Loss: 0.0122
+[20:24:50] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 1600, Loss: 0.0101
+[20:24:58] {train_network_jac.py:186} INFO - Epoch: 0, Batch: 1700, Loss: 0.0093

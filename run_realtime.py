@@ -22,7 +22,7 @@ def parse_args():
                         help='Use Depth image for evaluation (1/0)')
     parser.add_argument('--use-rgb', type=int, default=1,
                         help='Use RGB image for evaluation (1/0)')
-    parser.add_argument('--n-grasps', type=int, default=5,
+    parser.add_argument('--n-grasps', type=int, default=1,
                         help='Number of grasps to consider per image')
     parser.add_argument('--cpu', dest='force_cpu', action='store_true', default=False,
                         help='Force code to run in CPU mode')
@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
     # Connect to Camera
     logging.info('Connecting to camera...')
-    cam = RealSenseCamera(device_id=944122074484)
+    cam = RealSenseCamera(device_id=147122075982)
     cam.connect()
     cam_data = CameraData(include_depth=args.use_depth, include_rgb=args.use_rgb)
 

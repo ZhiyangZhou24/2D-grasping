@@ -1,0 +1,1004 @@
+[15:24:20] {/home/lab/zzy/grasp/2D-grasping-my/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[15:24:20] {train_network_jac_ranger.py:265} INFO - Loading Jacquard Dataset...
+[15:24:30] {train_network_jac_ranger.py:274} INFO - Dataset size is 54485
+[15:24:30] {train_network_jac_ranger.py:284} INFO - Training size: 49036
+[15:24:30] {train_network_jac_ranger.py:285} INFO - Validation size: 5449
+[15:24:30] {train_network_jac_ranger.py:303} INFO - Done
+[15:24:30] {train_network_jac_ranger.py:306} INFO - Loading Network...
+[15:24:30] {train_network_jac_ranger.py:322} INFO - Done from zero model
+[15:24:32] {train_network_jac_ranger.py:337} INFO - optimizer ranger Done
+[15:24:32] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 00, lr=0.001
+[15:24:57] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 100, Loss: 0.0521
+[15:25:21] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 200, Loss: 0.0351
+[15:25:45] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 300, Loss: 0.0239
+[15:26:09] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 400, Loss: 0.0378
+[15:26:33] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 500, Loss: 0.0234
+[15:26:57] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 600, Loss: 0.0316
+[15:27:21] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 700, Loss: 0.0307
+[15:27:45] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 800, Loss: 0.0203
+[15:28:09] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 900, Loss: 0.0358
+[15:28:33] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 1000, Loss: 0.0228
+[15:28:58] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 1100, Loss: 0.0157
+[15:29:22] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 1200, Loss: 0.0239
+[15:29:46] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 1300, Loss: 0.0219
+[15:30:10] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 1400, Loss: 0.0154
+[15:30:34] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 1500, Loss: 0.0218
+[15:30:58] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 1600, Loss: 0.0121
+[15:31:22] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 1700, Loss: 0.0125
+[15:31:47] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 1800, Loss: 0.0139
+[15:32:11] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 1900, Loss: 0.0199
+[15:32:38] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[15:36:35] {train_network_jac_ranger.py:378} INFO - 4166/5449 = 0.764544
+[15:36:35] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 01, lr=0.001
+[15:37:00] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 100, Loss: 0.0218
+[15:37:24] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 200, Loss: 0.0125
+[15:37:48] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 300, Loss: 0.0143
+[15:38:12] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 400, Loss: 0.0170
+[15:38:36] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 500, Loss: 0.0099
+[15:39:01] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 600, Loss: 0.0113
+[15:39:25] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 700, Loss: 0.0146
+[15:39:49] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 800, Loss: 0.0145
+[15:40:13] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 900, Loss: 0.0123
+[15:40:37] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 1000, Loss: 0.0129
+[15:41:01] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 1100, Loss: 0.0077
+[15:41:26] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 1200, Loss: 0.0102
+[15:41:50] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 1300, Loss: 0.0135
+[15:42:14] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 1400, Loss: 0.0107
+[15:42:38] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 1500, Loss: 0.0126
+[15:43:02] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 1600, Loss: 0.0127
+[15:43:26] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 1700, Loss: 0.0077
+[15:43:51] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 1800, Loss: 0.0131
+[15:44:15] {train_network_jac_ranger.py:193} INFO - Epoch: 1, Batch: 1900, Loss: 0.0118
+[15:44:42] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[15:48:48] {train_network_jac_ranger.py:378} INFO - 4761/5449 = 0.873738
+[15:48:48] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 02, lr=0.001
+[15:49:13] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 100, Loss: 0.0090
+[15:49:37] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 200, Loss: 0.0073
+[15:50:01] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 300, Loss: 0.0080
+[15:50:25] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 400, Loss: 0.0110
+[15:50:49] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 500, Loss: 0.0091
+[15:51:14] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 600, Loss: 0.0123
+[15:51:38] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 700, Loss: 0.0095
+[15:52:02] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 800, Loss: 0.0152
+[15:52:26] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 900, Loss: 0.0078
+[15:52:50] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 1000, Loss: 0.0105
+[15:53:15] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 1100, Loss: 0.0119
+[15:53:39] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 1200, Loss: 0.0094
+[15:54:03] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 1300, Loss: 0.0081
+[15:54:27] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 1400, Loss: 0.0078
+[15:54:51] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 1500, Loss: 0.0069
+[15:55:16] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 1600, Loss: 0.0146
+[15:55:40] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 1700, Loss: 0.0209
+[15:56:04] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 1800, Loss: 0.0104
+[15:56:28] {train_network_jac_ranger.py:193} INFO - Epoch: 2, Batch: 1900, Loss: 0.0109
+[15:56:55] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[16:00:59] {train_network_jac_ranger.py:378} INFO - 4871/5449 = 0.893925
+[16:00:59] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 03, lr=0.001
+[16:01:24] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 100, Loss: 0.0112
+[16:01:48] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 200, Loss: 0.0099
+[16:02:13] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 300, Loss: 0.0057
+[16:02:37] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 400, Loss: 0.0161
+[16:03:01] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 500, Loss: 0.0082
+[16:03:25] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 600, Loss: 0.0152
+[16:03:49] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 700, Loss: 0.0077
+[16:04:14] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 800, Loss: 0.0100
+[16:04:38] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 900, Loss: 0.0087
+[16:05:02] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 1000, Loss: 0.0137
+[16:05:27] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 1100, Loss: 0.0137
+[16:05:51] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 1200, Loss: 0.0105
+[16:06:15] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 1300, Loss: 0.0089
+[16:06:39] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 1400, Loss: 0.0063
+[16:07:04] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 1500, Loss: 0.0092
+[16:07:28] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 1600, Loss: 0.0122
+[16:07:52] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 1700, Loss: 0.0108
+[16:08:16] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 1800, Loss: 0.0115
+[16:08:41] {train_network_jac_ranger.py:193} INFO - Epoch: 3, Batch: 1900, Loss: 0.0084
+[16:09:08] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[16:13:18] {train_network_jac_ranger.py:378} INFO - 4994/5449 = 0.916498
+[16:13:18] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 04, lr=0.001
+[16:13:43] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 100, Loss: 0.0075
+[16:14:07] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 200, Loss: 0.0104
+[16:14:31] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 300, Loss: 0.0131
+[16:14:56] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 400, Loss: 0.0110
+[16:15:20] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 500, Loss: 0.0086
+[16:15:44] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 600, Loss: 0.0069
+[16:16:08] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 700, Loss: 0.0116
+[16:16:32] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 800, Loss: 0.0074
+[16:16:57] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 900, Loss: 0.0117
+[16:17:21] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 1000, Loss: 0.0076
+[16:17:45] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 1100, Loss: 0.0082
+[16:18:09] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 1200, Loss: 0.0082
+[16:18:33] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 1300, Loss: 0.0094
+[16:18:58] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 1400, Loss: 0.0165
+[16:19:22] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 1500, Loss: 0.0128
+[16:19:46] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 1600, Loss: 0.0076
+[16:20:10] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 1700, Loss: 0.0073
+[16:20:34] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 1800, Loss: 0.0077
+[16:20:59] {train_network_jac_ranger.py:193} INFO - Epoch: 4, Batch: 1900, Loss: 0.0100
+[16:21:25] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[16:25:34] {train_network_jac_ranger.py:378} INFO - 4947/5449 = 0.907873
+[16:25:34] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 05, lr=0.001
+[16:25:59] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 100, Loss: 0.0088
+[16:26:23] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 200, Loss: 0.0087
+[16:26:48] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 300, Loss: 0.0099
+[16:27:12] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 400, Loss: 0.0094
+[16:27:36] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 500, Loss: 0.0068
+[16:28:00] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 600, Loss: 0.0207
+[16:28:24] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 700, Loss: 0.0089
+[16:28:48] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 800, Loss: 0.0098
+[16:29:13] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 900, Loss: 0.0079
+[16:29:37] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 1000, Loss: 0.0088
+[16:30:01] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 1100, Loss: 0.0093
+[16:30:25] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 1200, Loss: 0.0153
+[16:30:50] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 1300, Loss: 0.0084
+[16:31:14] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 1400, Loss: 0.0118
+[16:31:38] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 1500, Loss: 0.0078
+[16:32:02] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 1600, Loss: 0.0068
+[16:32:27] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 1700, Loss: 0.0113
+[16:32:51] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 1800, Loss: 0.0157
+[16:33:15] {train_network_jac_ranger.py:193} INFO - Epoch: 5, Batch: 1900, Loss: 0.0070
+[16:33:42] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[16:37:53] {train_network_jac_ranger.py:378} INFO - 5014/5449 = 0.920169
+[16:37:53] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 06, lr=0.001
+[16:38:18] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 100, Loss: 0.0095
+[16:38:42] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 200, Loss: 0.0109
+[16:39:06] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 300, Loss: 0.0099
+[16:39:30] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 400, Loss: 0.0097
+[16:39:54] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 500, Loss: 0.0074
+[16:40:18] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 600, Loss: 0.0139
+[16:40:43] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 700, Loss: 0.0110
+[16:41:07] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 800, Loss: 0.0128
+[16:41:31] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 900, Loss: 0.0129
+[16:41:55] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 1000, Loss: 0.0107
+[16:42:20] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 1100, Loss: 0.0047
+[16:42:44] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 1200, Loss: 0.0052
+[16:43:08] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 1300, Loss: 0.0138
+[16:43:32] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 1400, Loss: 0.0118
+[16:43:57] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 1500, Loss: 0.0191
+[16:44:21] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 1600, Loss: 0.0063
+[16:44:45] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 1700, Loss: 0.0124
+[16:45:10] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 1800, Loss: 0.0083
+[16:45:34] {train_network_jac_ranger.py:193} INFO - Epoch: 6, Batch: 1900, Loss: 0.0087
+[16:46:01] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[16:50:07] {train_network_jac_ranger.py:378} INFO - 4957/5449 = 0.909708
+[16:50:07] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 07, lr=0.001
+[16:50:32] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 100, Loss: 0.0089
+[16:50:56] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 200, Loss: 0.0074
+[16:51:20] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 300, Loss: 0.0071
+[16:51:44] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 400, Loss: 0.0107
+[16:52:08] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 500, Loss: 0.0053
+[16:52:33] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 600, Loss: 0.0075
+[16:52:57] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 700, Loss: 0.0161
+[16:53:21] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 800, Loss: 0.0058
+[16:53:45] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 900, Loss: 0.0118
+[16:54:10] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 1000, Loss: 0.0091
+[16:54:34] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 1100, Loss: 0.0049
+[16:54:58] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 1200, Loss: 0.0131
+[16:55:22] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 1300, Loss: 0.0114
+[16:55:47] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 1400, Loss: 0.0075
+[16:56:11] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 1500, Loss: 0.0073
+[16:56:35] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 1600, Loss: 0.0065
+[16:56:59] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 1700, Loss: 0.0077
+[16:57:24] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 1800, Loss: 0.0104
+[16:57:48] {train_network_jac_ranger.py:193} INFO - Epoch: 7, Batch: 1900, Loss: 0.0091
+[16:58:15] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[17:02:20] {train_network_jac_ranger.py:378} INFO - 4948/5449 = 0.908057
+[17:02:20] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 08, lr=0.001
+[17:02:45] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 100, Loss: 0.0068
+[17:03:09] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 200, Loss: 0.0166
+[17:03:33] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 300, Loss: 0.0069
+[17:03:57] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 400, Loss: 0.0069
+[17:04:22] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 500, Loss: 0.0130
+[17:04:46] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 600, Loss: 0.0079
+[17:05:10] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 700, Loss: 0.0054
+[17:05:34] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 800, Loss: 0.0130
+[17:05:59] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 900, Loss: 0.0076
+[17:06:23] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 1000, Loss: 0.0142
+[17:06:47] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 1100, Loss: 0.0089
+[17:07:11] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 1200, Loss: 0.0107
+[17:07:35] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 1300, Loss: 0.0150
+[17:08:00] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 1400, Loss: 0.0085
+[17:08:24] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 1500, Loss: 0.0064
+[17:08:48] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 1600, Loss: 0.0135
+[17:09:13] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 1700, Loss: 0.0067
+[17:09:37] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 1800, Loss: 0.0117
+[17:10:01] {train_network_jac_ranger.py:193} INFO - Epoch: 8, Batch: 1900, Loss: 0.0101
+[17:10:28] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[17:14:34] {train_network_jac_ranger.py:378} INFO - 4991/5449 = 0.915948
+[17:14:34] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 09, lr=0.001
+[17:14:59] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 100, Loss: 0.0102
+[17:15:23] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 200, Loss: 0.0128
+[17:15:47] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 300, Loss: 0.0138
+[17:16:11] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 400, Loss: 0.0081
+[17:16:35] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 500, Loss: 0.0079
+[17:17:00] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 600, Loss: 0.0103
+[17:17:24] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 700, Loss: 0.0057
+[17:17:48] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 800, Loss: 0.0076
+[17:18:12] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 900, Loss: 0.0121
+[17:18:36] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 1000, Loss: 0.0076
+[17:19:01] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 1100, Loss: 0.0100
+[17:19:25] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 1200, Loss: 0.0063
+[17:19:49] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 1300, Loss: 0.0056
+[17:20:13] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 1400, Loss: 0.0094
+[17:20:38] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 1500, Loss: 0.0071
+[17:21:02] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 1600, Loss: 0.0119
+[17:21:26] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 1700, Loss: 0.0111
+[17:21:51] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 1800, Loss: 0.0143
+[17:22:15] {train_network_jac_ranger.py:193} INFO - Epoch: 9, Batch: 1900, Loss: 0.0078
+[17:22:42] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[17:26:47] {train_network_jac_ranger.py:378} INFO - 5040/5449 = 0.924940
+[17:26:47] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 10, lr=0.001
+[17:27:12] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 100, Loss: 0.0098
+[17:27:36] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 200, Loss: 0.0080
+[17:28:00] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 300, Loss: 0.0122
+[17:28:25] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 400, Loss: 0.0085
+[17:28:49] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 500, Loss: 0.0106
+[17:29:13] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 600, Loss: 0.0059
+[17:29:37] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 700, Loss: 0.0074
+[17:30:01] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 800, Loss: 0.0092
+[17:30:26] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 900, Loss: 0.0166
+[17:30:50] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 1000, Loss: 0.0101
+[17:31:14] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 1100, Loss: 0.0089
+[17:31:38] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 1200, Loss: 0.0108
+[17:32:03] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 1300, Loss: 0.0090
+[17:32:27] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 1400, Loss: 0.0094
+[17:32:51] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 1500, Loss: 0.0053
+[17:33:15] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 1600, Loss: 0.0090
+[17:33:40] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 1700, Loss: 0.0071
+[17:34:04] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 1800, Loss: 0.0054
+[17:34:28] {train_network_jac_ranger.py:193} INFO - Epoch: 10, Batch: 1900, Loss: 0.0071
+[17:34:55] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[17:39:02] {train_network_jac_ranger.py:378} INFO - 5052/5449 = 0.927143
+[17:39:02] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 11, lr=0.001
+[17:39:27] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 100, Loss: 0.0086
+[17:39:51] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 200, Loss: 0.0076
+[17:40:15] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 300, Loss: 0.0147
+[17:40:39] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 400, Loss: 0.0057
+[17:41:03] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 500, Loss: 0.0108
+[17:41:27] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 600, Loss: 0.0124
+[17:41:52] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 700, Loss: 0.0180
+[17:42:16] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 800, Loss: 0.0076
+[17:42:40] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 900, Loss: 0.0117
+[17:43:04] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 1000, Loss: 0.0088
+[17:43:28] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 1100, Loss: 0.0080
+[17:43:53] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 1200, Loss: 0.0082
+[17:44:17] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 1300, Loss: 0.0097
+[17:44:41] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 1400, Loss: 0.0078
+[17:45:06] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 1500, Loss: 0.0066
+[17:45:30] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 1600, Loss: 0.0104
+[17:45:54] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 1700, Loss: 0.0065
+[17:46:18] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 1800, Loss: 0.0107
+[17:46:43] {train_network_jac_ranger.py:193} INFO - Epoch: 11, Batch: 1900, Loss: 0.0080
+[17:47:10] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[17:51:15] {train_network_jac_ranger.py:378} INFO - 5048/5449 = 0.926409
+[17:51:15] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 12, lr=0.001
+[17:51:40] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 100, Loss: 0.0060
+[17:52:04] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 200, Loss: 0.0081
+[17:52:28] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 300, Loss: 0.0099
+[17:52:52] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 400, Loss: 0.0154
+[17:53:17] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 500, Loss: 0.0081
+[17:53:41] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 600, Loss: 0.0071
+[17:54:05] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 700, Loss: 0.0069
+[17:54:29] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 800, Loss: 0.0103
+[17:54:54] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 900, Loss: 0.0141
+[17:55:18] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 1000, Loss: 0.0091
+[17:55:42] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 1100, Loss: 0.0124
+[17:56:06] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 1200, Loss: 0.0053
+[17:56:30] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 1300, Loss: 0.0076
+[17:56:55] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 1400, Loss: 0.0084
+[17:57:19] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 1500, Loss: 0.0114
+[17:57:43] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 1600, Loss: 0.0085
+[17:58:07] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 1700, Loss: 0.0059
+[17:58:32] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 1800, Loss: 0.0097
+[17:58:56] {train_network_jac_ranger.py:193} INFO - Epoch: 12, Batch: 1900, Loss: 0.0075
+[17:59:23] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[18:03:29] {train_network_jac_ranger.py:378} INFO - 5021/5449 = 0.921453
+[18:03:29] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 13, lr=0.001
+[18:03:54] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 100, Loss: 0.0143
+[18:04:18] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 200, Loss: 0.0112
+[18:04:42] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 300, Loss: 0.0106
+[18:05:07] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 400, Loss: 0.0093
+[18:05:31] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 500, Loss: 0.0095
+[18:05:55] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 600, Loss: 0.0059
+[18:06:19] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 700, Loss: 0.0111
+[18:06:43] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 800, Loss: 0.0123
+[18:07:08] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 900, Loss: 0.0078
+[18:07:32] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 1000, Loss: 0.0128
+[18:07:56] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 1100, Loss: 0.0127
+[18:08:20] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 1200, Loss: 0.0067
+[18:08:44] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 1300, Loss: 0.0113
+[18:09:09] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 1400, Loss: 0.0095
+[18:09:33] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 1500, Loss: 0.0064
+[18:09:57] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 1600, Loss: 0.0088
+[18:10:21] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 1700, Loss: 0.0093
+[18:10:46] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 1800, Loss: 0.0065
+[18:11:10] {train_network_jac_ranger.py:193} INFO - Epoch: 13, Batch: 1900, Loss: 0.0171
+[18:11:37] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[18:15:43] {train_network_jac_ranger.py:378} INFO - 4998/5449 = 0.917233
+[18:15:43] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 14, lr=0.001
+[18:16:08] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 100, Loss: 0.0047
+[18:16:32] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 200, Loss: 0.0074
+[18:16:56] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 300, Loss: 0.0117
+[18:17:20] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 400, Loss: 0.0186
+[18:17:44] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 500, Loss: 0.0105
+[18:18:09] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 600, Loss: 0.0087
+[18:18:33] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 700, Loss: 0.0104
+[18:18:57] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 800, Loss: 0.0092
+[18:19:21] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 900, Loss: 0.0076
+[18:19:46] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 1000, Loss: 0.0049
+[18:20:10] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 1100, Loss: 0.0121
+[18:20:34] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 1200, Loss: 0.0145
+[18:20:58] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 1300, Loss: 0.0066
+[18:21:22] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 1400, Loss: 0.0061
+[18:21:47] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 1500, Loss: 0.0080
+[18:22:11] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 1600, Loss: 0.0101
+[18:22:35] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 1700, Loss: 0.0053
+[18:22:59] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 1800, Loss: 0.0096
+[18:23:24] {train_network_jac_ranger.py:193} INFO - Epoch: 14, Batch: 1900, Loss: 0.0129
+[18:23:50] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[18:27:57] {train_network_jac_ranger.py:378} INFO - 5075/5449 = 0.931364
+[18:27:57] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 15, lr=0.001
+[18:28:23] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 100, Loss: 0.0082
+[18:28:47] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 200, Loss: 0.0125
+[18:29:11] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 300, Loss: 0.0107
+[18:29:35] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 400, Loss: 0.0061
+[18:29:59] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 500, Loss: 0.0115
+[18:30:23] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 600, Loss: 0.0083
+[18:30:47] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 700, Loss: 0.0068
+[18:31:12] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 800, Loss: 0.0110
+[18:31:36] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 900, Loss: 0.0118
+[18:32:00] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 1000, Loss: 0.0071
+[18:32:24] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 1100, Loss: 0.0093
+[18:32:48] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 1200, Loss: 0.0117
+[18:33:13] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 1300, Loss: 0.0077
+[18:33:37] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 1400, Loss: 0.0115
+[18:34:01] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 1500, Loss: 0.0095
+[18:34:25] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 1600, Loss: 0.0070
+[18:34:50] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 1700, Loss: 0.0107
+[18:35:14] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 1800, Loss: 0.0061
+[18:35:38] {train_network_jac_ranger.py:193} INFO - Epoch: 15, Batch: 1900, Loss: 0.0113
+[18:36:05] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[18:40:12] {train_network_jac_ranger.py:378} INFO - 5034/5449 = 0.923839
+[18:40:12] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 16, lr=0.001
+[18:40:37] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 100, Loss: 0.0069
+[18:41:01] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 200, Loss: 0.0093
+[18:41:25] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 300, Loss: 0.0099
+[18:41:49] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 400, Loss: 0.0093
+[18:42:14] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 500, Loss: 0.0098
+[18:42:38] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 600, Loss: 0.0081
+[18:43:02] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 700, Loss: 0.0080
+[18:43:26] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 800, Loss: 0.0109
+[18:43:50] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 900, Loss: 0.0098
+[18:44:15] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 1000, Loss: 0.0047
+[18:44:39] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 1100, Loss: 0.0080
+[18:45:03] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 1200, Loss: 0.0062
+[18:45:27] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 1300, Loss: 0.0110
+[18:45:52] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 1400, Loss: 0.0093
+[18:46:16] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 1500, Loss: 0.0098
+[18:46:40] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 1600, Loss: 0.0102
+[18:47:04] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 1700, Loss: 0.0065
+[18:47:28] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 1800, Loss: 0.0103
+[18:47:53] {train_network_jac_ranger.py:193} INFO - Epoch: 16, Batch: 1900, Loss: 0.0061
+[18:48:19] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[18:52:24] {train_network_jac_ranger.py:378} INFO - 4909/5449 = 0.900899
+[18:52:24] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 17, lr=0.001
+[18:52:49] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 100, Loss: 0.0052
+[18:53:13] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 200, Loss: 0.0070
+[18:53:37] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 300, Loss: 0.0074
+[18:54:01] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 400, Loss: 0.0056
+[18:54:25] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 500, Loss: 0.0119
+[18:54:49] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 600, Loss: 0.0114
+[18:55:13] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 700, Loss: 0.0086
+[18:55:38] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 800, Loss: 0.0066
+[18:56:02] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 900, Loss: 0.0072
+[18:56:26] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 1000, Loss: 0.0074
+[18:56:50] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 1100, Loss: 0.0102
+[18:57:15] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 1200, Loss: 0.0078
+[18:57:39] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 1300, Loss: 0.0112
+[18:58:03] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 1400, Loss: 0.0046
+[18:58:27] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 1500, Loss: 0.0096
+[18:58:51] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 1600, Loss: 0.0073
+[18:59:16] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 1700, Loss: 0.0088
+[18:59:40] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 1800, Loss: 0.0096
+[19:00:04] {train_network_jac_ranger.py:193} INFO - Epoch: 17, Batch: 1900, Loss: 0.0091
+[19:00:31] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[19:04:38] {train_network_jac_ranger.py:378} INFO - 5041/5449 = 0.925124
+[19:04:38] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 18, lr=0.001
+[19:05:03] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 100, Loss: 0.0151
+[19:05:27] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 200, Loss: 0.0095
+[19:05:51] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 300, Loss: 0.0076
+[19:06:15] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 400, Loss: 0.0060
+[19:06:39] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 500, Loss: 0.0064
+[19:07:04] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 600, Loss: 0.0106
+[19:07:28] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 700, Loss: 0.0111
+[19:07:52] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 800, Loss: 0.0098
+[19:08:16] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 900, Loss: 0.0071
+[19:08:40] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 1000, Loss: 0.0060
+[19:09:05] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 1100, Loss: 0.0107
+[19:09:29] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 1200, Loss: 0.0070
+[19:09:53] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 1300, Loss: 0.0052
+[19:10:17] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 1400, Loss: 0.0059
+[19:10:41] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 1500, Loss: 0.0118
+[19:11:06] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 1600, Loss: 0.0088
+[19:11:30] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 1700, Loss: 0.0071
+[19:11:54] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 1800, Loss: 0.0059
+[19:12:18] {train_network_jac_ranger.py:193} INFO - Epoch: 18, Batch: 1900, Loss: 0.0087
+[19:12:45] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[19:16:52] {train_network_jac_ranger.py:378} INFO - 5068/5449 = 0.930079
+[19:16:52] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 19, lr=0.001
+[19:17:17] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 100, Loss: 0.0092
+[19:17:41] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 200, Loss: 0.0136
+[19:18:05] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 300, Loss: 0.0066
+[19:18:29] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 400, Loss: 0.0048
+[19:18:53] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 500, Loss: 0.0092
+[19:19:17] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 600, Loss: 0.0055
+[19:19:42] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 700, Loss: 0.0080
+[19:20:06] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 800, Loss: 0.0062
+[19:20:30] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 900, Loss: 0.0090
+[19:20:54] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 1000, Loss: 0.0091
+[19:21:18] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 1100, Loss: 0.0082
+[19:21:43] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 1200, Loss: 0.0083
+[19:22:07] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 1300, Loss: 0.0074
+[19:22:31] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 1400, Loss: 0.0150
+[19:22:55] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 1500, Loss: 0.0084
+[19:23:19] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 1600, Loss: 0.0104
+[19:23:44] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 1700, Loss: 0.0057
+[19:24:08] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 1800, Loss: 0.0086
+[19:24:32] {train_network_jac_ranger.py:193} INFO - Epoch: 19, Batch: 1900, Loss: 0.0070
+[19:24:59] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[19:29:06] {train_network_jac_ranger.py:378} INFO - 5080/5449 = 0.932281
+[19:29:06] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 20, lr=0.001
+[19:29:31] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 100, Loss: 0.0094
+[19:29:55] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 200, Loss: 0.0067
+[19:30:19] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 300, Loss: 0.0064
+[19:30:43] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 400, Loss: 0.0085
+[19:31:07] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 500, Loss: 0.0125
+[19:31:31] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 600, Loss: 0.0050
+[19:31:56] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 700, Loss: 0.0082
+[19:32:20] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 800, Loss: 0.0093
+[19:32:44] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 900, Loss: 0.0080
+[19:33:08] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 1000, Loss: 0.0117
+[19:33:33] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 1100, Loss: 0.0128
+[19:33:57] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 1200, Loss: 0.0054
+[19:34:21] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 1300, Loss: 0.0076
+[19:34:45] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 1400, Loss: 0.0068
+[19:35:09] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 1500, Loss: 0.0065
+[19:35:34] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 1600, Loss: 0.0097
+[19:35:58] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 1700, Loss: 0.0060
+[19:36:22] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 1800, Loss: 0.0087
+[19:36:46] {train_network_jac_ranger.py:193} INFO - Epoch: 20, Batch: 1900, Loss: 0.0079
+[19:37:13] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[19:41:17] {train_network_jac_ranger.py:378} INFO - 5052/5449 = 0.927143
+[19:41:17] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 21, lr=0.001
+[19:41:42] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 100, Loss: 0.0183
+[19:42:06] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 200, Loss: 0.0081
+[19:42:30] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 300, Loss: 0.0094
+[19:42:54] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 400, Loss: 0.0091
+[19:43:19] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 500, Loss: 0.0104
+[19:43:43] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 600, Loss: 0.0052
+[19:44:07] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 700, Loss: 0.0119
+[19:44:31] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 800, Loss: 0.0082
+[19:44:55] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 900, Loss: 0.0057
+[19:45:19] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 1000, Loss: 0.0057
+[19:45:44] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 1100, Loss: 0.0075
+[19:46:08] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 1200, Loss: 0.0127
+[19:46:32] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 1300, Loss: 0.0058
+[19:46:56] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 1400, Loss: 0.0076
+[19:47:20] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 1500, Loss: 0.0067
+[19:47:45] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 1600, Loss: 0.0067
+[19:48:09] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 1700, Loss: 0.0095
+[19:48:33] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 1800, Loss: 0.0100
+[19:48:57] {train_network_jac_ranger.py:193} INFO - Epoch: 21, Batch: 1900, Loss: 0.0048
+[19:49:24] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[19:53:32] {train_network_jac_ranger.py:378} INFO - 5053/5449 = 0.927326
+[19:53:32] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 22, lr=0.001
+[19:53:57] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 100, Loss: 0.0108
+[19:54:21] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 200, Loss: 0.0102
+[19:54:45] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 300, Loss: 0.0082
+[19:55:09] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 400, Loss: 0.0076
+[19:55:33] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 500, Loss: 0.0120
+[19:55:57] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 600, Loss: 0.0073
+[19:56:21] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 700, Loss: 0.0122
+[19:56:46] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 800, Loss: 0.0092
+[19:57:10] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 900, Loss: 0.0063
+[19:57:34] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 1000, Loss: 0.0053
+[19:57:58] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 1100, Loss: 0.0079
+[19:58:22] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 1200, Loss: 0.0178
+[19:58:47] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 1300, Loss: 0.0155
+[19:59:11] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 1400, Loss: 0.0085
+[19:59:35] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 1500, Loss: 0.0105
+[19:59:59] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 1600, Loss: 0.0083
+[20:00:23] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 1700, Loss: 0.0081
+[20:00:48] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 1800, Loss: 0.0062
+[20:01:12] {train_network_jac_ranger.py:193} INFO - Epoch: 22, Batch: 1900, Loss: 0.0059
+[20:01:39] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[20:05:44] {train_network_jac_ranger.py:378} INFO - 5035/5449 = 0.924023
+[20:05:44] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 23, lr=0.001
+[20:06:09] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 100, Loss: 0.0078
+[20:06:33] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 200, Loss: 0.0100
+[20:06:58] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 300, Loss: 0.0084
+[20:07:22] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 400, Loss: 0.0090
+[20:07:46] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 500, Loss: 0.0113
+[20:08:10] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 600, Loss: 0.0095
+[20:08:34] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 700, Loss: 0.0080
+[20:08:58] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 800, Loss: 0.0153
+[20:09:23] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 900, Loss: 0.0081
+[20:09:47] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 1000, Loss: 0.0060
+[20:10:11] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 1100, Loss: 0.0096
+[20:10:35] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 1200, Loss: 0.0053
+[20:10:59] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 1300, Loss: 0.0096
+[20:11:24] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 1400, Loss: 0.0118
+[20:11:48] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 1500, Loss: 0.0054
+[20:12:12] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 1600, Loss: 0.0060
+[20:12:36] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 1700, Loss: 0.0049
+[20:13:00] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 1800, Loss: 0.0057
+[20:13:25] {train_network_jac_ranger.py:193} INFO - Epoch: 23, Batch: 1900, Loss: 0.0079
+[20:13:52] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[20:17:58] {train_network_jac_ranger.py:378} INFO - 5069/5449 = 0.930262
+[20:17:58] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 24, lr=0.001
+[20:18:23] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 100, Loss: 0.0088
+[20:18:47] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 200, Loss: 0.0079
+[20:19:11] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 300, Loss: 0.0051
+[20:19:35] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 400, Loss: 0.0060
+[20:19:59] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 500, Loss: 0.0058
+[20:20:23] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 600, Loss: 0.0106
+[20:20:47] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 700, Loss: 0.0069
+[20:21:11] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 800, Loss: 0.0088
+[20:21:36] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 900, Loss: 0.0083
+[20:22:00] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 1000, Loss: 0.0101
+[20:22:24] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 1100, Loss: 0.0073
+[20:22:48] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 1200, Loss: 0.0058
+[20:23:12] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 1300, Loss: 0.0083
+[20:23:37] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 1400, Loss: 0.0112
+[20:24:01] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 1500, Loss: 0.0102
+[20:24:25] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 1600, Loss: 0.0067
+[20:24:49] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 1700, Loss: 0.0103
+[20:25:13] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 1800, Loss: 0.0076
+[20:25:38] {train_network_jac_ranger.py:193} INFO - Epoch: 24, Batch: 1900, Loss: 0.0054
+[20:26:04] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[20:30:10] {train_network_jac_ranger.py:378} INFO - 5047/5449 = 0.926225
+[20:30:10] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 25, lr=0.001
+[20:30:34] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 100, Loss: 0.0082
+[20:30:58] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 200, Loss: 0.0074
+[20:31:23] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 300, Loss: 0.0073
+[20:31:47] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 400, Loss: 0.0109
+[20:32:11] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 500, Loss: 0.0077
+[20:32:35] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 600, Loss: 0.0044
+[20:32:59] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 700, Loss: 0.0124
+[20:33:23] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 800, Loss: 0.0046
+[20:33:47] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 900, Loss: 0.0106
+[20:34:12] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 1000, Loss: 0.0103
+[20:34:36] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 1100, Loss: 0.0077
+[20:35:00] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 1200, Loss: 0.0066
+[20:35:24] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 1300, Loss: 0.0131
+[20:35:48] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 1400, Loss: 0.0079
+[20:36:12] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 1500, Loss: 0.0133
+[20:36:37] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 1600, Loss: 0.0074
+[20:37:01] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 1700, Loss: 0.0071
+[20:37:25] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 1800, Loss: 0.0079
+[20:37:49] {train_network_jac_ranger.py:193} INFO - Epoch: 25, Batch: 1900, Loss: 0.0086
+[20:38:16] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[20:42:21] {train_network_jac_ranger.py:378} INFO - 5067/5449 = 0.929895
+[20:42:21] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 26, lr=0.001
+[20:42:46] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 100, Loss: 0.0105
+[20:43:10] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 200, Loss: 0.0057
+[20:43:34] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 300, Loss: 0.0061
+[20:43:58] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 400, Loss: 0.0081
+[20:44:22] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 500, Loss: 0.0067
+[20:44:47] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 600, Loss: 0.0057
+[20:45:11] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 700, Loss: 0.0157
+[20:45:35] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 800, Loss: 0.0091
+[20:45:59] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 900, Loss: 0.0052
+[20:46:23] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 1000, Loss: 0.0095
+[20:46:47] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 1100, Loss: 0.0108
+[20:47:12] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 1200, Loss: 0.0084
+[20:47:36] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 1300, Loss: 0.0083
+[20:48:00] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 1400, Loss: 0.0054
+[20:48:24] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 1500, Loss: 0.0098
+[20:48:48] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 1600, Loss: 0.0115
+[20:49:13] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 1700, Loss: 0.0103
+[20:49:37] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 1800, Loss: 0.0079
+[20:50:01] {train_network_jac_ranger.py:193} INFO - Epoch: 26, Batch: 1900, Loss: 0.0088
+[20:50:28] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[20:54:33] {train_network_jac_ranger.py:378} INFO - 5028/5449 = 0.922738
+[20:54:33] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 27, lr=0.001
+[20:54:58] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 100, Loss: 0.0087
+[20:55:22] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 200, Loss: 0.0096
+[20:55:46] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 300, Loss: 0.0060
+[20:56:10] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 400, Loss: 0.0059
+[20:56:34] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 500, Loss: 0.0138
+[20:56:58] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 600, Loss: 0.0110
+[20:57:22] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 700, Loss: 0.0094
+[20:57:46] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 800, Loss: 0.0081
+[20:58:11] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 900, Loss: 0.0054
+[20:58:35] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 1000, Loss: 0.0074
+[20:58:59] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 1100, Loss: 0.0083
+[20:59:23] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 1200, Loss: 0.0059
+[20:59:47] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 1300, Loss: 0.0070
+[21:00:11] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 1400, Loss: 0.0052
+[21:00:36] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 1500, Loss: 0.0073
+[21:01:00] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 1600, Loss: 0.0099
+[21:01:24] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 1700, Loss: 0.0091
+[21:01:48] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 1800, Loss: 0.0071
+[21:02:12] {train_network_jac_ranger.py:193} INFO - Epoch: 27, Batch: 1900, Loss: 0.0102
+[21:02:39] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[21:06:46] {train_network_jac_ranger.py:378} INFO - 5095/5449 = 0.935034
+[21:06:46] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 28, lr=0.001
+[21:07:11] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 100, Loss: 0.0114
+[21:07:35] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 200, Loss: 0.0159
+[21:07:59] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 300, Loss: 0.0093
+[21:08:23] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 400, Loss: 0.0064
+[21:08:48] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 500, Loss: 0.0073
+[21:09:12] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 600, Loss: 0.0065
+[21:09:36] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 700, Loss: 0.0084
+[21:10:00] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 800, Loss: 0.0088
+[21:10:24] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 900, Loss: 0.0080
+[21:10:48] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 1000, Loss: 0.0074
+[21:11:13] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 1100, Loss: 0.0092
+[21:11:37] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 1200, Loss: 0.0111
+[21:12:01] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 1300, Loss: 0.0122
+[21:12:25] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 1400, Loss: 0.0107
+[21:12:49] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 1500, Loss: 0.0059
+[21:13:14] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 1600, Loss: 0.0045
+[21:13:38] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 1700, Loss: 0.0050
+[21:14:02] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 1800, Loss: 0.0099
+[21:14:26] {train_network_jac_ranger.py:193} INFO - Epoch: 28, Batch: 1900, Loss: 0.0142
+[21:14:53] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[21:18:59] {train_network_jac_ranger.py:378} INFO - 5075/5449 = 0.931364
+[21:18:59] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 29, lr=0.001
+[21:19:24] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 100, Loss: 0.0080
+[21:19:48] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 200, Loss: 0.0050
+[21:20:12] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 300, Loss: 0.0075
+[21:20:36] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 400, Loss: 0.0062
+[21:21:00] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 500, Loss: 0.0060
+[21:21:24] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 600, Loss: 0.0107
+[21:21:48] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 700, Loss: 0.0089
+[21:22:13] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 800, Loss: 0.0093
+[21:22:37] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 900, Loss: 0.0176
+[21:23:01] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 1000, Loss: 0.0083
+[21:23:25] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 1100, Loss: 0.0073
+[21:23:49] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 1200, Loss: 0.0073
+[21:24:14] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 1300, Loss: 0.0128
+[21:24:38] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 1400, Loss: 0.0096
+[21:25:02] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 1500, Loss: 0.0084
+[21:25:26] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 1600, Loss: 0.0088
+[21:25:50] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 1700, Loss: 0.0117
+[21:26:15] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 1800, Loss: 0.0052
+[21:26:39] {train_network_jac_ranger.py:193} INFO - Epoch: 29, Batch: 1900, Loss: 0.0065
+[21:27:06] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[21:31:12] {train_network_jac_ranger.py:378} INFO - 5090/5449 = 0.934116
+[21:31:12] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 30, lr=0.001
+[21:31:37] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 100, Loss: 0.0091
+[21:32:01] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 200, Loss: 0.0062
+[21:32:25] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 300, Loss: 0.0074
+[21:32:49] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 400, Loss: 0.0048
+[21:33:13] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 500, Loss: 0.0056
+[21:33:38] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 600, Loss: 0.0055
+[21:34:02] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 700, Loss: 0.0078
+[21:34:26] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 800, Loss: 0.0088
+[21:34:50] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 900, Loss: 0.0061
+[21:35:14] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 1000, Loss: 0.0089
+[21:35:39] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 1100, Loss: 0.0094
+[21:36:03] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 1200, Loss: 0.0061
+[21:36:27] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 1300, Loss: 0.0076
+[21:36:51] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 1400, Loss: 0.0106
+[21:37:15] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 1500, Loss: 0.0056
+[21:37:40] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 1600, Loss: 0.0088
+[21:38:04] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 1700, Loss: 0.0072
+[21:38:28] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 1800, Loss: 0.0071
+[21:38:52] {train_network_jac_ranger.py:193} INFO - Epoch: 30, Batch: 1900, Loss: 0.0103
+[21:39:19] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[21:43:25] {train_network_jac_ranger.py:378} INFO - 5110/5449 = 0.937787
+[21:43:25] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 31, lr=0.001
+[21:43:50] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 100, Loss: 0.0084
+[21:44:14] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 200, Loss: 0.0072
+[21:44:38] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 300, Loss: 0.0163
+[21:45:02] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 400, Loss: 0.0070
+[21:45:27] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 500, Loss: 0.0113
+[21:45:51] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 600, Loss: 0.0076
+[21:46:15] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 700, Loss: 0.0063
+[21:46:39] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 800, Loss: 0.0088
+[21:47:03] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 900, Loss: 0.0082
+[21:47:28] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 1000, Loss: 0.0111
+[21:47:52] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 1100, Loss: 0.0084
+[21:48:16] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 1200, Loss: 0.0073
+[21:48:40] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 1300, Loss: 0.0111
+[21:49:04] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 1400, Loss: 0.0086
+[21:49:29] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 1500, Loss: 0.0054
+[21:49:53] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 1600, Loss: 0.0050
+[21:50:17] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 1700, Loss: 0.0056
+[21:50:41] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 1800, Loss: 0.0085
+[21:51:05] {train_network_jac_ranger.py:193} INFO - Epoch: 31, Batch: 1900, Loss: 0.0049
+[21:51:32] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[21:55:39] {train_network_jac_ranger.py:378} INFO - 5064/5449 = 0.929345
+[21:55:39] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 32, lr=0.001
+[21:56:04] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 100, Loss: 0.0074
+[21:56:28] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 200, Loss: 0.0067
+[21:56:52] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 300, Loss: 0.0058
+[21:57:16] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 400, Loss: 0.0084
+[21:57:40] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 500, Loss: 0.0108
+[21:58:05] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 600, Loss: 0.0070
+[21:58:29] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 700, Loss: 0.0062
+[21:58:53] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 800, Loss: 0.0056
+[21:59:17] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 900, Loss: 0.0118
+[21:59:41] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 1000, Loss: 0.0084
+[22:00:06] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 1100, Loss: 0.0069
+[22:00:30] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 1200, Loss: 0.0084
+[22:00:54] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 1300, Loss: 0.0091
+[22:01:18] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 1400, Loss: 0.0134
+[22:01:42] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 1500, Loss: 0.0101
+[22:02:07] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 1600, Loss: 0.0078
+[22:02:31] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 1700, Loss: 0.0069
+[22:02:55] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 1800, Loss: 0.0112
+[22:03:19] {train_network_jac_ranger.py:193} INFO - Epoch: 32, Batch: 1900, Loss: 0.0069
+[22:03:46] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[22:07:53] {train_network_jac_ranger.py:378} INFO - 5110/5449 = 0.937787
+[22:07:53] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 33, lr=0.001
+[22:08:18] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 100, Loss: 0.0079
+[22:08:42] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 200, Loss: 0.0071
+[22:09:06] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 300, Loss: 0.0051
+[22:09:30] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 400, Loss: 0.0044
+[22:09:54] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 500, Loss: 0.0114
+[22:10:18] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 600, Loss: 0.0070
+[22:10:43] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 700, Loss: 0.0098
+[22:11:07] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 800, Loss: 0.0063
+[22:11:31] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 900, Loss: 0.0060
+[22:11:55] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 1000, Loss: 0.0073
+[22:12:19] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 1100, Loss: 0.0126
+[22:12:44] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 1200, Loss: 0.0059
+[22:13:08] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 1300, Loss: 0.0054
+[22:13:32] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 1400, Loss: 0.0124
+[22:13:56] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 1500, Loss: 0.0072
+[22:14:20] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 1600, Loss: 0.0047
+[22:14:45] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 1700, Loss: 0.0054
+[22:15:09] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 1800, Loss: 0.0127
+[22:15:33] {train_network_jac_ranger.py:193} INFO - Epoch: 33, Batch: 1900, Loss: 0.0060
+[22:16:00] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[22:20:04] {train_network_jac_ranger.py:378} INFO - 5048/5449 = 0.926409
+[22:20:04] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 34, lr=0.001
+[22:20:29] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 100, Loss: 0.0085
+[22:20:53] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 200, Loss: 0.0141
+[22:21:17] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 300, Loss: 0.0068
+[22:21:41] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 400, Loss: 0.0157
+[22:22:06] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 500, Loss: 0.0053
+[22:22:30] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 600, Loss: 0.0108
+[22:22:54] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 700, Loss: 0.0066
+[22:23:18] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 800, Loss: 0.0088
+[22:23:42] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 900, Loss: 0.0088
+[22:24:07] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 1000, Loss: 0.0067
+[22:24:31] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 1100, Loss: 0.0090
+[22:24:55] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 1200, Loss: 0.0073
+[22:25:19] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 1300, Loss: 0.0093
+[22:25:43] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 1400, Loss: 0.0065
+[22:26:08] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 1500, Loss: 0.0089
+[22:26:32] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 1600, Loss: 0.0061
+[22:26:56] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 1700, Loss: 0.0088
+[22:27:20] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 1800, Loss: 0.0129
+[22:27:44] {train_network_jac_ranger.py:193} INFO - Epoch: 34, Batch: 1900, Loss: 0.0067
+[22:28:11] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[22:32:18] {train_network_jac_ranger.py:378} INFO - 5068/5449 = 0.930079
+[22:32:18] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 35, lr=0.001
+[22:32:43] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 100, Loss: 0.0069
+[22:33:07] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 200, Loss: 0.0078
+[22:33:31] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 300, Loss: 0.0108
+[22:33:55] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 400, Loss: 0.0041
+[22:34:19] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 500, Loss: 0.0082
+[22:34:43] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 600, Loss: 0.0055
+[22:35:07] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 700, Loss: 0.0062
+[22:35:31] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 800, Loss: 0.0084
+[22:35:56] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 900, Loss: 0.0057
+[22:36:20] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 1000, Loss: 0.0056
+[22:36:44] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 1100, Loss: 0.0067
+[22:37:08] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 1200, Loss: 0.0107
+[22:37:32] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 1300, Loss: 0.0102
+[22:37:57] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 1400, Loss: 0.0063
+[22:38:21] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 1500, Loss: 0.0069
+[22:38:45] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 1600, Loss: 0.0069
+[22:39:09] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 1700, Loss: 0.0073
+[22:39:34] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 1800, Loss: 0.0094
+[22:39:58] {train_network_jac_ranger.py:193} INFO - Epoch: 35, Batch: 1900, Loss: 0.0094
+[22:40:25] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[22:44:32] {train_network_jac_ranger.py:378} INFO - 5113/5449 = 0.938337
+[22:44:32] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 36, lr=0.001
+[22:44:57] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 100, Loss: 0.0081
+[22:45:21] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 200, Loss: 0.0088
+[22:45:45] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 300, Loss: 0.0130
+[22:46:09] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 400, Loss: 0.0074
+[22:46:33] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 500, Loss: 0.0094
+[22:46:58] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 600, Loss: 0.0080
+[22:47:22] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 700, Loss: 0.0072
+[22:47:46] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 800, Loss: 0.0048
+[22:48:10] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 900, Loss: 0.0045
+[22:48:34] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 1000, Loss: 0.0069
+[22:48:58] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 1100, Loss: 0.0090
+[22:49:23] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 1200, Loss: 0.0083
+[22:49:47] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 1300, Loss: 0.0126
+[22:50:11] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 1400, Loss: 0.0060
+[22:50:35] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 1500, Loss: 0.0060
+[22:50:59] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 1600, Loss: 0.0096
+[22:51:24] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 1700, Loss: 0.0077
+[22:51:48] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 1800, Loss: 0.0084
+[22:52:12] {train_network_jac_ranger.py:193} INFO - Epoch: 36, Batch: 1900, Loss: 0.0055
+[22:52:39] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[22:56:44] {train_network_jac_ranger.py:378} INFO - 5077/5449 = 0.931731
+[22:56:44] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 37, lr=0.001
+[22:57:09] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 100, Loss: 0.0090
+[22:57:33] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 200, Loss: 0.0071
+[22:57:57] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 300, Loss: 0.0050
+[22:58:21] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 400, Loss: 0.0079
+[22:58:45] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 500, Loss: 0.0135
+[22:59:09] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 600, Loss: 0.0075
+[22:59:33] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 700, Loss: 0.0111
+[22:59:58] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 800, Loss: 0.0095
+[23:00:22] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 900, Loss: 0.0070
+[23:00:46] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 1000, Loss: 0.0075
+[23:01:10] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 1100, Loss: 0.0055
+[23:01:34] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 1200, Loss: 0.0075
+[23:01:59] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 1300, Loss: 0.0108
+[23:02:23] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 1400, Loss: 0.0076
+[23:02:47] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 1500, Loss: 0.0073
+[23:03:11] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 1600, Loss: 0.0061
+[23:03:35] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 1700, Loss: 0.0144
+[23:04:00] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 1800, Loss: 0.0063
+[23:04:24] {train_network_jac_ranger.py:193} INFO - Epoch: 37, Batch: 1900, Loss: 0.0109
+[23:04:51] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[23:08:59] {train_network_jac_ranger.py:378} INFO - 5109/5449 = 0.937603
+[23:08:59] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 38, lr=0.001
+[23:09:24] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 100, Loss: 0.0097
+[23:09:48] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 200, Loss: 0.0086
+[23:10:12] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 300, Loss: 0.0084
+[23:10:36] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 400, Loss: 0.0049
+[23:11:00] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 500, Loss: 0.0064
+[23:11:24] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 600, Loss: 0.0047
+[23:11:48] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 700, Loss: 0.0070
+[23:12:12] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 800, Loss: 0.0075
+[23:12:37] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 900, Loss: 0.0068
+[23:13:01] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 1000, Loss: 0.0129
+[23:13:25] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 1100, Loss: 0.0056
+[23:13:49] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 1200, Loss: 0.0056
+[23:14:13] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 1300, Loss: 0.0074
+[23:14:37] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 1400, Loss: 0.0079
+[23:15:02] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 1500, Loss: 0.0035
+[23:15:26] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 1600, Loss: 0.0153
+[23:15:50] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 1700, Loss: 0.0076
+[23:16:14] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 1800, Loss: 0.0093
+[23:16:38] {train_network_jac_ranger.py:193} INFO - Epoch: 38, Batch: 1900, Loss: 0.0078
+[23:17:05] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[23:21:12] {train_network_jac_ranger.py:378} INFO - 5075/5449 = 0.931364
+[23:21:12] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 39, lr=0.001
+[23:21:37] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 100, Loss: 0.0082
+[23:22:01] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 200, Loss: 0.0040
+[23:22:25] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 300, Loss: 0.0085
+[23:22:50] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 400, Loss: 0.0058
+[23:23:14] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 500, Loss: 0.0061
+[23:23:38] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 600, Loss: 0.0076
+[23:24:02] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 700, Loss: 0.0061
+[23:24:26] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 800, Loss: 0.0090
+[23:24:50] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 900, Loss: 0.0051
+[23:25:14] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 1000, Loss: 0.0135
+[23:25:39] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 1100, Loss: 0.0054
+[23:26:03] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 1200, Loss: 0.0082
+[23:26:27] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 1300, Loss: 0.0136
+[23:26:51] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 1400, Loss: 0.0080
+[23:27:15] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 1500, Loss: 0.0078
+[23:27:40] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 1600, Loss: 0.0061
+[23:28:04] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 1700, Loss: 0.0110
+[23:28:28] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 1800, Loss: 0.0056
+[23:28:52] {train_network_jac_ranger.py:193} INFO - Epoch: 39, Batch: 1900, Loss: 0.0108
+[23:29:19] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[23:33:25] {train_network_jac_ranger.py:378} INFO - 5043/5449 = 0.925491
+[23:33:25] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 40, lr=0.001
+[23:33:50] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 100, Loss: 0.0070
+[23:34:14] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 200, Loss: 0.0067
+[23:34:38] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 300, Loss: 0.0069
+[23:35:02] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 400, Loss: 0.0099
+[23:35:26] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 500, Loss: 0.0060
+[23:35:51] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 600, Loss: 0.0077
+[23:36:15] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 700, Loss: 0.0079
+[23:36:39] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 800, Loss: 0.0105
+[23:37:03] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 900, Loss: 0.0059
+[23:37:27] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 1000, Loss: 0.0083
+[23:37:51] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 1100, Loss: 0.0066
+[23:38:16] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 1200, Loss: 0.0049
+[23:38:40] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 1300, Loss: 0.0053
+[23:39:04] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 1400, Loss: 0.0095
+[23:39:28] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 1500, Loss: 0.0122
+[23:39:52] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 1600, Loss: 0.0065
+[23:40:16] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 1700, Loss: 0.0100
+[23:40:41] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 1800, Loss: 0.0082
+[23:41:05] {train_network_jac_ranger.py:193} INFO - Epoch: 40, Batch: 1900, Loss: 0.0088
+[23:41:32] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[23:45:37] {train_network_jac_ranger.py:378} INFO - 5038/5449 = 0.924573
+[23:45:37] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 41, lr=0.001
+[23:46:02] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 100, Loss: 0.0070
+[23:46:26] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 200, Loss: 0.0109
+[23:46:50] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 300, Loss: 0.0070
+[23:47:14] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 400, Loss: 0.0081
+[23:47:38] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 500, Loss: 0.0102
+[23:48:02] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 600, Loss: 0.0100
+[23:48:26] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 700, Loss: 0.0070
+[23:48:51] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 800, Loss: 0.0051
+[23:49:15] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 900, Loss: 0.0087
+[23:49:39] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 1000, Loss: 0.0086
+[23:50:03] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 1100, Loss: 0.0063
+[23:50:27] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 1200, Loss: 0.0109
+[23:50:51] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 1300, Loss: 0.0071
+[23:51:16] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 1400, Loss: 0.0053
+[23:51:40] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 1500, Loss: 0.0058
+[23:52:04] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 1600, Loss: 0.0090
+[23:52:28] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 1700, Loss: 0.0086
+[23:52:53] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 1800, Loss: 0.0067
+[23:53:17] {train_network_jac_ranger.py:193} INFO - Epoch: 41, Batch: 1900, Loss: 0.0046
+[23:53:43] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[23:57:51] {train_network_jac_ranger.py:378} INFO - 5101/5449 = 0.936135
+[23:57:51] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 42, lr=0.001
+[23:58:16] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 100, Loss: 0.0075
+[23:58:40] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 200, Loss: 0.0044
+[23:59:04] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 300, Loss: 0.0067
+[23:59:28] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 400, Loss: 0.0066
+[23:59:52] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 500, Loss: 0.0074
+[00:00:16] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 600, Loss: 0.0106
+[00:00:40] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 700, Loss: 0.0098
+[00:01:05] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 800, Loss: 0.0101
+[00:01:29] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 900, Loss: 0.0068
+[00:01:53] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 1000, Loss: 0.0112
+[00:02:17] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 1100, Loss: 0.0083
+[00:02:41] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 1200, Loss: 0.0073
+[00:03:05] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 1300, Loss: 0.0065
+[00:03:30] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 1400, Loss: 0.0096
+[00:03:54] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 1500, Loss: 0.0096
+[00:04:18] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 1600, Loss: 0.0066
+[00:04:42] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 1700, Loss: 0.0060
+[00:05:06] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 1800, Loss: 0.0083
+[00:05:31] {train_network_jac_ranger.py:193} INFO - Epoch: 42, Batch: 1900, Loss: 0.0081
+[00:05:58] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[00:10:04] {train_network_jac_ranger.py:378} INFO - 5044/5449 = 0.925674
+[00:10:04] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 43, lr=0.001
+[00:10:29] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 100, Loss: 0.0085
+[00:10:53] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 200, Loss: 0.0111
+[00:11:17] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 300, Loss: 0.0051
+[00:11:41] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 400, Loss: 0.0098
+[00:12:05] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 500, Loss: 0.0053
+[00:12:29] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 600, Loss: 0.0052
+[00:12:53] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 700, Loss: 0.0074
+[00:13:17] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 800, Loss: 0.0059
+[00:13:41] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 900, Loss: 0.0058
+[00:14:06] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 1000, Loss: 0.0082
+[00:14:30] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 1100, Loss: 0.0053
+[00:14:54] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 1200, Loss: 0.0062
+[00:15:18] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 1300, Loss: 0.0094
+[00:15:42] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 1400, Loss: 0.0058
+[00:16:06] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 1500, Loss: 0.0104
+[00:16:31] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 1600, Loss: 0.0091
+[00:16:55] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 1700, Loss: 0.0057
+[00:17:19] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 1800, Loss: 0.0060
+[00:17:43] {train_network_jac_ranger.py:193} INFO - Epoch: 43, Batch: 1900, Loss: 0.0061
+[00:18:10] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[00:22:17] {train_network_jac_ranger.py:378} INFO - 5055/5449 = 0.927693
+[00:22:17] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 44, lr=0.001
+[00:22:42] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 100, Loss: 0.0049
+[00:23:06] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 200, Loss: 0.0109
+[00:23:30] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 300, Loss: 0.0068
+[00:23:54] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 400, Loss: 0.0061
+[00:24:18] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 500, Loss: 0.0056
+[00:24:43] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 600, Loss: 0.0065
+[00:25:07] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 700, Loss: 0.0075
+[00:25:31] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 800, Loss: 0.0071
+[00:25:55] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 900, Loss: 0.0061
+[00:26:19] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 1000, Loss: 0.0061
+[00:26:43] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 1100, Loss: 0.0050
+[00:27:08] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 1200, Loss: 0.0092
+[00:27:32] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 1300, Loss: 0.0109
+[00:27:56] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 1400, Loss: 0.0070
+[00:28:20] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 1500, Loss: 0.0056
+[00:28:44] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 1600, Loss: 0.0079
+[00:29:08] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 1700, Loss: 0.0053
+[00:29:33] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 1800, Loss: 0.0058
+[00:29:57] {train_network_jac_ranger.py:193} INFO - Epoch: 44, Batch: 1900, Loss: 0.0087
+[00:30:24] {train_network_jac_ranger.py:375} INFO - Validating 0.25...
+[00:34:29] {train_network_jac_ranger.py:378} INFO - 5048/5449 = 0.926409
+[00:34:29] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 45, lr=0.001
+[00:34:54] {train_network_jac_ranger.py:193} INFO - Epoch: 45, Batch: 100, Loss: 0.0082
+[00:35:18] {train_network_jac_ranger.py:193} INFO - Epoch: 45, Batch: 200, Loss: 0.0065
+[00:35:42] {train_network_jac_ranger.py:193} INFO - Epoch: 45, Batch: 300, Loss: 0.0099
+[00:36:06] {train_network_jac_ranger.py:193} INFO - Epoch: 45, Batch: 400, Loss: 0.0089

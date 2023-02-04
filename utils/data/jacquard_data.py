@@ -1,6 +1,5 @@
 import glob
 import os
-
 from utils.dataset_processing import grasp, image
 from .grasp_data import GraspDatasetBase
 
@@ -18,7 +17,7 @@ class JacquardDataset(GraspDatasetBase):
         """
         super(JacquardDataset, self).__init__(**kwargs)
 
-        self.grasp_files = glob.glob(os.path.join(file_path, '*', '*_grasps.txt'))
+        self.grasp_files = glob.glob(os.path.join(file_path,'*','*', '*_grasps.txt'))
         self.grasp_files.sort()
         self.length = len(self.grasp_files)
 

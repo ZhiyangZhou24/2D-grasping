@@ -10,7 +10,7 @@ class GraspDatasetBase(torch.utils.data.Dataset):
     An abstract dataset for training networks in a common format.
     """
 
-    def __init__(self, output_size=224, include_depth=True, include_rgb=False, random_rotate=False,
+    def __init__(self, output_size=224, include_depth=True, include_rgb=False, random_rotate=True,
                  random_zoom=False, input_only=False):
         """
         :param output_size: Image output size in pixels (square)
@@ -95,4 +95,4 @@ class GraspDatasetBase(torch.utils.data.Dataset):
         return x, (pos, cos, sin, width), idx, rot, zoom_factor
 
     def __len__(self):
-        return len(self.grasp_files)
+        return len(self.grasp_files)*3

@@ -1,0 +1,12 @@
+[00:36:29] {/home/lab/zzy/grasp/2D-grasping-my/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[00:36:29] {train_network_jac_ranger.py:265} INFO - Loading Jacquard Dataset...
+[00:36:29] {train_network_jac_ranger.py:274} INFO - Dataset size is 54485
+[00:36:29] {train_network_jac_ranger.py:284} INFO - Training size: 49036
+[00:36:29] {train_network_jac_ranger.py:285} INFO - Validation size: 5449
+[00:36:29] {train_network_jac_ranger.py:303} INFO - Done
+[00:36:29] {train_network_jac_ranger.py:306} INFO - Loading Network...
+[00:36:29] {train_network_jac_ranger.py:322} INFO - Done from zero model
+[00:36:31] {train_network_jac_ranger.py:337} INFO - optimizer ranger Done
+[00:36:31] {train_network_jac_ranger.py:353} INFO - Beginning Epoch 00, lr=0.001
+[00:36:56] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 100, Loss: 0.0392
+[00:37:20] {train_network_jac_ranger.py:193} INFO - Epoch: 0, Batch: 200, Loss: 0.0365

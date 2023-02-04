@@ -1,0 +1,7 @@
+[13:32:55] {/home/lab/zzy/grasp/2D-grasping-my/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[13:32:55] {train_network.py:258} INFO - Loading Cornell Dataset...
+[13:32:55] {train_network.py:267} INFO - Dataset size is 885
+[13:32:55] {train_network.py:277} INFO - Training size: 2832
+[13:32:55] {train_network.py:278} INFO - Validation size: 708
+[13:32:55] {train_network.py:296} INFO - Done
+[13:32:55] {train_network.py:299} INFO - Loading Network...

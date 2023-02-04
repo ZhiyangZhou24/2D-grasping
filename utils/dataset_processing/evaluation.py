@@ -45,6 +45,12 @@ def plot_output(rgb_img, grasp_q_img, grasp_angle_img, depth_img, no_grasps=1, g
     ax.axis('off')
     plt.colorbar(plot)
 
+    # ax = fig.add_subplot(2, 2, 4)
+    # plot = ax.imshow(grasp_angle_img, cmap='jet', vmin=0, vmax=1)
+    # ax.set_title('Q label')
+    # ax.axis('off')
+    # plt.colorbar(plot)
+
     ax = fig.add_subplot(2, 2, 4)
     plot = ax.imshow(grasp_angle_img, cmap='hsv', vmin=-np.pi / 2, vmax=np.pi / 2)
     ax.set_title('Angle')

@@ -86,7 +86,8 @@ class GraspRectangles:
                 except ValueError:
                     # Some files contain weird values.
                     continue
-        return cls(grs)
+        grs = cls(grs)
+        return grs
 
     @classmethod
     def load_from_jacquard_file(cls, fname, scale=1.0):
@@ -163,7 +164,7 @@ class GraspRectangles:
         for gr in self.grs:
             rr, cc = gr.compact_polygon_coords(shape)
             if position:
-                pos_out[rr, cc] = 1.0
+                pos_out[rr, cc] = 1
             if angle:
                 ang_out[rr, cc] = gr.angle
             if width:
@@ -171,6 +172,57 @@ class GraspRectangles:
 
         return pos_out, ang_out, width_out
 
+
+    def draw_ga(self, shape, position=True, angle=True, width=True):
+        """
+        Plot all GraspRectangles as solid rectangles in a numpy array, e.g. as network training data.
+        :param shape: output shape
+        :param position: If True, Q output will be produced
+        :param angle: If True, Angle output will be produced
+        :param width: If True, Width output will be produced
+        :return: Q, Angle, Width outputs (or None)
+        """
+
+        gaussian = 2
+        filter_f = 0
+        if position:
+            pos_out = np.zeros(shape)
+        else:
+            pos_out = None
+        if angle:
+            ang_out = np.zeros(shape)
+        else:
+            ang_out = None
+        if width:
+            width_out = np.zeros(shape)
+        else:
+            width_out = None
+
+        for gr in self.grs:
+            rows, cols = gr.compact_polygon_coords(shape)
+            if not rows.tolist() or not cols.tolist():
+                continue
+            b_map = np.zeros(shape)  # auxiliary binary map
+            b_map[rows, cols] = 1
+            ang_out[rows, cols] = gr.angle
+            width_out[rows, cols] = gr.length
+            grid_x, grid_y = np.meshgrid(
+                np.linspace(-1, 1, max(cols) - min(cols) + 1),
+                np.linspace(-1, 1, max(rows) - min(rows) + 1)
+            )
+            gauss_grid = np.exp(-(grid_x ** 2 + grid_y ** 2) / gaussian)
+            if filter_f !=0:
+                gauss_grid[(gauss_grid > 0) & (gauss_grid < filter_f)] = filter_f
+            gauss_map = np.zeros(shape)
+            gauss_map[
+                min(rows):max(rows) + 1,
+                min(cols):max(cols) + 1
+            ] = gauss_grid
+            gauss_map = gauss_map * b_map
+            pos_out = np.maximum(pos_out,gauss_map)
+
+
+        return pos_out, ang_out, width_out 
     def to_array(self, pad_to=0):
         """
         Convert all GraspRectangles to a single array.

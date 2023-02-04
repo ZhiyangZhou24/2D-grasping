@@ -16,17 +16,18 @@ from torchsummary import summary
 from hardware.device import get_device
 from inference.models import get_network
 from inference.post_process import post_process_output
-from utils.data import get_dataset
+from utils.data.cornell_data import CornellDataset
+# from utils.data import get_dataset
 from utils.dataset_processing import evaluation
 from utils.visualisation.gridshow import gridshow
-
+from ranger import Ranger  # this is from ranger.py
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3next',
-                        help='Network name in inference/models')
+    parser.add_argument('--network', type=str, default='grconvnet3_seresunet',
+                        help='Network name in inference/models  grconvnet')
     parser.add_argument('--input-size', type=int, default=224,
                         help='Input image size for the network')
     parser.add_argument('--use-depth', type=int, default=1,
@@ -43,22 +44,30 @@ def parse_args():
                         help='Threshold for IOU matching')
 
     # Datasets
+    # /media/lab/d/ZZY/datasets/Jacquard
+    # /media/lab/d/ZZY/datasets/Cornell
+    # /home/lab/zzy/datasets/Cornell
+    # /media/lab/d/ZZY/datasets/transgrasp
     parser.add_argument('--dataset', type=str,default='cornell',
                         help='Dataset Name ("cornell" or "jacquard")')
-    parser.add_argument('--dataset-path', type=str,default='/media/lab/d/ZZY/datasets/Cornell',
+    parser.add_argument('--dataset-path', type=str,default='/media/lab/e/zzy/datasets/Cornell',
                         help='Path to dataset')
-    parser.add_argument('--split', type=float, default=0.9,
+    parser.add_argument('--alfa', type=int, default=4,
+                        help='len(Dataset)*alfa')
+    parser.add_argument('--split', type=float, default=0.8,
                         help='Fraction of data for training (remainder is validation)')
-    parser.add_argument('--ds-shuffle', action='store_true', default=False,
+    parser.add_argument('--ds-shuffle', action='store_true', default=True,
                         help='Shuffle the dataset')
     parser.add_argument('--ds-rotate', type=float, default=0.0,
                         help='Shift the start point of the dataset to use a different test/train split')
-    parser.add_argument('--num-workers', type=int, default=32,
+    parser.add_argument('--num-workers', type=int, default=16,
                         help='Dataset workers')
 
     # Training
-    parser.add_argument('--batch-size', type=int, default=16,
+    parser.add_argument('--batch-size', type=int, default=32,
                         help='Batch size')
+    parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
+    parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
     parser.add_argument('--epochs', type=int, default=50,
                         help='Training epochs')
     parser.add_argument('--batches-per-epoch', type=int, default=1000,
@@ -67,17 +76,19 @@ def parse_args():
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='training_ggcnnnext_cornell_rgb0',
+    parser.add_argument('--description', type=str, default='imp3_pp_rgbd_adam',
                         help='Training description')
-    parser.add_argument('--logdir', type=str, default='logs/',
+    parser.add_argument('--logdir', type=str, default='logs/test_cornell',
                         help='Log directory')
     parser.add_argument('--vis', action='store_true',
                         help='Visualise the training process')
     parser.add_argument('--cpu', dest='force_cpu', action='store_true', default=False,
                         help='Force code to run in CPU mode')
-    parser.add_argument('--random-seed', type=int, default=123,
+    parser.add_argument('--random-seed', type=int, default=1234,
                         help='Random seed for numpy')
-
+    parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
+    parser.add_argument('--model', type=str, default='logs/seres_u/221210_1659_trainnin_seresu_rgbd_32_alfa3_3000/epoch_24_iou_0.9737', help='保存的模型')
+    parser.add_argument('--start-epoch', type=int, default=24, help='继续训练开始的epoch')
     args = parser.parse_args()
     return args
 
@@ -245,10 +256,10 @@ def run():
 
     # Load Dataset
     logging.info('Loading {} Dataset...'.format(args.dataset.title()))
-    Dataset = get_dataset(args.dataset)
-    dataset = Dataset(args.dataset_path,
+    # Dataset = get_dataset(args.dataset)
+    dataset = CornellDataset(args.dataset_path,
                       output_size=args.input_size,
-                      ds_rotate=args.ds_rotate,
+                      alfa=args.alfa,
                       random_rotate=True,
                       random_zoom=True,
                       include_depth=args.use_depth,
@@ -256,9 +267,10 @@ def run():
     logging.info('Dataset size is {}'.format(dataset.length))
 
     # Creating data indices for training and validation splits
-    indices = list(range(dataset.length))
-    split = int(np.floor(args.split * dataset.length))
-    if args.ds_shuffle:
+    indices = list(range(dataset.len))
+    print('len{}'.format(dataset.len))
+    split = int(np.floor(args.split * dataset.len))
+    if args.ds_shuffle: # 对应 imgwise 否则为obj
         np.random.seed(args.random_seed)
         np.random.shuffle(indices)
     train_indices, val_indices = indices[:split], indices[split:]
@@ -273,7 +285,8 @@ def run():
         dataset,
         batch_size=args.batch_size,
         num_workers=args.num_workers,
-        sampler=train_sampler
+        sampler=train_sampler,
+        pin_memory=True
     )
     val_data = torch.utils.data.DataLoader(
         dataset,
@@ -286,6 +299,7 @@ def run():
     # Load the network
     logging.info('Loading Network...')
     input_channels = 1 * args.use_depth + 3 * args.use_rgb
+    print("input channel is {}".format(input_channels))
     network = get_network(args.network)
     net = network(
         input_channels=input_channels,
@@ -293,18 +307,31 @@ def run():
         prob=args.dropout_prob,
         channel_size=args.channel_size
     )
-
+    if args.goon_train:
+        # 加载预训练模型
+        net = torch.load(args.model, map_location=torch.device(device))
+        # net.load_state_dict(pretrained_dict, strict=True)   # True:完全吻合，False:只加载键值相同的参数，其他加载默认值。
+        logging.info('Done from goon checkpoint {}'.format(args.model))
+    else :
+        logging.info('Done from zero model')
     net = net.to(device)
-    logging.info('Done')
+    
 
     if args.optim.lower() == 'adam':
-        optimizer = optim.Adam(net.parameters())
+        # 优化器
+        optimizer = optim.Adam(net.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[1000], gamma=0.5)     # 学习率衰减    20, 30, 60
     elif args.optim.lower() == 'sgd':
-        optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
+        optimizer = optim.SGD(net.parameters(), lr=0.005, momentum=0.9)
+    elif args.optim.lower() == 'ranger':
+        optimizer = Ranger(net.parameters(), lr=args.lr)
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[1000], gamma=0.5)
     else:
         raise NotImplementedError('Optimizer {} is not implemented'.format(args.optim))
+    logging.info('optimizer {} Done'.format(args.optim))
 
     # Print model architecture.
+    print("input size is {}".format(input_channels))
     summary(net, (input_channels, args.input_size, args.input_size))
     f = open(os.path.join(save_folder, 'arch.txt'), 'w')
     sys.stdout = f
@@ -313,21 +340,36 @@ def run():
     f.close()
 
     best_iou = 0.0
-    for epoch in range(args.epochs):
-        logging.info('Beginning Epoch {:02d}'.format(epoch))
+    start_epoch = args.start_epoch if args.goon_train else 0
+    for _ in range(start_epoch):
+        scheduler.step()
+    for epoch in range(args.epochs)[start_epoch:]:
+        logging.info('Beginning Epoch {:02d}, lr={}'.format(epoch, optimizer.state_dict()['param_groups'][0]['lr']))
         train_results = train(epoch, net, device, train_data, optimizer, args.batches_per_epoch, vis=args.vis)
-
+        scheduler.step()
         # Log training losses to tensorboard
         tb.add_scalar('loss/train_loss', train_results['loss'], epoch)
         for n, l in train_results['losses'].items():
             tb.add_scalar('train_loss/' + n, l, epoch)
 
+        # logging.info('Validating 0.40...')
+        # test_results = validate(net, device, val_data, 0.40)
+        # logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
+        #                              test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+        # logging.info('Validating 0.35...')
+        # test_results = validate(net, device, val_data, 0.35)
+        # logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
+        #                              test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+        # logging.info('Validating 0.30...')
+        # test_results = validate(net, device, val_data, 0.30)
+        # logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
+        #                              test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+
         # Run Validation
-        logging.info('Validating...')
-        test_results = validate(net, device, val_data, args.iou_threshold)
+        logging.info('Validating 0.25...')
+        test_results = validate(net, device, val_data, 0.25)
         logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
                                      test_results['correct'] / (test_results['correct'] + test_results['failed'])))
-
         # Log validation results to tensorbaord
         tb.add_scalar('loss/IOU', test_results['correct'] / (test_results['correct'] + test_results['failed']), epoch)
         tb.add_scalar('loss/val_loss', test_results['loss'], epoch)
@@ -336,9 +378,15 @@ def run():
 
         # Save best performing network
         iou = test_results['correct'] / (test_results['correct'] + test_results['failed'])
-        if iou > best_iou or epoch == 0 or (epoch % 10) == 0:
-            torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.2f' % (epoch, iou)))
+        if iou > best_iou or epoch == 0 or (epoch % 5) == 0:
+            print('>>> save model: ', 'epoch_%02d_iou_%0.4f' % (epoch, iou))
+            # torch.save(net.state_dict(), os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
+            torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             best_iou = iou
+        # else:
+        #     print('>>> save model: ', 'epoch_%02d_iou_%0.4f' % (epoch, iou))
+        #     # torch.save(net.state_dict(), os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
+        #     torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
 
 
 if __name__ == '__main__':

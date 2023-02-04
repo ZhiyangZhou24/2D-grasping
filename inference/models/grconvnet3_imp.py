@@ -1,0 +1,221 @@
+import torch.nn as nn
+import torch
+import torch.nn.functional as F
+from torch.nn.parameter import Parameter
+from inference.models.pico_det import CSPLayer
+from inference.models.grasp_model import GraspModel, ResidualBlock
+
+
+class ChannelAttention(nn.Module):
+    def __init__(self, in_planes, ratio=8):
+        super(ChannelAttention, self).__init__()
+        self.avg_pool = nn.AdaptiveAvgPool2d(1)
+        self.max_pool = nn.AdaptiveMaxPool2d(1)
+
+        # 利用1x1卷积代替全连接
+        self.fc1   = nn.Conv2d(in_planes, in_planes // ratio, 1, bias=False)
+        self.relu1 = nn.ReLU()
+        self.fc2   = nn.Conv2d(in_planes // ratio, in_planes, 1, bias=False)
+
+        self.sigmoid = nn.Sigmoid()
+
+    def forward(self, x):
+        avg_out = self.fc2(self.relu1(self.fc1(self.avg_pool(x))))
+        max_out = self.fc2(self.relu1(self.fc1(self.max_pool(x))))
+        out = avg_out + max_out
+        return self.sigmoid(out)
+
+class SpatialAttention(nn.Module):
+    def __init__(self, kernel_size=7):
+        super(SpatialAttention, self).__init__()
+
+        assert kernel_size in (3, 7), 'kernel size must be 3 or 7'
+        padding = 3 if kernel_size == 7 else 1
+        self.conv1 = nn.Conv2d(2, 1, kernel_size, padding=padding, bias=False)
+        self.sigmoid = nn.Sigmoid()
+
+    def forward(self, x):
+        avg_out = torch.mean(x, dim=1, keepdim=True)
+        max_out, _ = torch.max(x, dim=1, keepdim=True)
+        x = torch.cat([avg_out, max_out], dim=1)
+        x = self.conv1(x)
+        return self.sigmoid(x)
+
+class cbam_block(nn.Module):
+    def __init__(self, channel, ratio=8, kernel_size=3):
+        super(cbam_block, self).__init__()
+        self.channelattention = ChannelAttention(channel, ratio=ratio)
+        self.spatialattention = SpatialAttention(kernel_size=kernel_size)
+
+    def forward(self, x):
+        x = x*self.channelattention(x)
+        x = x*self.spatialattention(x)
+        return x
+
+class sa_layer(nn.Module):
+    """Constructs a Channel Spatial Group module.
+    Args:
+        k_size: Adaptive selection of kernel size
+    """
+
+    def __init__(self, channel, groups=64):
+        super(sa_layer, self).__init__()
+        self.groups = groups
+        self.avg_pool = nn.AdaptiveAvgPool2d(1)
+        self.cweight = Parameter(torch.zeros(1, channel // (2 * groups), 1, 1))
+        self.cbias = Parameter(torch.ones(1, channel // (2 * groups), 1, 1))
+        self.sweight = Parameter(torch.zeros(1, channel // (2 * groups), 1, 1))
+        self.sbias = Parameter(torch.ones(1, channel // (2 * groups), 1, 1))
+
+        self.sigmoid = nn.Sigmoid()
+        self.gn = nn.GroupNorm(channel // (2 * groups), channel // (2 * groups))
+
+    @staticmethod
+    def channel_shuffle(x, groups):
+        b, c, h, w = x.shape
+
+        x = x.reshape(b, groups, -1, h, w)
+        x = x.permute(0, 2, 1, 3, 4)
+
+        # flatten
+        x = x.reshape(b, -1, h, w)
+
+        return x
+
+    def forward(self, x):
+        b, c, h, w = x.shape
+        print("shape x {}".format(x.shape))
+        x = x.reshape(b * self.groups, -1, h, w)
+        print("shape x {}".format(x.shape))
+        x_0, x_1 = x.chunk(2, dim=1)
+
+        # channel attention
+        xn = self.avg_pool(x_0)
+        xn = self.cweight * xn + self.cbias
+        xn = x_0 * self.sigmoid(xn)
+
+        # spatial attention
+        xs = self.gn(x_1)
+        xs = self.sweight * xs + self.sbias
+        xs = x_1 * self.sigmoid(xs)
+
+        # concatenate along channel axis
+        out = torch.cat([xn, xs], dim=1)
+        out = out.reshape(b, -1, h, w)
+
+        out = self.channel_shuffle(out, 2)
+        return out
+
+
+class GenerativeResnet(GraspModel):
+
+    def __init__(self, input_channels=4, output_channels=1, channel_size=32, dropout=False, prob=0.0):
+        super(GenerativeResnet, self).__init__()
+        self.conv1 = nn.Conv2d(input_channels, channel_size, kernel_size=9, stride=1, padding=4)  #32 224
+        self.bn1 = nn.BatchNorm2d(channel_size)
+
+        self.conv2 = nn.Conv2d(channel_size, channel_size * 2, kernel_size=4, stride=2, padding=1) #64 112
+        self.bn2 = nn.BatchNorm2d(channel_size * 2)
+
+        self.conv3 = nn.Conv2d(channel_size * 2, channel_size * 4, kernel_size=4, stride=2, padding=1) #128 64
+        self.bn3 = nn.BatchNorm2d(channel_size * 4)
+
+        self.res1 = ResidualBlock(channel_size * 4, channel_size * 4) #128 56
+        self.res2 = ResidualBlock(channel_size * 4, channel_size * 4) #128 56
+        self.res3 = ResidualBlock(channel_size * 4, channel_size * 4) #128 56
+        self.res4 = ResidualBlock(channel_size * 4, channel_size * 4) #128 56
+        self.res5 = ResidualBlock(channel_size * 4, channel_size * 4) #128 56
+        
+        self.csp_layer_1 = CSPLayer(channel_size * 4 + channel_size * 4,channel_size * 4)
+        self.sa_layer_1 = cbam_block(channel_size * 4)
+        self.conv4 = nn.ConvTranspose2d(channel_size * 4, channel_size * 2, kernel_size=4, stride=2, padding=1) 
+        self.bn4 = nn.BatchNorm2d(channel_size * 2)
+        self.csp_layer_2 = CSPLayer(channel_size * 2 + channel_size * 2,channel_size*2)
+        self.sa_layer_2 = cbam_block(channel_size * 2)
+        self.conv5 = nn.ConvTranspose2d(channel_size * 2, channel_size, kernel_size=4, stride=2, padding=1)
+        self.bn5 = nn.BatchNorm2d(channel_size)
+
+        self.csp_layer_3 = CSPLayer(channel_size  + channel_size ,channel_size )
+        self.sa_layer_3 = cbam_block(channel_size * 1)
+        self.conv6 = nn.ConvTranspose2d(channel_size, channel_size, kernel_size=9, stride=1, padding=4)
+
+        self.pos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
+        self.cos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
+        self.sin_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
+        self.width_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
+
+        self.dropout = dropout
+        self.dropout_pos = nn.Dropout(p=prob)
+        self.dropout_cos = nn.Dropout(p=prob)
+        self.dropout_sin = nn.Dropout(p=prob)
+        self.dropout_wid = nn.Dropout(p=prob)
+
+        for m in self.modules():
+            if isinstance(m, (nn.Conv2d, nn.ConvTranspose2d)):
+                nn.init.xavier_uniform_(m.weight, gain=1)
+        
+    def forward(self, x_in):
+        dbg=0
+        x1 = F.hardswish(self.bn1(self.conv1(x_in)))
+        if dbg == 1:
+            print('x1.shape  {}'.format(x1.shape))
+        x2 = F.hardswish(self.bn2(self.conv2(x1)))
+        if dbg == 1:
+            print('x2.shape  {}'.format(x2.shape))
+        x3 = F.hardswish(self.bn3(self.conv3(x2)))
+        if dbg == 1:
+            print('x3.shape  {}'.format(x3.shape))
+        xx = self.res1(x3)
+        xx = self.res2(xx)
+        xx = self.res3(xx)
+        xx = self.res4(xx)
+        x4 = self.res5(xx)
+        if dbg == 1:
+            print('xx.shape  {}'.format(xx.shape))
+
+        x43 = self.csp_layer_1(torch.cat((x4, x3), dim=1))  #128+128 128
+        if dbg == 1:
+            print('csp x43.shape  {}'.format(x43.shape))
+        x43 = self.sa_layer_1(x43)
+        if dbg == 1:
+            print('cbam x43.shape  {}'.format(x43.shape))
+        x43 = F.hardswish(self.bn4(self.conv4(x43)))
+        if dbg == 1:
+            print('x43.shape  {}'.format(x43.shape))
+
+        x42 = self.csp_layer_2(torch.cat((x43, x2), dim=1))  #64+64 64
+        if dbg == 1:
+            print('csp x42.shape  {}'.format(x42.shape))
+        x42 = self.sa_layer_2(x42)
+        if dbg == 1:
+            print('cbam x42.shape  {}'.format(x42.shape))
+        x42 = F.hardswish(self.bn5(self.conv5(x42)))
+        
+        if dbg == 1:
+            print('x42.shape  {}'.format(x42.shape))
+
+        x41 = self.csp_layer_3(torch.cat((x42, x1), dim=1))  #32+32 32
+        x41 = self.sa_layer_3(x41)
+        if dbg == 1:
+            print('csp x41.shape  {}'.format(x41.shape))
+        x = self.conv6(x41)
+        if dbg == 1:
+            print('x.shape  {}'.format(x.shape))
+        if self.dropout:
+            pos_output = self.pos_output(self.dropout_pos(x))
+            cos_output = self.cos_output(self.dropout_cos(x))
+            sin_output = self.sin_output(self.dropout_sin(x))
+            width_output = self.width_output(self.dropout_wid(x))
+        else:
+            pos_output = self.pos_output(x)
+            cos_output = self.cos_output(x)
+            sin_output = self.sin_output(x)
+            width_output = self.width_output(x)
+        if dbg == 1:
+            print('pos_output.shape  {}'.format(pos_output.shape))
+        return pos_output, cos_output, sin_output, width_output
+if __name__ == "__main__":
+    model = GenerativeResnet()
+    model.eval()
+    input = torch.rand(1, 4, 224, 224)
+    output = model(input)

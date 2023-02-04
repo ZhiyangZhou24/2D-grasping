@@ -21,7 +21,7 @@ class DenseBlock(nn.Module):
         self.with_bn = with_bn
         self.layers = []
         for i in range(L):
-            layer_in_channels = in_channels + i * k + 1
+            layer_in_channels = in_channels + i * k +1
             single_layer = []
             conv1 = nn.Conv2d(layer_in_channels, k * 4, kernel_size = 1, stride = 1)
             xavier_init(conv1)
@@ -45,6 +45,6 @@ class DenseBlock(nn.Module):
             if i != 0:
                 h = torch.cat(hs, dim = 1)
             h = self.layers[i](h)
-            if i != self.L - 1:
+            if i != self.L:
                 hs.append(h)
         return h

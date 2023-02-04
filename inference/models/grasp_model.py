@@ -1,6 +1,6 @@
 import torch.nn as nn
 import torch.nn.functional as F
-
+import torch
 
 class GraspModel(nn.Module):
     """
@@ -35,6 +35,12 @@ class GraspModel(nn.Module):
                 'cos': cos_pred,
                 'sin': sin_pred,
                 'width': width_pred
+            },
+            'label': {
+                'pos': y_pos,
+                'cos': y_cos,
+                'sin': y_sin,
+                'width': y_width
             }
         }
 
@@ -47,6 +53,45 @@ class GraspModel(nn.Module):
             'width': width_pred
         }
 
+
+import math
+class eca_block(nn.Module):
+    def __init__(self, channel, b=1, gamma=2):
+        super(eca_block, self).__init__()
+        kernel_size = int(abs((math.log(channel, 2) + b) / gamma))
+        kernel_size = kernel_size if kernel_size % 2 else kernel_size + 1
+        
+        self.avg_pool = nn.AdaptiveAvgPool2d(1)
+        self.conv = nn.Conv1d(1, 1, kernel_size=kernel_size, padding=(kernel_size - 1) // 2, bias=False) 
+        self.sigmoid = nn.Sigmoid()
+
+    def forward(self, x):
+        y = self.avg_pool(x)
+        y = self.conv(y.squeeze(-1).transpose(-1, -2)).transpose(-1, -2).unsqueeze(-1)
+        y = self.sigmoid(y)
+        return x * y.expand_as(x)
+
+class ResidualBlock_att(nn.Module):
+    """
+    A residual block with dropout option
+    """
+
+    def __init__(self, in_channels, out_channels, kernel_size=3,use_att=False):
+        super(ResidualBlock, self).__init__()
+        self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size, padding=1)
+        self.bn1 = nn.BatchNorm2d(in_channels)
+        self.conv2 = nn.Conv2d(in_channels, out_channels, kernel_size, padding=1)
+        self.bn2 = nn.BatchNorm2d(in_channels)
+        self.use_att = use_att
+        self.eca = eca_block(out_channels)
+
+    def forward(self, x_in):
+        x = self.bn1(self.conv1(x_in))
+        x = F.relu(x)
+        x = self.bn2(self.conv2(x))
+        if self.use_att == True:
+            x = self.eca(x)
+        return x + x_in
 
 class ResidualBlock(nn.Module):
     """

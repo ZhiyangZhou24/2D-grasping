@@ -2,7 +2,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from .dense import DenseBlock
 from .duc import DenseUpsamplingConvolution
-from inference.models.grasp_model import GraspModel, ResidualBlock
+from inference.models.grasp_model import GraspModel, ResidualBlock,ConvNeXtBlock
 
 
 class GenerativeResnet(GraspModel):
@@ -24,17 +24,17 @@ class GenerativeResnet(GraspModel):
         self.conv3 = nn.Conv2d(channel_size * 2, channel_size * 4, kernel_size=4, stride=2, padding=1)
         self.bn3 = nn.BatchNorm2d(channel_size * 4)
 
-        # self.res1 = ResidualBlock(channel_size * 4, channel_size * 4)
-        # self.res2 = ResidualBlock(channel_size * 4, channel_size * 4)
-        # self.res3 = ResidualBlock(channel_size * 4, channel_size * 4)
-        # self.res4 = ResidualBlock(channel_size * 4, channel_size * 4)
-        # self.res5 = ResidualBlock(channel_size * 4, channel_size * 4)
+        self.res1 = ConvNeXtBlock(channel_size * 4)
+        self.res2 = ConvNeXtBlock(channel_size * 4)
+        self.res3 = ConvNeXtBlock(channel_size * 4)
+        self.res4 = ConvNeXtBlock(channel_size * 4)
+        self.res5 = ConvNeXtBlock(channel_size * 4)
 
-        self.dense1 = DenseBlock(self.hidden_channels, self.L, self.k, with_bn = True)
-        self.dense2 = DenseBlock(self.hidden_channels, self.L, self.k, with_bn = True)
-        self.dense3 = DenseBlock(self.hidden_channels, self.L, self.k, with_bn = True)
-        self.dense4 = DenseBlock(self.hidden_channels, self.L, self.k, with_bn = True)
-        self.dense5 = DenseBlock(self.hidden_channels, self.L, self.k, with_bn = True)
+        self.dense1 = DenseBlock(channel_size * 4, self.L, self.k, with_bn = True)
+        self.dense2 = DenseBlock(channel_size * 4, self.L, self.k, with_bn = True)
+        self.dense3 = DenseBlock(channel_size * 4, self.L, self.k, with_bn = True)
+        self.dense4 = DenseBlock(channel_size * 4, self.L, self.k, with_bn = True)
+        self.dense5 = DenseBlock(channel_size * 4, self.L, self.k, with_bn = True)
 
 
         self.conv4 = nn.ConvTranspose2d(channel_size * 4, channel_size * 2, kernel_size=4, stride=2, padding=1,
@@ -77,11 +77,10 @@ class GenerativeResnet(GraspModel):
         x = F.relu(self.bn1(self.conv1(x_in)))
         x = F.relu(self.bn2(self.conv2(x)))
         x = F.relu(self.bn3(self.conv3(x)))
-        x = self.dense1(x)
-        x = self.dense2(x)
-        x = self.dense3(x)
-        x = self.dense4(x)
-        x = self.dense5(x)
+        x = self.res1(x)
+        x = self.res2(x)
+        x = self.res3(x)
+        x = self.res4(x)
         x = F.relu(self.bn4(self.conv4(x)))
         x = F.relu(self.bn5(self.conv5(x)))
         x = self.conv6(x)

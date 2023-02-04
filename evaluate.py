@@ -10,7 +10,7 @@ from inference.post_process import post_process_output
 from utils.data import get_dataset
 from utils.dataset_processing import evaluation, grasp
 from utils.visualisation.plot import save_results
-
+from utils.data.cornell_data import CornellDataset
 logging.basicConfig(level=logging.INFO)
 
 
@@ -22,19 +22,21 @@ def parse_args():
                         help='Path to saved networks to evaluate')
     parser.add_argument('--input-size', type=int, default=224,
                         help='Input image size for the network')
-
-    # Dataset
-    parser.add_argument('--dataset', type=str,
+# logs/test_my_transgrasp/221225_1444_trainnin_grc3_rgbd_32_alfa4_1000/epoch_23_iou_0.5429
+    # Dataset  trained-models/jacquard-d-grconvnet3-drop0-ch32/epoch_50_iou_0.94
+    parser.add_argument('--dataset', type=str,default='cornell',
                         help='Dataset Name ("cornell" or "jaquard")')
-    parser.add_argument('--dataset-path', type=str,
+    parser.add_argument('--dataset-path', type=str,default='/media/lab/e/zzy/datasets/Cornell',
                         help='Path to dataset')
+    parser.add_argument('--alfa', type=int, default=1,
+                        help='len(Dataset)*alfa')
     parser.add_argument('--use-depth', type=int, default=1,
                         help='Use Depth image for evaluation (1/0)')
     parser.add_argument('--use-rgb', type=int, default=1,
                         help='Use RGB image for evaluation (1/0)')
     parser.add_argument('--augment', action='store_true',
                         help='Whether data augmentation should be applied')
-    parser.add_argument('--split', type=float, default=0.9,
+    parser.add_argument('--split', type=float, default=0.8,
                         help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-shuffle', action='store_true', default=False,
                         help='Shuffle the dataset')
@@ -80,16 +82,29 @@ if __name__ == '__main__':
     # Load Dataset
     logging.info('Loading {} Dataset...'.format(args.dataset.title()))
     Dataset = get_dataset(args.dataset)
-    test_dataset = Dataset(args.dataset_path,
-                           output_size=args.input_size,
-                           ds_rotate=args.ds_rotate,
-                           random_rotate=args.augment,
-                           random_zoom=args.augment,
-                           include_depth=args.use_depth,
-                           include_rgb=args.use_rgb)
 
-    indices = list(range(test_dataset.length))
-    split = int(np.floor(args.split * test_dataset.length))
+    test_dataset = CornellDataset(args.dataset_path,
+                      output_size=args.input_size,
+                      alfa=args.alfa,
+                      random_rotate=args.augment,
+                      random_zoom=args.augment,
+                      include_depth=args.use_depth,
+                      include_rgb=args.use_rgb)
+    # test_dataset = Dataset(args.dataset_path,
+    #                        output_size=args.input_size,
+    #                        ds_rotate=args.ds_rotate,
+    #                        random_rotate=args.augment,
+    #                        random_zoom=args.augment,
+    #                        include_depth=args.use_depth,
+    #                        include_rgb=args.use_rgb)
+    indices = list(range(test_dataset.len))
+    print('len{}'.format(test_dataset.len))
+    split = int(np.floor(args.split * test_dataset.len))
+    if args.ds_shuffle: # 对应 imgwise 否则为obj
+        np.random.seed(args.random_seed)
+        np.random.shuffle(indices)
+    # indices = list(range(test_dataset.length))
+    # split = int(np.floor(args.split * test_dataset.length))
     if args.ds_shuffle:
         np.random.seed(args.random_seed)
         np.random.shuffle(indices)
@@ -104,7 +119,7 @@ if __name__ == '__main__':
         sampler=val_sampler
     )
     logging.info('Done')
-
+    save_count = 0
     for network in args.network:
         logging.info('\nEvaluating model {}'.format(network))
 
@@ -146,17 +161,18 @@ if __name__ == '__main__':
                         for g in grasps:
                             f.write(test_data.dataset.get_jname(didx) + '\n')
                             f.write(g.to_jacquard(scale=1024 / 300) + '\n')
-
+                
                 if args.vis:
-                    # save_results(
-                    #     rgb_img=test_data.dataset.get_rgb(didx, rot, zoom, normalise=False),
-                    #     depth_img=test_data.dataset.get_depth(didx, rot, zoom),
-                    #     grasp_q_img=q_img,
-                    #     grasp_angle_img=ang_img,
-                    #     no_grasps=args.n_grasps,
-                    #     grasp_width_img=width_img
-                    # )
-
+                    save_results(
+                        rgb_img=test_data.dataset.get_rgb(didx, rot, zoom, normalise=False),
+                        depth_img=test_data.dataset.get_depth(didx, rot, zoom),
+                        grasp_q_img=q_img,
+                        grasp_angle_img=ang_img,
+                        no_grasps=args.n_grasps,
+                        grasp_width_img=width_img,
+                        save_path = 'results/{}'.format(save_count)
+                    )
+                    save_count+=1
                     # evaluation.plot_output(
                     #     rgb_img=test_data.dataset.get_rgb(didx, rot, zoom, normalise=False),
                     #     depth_img=test_data.dataset.get_depth(didx, rot, zoom),
@@ -166,12 +182,12 @@ if __name__ == '__main__':
                     #     grasp_width_img=width_img
                     # )
 
-                    evaluation.plot_output(rgb_img = test_data.dataset.get_rgb(didx, rot, zoom, normalise=False),
-                                        depth_img = test_data.dataset.get_depth(didx, rot, zoom),
-                                        grasp_q_img = q_img,
-                                        grasp_angle_img = ang_img,
-                                        no_grasps = 5, 
-                                        grasp_width_img = width_img)
+                    # evaluation.plot_output(rgb_img = test_data.dataset.get_rgb(didx, rot, zoom, normalise=False),
+                    #                     depth_img = test_data.dataset.get_depth(didx, rot, zoom),
+                    #                     grasp_q_img = q_img,
+                    #                     grasp_angle_img = ang_img,
+                    #                     no_grasps = args.n_grasps, 
+                    #                     grasp_width_img = width_img)
                 
 
 
