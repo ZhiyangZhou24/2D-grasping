@@ -11,7 +11,7 @@ class GraspDatasetBase(torch.utils.data.Dataset):
     """
 
     def __init__(self, output_size=224, include_depth=True, include_rgb=False, random_rotate=True,
-                 random_zoom=False, input_only=False):
+                 random_zoom=False, input_only=False,use_gauss_kernel = 0.0):
         """
         :param output_size: Image output size in pixels (square)
         :param include_depth: Whether depth image is included
@@ -26,6 +26,7 @@ class GraspDatasetBase(torch.utils.data.Dataset):
         self.input_only = input_only
         self.include_depth = include_depth
         self.include_rgb = include_rgb
+        self.use_gauss_kernel = use_gauss_kernel
 
         self.grasp_files = []
 
@@ -71,7 +72,12 @@ class GraspDatasetBase(torch.utils.data.Dataset):
         # Load the grasps
         bbs = self.get_gtbb(idx, rot, zoom_factor)
 
-        pos_img, ang_img, width_img = bbs.draw((self.output_size, self.output_size))
+        if self.use_gauss_kernel !=0.0:
+            # print('gauss')
+            pos_img, ang_img, width_img = bbs.draw_gauss(shape = (self.output_size, self.output_size),use_gauss_kernel = self.use_gauss_kernel)
+        else: # use binary map
+            # print('bina')
+            pos_img, ang_img, width_img = bbs.draw((self.output_size, self.output_size))
         width_img = np.clip(width_img, 0.0, self.output_size / 2) / (self.output_size / 2)
 
         if self.include_depth and self.include_rgb:

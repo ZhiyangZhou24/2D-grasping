@@ -40,6 +40,9 @@ def get_network(network_name):
     elif network_name == 'grconvnet3_imp_pp':
         from .grconvnet3_imp_pp import GenerativeResnet
         return GenerativeResnet
+    elif network_name == 'grconvnet3_imp_dwc':
+        from .grconvnet3_imp_dwc2 import GenerativeResnet
+        return GenerativeResnet
     elif network_name == 'unet':
         from .unet import GenerativeResnet
         return GenerativeResnet

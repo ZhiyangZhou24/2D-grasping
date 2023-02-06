@@ -25,16 +25,20 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3_seresunet',
+    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc',
                         help='Network name in inference/models  grconvnet')
-    parser.add_argument('--input-size', type=int, default=320,
+    parser.add_argument('--input-size', type=int, default=400,
                         help='Input image size for the network')
     parser.add_argument('--use-depth', type=int, default=1,
                         help='Use Depth image for training (1/0)')
-    parser.add_argument('--use-rgb', type=int, default=1,
+    parser.add_argument('--use-rgb', type=int, default=0,
                         help='Use RGB image for training (1/0)')
-    parser.add_argument('--use-dropout', type=int, default=1,
+    parser.add_argument('--use-dropout', type=int, default=0,
                         help='Use dropout for training (1/0)')
+    parser.add_argument('--upsamp', type=str, default='use_duc',
+                        help='Use upsamp type (  use_duc  use_convt use_bilinear)')
+    parser.add_argument('--att', type=str, default='use_eca',
+                        help='Use att type (  use_eca  use_se use_coora use_cba)')
     parser.add_argument('--dropout-prob', type=float, default=0.1,
                         help='Dropout prob for training (0-1)')
     parser.add_argument('--channel-size', type=int, default=32,
@@ -43,11 +47,8 @@ def parse_args():
                         help='Threshold for IOU matching')
 
     # Datasets
-    # /media/lab/d/ZZY/datasets/Jacquard
-    # /media/lab/d/ZZY/datasets/Cornell
-    # /home/lab/zzy/datasets/Cornell
-    # /media/lab/d/ZZY/datasets/transgrasp
-    # /media/lab/TOSHIBA480/0.Datasets/Jacquard
+    # /media/lab/ChainGOAT/Jacquard
+    # /media/lab/e/zzy/datasets/Cornell
     parser.add_argument('--dataset', type=str,default='jacquard',
                         help='Dataset Name ("cornell" or "jacquard")')
     parser.add_argument('--dataset-path', type=str,default='/media/lab/ChainGOAT/Jacquard',
@@ -58,9 +59,12 @@ def parse_args():
                         help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-shuffle', action='store_true', default=False,
                         help='Shuffle the dataset')
+    parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
+                        help='Dataset gaussian progress 0.0 means not use gauss')
+
     parser.add_argument('--ds-rotate', type=float, default=0.0,
                         help='Shift the start point of the dataset to use a different test/train split')
-    parser.add_argument('--num-workers', type=int, default=12,
+    parser.add_argument('--num-workers', type=int, default=16,
                         help='Dataset workers')
 
     # Training
@@ -68,28 +72,27 @@ def parse_args():
                         help='Batch size')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
-    parser.add_argument('--epochs', type=int, default=50,
+    parser.add_argument('--epochs', type=int, default=60,
                         help='Training epochs')
-    parser.add_argument('--batches-per-epoch', type=int, default=1000,
+    parser.add_argument('--batches-per-epoch', type=int, default=1600,
                         help='Batches per Epoch')
     parser.add_argument('--optim', type=str, default='adam',
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    # https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
-    parser.add_argument('--description', type=str, default='resu_rgbd_1000_dr1_noaug_320',
+    parser.add_argument('--description', type=str, default='imp3_dwc2_d_duc_eca_adam_bina_400',
                         help='Training description')
-    parser.add_argument('--logdir', type=str, default='logs/test_jacquard',
+    parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
                         help='Log directory')
     parser.add_argument('--vis', action='store_true',
                         help='Visualise the training process')
     parser.add_argument('--cpu', dest='force_cpu', action='store_true', default=False,
                         help='Force code to run in CPU mode')
-    parser.add_argument('--random-seed', type=int, default=123,
+    parser.add_argument('--random-seed', type=int, default=1234,
                         help='Random seed for numpy')
     parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
-    parser.add_argument('--model', type=str, default='logs/test_resu_drop0_depth_jacquard/230110_1342_resu_depth/epoch_10_iou_0.9121', help='保存的模型')
-    parser.add_argument('--start-epoch', type=int, default=10, help='继续训练开始的epoch')
+    parser.add_argument('--model', type=str, default='logs/jacquard_dwc/230204_2300_imp3_dwc_d_duc_se_adam_bina/epoch_00_iou_0.8246', help='保存的模型')
+    parser.add_argument('--start-epoch', type=int, default=1, help='继续训练开始的epoch')
     args = parser.parse_args()
     return args
 
@@ -261,10 +264,11 @@ def run():
     dataset = Dataset(args.dataset_path,
                       output_size=args.input_size,
                       ds_rotate=args.ds_rotate,
-                      random_rotate=False,
-                      random_zoom=False,
+                      random_rotate=True,
+                      random_zoom=True,
                       include_depth=args.use_depth,
-                      include_rgb=args.use_rgb)
+                      include_rgb= args.use_rgb,
+                      use_gauss_kernel = args.use_gauss_kernel)
     logging.info('Dataset size is {}'.format(dataset.length))
 
     # Creating data indices for training and validation splits
@@ -305,7 +309,9 @@ def run():
         input_channels=input_channels,
         dropout=args.use_dropout,
         prob=args.dropout_prob,
-        channel_size=args.channel_size
+        channel_size=args.channel_size,
+        upsamp=args.upsamp,
+        att = args.att
     )
     if args.goon_train:
         # 加载预训练模型

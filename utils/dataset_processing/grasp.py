@@ -171,9 +171,8 @@ class GraspRectangles:
                 width_out[rr, cc] = gr.length
 
         return pos_out, ang_out, width_out
-
-
-    def draw_ga(self, shape, position=True, angle=True, width=True):
+     
+    def draw_gauss(self, shape, use_gauss_kernel, filter=False, position=True, angle=True, width=True):
         """
         Plot all GraspRectangles as solid rectangles in a numpy array, e.g. as network training data.
         :param shape: output shape
@@ -182,9 +181,7 @@ class GraspRectangles:
         :param width: If True, Width output will be produced
         :return: Q, Angle, Width outputs (or None)
         """
-
-        gaussian = 2
-        filter_f = 0
+        gaussian = use_gauss_kernel
         if position:
             pos_out = np.zeros(shape)
         else:
@@ -211,8 +208,8 @@ class GraspRectangles:
                 np.linspace(-1, 1, max(rows) - min(rows) + 1)
             )
             gauss_grid = np.exp(-(grid_x ** 2 + grid_y ** 2) / gaussian)
-            if filter_f !=0:
-                gauss_grid[(gauss_grid > 0) & (gauss_grid < filter_f)] = filter_f
+            if filter:
+                gauss_grid[(gauss_grid > 0) & (gauss_grid < 0.9)] = 0.9
             gauss_map = np.zeros(shape)
             gauss_map[
                 min(rows):max(rows) + 1,
@@ -220,7 +217,6 @@ class GraspRectangles:
             ] = gauss_grid
             gauss_map = gauss_map * b_map
             pos_out = np.maximum(pos_out,gauss_map)
-
 
         return pos_out, ang_out, width_out 
     def to_array(self, pad_to=0):
