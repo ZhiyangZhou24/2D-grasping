@@ -27,17 +27,17 @@ def parse_args():
     # Network
     parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc',
                         help='Network name in inference/models  grconvnet')
-    parser.add_argument('--input-size', type=int, default=400,
+    parser.add_argument('--input-size', type=int, default=224,
                         help='Input image size for the network')
     parser.add_argument('--use-depth', type=int, default=1,
                         help='Use Depth image for training (1/0)')
     parser.add_argument('--use-rgb', type=int, default=0,
                         help='Use RGB image for training (1/0)')
-    parser.add_argument('--use-dropout', type=int, default=0,
+    parser.add_argument('--use-dropout', type=int, default=1,
                         help='Use dropout for training (1/0)')
-    parser.add_argument('--upsamp', type=str, default='use_duc',
+    parser.add_argument('--upsamp', type=str, default='use_bilinear',
                         help='Use upsamp type (  use_duc  use_convt use_bilinear)')
-    parser.add_argument('--att', type=str, default='use_eca',
+    parser.add_argument('--att', type=str, default='use_coora',
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
     parser.add_argument('--dropout-prob', type=float, default=0.1,
                         help='Dropout prob for training (0-1)')
@@ -55,7 +55,7 @@ def parse_args():
                         help='Path to dataset')
     parser.add_argument('--alfa', type=int, default=1,
                         help='len(Dataset)*alfa')
-    parser.add_argument('--split', type=float, default=0.9,
+    parser.add_argument('--split', type=float, default=0.95,
                         help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-shuffle', action='store_true', default=False,
                         help='Shuffle the dataset')
@@ -68,7 +68,7 @@ def parse_args():
                         help='Dataset workers')
 
     # Training
-    parser.add_argument('--batch-size', type=int, default=16,
+    parser.add_argument('--batch-size', type=int, default=32,
                         help='Batch size')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
@@ -80,7 +80,7 @@ def parse_args():
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='imp3_dwc2_d_duc_eca_adam_bina_400',
+    parser.add_argument('--description', type=str, default='imp3_dwc_d_bili_se_drop1_adam_bina_224',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
                         help='Log directory')
@@ -91,8 +91,8 @@ def parse_args():
     parser.add_argument('--random-seed', type=int, default=1234,
                         help='Random seed for numpy')
     parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
-    parser.add_argument('--model', type=str, default='logs/jacquard_dwc/230204_2300_imp3_dwc_d_duc_se_adam_bina/epoch_00_iou_0.8246', help='保存的模型')
-    parser.add_argument('--start-epoch', type=int, default=1, help='继续训练开始的epoch')
+    parser.add_argument('--model', type=str, default='logs/jacquard_dwc/230206_1112_imp3_dwc2_d_duc_eca_adam_bina_400/epoch_48_iou_0.8972', help='保存的模型')
+    parser.add_argument('--start-epoch', type=int, default=49, help='继续训练开始的epoch')
     args = parser.parse_args()
     return args
 

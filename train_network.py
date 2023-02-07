@@ -17,7 +17,7 @@ from hardware.device import get_device
 from inference.models import get_network
 from inference.post_process import post_process_output
 from utils.data.cornell_data import CornellDataset
-# from utils.data import get_dataset
+from utils.data import get_dataset
 from utils.dataset_processing import evaluation
 from utils.visualisation.gridshow import gridshow
 from ranger import Ranger  # this is from ranger.py
@@ -26,7 +26,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc',
+    parser.add_argument('--network', type=str, default='grconvnet3_seresunet1',
                         help='Network name in inference/models  grconvnet')
     parser.add_argument('--input-size', type=int, default=224,
                         help='Input image size for the network')
@@ -36,14 +36,23 @@ def parse_args():
                         help='Use RGB image for training (1/0)')
     parser.add_argument('--use-dropout', type=int, default=0,
                         help='Use dropout for training (1/0)')
-    parser.add_argument('--upsamp', type=str, default='use_duc',
-                        help='Use upsamp type (  use_duc  use_convt use_bilinear  )')
     parser.add_argument('--dropout-prob', type=float, default=0.1,
                         help='Dropout prob for training (0-1)')
     parser.add_argument('--channel-size', type=int, default=32,
                         help='Internal channel size for the network')
     parser.add_argument('--iou-threshold', type=float, default=0.25,
                         help='Threshold for IOU matching')
+    parser.add_argument('--iou-abla', type=bool, default=False,
+                        help='Threshold albation for evaluation, need more time')
+    
+    parser.add_argument('--posloss', type=bool, default=False,
+                        help='(  True  False  )')
+    parser.add_argument('--upsamp', type=str, default='use_duc',
+                        help='Use upsamp type (  use_duc  use_convt use_bilinear  )')
+    parser.add_argument('--att', type=str, default='use_eca',
+                        help='Use att type (  use_eca  use_se use_coora use_cba)')
+    parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
+                        help='Dataset gaussian progress 0.0 means not use gauss')
 
     # Datasets
     # /media/lab/ChainGOAT/Jacquard
@@ -54,7 +63,7 @@ def parse_args():
                         help='Path to dataset')
     parser.add_argument('--alfa', type=int, default=1,
                         help='len(Dataset)*alfa')
-    parser.add_argument('--split', type=float, default=0.9,
+    parser.add_argument('--split', type=float, default=0.95,
                         help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-shuffle', action='store_true', default=False,
                         help='Shuffle the dataset')
@@ -70,15 +79,15 @@ def parse_args():
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
     parser.add_argument('--epochs', type=int, default=60,
                         help='Training epochs')
-    parser.add_argument('--batches-per-epoch', type=int, default=1800,
+    parser.add_argument('--batches-per-epoch', type=int, default=1600,
                         help='Batches per Epoch')
-    parser.add_argument('--optim', type=str, default='adam',
+    parser.add_argument('--optim', type=str, default='ranger',
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='imp3_dwc_d_duc_se_adam_bina',
+    parser.add_argument('--description', type=str, default='resu1_d_bili_eca_ranger_bina_pos0',
                         help='Training description')
-    parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
+    parser.add_argument('--logdir', type=str, default='logs/jacquard_resu',
                         help='Log directory')
     parser.add_argument('--vis', action='store_true',
                         help='Visualise the training process')
@@ -119,7 +128,7 @@ def validate(net, device, val_data, iou_threshold):
         for x, y, didx, rot, zoom_factor in val_data:
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc)
+            lossd = net.compute_loss(xc, y,cpos_loss=False)
 
             loss = lossd['loss']
 
@@ -178,7 +187,7 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
 
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc)
+            lossd = net.compute_loss(xc, yc,pos_loss=False)
 
             loss = lossd['loss']
 
@@ -256,24 +265,36 @@ def run():
 
     # Load Dataset
     logging.info('Loading {} Dataset...'.format(args.dataset.title()))
-    # Dataset = get_dataset(args.dataset)
-    dataset = CornellDataset(args.dataset_path,
+    Dataset = get_dataset(args.dataset)
+    dataset = Dataset(args.dataset_path,
                       output_size=args.input_size,
+                      ds_rotate=args.ds_rotate,
                       alfa=args.alfa,
                       random_rotate=True,
                       random_zoom=True,
                       include_depth=args.use_depth,
-                      include_rgb=args.use_rgb)
+                      include_rgb=args.use_rgb,
+                      use_gauss_kernel = args.use_gauss_kernel)
     logging.info('Dataset size is {}'.format(dataset.length))
 
     # Creating data indices for training and validation splits
-    indices = list(range(dataset.len))
-    print('len{}'.format(dataset.len))
-    split = int(np.floor(args.split * dataset.len))
-    if args.ds_shuffle: # 对应 imgwise 否则为obj
-        np.random.seed(args.random_seed)
-        np.random.shuffle(indices)
-    train_indices, val_indices = indices[:split], indices[split:]
+    if args.dataset.title() != 'Jacquard':
+        indices = list(range(dataset.len))
+        logging.info('alfaed Dataset len is {}'.format(dataset.len))
+        split = int(np.floor(args.split * dataset.len))
+        if args.ds_shuffle: # 对应 imgwise 否则为obj
+            np.random.seed(args.random_seed)
+            np.random.shuffle(indices)
+        train_indices, val_indices = indices[:split], indices[split:]
+    else:
+        indices = list(range(dataset.length))
+        logging.info('Dataset len is {}'.format(dataset.length))
+        split = int(np.floor(args.split * dataset.length))
+        if args.ds_shuffle: # 对应 imgwise 否则为obj
+            np.random.seed(args.random_seed)
+            np.random.shuffle(indices)
+        train_indices, val_indices = indices[:split], indices[split:]
+    
     logging.info('Training size: {}'.format(len(train_indices)))
     logging.info('Validation size: {}'.format(len(val_indices)))
 
@@ -299,14 +320,15 @@ def run():
     # Load the network
     logging.info('Loading Network...')
     input_channels = 1 * args.use_depth + 3 * args.use_rgb
-    print("input channel is {}".format(input_channels))
+    logging.info("input channel is {}".format(input_channels))
     network = get_network(args.network)
     net = network(
         input_channels=input_channels,
         dropout=args.use_dropout,
         prob=args.dropout_prob,
         channel_size=args.channel_size,
-        upsamp=args.upsamp
+        upsamp=args.upsamp,
+        att = args.att
     )
     if args.goon_train:
         # 加载预训练模型
@@ -332,7 +354,6 @@ def run():
     logging.info('optimizer {} Done'.format(args.optim))
 
     # Print model architecture.
-    print("input size is {}".format(input_channels))
     summary(net, (input_channels, args.input_size, args.input_size))
     f = open(os.path.join(save_folder, 'arch.txt'), 'w')
     sys.stdout = f
@@ -353,18 +374,19 @@ def run():
         for n, l in train_results['losses'].items():
             tb.add_scalar('train_loss/' + n, l, epoch)
 
-        # logging.info('Validating 0.40...')
-        # test_results = validate(net, device, val_data, 0.40)
-        # logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-        #                              test_results['correct'] / (test_results['correct'] + test_results['failed'])))
-        # logging.info('Validating 0.35...')
-        # test_results = validate(net, device, val_data, 0.35)
-        # logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-        #                              test_results['correct'] / (test_results['correct'] + test_results['failed'])))
-        # logging.info('Validating 0.30...')
-        # test_results = validate(net, device, val_data, 0.30)
-        # logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-        #                              test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+        if args.iou_abla == True:
+            logging.info('Validating 0.40...')
+            test_results = validate(net, device, val_data, 0.40)
+            logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
+                                        test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+            logging.info('Validating 0.35...')
+            test_results = validate(net, device, val_data, 0.35)
+            logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
+                                        test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+            logging.info('Validating 0.30...')
+            test_results = validate(net, device, val_data, 0.30)
+            logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
+                                        test_results['correct'] / (test_results['correct'] + test_results['failed'])))
 
         # Run Validation
         logging.info('Validating 0.25...')
@@ -379,16 +401,11 @@ def run():
 
         # Save best performing network
         iou = test_results['correct'] / (test_results['correct'] + test_results['failed'])
-        if iou > best_iou or epoch == 0 or (epoch % 5) == 0:
-            print('>>> save model: ', 'epoch_%02d_iou_%0.4f' % (epoch, iou))
+        if iou > best_iou or epoch == 0 or (epoch % 10) == 0:
+            logging.info('>>> save model: ', 'epoch_%02d_iou_%0.4f' % (epoch, iou))
             # torch.save(net.state_dict(), os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             best_iou = iou
-        # else:
-        #     print('>>> save model: ', 'epoch_%02d_iou_%0.4f' % (epoch, iou))
-        #     # torch.save(net.state_dict(), os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
-        #     torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
-
 
 if __name__ == '__main__':
     run()

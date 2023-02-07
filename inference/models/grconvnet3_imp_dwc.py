@@ -128,31 +128,34 @@ class up(nn.Module):
 
 class GenerativeResnet(GraspModel):
 
-    def __init__(self, input_channels=4, output_channels=1, channel_size=32,upsamp='use_bilinear',dropout=False, prob=0.0):
+    def __init__(self, input_channels=4, output_channels=1, channel_size=32, att = 'use_eca',upsamp='use_bilinear',dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
-        print('upsamp {}'.format(upsamp))
+        print('Model is grc3_imp_dwc')
+        print('GRCNN upsamp {}'.format(upsamp))
+        print('GRCNNatt {}'.format(att))
+        # if att == 'use_se':
+        use_att = True
         self.inconv = nn.Sequential(conv_3x3_bn(input_channels, input_channels, act=nn.ReLU, stride=1, group=input_channels),
                                     conv_1x1_bn(input_channels , channel_size , act=nn.Hardswish),
-                                    DepthwiseSeparable(num_channels= channel_size, num_filters=channel_size,stride=1,use_se=True))
+                                    DepthwiseSeparable(num_channels= channel_size, num_filters=channel_size,stride=1,use_se=use_att))
 
-        self.downconv1 = down(in_channels= channel_size ,  out_channels= channel_size * 2,use_se=True)
+        self.downconv1 = down(in_channels= channel_size ,  out_channels= channel_size * 2,use_se=use_att)
 
-        self.downconv2 = down(in_channels= channel_size * 2,  out_channels= channel_size * 4,use_se=True)
+        self.downconv2 = down(in_channels= channel_size * 2,  out_channels= channel_size * 4,use_se=use_att)
 
         self.bottonconv = nn.Sequential(
-                                        DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=True),
-                                        DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=True),
-                                        DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=True),
-                                        DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=True),
-                                        DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=True),
+                                        DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=use_att),
+                                        DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=use_att),
+                                        DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=use_att),
+                                        DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=use_att),
+                                        DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=use_att),
                                         CSPLayer(channel_size * 4, channel_size * 4, kernel_size=3)
         )
         self.up1 = up(channel_size * 8, channel_size * 2, upsamp)
 
         self.up2 = up(channel_size * 4, channel_size, upsamp)
 
-
-        self.outconv = conv_1x1_bn(channel_size , channel_size , act=nn.ReLU)
+        self.outconv = conv_3x3_bn(channel_size , channel_size, stride=1 , act=nn.ReLU)
 
 
         self.pos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)

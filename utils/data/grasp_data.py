@@ -11,7 +11,7 @@ class GraspDatasetBase(torch.utils.data.Dataset):
     """
 
     def __init__(self, output_size=224, include_depth=True, include_rgb=False, random_rotate=True,
-                 random_zoom=False, input_only=False,use_gauss_kernel = 0.0):
+                 random_zoom=False, input_only=False,use_gauss_kernel = 0.0,alfa=1):
         """
         :param output_size: Image output size in pixels (square)
         :param include_depth: Whether depth image is included
@@ -101,4 +101,4 @@ class GraspDatasetBase(torch.utils.data.Dataset):
         return x, (pos, cos, sin, width), idx, rot, zoom_factor
 
     def __len__(self):
-        return len(self.grasp_files)*3
+        return len(self.grasp_files)

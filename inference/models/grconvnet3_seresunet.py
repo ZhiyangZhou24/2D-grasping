@@ -205,9 +205,11 @@ class outconv(nn.Module):
 
 class GenerativeResnet(GraspModel):
 
-    def __init__(self, input_channels=4, output_channels=1, channel_size=32, dropout=False, prob=0.0):
+    def __init__(self, input_channels=4, output_channels=1, channel_size=32, att = 'use_eca',upsamp='use_bilinear', dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
-
+        print('Model is resunet')
+        print('Model upsamp {}'.format(upsamp))
+        print('Model att {}'.format(att))
         #down 1
         self.conv1 = nn.Conv2d(input_channels, channel_size, kernel_size=3, stride=1, padding=1)#32 C
         self.bn1 = nn.BatchNorm2d(channel_size)

@@ -11,8 +11,8 @@ class CornellDataset(torch.utils.data.Dataset):
     Dataset wrapper for the Cornell dataset.
     """
 
-    def __init__(self, file_path,alfa,output_size=224,include_depth=True, include_rgb=False, random_rotate=False,
-                 random_zoom=False, **kwargs):
+    def __init__(self, file_path, alfa=1, ds_rotate = 0.0, output_size=224,include_depth=True, include_rgb=False, random_rotate=False,
+                 random_zoom=False,use_gauss_kernel = 0.0, **kwargs):
         """
         :param file_path: Cornell Dataset directory.
         :param output_size: Size of Central Crop transformation
@@ -29,9 +29,13 @@ class CornellDataset(torch.utils.data.Dataset):
         self.include_rgb = include_rgb
         # artificially increase the number of samples by passing the length directly to the dataset 
         self.len = alfa*self.length
+        self.use_gauss_kernel = use_gauss_kernel
         
         if self.length == 0:
             raise FileNotFoundError('No dataset files found. Check path: {}'.format(file_path))
+        if ds_rotate:
+            self.grasp_files = self.grasp_files[int(self.length * ds_rotate):] + self.grasp_files[
+                                                                                 :int(self.length * ds_rotate)]
 
         self.depth_files = [f.replace('cpos.txt', 'd.tiff') for f in self.grasp_files]
         self.rgb_files = [f.replace('d.tiff', 'r.png') for f in self.depth_files]
@@ -65,7 +69,12 @@ class CornellDataset(torch.utils.data.Dataset):
         # Load the grasps
         bbs = self.get_gtbb(index, rot, zoom_factor)
 
-        pos_img, ang_img, width_img = bbs.draw((self.output_size, self.output_size))
+        if self.use_gauss_kernel !=0.0:
+            # print('gauss')
+            pos_img, ang_img, width_img = bbs.draw_gauss(shape = (self.output_size, self.output_size),use_gauss_kernel = self.use_gauss_kernel)
+        else: # use binary map
+            # print('bina')
+            pos_img, ang_img, width_img = bbs.draw((self.output_size, self.output_size))
         width_img = np.clip(width_img, 0.0, self.output_size / 2) / (self.output_size / 2)
 
         if self.include_depth and self.include_rgb:

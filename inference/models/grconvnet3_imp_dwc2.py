@@ -154,7 +154,7 @@ class up(nn.Module):
         return x
 
 class up_att(nn.Module):
-    def __init__(self, in_ch, out_ch,att_type,reduc_ratio=16, upsample_type='use_eca'):
+    def __init__(self, in_ch, out_ch,att_type,reduc_ratio=16, upsample_type='use_bilinear'):
         super(up_att, self).__init__()
         self.upsample_type = upsample_type
         self.att_type = att_type
@@ -198,6 +198,7 @@ class up_att(nn.Module):
 
     def forward(self, x):
         # x = torch.cat([x1, x2], dim=1)
+        # print(x.shape)
         x = self.att(x)
 
         x = self.up(x)
@@ -209,41 +210,41 @@ class GenerativeResnet(GraspModel):
     def __init__(self, input_channels=4, output_channels=1, channel_size=32, att = 'use_eca',upsamp='use_bilinear',dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
         print('Model is grc3_imp_dwc2')
-        print('GRCNN upsamp {}'.format(upsamp))
-        print('GRCNNatt {}'.format(att))
+        print('Model upsamp {}'.format(upsamp))
+        print('Model att {}'.format(att))
         self.cbr_1 = nn.Sequential(  
             conv_3x3_bn(input_channels, channel_size, act=nn.ReLU, stride=1),
             conv_3x3_bn(channel_size, channel_size, act=nn.ReLU, stride=1),
             conv_3x3_bn(channel_size, channel_size, act=nn.ReLU, stride=1),
-            conv_3x3_bn(channel_size, channel_size, act=nn.ReLU, stride=1)
+            conv_3x3_bn(channel_size, channel_size, act=nn.ReLU, stride=1)  # 400 32
         )
         self.mp1 = nn.MaxPool2d(kernel_size=2, stride=2)
 
         self.cbr_2 = nn.Sequential(
-            conv_3x3_bn(channel_size, channel_size, act=nn.ReLU, stride=1),
-            conv_3x3_bn(channel_size, channel_size, act=nn.ReLU, stride=1)
+            conv_3x3_bn(channel_size, channel_size * 2, act=nn.ReLU, stride=1),
+            conv_3x3_bn(channel_size * 2, channel_size * 2, act=nn.ReLU, stride=1)  # 200 64
         )
         
         self.mp2 = nn.MaxPool2d(kernel_size=2, stride=2)
 
         self.cbr_3 = nn.Sequential(
-            conv_3x3_bn(channel_size, channel_size, act=nn.ReLU, stride=1),
-            conv_3x3_bn(channel_size, channel_size, act=nn.ReLU, stride=1)
+            conv_3x3_bn(channel_size * 2, channel_size * 4, act=nn.ReLU, stride=1),
+            conv_3x3_bn(channel_size * 4, channel_size * 4, act=nn.ReLU, stride=1)  # 200 128
         )
 
         self.resblock = nn.Sequential(
-            ResidualBlock(channel_size, channel_size),
-            ResidualBlock(channel_size, channel_size),
-            ResidualBlock(channel_size, channel_size)
+            ResidualBlock(channel_size * 4, channel_size * 4),
+            ResidualBlock(channel_size * 4, channel_size * 4),
+            ResidualBlock(channel_size * 4, channel_size * 4)
         )
         
-        self.rfb = BasicRFB(in_planes = channel_size ,out_planes = channel_size)
+        self.rfb = BasicRFB(in_planes = channel_size * 4 ,out_planes = channel_size * 4)
         
-        self.att1 = CoordAtt(inp=channel_size,oup=channel_size,reduction=16)
+        self.att1 = CoordAtt(inp=channel_size * 4,oup=channel_size * 4,reduction=16)
 
-        self.up1 = up_att(in_ch=channel_size * 2,out_ch=channel_size,att_type=att,upsample_type=upsamp)
+        self.up1 = up_att(in_ch=channel_size * 4 * 2,out_ch=channel_size * 2,att_type=att,upsample_type=upsamp)
 
-        self.up2 = up_att(in_ch=channel_size * 2,out_ch=channel_size,att_type=att,upsample_type=upsamp)
+        self.up2 = up_att(in_ch=channel_size * 2 * 2,out_ch=channel_size,att_type=att,upsample_type=upsamp)
 
         self.pos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=3,padding=1)
         self.cos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=3,padding=1)
@@ -293,11 +294,11 @@ class GenerativeResnet(GraspModel):
         if dbg == 1:
             print('attx.shape  {}'.format(attx.shape))
 
-        up1x = self.up1(torch.cat((attx, cbr3_x), dim=1))  #
+        up1x = self.up1(torch.cat((attx, cbr3_x), dim=1))  #att 128 100 cbr3 128 100
         if dbg == 1:
             print('up1x.shape  {}'.format(up1x.shape))
 
-        up2x = self.up1(torch.cat((up1x, cbr2_x), dim=1))  #
+        up2x = self.up2(torch.cat((up1x, cbr2_x), dim=1))  #
         if dbg == 1:
             print('up2x.shape  {}'.format(up2x.shape))
         
