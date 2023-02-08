@@ -1,11 +1,14 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from attention import CoordAtt, eca_block, se_block,cbam_block
-from grasp_model import GraspModel, Mish
-from duc import DenseUpsamplingConvolution
-from pp_lcnet import DepthwiseSeparable, ConvBNLayer,make_divisible
-from pico_det import CSPLayer
+import sys
+sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
+from inference.models.attention import CoordAtt, eca_block, se_block,cbam_block
+from inference.models.grasp_model import GraspModel, Mish
+from inference.models.duc import DenseUpsamplingConvolution
+from inference.models.pp_lcnet import DepthwiseSeparable, ConvBNLayer,make_divisible
+from inference.models.pico_det import CSPLayer
+from torchsummary import summary
 
 class conv_att(nn.Module):
     '''(conv => BN => ReLU) * 2'''
@@ -200,7 +203,7 @@ class up_final(nn.Module):
 class GenerativeResnet(GraspModel):
 
 # DSC version of resunet
-    def __init__(self, input_channels=4, output_channels=1, channel_size=32,use_mish=False, att = 'use_se', dropout=False, prob=0.0):
+    def __init__(self, input_channels=4, output_channels=1, channel_size=32,use_mish=False,upsamp='use_bilinear', att = 'use_se', dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
         print('Model is resunet4')
         print('Model att {}'.format(att))
@@ -287,10 +290,10 @@ class GenerativeResnet(GraspModel):
             print('width_output.shape  {}'.format(width_output.shape))
         return pos_output, cos_output, sin_output, width_output
 
-import sys
-sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 if __name__ == '__main__':
     model = GenerativeResnet()
     model.eval()
     input = torch.rand(1, 4, 224, 224)
+    summary(model, (4, 224, 224),device='cpu')
+    sys.stdout = sys.__stdout__
     output = model(input)

@@ -26,7 +26,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3_seresunet2',
+    parser.add_argument('--network', type=str, default='grconvnet3_seresunet4',
                         help='Network name in inference/models  grconvnet')
     parser.add_argument('--input-size', type=int, default=320,
                         help='Input image size for the network')
@@ -34,7 +34,7 @@ def parse_args():
                         help='Use Depth image for training (1/0)')
     parser.add_argument('--use-rgb', type=int, default=0,
                         help='Use RGB image for training (1/0)')
-    parser.add_argument('--use-dropout', type=int, default=1,
+    parser.add_argument('--use-dropout', type=int, default=0,
                         help='Use dropout for training (1/0)')
     parser.add_argument('--dropout-prob', type=float, default=0.1,
                         help='Dropout prob for training (0-1)')
@@ -87,7 +87,7 @@ def parse_args():
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='resu2_d_trap_eca_drop1_ranger_bina_pos0',
+    parser.add_argument('--description', type=str, default='resu4_dsc_d_bili_eca_drop0_ranger_bina_pos0',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_resu',
                         help='Log directory')

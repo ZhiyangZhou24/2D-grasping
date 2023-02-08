@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from inference.models.attention import CoordAtt, eca_block, se_block,cbam_block
 from inference.models.grasp_model import GraspModel, Mish
 from inference.models.duc import DenseUpsamplingConvolution
-
+from torchsummary import summary
 
 class conv_att(nn.Module):
     '''(conv => BN => ReLU) * 2'''
@@ -269,4 +269,6 @@ if __name__ == '__main__':
     model = GenerativeResnet()
     model.eval()
     input = torch.rand(1, 4, 224, 224)
+    summary(model, (4, 224, 224),device='cpu')
+    sys.stdout = sys.__stdout__
     output = model(input)

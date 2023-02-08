@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from inference.models.attention import CoordAtt, eca_block, se_block,cbam_block
 from inference.models.grasp_model import GraspModel, Mish
 from inference.models.duc import DenseUpsamplingConvolution
-
+from torchsummary import summary
 
 class conv_att(nn.Module):
     '''(conv => BN => ReLU) * 2'''
@@ -238,10 +238,10 @@ class GenerativeResnet(GraspModel):
             width_output = self.width_output(x)
         return pos_output, cos_output, sin_output, width_output
 
-import sys
-sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 if __name__ == '__main__':
     model = GenerativeResnet()
     model.eval()
     input = torch.rand(1, 4, 224, 224)
+    summary(model, (4, 224, 224),device='cpu')
+    sys.stdout = sys.__stdout__
     output = model(input)
