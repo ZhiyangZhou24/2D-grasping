@@ -1,9 +1,13 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import sys
+sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 from inference.models.attention import CoordAtt, eca_block, se_block,cbam_block
 from inference.models.grasp_model import GraspModel, Mish
 from inference.models.duc import DenseUpsamplingConvolution
+from inference.models.pp_lcnet import DepthwiseSeparable, ConvBNLayer,make_divisible
+from inference.models.pico_det import CSPLayer
 from torchsummary import summary
 
 class conv_att(nn.Module):
@@ -58,10 +62,41 @@ class conv_att(nn.Module):
         x += residual
         return x
 
+class dsc_conv_att(nn.Module):
+    '''(conv => BN => ReLU) * 2'''
+
+    def __init__(self, in_ch, out_ch,dsc_kernel=3,stride=2,use_mish=False,iden=False,att_type = 'use_eca', reduc_ratio=3):
+        super(dsc_conv_att, self).__init__()
+        self.att_type = att_type
+        self.iden = iden
+        if att_type == 'use_se':
+            use_se = True
+        else :
+            use_se = False
+        self.conv = nn.Sequential(
+                DepthwiseSeparable(num_channels= in_ch, num_filters=in_ch,dw_size=dsc_kernel,stride=1,use_se=use_se),
+                DepthwiseSeparable(num_channels= in_ch, num_filters=out_ch,dw_size=dsc_kernel,stride=stride,use_se=use_se)
+        )
+
+        self.channel_conv = nn.Sequential(
+            nn.Conv2d(in_ch, out_ch, kernel_size=1, stride=1, bias=False),
+            nn.BatchNorm2d(out_ch)
+        )
+
+    def forward(self, x):
+        if self.iden:
+            residual = x
+        x = self.conv(x)
+        if self.iden:
+            if residual.shape[1] != x.shape[1]:
+                residual = self.channel_conv(residual)
+            x += residual
+        return x
 
 class inconv(nn.Module):
     def __init__(self, in_channels, out_channels,use_mish=False,att_type=None, reduc_ratio = 16):
         super(inconv, self).__init__()
+        self.att = None
         if use_mish:
             self.conv = nn.Sequential(
                 nn.Conv2d(in_channels, out_channels // 2, kernel_size=3, stride=1, padding=1),
@@ -73,14 +108,18 @@ class inconv(nn.Module):
             )
         else:
             self.conv = nn.Sequential(
-                nn.Conv2d(in_channels, out_channels // 2, kernel_size=3, stride=1, padding=1),
-                nn.BatchNorm2d(out_channels // 2),
-                nn.ReLU(),
-                nn.Conv2d(out_channels // 2, out_channels,kernel_size= 3, stride=2, padding=1),
-                nn.BatchNorm2d(out_channels),
-                nn.ReLU()
+                ConvBNLayer(
+                    num_channels=in_channels,
+                    filter_size=3,
+                    num_filters=out_channels // 2,
+                    stride=1),
+                ConvBNLayer(
+                    num_channels=out_channels // 2,
+                    filter_size=3,
+                    num_filters=out_channels,
+                    stride=2),
             )
-        
+            
         if att_type == 'use_coora':
             self.att = CoordAtt(out_channels,out_channels,reduc_ratio)
         elif att_type == 'use_eca':
@@ -104,41 +143,27 @@ class inconv(nn.Module):
 
 
 class down(nn.Module):
-    def __init__(self, in_ch, out_ch,use_mish=False,att_type='use_eca'):
+    def __init__(self, in_ch, out_ch,dsc_kernel = 3,use_mish=False,att_type='use_se'):
         super(down, self).__init__()
         self.mpconv = nn.Sequential(
-            nn.MaxPool2d(kernel_size = 2),
-            conv_att(in_ch, out_ch,att_type=att_type,use_mish=use_mish)
+            dsc_conv_att(in_ch, out_ch,stride=2,att_type=att_type,use_mish=use_mish,dsc_kernel=dsc_kernel)
         )
 
     def forward(self, x):
         x = self.mpconv(x)
         return x
 
-
 class up(nn.Module):
-    def __init__(self, in_ch, out_ch,use_mish=False,att_type='use_eca',upsample_type='use_convt'):
+    def __init__(self, in_ch, out_ch,use_mish=False,att_type='use_se'):
         super(up, self).__init__()
-        self.upsample_type = upsample_type
         self.att_type = att_type
 
-        self.up = self._make_upconv(in_ch // 2 , in_ch // 2, upscale_factor = 2)
+        self.up = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
 
-        self.conv = conv_att(in_ch, out_ch,att_type = att_type,use_mish=use_mish)
-    def _make_upconv(self, in_channels, out_channels, upscale_factor = 2):
-        if self.upsample_type == 'use_duc':
-            print('duc')
-            return DenseUpsamplingConvolution(in_channels, out_channels, upscale_factor = upscale_factor)
-        elif self.upsample_type == 'use_convt':
-            print('use_convt')
-            return nn.Sequential(
-                nn.ConvTranspose2d(in_channels, out_channels, 2, stride = upscale_factor)
-            )
-        elif self.upsample_type == 'use_bilinear':
-            print('use_bilinear')
-            return nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
-        else :
-            print('upsample_type error , please check!!!!')
+        # not used
+        self.cspconv = CSPLayer(in_ch,out_ch,kernel_size=3)
+
+        self.conv = dsc_conv_att(in_ch, out_ch,stride=1,att_type=att_type,use_mish=use_mish)
 
     def forward(self, x1, x2):
         x1 = self.up(x1)
@@ -177,22 +202,22 @@ class up_final(nn.Module):
 
 class GenerativeResnet(GraspModel):
 
-    def __init__(self, input_channels=4, output_channels=1, channel_size=32,use_mish=False, att = 'use_eca',upsamp='use_convt', dropout=False, prob=0.0):
+# DSC version of resunet
+    def __init__(self, input_channels=4, output_channels=1, channel_size=32,use_mish=False,upsamp='use_bilinear', att = 'use_se', dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
-        print('Model is resunet2')
-        print('Model upsamp {}'.format(upsamp))
+        print('Model is resunet4')
         print('Model att {}'.format(att))
 
-        self.inconv = inconv(input_channels,channel_size * 2,use_mish=use_mish,att_type='use_eca')
+        self.inconv = inconv(input_channels,channel_size * 2,use_mish=use_mish,att_type=None)
 
         self.down1 = down(channel_size * 2, channel_size * 4, att_type=att,use_mish=use_mish)
         self.down2 = down(channel_size * 4, channel_size * 8, att_type=att,use_mish=use_mish)
         self.down3 = down(channel_size * 8, channel_size * 16, att_type=att,use_mish=use_mish)
         self.down4 = down(channel_size * 16, channel_size * 16, att_type=att,use_mish=use_mish)
-        self.up1 = up(channel_size * 16 * 2, channel_size * 8, att_type=att,upsample_type=upsamp,use_mish=use_mish)
-        self.up2 = up(channel_size * 8 * 2, channel_size * 4, att_type=att,upsample_type=upsamp,use_mish=use_mish)
-        self.up3 = up(channel_size * 4 * 2, channel_size * 2, att_type=att,upsample_type=upsamp,use_mish=use_mish)
-        self.up4 = up(channel_size * 2 * 2, channel_size * 2, att_type=att,upsample_type=upsamp,use_mish=use_mish)
+        self.up1 = up(channel_size * 16 * 2, channel_size * 8, att_type=att,use_mish=use_mish)
+        self.up2 = up(channel_size * 8 * 2, channel_size * 4, att_type=att,use_mish=use_mish)
+        self.up3 = up(channel_size * 4 * 2, channel_size * 2, att_type=att,use_mish=use_mish)
+        self.up4 = up(channel_size * 2 * 2, channel_size * 2, att_type=att,use_mish=use_mish)
 
         self.up_final = up_final(channel_size * 2, channel_size)
 
@@ -261,10 +286,10 @@ class GenerativeResnet(GraspModel):
             cos_output = self.cos_output(x)
             sin_output = self.sin_output(x)
             width_output = self.width_output(x)
+        if dbg == 1:
+            print('width_output.shape  {}'.format(width_output.shape))
         return pos_output, cos_output, sin_output, width_output
 
-import sys
-sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 if __name__ == '__main__':
     model = GenerativeResnet()
     model.eval()

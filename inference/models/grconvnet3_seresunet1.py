@@ -1,10 +1,12 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import sys
+sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 from inference.models.attention import CoordAtt, eca_block, se_block,cbam_block
 from inference.models.grasp_model import GraspModel, Mish
 from inference.models.duc import DenseUpsamplingConvolution
-
+from torchsummary import summary
 
 class conv_att(nn.Module):
     '''(conv => BN => ReLU) * 2'''

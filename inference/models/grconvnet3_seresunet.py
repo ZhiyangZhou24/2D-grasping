@@ -1,9 +1,10 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torchvision
-
+import sys
+sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 from inference.models.grasp_model import GraspModel, ResidualBlock
+from torchsummary import summary
 
 class SELayer(nn.Module):
     def __init__(self, channel, reduction=16):
@@ -294,24 +295,10 @@ class GenerativeResnet(GraspModel):
         # print('width_output shape{}'.format(width_output.shape))
         return pos_output, cos_output, sin_output, width_output
 
-
 if __name__ == '__main__':
-
-    def weights_init(m):
-        classname = m.__class__.__name__
-        # print(classname)
-        if classname.find('Conv') != -1:
-            torch.nn.init.xavier_uniform_(m.weight.data)
-            if m.bias is not None:
-                torch.nn.init.constant_(m.bias.data, 0.0)
-
-
-    # model = SeResUNet(3, 3, deep_supervision=True).cuda()
-    model = GenerativeResnet(3, 3, deep_supervision=True).cuda()
-    model.apply(weights_init)
-
-    x = torch.randn((1, 3, 256, 256)).cuda()
-
-    for i in range(1000):
-        y0, y1, y2, y3, y4 = model(x)
-        print(y0.shape, y1.shape, y2.shape, y3.shape, y4.shape)
+    model = GenerativeResnet()
+    model.eval()
+    input = torch.rand(1, 4, 224, 224)
+    summary(model, (4, 224, 224),device='cpu')
+    sys.stdout = sys.__stdout__
+    output = model(input)
