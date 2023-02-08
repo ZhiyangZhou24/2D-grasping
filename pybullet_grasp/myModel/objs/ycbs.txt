@@ -1,0 +1,15 @@
+YcbBanana
+YcbChipsCan
+YcbFoamBrick
+YcbGelatinBox
+YcbHammer
+YcbMasterChefCan
+YcbTomatoSoupCan
+YcbTennisBall
+YcbStrawberry
+YcbScissors
+YcbPowerDrill
+YcbPottedMeatCan
+YcbPear
+YcbMustardBottle
+YcbMediumClamp
