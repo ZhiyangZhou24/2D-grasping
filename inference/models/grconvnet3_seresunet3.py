@@ -64,19 +64,19 @@ class inconv(nn.Module):
         super(inconv, self).__init__()
         if use_mish:
             self.conv = nn.Sequential(
-                nn.Conv2d(in_channels, out_channels // 2, kernel_size=3, stride=1, padding=1),
-                nn.BatchNorm2d(out_channels // 2),
+                nn.Conv2d(in_channels, in_channels, kernel_size=3, stride=1, padding=1),
+                nn.BatchNorm2d(in_channels),
                 Mish(),
-                nn.Conv2d(out_channels // 2, out_channels, kernel_size= 3, stride=2, padding=1),
+                nn.Conv2d(out_channels, out_channels, kernel_size= 3, stride=1, padding=1),
                 nn.BatchNorm2d(out_channels),
                 Mish()
             )
         else:
             self.conv = nn.Sequential(
-                nn.Conv2d(in_channels, out_channels // 2, kernel_size=3, stride=1, padding=1),
-                nn.BatchNorm2d(out_channels // 2),
+                nn.Conv2d(in_channels, in_channels, kernel_size=3, stride=1, padding=1),
+                nn.BatchNorm2d(in_channels),
                 nn.ReLU(),
-                nn.Conv2d(out_channels // 2, out_channels,kernel_size= 3, stride=2, padding=1),
+                nn.Conv2d(out_channels, out_channels,kernel_size= 3, stride=1, padding=1),
                 nn.BatchNorm2d(out_channels),
                 nn.ReLU()
             )
@@ -153,53 +153,30 @@ class up(nn.Module):
         x = self.conv(x)
         return x
 
-class up_final(nn.Module):
-    def __init__(self, in_ch, out_ch, use_mish=False):
-        super(up_final, self).__init__()
-
-        if use_mish:
-            self.up = nn.Sequential(
-            nn.ConvTranspose2d(in_ch, out_ch, 2,stride = 2),
-            nn.BatchNorm2d(out_ch),
-            Mish()
-        )
-        else:
-            self.up = nn.Sequential(
-                nn.ConvTranspose2d(in_ch, out_ch, 2,stride = 2),
-                nn.BatchNorm2d(out_ch),
-                nn.ReLU()
-            )
-
-
-    def forward(self, x):
-        x = self.up(x) #64
-        return x
 
 class GenerativeResnet(GraspModel):
 
     def __init__(self, input_channels=4, output_channels=1, channel_size=32,use_mish=False, att = 'use_eca',upsamp='use_convt', dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
-        print('Model is resunet2')
+        print('Model is resunet3')
         print('Model upsamp {}'.format(upsamp))
         print('Model att {}'.format(att))
 
-        self.inconv = inconv(input_channels,channel_size * 2,use_mish=use_mish,att_type='use_eca')
+        self.inconv = inconv(input_channels,channel_size * 2,use_mish=use_mish)
 
         self.down1 = down(channel_size * 2, channel_size * 4, att_type=att,use_mish=use_mish)
         self.down2 = down(channel_size * 4, channel_size * 8, att_type=att,use_mish=use_mish)
         self.down3 = down(channel_size * 8, channel_size * 16, att_type=att,use_mish=use_mish)
         self.down4 = down(channel_size * 16, channel_size * 16, att_type=att,use_mish=use_mish)
-        self.up1 = up(channel_size * 16 * 2, channel_size * 8, att_type=att,upsample_type=upsamp,use_mish=use_mish)
-        self.up2 = up(channel_size * 8 * 2, channel_size * 4, att_type=att,upsample_type=upsamp,use_mish=use_mish)
-        self.up3 = up(channel_size * 4 * 2, channel_size * 2, att_type=att,upsample_type=upsamp,use_mish=use_mish)
-        self.up4 = up(channel_size * 2 * 2, channel_size * 2, att_type=att,upsample_type=upsamp,use_mish=use_mish)
+        self.up1 = up(channel_size * 16 * 2, channel_size * 8, att_type=att,use_mish=use_mish)
+        self.up2 = up(channel_size * 8 * 2, channel_size * 4, att_type=att,use_mish=use_mish)
+        self.up3 = up(channel_size * 4 * 2, channel_size * 2, att_type=att,use_mish=use_mish)
+        self.up4 = up(channel_size * 2 * 2, channel_size * 2, att_type=att,use_mish=use_mish)
 
-        self.up_final = up_final(channel_size * 2, channel_size)
-
-        self.pos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
-        self.cos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
-        self.sin_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
-        self.width_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
+        self.pos_output = nn.Conv2d(in_channels=channel_size * 2, out_channels=output_channels, kernel_size=1)
+        self.cos_output = nn.Conv2d(in_channels=channel_size * 2, out_channels=output_channels, kernel_size=1)
+        self.sin_output = nn.Conv2d(in_channels=channel_size * 2, out_channels=output_channels, kernel_size=1)
+        self.width_output = nn.Conv2d(in_channels=channel_size * 2, out_channels=output_channels, kernel_size=1)
 
         self.dropout = dropout
         self.dropout_pos = nn.Dropout(p=prob)
@@ -246,10 +223,8 @@ class GenerativeResnet(GraspModel):
         if dbg == 1:
             print('x11.shape  {}'.format(x11.shape))
 
-        # x = F.relu(self.bn5(self.conv5(self.up_out(x11)))) #32 224
-        x = self.up_final(x11)
-        if dbg == 1:
-            print('x.shape  {}'.format(x.shape))
+        x = x11
+        # print('x shape{}'.format(x.shape))
 
         if self.dropout:
             pos_output = self.pos_output(self.dropout_pos(x))

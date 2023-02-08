@@ -49,7 +49,7 @@ def parse_args():
                         help='(  True  False  )')
     parser.add_argument('--posloss', type=bool, default=False,
                         help='(  True  False  )')
-    parser.add_argument('--upsamp', type=str, default='use_duc',
+    parser.add_argument('--upsamp', type=str, default='use_convt',
                         help='Use upsamp type (  use_duc  use_convt use_bilinear  )')
     parser.add_argument('--att', type=str, default='use_eca',
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
@@ -87,7 +87,7 @@ def parse_args():
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='resu2_d_bili_eca_drop1_ranger_bina_pos0',
+    parser.add_argument('--description', type=str, default='resu2_d_trap_eca_drop1_ranger_bina_pos0',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_resu',
                         help='Log directory')
