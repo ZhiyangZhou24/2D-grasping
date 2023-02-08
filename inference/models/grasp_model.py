@@ -2,6 +2,17 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch
 
+class Mish(nn.Module):
+    def __init__(self):
+        super().__init__()
+        print("Mish activation loaded...")
+    def forward(self,x):
+        x = x * (torch.tanh(F.softplus(x)))
+        return x
+
+def mish(x):
+    return x*(torch.tanh(F.softplus(x)))
+
 class GraspModel(nn.Module):
     """
     An abstract model for grasp network in a common format.

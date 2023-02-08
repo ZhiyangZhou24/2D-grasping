@@ -26,15 +26,15 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3_seresunet1',
+    parser.add_argument('--network', type=str, default='grconvnet3_seresunet2',
                         help='Network name in inference/models  grconvnet')
-    parser.add_argument('--input-size', type=int, default=224,
+    parser.add_argument('--input-size', type=int, default=320,
                         help='Input image size for the network')
     parser.add_argument('--use-depth', type=int, default=1,
                         help='Use Depth image for training (1/0)')
     parser.add_argument('--use-rgb', type=int, default=0,
                         help='Use RGB image for training (1/0)')
-    parser.add_argument('--use-dropout', type=int, default=0,
+    parser.add_argument('--use-dropout', type=int, default=1,
                         help='Use dropout for training (1/0)')
     parser.add_argument('--dropout-prob', type=float, default=0.1,
                         help='Dropout prob for training (0-1)')
@@ -45,6 +45,8 @@ def parse_args():
     parser.add_argument('--iou-abla', type=bool, default=False,
                         help='Threshold albation for evaluation, need more time')
     
+    parser.add_argument('--use-mish', type=bool, default=False,
+                        help='(  True  False  )')
     parser.add_argument('--posloss', type=bool, default=False,
                         help='(  True  False  )')
     parser.add_argument('--upsamp', type=str, default='use_duc',
@@ -85,7 +87,7 @@ def parse_args():
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='resu1_d_bili_eca_ranger_bina_pos0',
+    parser.add_argument('--description', type=str, default='resu2_d_bili_eca_drop1_ranger_bina_pos0',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_resu',
                         help='Log directory')
@@ -128,7 +130,7 @@ def validate(net, device, val_data, iou_threshold):
         for x, y, didx, rot, zoom_factor in val_data:
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, y,cpos_loss=False)
+            lossd = net.compute_loss(xc, yc,pos_loss=False)
 
             loss = lossd['loss']
 
@@ -328,7 +330,8 @@ def run():
         prob=args.dropout_prob,
         channel_size=args.channel_size,
         upsamp=args.upsamp,
-        att = args.att
+        att = args.att,
+        use_mish=args.use_mish
     )
     if args.goon_train:
         # 加载预训练模型
@@ -402,7 +405,7 @@ def run():
         # Save best performing network
         iou = test_results['correct'] / (test_results['correct'] + test_results['failed'])
         if iou > best_iou or epoch == 0 or (epoch % 10) == 0:
-            logging.info('>>> save model: ', 'epoch_%02d_iou_%0.4f' % (epoch, iou))
+            logging.info('>>> save model: epoch_%02d_iou_%0.4f' % (epoch, iou))
             # torch.save(net.state_dict(), os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             best_iou = iou

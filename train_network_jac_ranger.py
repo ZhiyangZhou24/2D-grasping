@@ -86,7 +86,7 @@ def parse_args():
 
     # Logging etc.
     # https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
-    parser.add_argument('--description', type=str, default='resu_rgb_1600_32_320_drop1_ranger_bina',
+    parser.add_argument('--description', type=str, default='resu1_depth_1600_32_320_drop1_ranger_bina',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/resu_jacquard',
                         help='Log directory')
@@ -96,7 +96,7 @@ def parse_args():
                         help='Force code to run in CPU mode')
     parser.add_argument('--random-seed', type=int, default=123,
                         help='Random seed for numpy')
-    parser.add_argument('--goon-train', type=bool, default=True, help='是否从已有网络继续训练')
+    parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
     parser.add_argument('--model', type=str, default='logs/resu_jacquard/230207_1239_resu_rgb_1600_32_320_drop1_ranger_bina/epoch_29_iou_0.9435', help='保存的模型')
     parser.add_argument('--start-epoch', type=int, default=30, help='继续训练开始的epoch')
     args = parser.parse_args()

@@ -31,6 +31,9 @@ def get_network(network_name):
     elif network_name == 'grconvnet3_seresunet1':
         from .grconvnet3_seresunet1 import GenerativeResnet
         return GenerativeResnet
+    elif network_name == 'grconvnet3_seresunet2':
+        from .grconvnet3_seresunet2 import GenerativeResnet
+        return GenerativeResnet
     elif network_name == 'grconvnet3_pico_u':
         from .grconvnet3_pico_u import GenerativeResnet
         return GenerativeResnet
