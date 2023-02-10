@@ -26,7 +26,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3_seresunet2_rfb',
+    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc1',
                         help='Network name in inference/models  grconvnet')
     parser.add_argument('--input-size', type=int, default=320,
                         help='Input image size for the network')
@@ -45,11 +45,11 @@ def parse_args():
     parser.add_argument('--iou-abla', type=bool, default=False,
                         help='Threshold albation for evaluation, need more time')
     
-    parser.add_argument('--use-mish', type=bool, default=False,
+    parser.add_argument('--use-mish', type=bool, default=True,
                         help='(  True  False  )')
     parser.add_argument('--posloss', type=bool, default=True,
                         help='(  True  False  )')
-    parser.add_argument('--upsamp', type=str, default='use_convt',
+    parser.add_argument('--upsamp', type=str, default='use_bilinear',
                         help='Use upsamp type (  use_duc  use_convt use_bilinear  )')
     parser.add_argument('--att', type=str, default='use_eca',
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
@@ -87,9 +87,9 @@ def parse_args():
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='resu2_rfb_d_trap_eca_drop1_ranger_bina_pos1',
+    parser.add_argument('--description', type=str, default='dwc1_d_bili_se_drop1_ranger_bina_pos1',
                         help='Training description')
-    parser.add_argument('--logdir', type=str, default='logs/jacquard_resu',
+    parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
                         help='Log directory')
     parser.add_argument('--vis', action='store_true',
                         help='Visualise the training process')

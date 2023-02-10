@@ -4,49 +4,21 @@ import torch.nn.functional as F
 from torch.nn.parameter import Parameter
 import sys
 sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
-from inference.models.pico_det import CSPLayer, DepthwiseSeparable,Mish,ConvBNLayer
+from inference.models.pico_det import CSPLayer, DepthwiseSeparable,ConvBNLayer
 from inference.models.grasp_model import GraspModel
 from inference.models.attention import CoordAtt
 from inference.models.duc import DenseUpsamplingConvolution
 from torchsummary import summary
 
 
-def conv_3x3_bn(inp, oup, act, stride=1, group=1):
-    return nn.Sequential(
-        nn.Conv2d(inp, oup, 3, stride, 1, bias=False, groups=group),
-        nn.BatchNorm2d(oup),
-        act(inplace=True)
-    )
-
-
-def conv_1x1_bn(inp, oup, act, group=1):
-    return nn.Sequential(
-        nn.Conv2d(inp, oup, 1, 1, 0, bias=False, groups=group),
-        nn.BatchNorm2d(oup),
-        act(inplace=True)
-    )
-
-
 class down(nn.Module):
     """Downscaling with maxpool then double conv"""
 
-    def __init__(self, in_channels, out_channels,use_se=False):
+    def __init__(self, in_channels, out_channels,act="hard_swish",use_se=False):
         super(down, self).__init__()
         self.maxpool_conv = nn.Sequential(
-            DepthwiseSeparable(num_channels= in_channels, num_filters=in_channels,stride=1,use_se=use_se),
-            DepthwiseSeparable(num_channels= in_channels, num_filters=out_channels,stride=2,use_se=use_se)
-        )
-    def forward(self, x):
-        return self.maxpool_conv(x)
-
-class down_pp(nn.Module):
-    """Downscaling with maxpool then double conv"""
-
-    def __init__(self, in_channels, out_channels,use_se=False):
-        super(down, self).__init__()
-        self.maxpool_conv = nn.Sequential(
-            DepthwiseSeparable(num_channels= in_channels, num_filters=in_channels,stride=1,use_se=use_se),
-            DepthwiseSeparable(num_channels= in_channels, num_filters=out_channels,stride=2,use_se=use_se)
+            DepthwiseSeparable(num_channels= in_channels, num_filters=in_channels,stride=1,use_se=use_se,act=act),
+            DepthwiseSeparable(num_channels= in_channels, num_filters=out_channels,stride=2,use_se=use_se,act=act)
         )
     def forward(self, x):
         return self.maxpool_conv(x)
@@ -90,6 +62,9 @@ class GenerativeResnet(GraspModel):
         super(GenerativeResnet, self).__init__()
         print('Model is grc3_imp_dwc1')
         print('GRCNN upsamp {}'.format(upsamp))
+        print('USE mish {}'.format(use_mish))
+        print('USE att {}'.format(att))
+        self.att = att
         if use_mish :
             self.act = "mish"
         else:
@@ -98,26 +73,26 @@ class GenerativeResnet(GraspModel):
         self.stem = ConvBNLayer(in_channel=input_channels,out_channel=channel_size,kernel_size=3,stride=1,groups=1,act=self.act)
 
         self.dsc1 = nn.Sequential( #56
-                                DepthwiseSeparable(num_channels= channel_size , num_filters=channel_size ,stride=1,use_se=True,act=self.act),
-                                DepthwiseSeparable(num_channels= channel_size , num_filters=channel_size * 2,stride=2,use_se=True,act=self.act)
+                                DepthwiseSeparable(num_channels= channel_size , num_filters=channel_size ,stride=1,att_type = self.att,act=self.act),
+                                DepthwiseSeparable(num_channels= channel_size , num_filters=channel_size * 2,stride=2,att_type = self.att,act=self.act)
         )
 
         self.dsc2 = nn.Sequential( #28
-                                DepthwiseSeparable(num_channels= channel_size * 2, num_filters=channel_size * 2,stride=1,use_se=True,act=self.act),
-                                DepthwiseSeparable(num_channels= channel_size * 2, num_filters=channel_size * 4,stride=2,use_se=True,act=self.act)
+                                DepthwiseSeparable(num_channels= channel_size * 2, num_filters=channel_size * 2,stride=1,att_type = self.att,act=self.act),
+                                DepthwiseSeparable(num_channels= channel_size * 2, num_filters=channel_size * 4,stride=2,att_type = self.att,act=self.act)
         )
 
         self.dsc3 = nn.Sequential( #14
-                                DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=True,act=self.act),
-                                DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 8,stride=2,use_se=True,act=self.act)
+                                DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,att_type = self.att,act=self.act),
+                                DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 8,stride=2,att_type = self.att,act=self.act)
         )
 
         self.dscBottleNeck = nn.Sequential(
-                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,use_se=True,act=self.act),
-                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,use_se=True,act=self.act),
-                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,use_se=True,act=self.act),
-                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,use_se=True,act=self.act),
-                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,use_se=True,act=self.act)  #14
+                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,att_type = self.att,act=self.act),
+                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,att_type = self.att,act=self.act),
+                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,att_type = self.att,act=self.act),
+                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,att_type = self.att,act=self.act),
+                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,att_type = self.att,act=self.act)  #14
 
                                         # DepthwiseSeparable(num_channels= channel_size * 16, num_filters=channel_size * 32,dw_size = 5,stride=2,use_se=True),#7
                                         # DepthwiseSeparable(num_channels= channel_size * 32, num_filters=channel_size * 32,dw_size = 5,stride=1,use_se=True),
@@ -145,7 +120,7 @@ class GenerativeResnet(GraspModel):
                 nn.init.xavier_uniform_(m.weight, gain=1)
         
     def forward(self, x_in):
-        dbg=1
+        dbg=0
         if dbg == 1:
             print('x_in.shape  {}'.format(x_in.shape))
         stem = self.stem(x_in)
@@ -163,19 +138,19 @@ class GenerativeResnet(GraspModel):
         if dbg == 1:
             print('d3.shape  {}'.format(d3.shape))
 
-        bt = self.dscBottleNeck(d3)
+        x = self.dscBottleNeck(d3)
         if dbg == 1:
-            print('bt.shape  {}'.format(bt.shape))
+            print('bt.shape  {}'.format(x.shape))
 
-        u1 = self.up1(bt,d3)
+        x = self.up1(x,d3)
         if dbg == 1:
-            print('u1.shape  {}'.format(u1.shape))
+            print('u1.shape  {}'.format(x.shape))
 
-        u2 = self.up2(u1,d2)
+        x = self.up2(x,d2)
         if dbg == 1:
-            print('u2.shape  {}'.format(u2.shape))
+            print('u2.shape  {}'.format(x.shape))
 
-        x = self.up3(u2,d1)
+        x = self.up3(x,d1)
         if dbg == 1:
             print('x.shape  {}'.format(x.shape))
 

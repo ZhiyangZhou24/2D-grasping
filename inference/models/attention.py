@@ -5,6 +5,7 @@ import math
 class se_block(nn.Module):
     def __init__(self, channel, ratio=16):
         super(se_block, self).__init__()
+        print("se_block loaded")
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
         self.fc = nn.Sequential(
                 nn.Linear(channel, channel // ratio, bias=False),
@@ -57,6 +58,7 @@ class SpatialAttention(nn.Module):
 class cbam_block(nn.Module):
     def __init__(self, channel, ratio=8, kernel_size=7):
         super(cbam_block, self).__init__()
+        print("cbam_block loaded")
         self.channelattention = ChannelAttention(channel, ratio=ratio)
         self.spatialattention = SpatialAttention(kernel_size=kernel_size)
 
@@ -70,7 +72,7 @@ class eca_block(nn.Module):
         super(eca_block, self).__init__()
         kernel_size = int(abs((math.log(channel, 2) + b) / gamma))
         kernel_size = kernel_size if kernel_size % 2 else kernel_size + 1
-        
+        print("eca_block loaded kernel is {}".format(kernel_size))
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
         self.conv = nn.Conv1d(1, 1, kernel_size=kernel_size, padding=(kernel_size - 1) // 2, bias=False) 
         self.sigmoid = nn.Sigmoid()
@@ -131,6 +133,7 @@ class h_swish(nn.Module):
 class CoordAtt(nn.Module):
     def __init__(self, inp, oup, reduction=32):
         super(CoordAtt, self).__init__()
+        print("CoorAtt loaded")
         self.pool_h = nn.AdaptiveAvgPool2d((None, 1))
         self.pool_w = nn.AdaptiveAvgPool2d((1, None))
 

@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from numbers import Integral
+from inference.models.attention import CoordAtt, eca_block, se_block,cbam_block
 import math
 
 class Mish(nn.Module):
@@ -51,7 +52,7 @@ def channel_shuffle(x, num_groups):
 class SEModule(nn.Module):
     def __init__(self, channel, reduction=4):
         super(SEModule, self).__init__()
-
+        print("SEModule loaded")
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
         self.conv1 = nn.Conv2d(in_channels=channel,
                                out_channels=channel // reduction,
@@ -243,9 +244,9 @@ class ConvBNLayer(nn.Module):
     def forward(self, x):
         x = self.bn(self.conv(x))
         if self.act == "leaky_relu":
-            x = F.leaky_relu(x)
+            x = F.leaky_relu(x,inplace=True)
         elif self.act == "hard_swish":
-            x = F.hardswish(x)
+            x = F.hardswish(x,inplace=True)
         elif self.act == "mish":
             x = mish(x)
         return x
@@ -256,10 +257,13 @@ class DepthwiseSeparable(nn.Module):
                  num_filters,
                  stride,
                  dw_size=3,
-                 use_se=False,
+                 att_type = 'use_se',
+                 use_identity = False,
                  act="hard_swish"):
         super().__init__()
-        self.use_se = use_se
+        self.att_type = att_type
+        self.use_identity = use_identity
+        assert self.att_type in ['use_eca', 'use_se','use_coora',"use_cbam"]
         self.dw_conv = ConvBNLayer(
             in_channel=num_channels,
             out_channel=num_channels,
@@ -267,8 +271,8 @@ class DepthwiseSeparable(nn.Module):
             stride=stride,
             groups=num_channels,
             act=act)
-        if use_se:
-            self.se = SEModule(num_channels)
+        if self.att_type !=None:
+            self.att = self._make_att(num_channels,num_channels)
         self.pw_conv = ConvBNLayer(
             in_channel=num_channels,
             kernel_size=1,
@@ -276,11 +280,38 @@ class DepthwiseSeparable(nn.Module):
             stride=1,
             act=act)
 
+        if self.use_identity:
+            self.channel_conv = nn.Sequential(
+                nn.Conv2d(num_channels, num_filters, kernel_size=1, stride=1, bias=False),
+                nn.BatchNorm2d(num_filters),
+            )
+    def _make_att(self, in_channels, out_channels,reduc_ratio):
+        if self.att_type == 'use_coora':
+            print('use_coora reduc_ratio = {}'.format(reduc_ratio))
+            return CoordAtt(in_channels,out_channels,reduc_ratio)
+        elif self.att_type == 'use_eca':
+            print('use_eca ')
+            return eca_block(out_channels)
+        elif self.att_type == 'use_se':
+            print('use_se ')
+            return SEModule(out_channels)
+        elif self.att_type == 'use_cbam':
+            print('use_cbam reduc_ratio = {}'.format(reduc_ratio))
+            return cbam_block(out_channels,ratio=reduc_ratio)
+        else :
+            print('att_type error , please check!!!!')
     def forward(self, x):
+        if self.use_identity:
+            residual = x
         x = self.dw_conv(x)
-        if self.use_se:
-            x = self.se(x)
+        if self.att_type !=None:
+            x = self.att(x)
         x = self.pw_conv(x)
+
+        if self.use_identity:
+            if residual.shape[1] != x.shape[1]:
+                residual = self.channel_conv(residual)
+            x += residual
         return x
 
 
@@ -324,9 +355,9 @@ class DPModule(nn.Module):
 
     def act_func(self, x):
         if self.act == "leaky_relu":
-            x = F.leaky_relu(x)
+            x = F.leaky_relu(x,inplace=True)
         elif self.act == "hard_swish":
-            x = F.hardswish(x)
+            x = F.hardswish(x,inplace=True)
         return x
 
     def forward(self, x):

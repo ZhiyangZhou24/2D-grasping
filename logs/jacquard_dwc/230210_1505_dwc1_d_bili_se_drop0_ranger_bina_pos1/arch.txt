@@ -1,0 +1,379 @@
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 32, 320, 320]             288
+       BatchNorm2d-2         [-1, 32, 320, 320]              64
+       ConvBNLayer-3         [-1, 32, 320, 320]               0
+            Conv2d-4         [-1, 32, 320, 320]             288
+       BatchNorm2d-5         [-1, 32, 320, 320]              64
+       ConvBNLayer-6         [-1, 32, 320, 320]               0
+ AdaptiveAvgPool2d-7             [-1, 32, 1, 1]               0
+            Conv2d-8              [-1, 8, 1, 1]             256
+            Conv2d-9             [-1, 32, 1, 1]             256
+         SEModule-10         [-1, 32, 320, 320]               0
+           Conv2d-11         [-1, 32, 320, 320]           1,024
+      BatchNorm2d-12         [-1, 32, 320, 320]              64
+      ConvBNLayer-13         [-1, 32, 320, 320]               0
+DepthwiseSeparable-14         [-1, 32, 320, 320]               0
+           Conv2d-15         [-1, 32, 160, 160]             288
+      BatchNorm2d-16         [-1, 32, 160, 160]              64
+      ConvBNLayer-17         [-1, 32, 160, 160]               0
+AdaptiveAvgPool2d-18             [-1, 32, 1, 1]               0
+           Conv2d-19              [-1, 8, 1, 1]             256
+           Conv2d-20             [-1, 32, 1, 1]             256
+         SEModule-21         [-1, 32, 160, 160]               0
+           Conv2d-22         [-1, 64, 160, 160]           2,048
+      BatchNorm2d-23         [-1, 64, 160, 160]             128
+      ConvBNLayer-24         [-1, 64, 160, 160]               0
+DepthwiseSeparable-25         [-1, 64, 160, 160]               0
+           Conv2d-26         [-1, 64, 160, 160]             576
+      BatchNorm2d-27         [-1, 64, 160, 160]             128
+      ConvBNLayer-28         [-1, 64, 160, 160]               0
+AdaptiveAvgPool2d-29             [-1, 64, 1, 1]               0
+           Conv2d-30             [-1, 16, 1, 1]           1,024
+           Conv2d-31             [-1, 64, 1, 1]           1,024
+         SEModule-32         [-1, 64, 160, 160]               0
+           Conv2d-33         [-1, 64, 160, 160]           4,096
+      BatchNorm2d-34         [-1, 64, 160, 160]             128
+      ConvBNLayer-35         [-1, 64, 160, 160]               0
+DepthwiseSeparable-36         [-1, 64, 160, 160]               0
+           Conv2d-37           [-1, 64, 80, 80]             576
+      BatchNorm2d-38           [-1, 64, 80, 80]             128
+      ConvBNLayer-39           [-1, 64, 80, 80]               0
+AdaptiveAvgPool2d-40             [-1, 64, 1, 1]               0
+           Conv2d-41             [-1, 16, 1, 1]           1,024
+           Conv2d-42             [-1, 64, 1, 1]           1,024
+         SEModule-43           [-1, 64, 80, 80]               0
+           Conv2d-44          [-1, 128, 80, 80]           8,192
+      BatchNorm2d-45          [-1, 128, 80, 80]             256
+      ConvBNLayer-46          [-1, 128, 80, 80]               0
+DepthwiseSeparable-47          [-1, 128, 80, 80]               0
+           Conv2d-48          [-1, 128, 80, 80]           1,152
+      BatchNorm2d-49          [-1, 128, 80, 80]             256
+      ConvBNLayer-50          [-1, 128, 80, 80]               0
+AdaptiveAvgPool2d-51            [-1, 128, 1, 1]               0
+           Conv2d-52             [-1, 32, 1, 1]           4,096
+           Conv2d-53            [-1, 128, 1, 1]           4,096
+         SEModule-54          [-1, 128, 80, 80]               0
+           Conv2d-55          [-1, 128, 80, 80]          16,384
+      BatchNorm2d-56          [-1, 128, 80, 80]             256
+      ConvBNLayer-57          [-1, 128, 80, 80]               0
+DepthwiseSeparable-58          [-1, 128, 80, 80]               0
+           Conv2d-59          [-1, 128, 40, 40]           1,152
+      BatchNorm2d-60          [-1, 128, 40, 40]             256
+      ConvBNLayer-61          [-1, 128, 40, 40]               0
+AdaptiveAvgPool2d-62            [-1, 128, 1, 1]               0
+           Conv2d-63             [-1, 32, 1, 1]           4,096
+           Conv2d-64            [-1, 128, 1, 1]           4,096
+         SEModule-65          [-1, 128, 40, 40]               0
+           Conv2d-66          [-1, 256, 40, 40]          32,768
+      BatchNorm2d-67          [-1, 256, 40, 40]             512
+      ConvBNLayer-68          [-1, 256, 40, 40]               0
+DepthwiseSeparable-69          [-1, 256, 40, 40]               0
+           Conv2d-70          [-1, 256, 40, 40]           6,400
+      BatchNorm2d-71          [-1, 256, 40, 40]             512
+      ConvBNLayer-72          [-1, 256, 40, 40]               0
+AdaptiveAvgPool2d-73            [-1, 256, 1, 1]               0
+           Conv2d-74             [-1, 64, 1, 1]          16,384
+           Conv2d-75            [-1, 256, 1, 1]          16,384
+         SEModule-76          [-1, 256, 40, 40]               0
+           Conv2d-77          [-1, 256, 40, 40]          65,536
+      BatchNorm2d-78          [-1, 256, 40, 40]             512
+      ConvBNLayer-79          [-1, 256, 40, 40]               0
+DepthwiseSeparable-80          [-1, 256, 40, 40]               0
+           Conv2d-81          [-1, 256, 40, 40]           6,400
+      BatchNorm2d-82          [-1, 256, 40, 40]             512
+      ConvBNLayer-83          [-1, 256, 40, 40]               0
+AdaptiveAvgPool2d-84            [-1, 256, 1, 1]               0
+           Conv2d-85             [-1, 64, 1, 1]          16,384
+           Conv2d-86            [-1, 256, 1, 1]          16,384
+         SEModule-87          [-1, 256, 40, 40]               0
+           Conv2d-88          [-1, 256, 40, 40]          65,536
+      BatchNorm2d-89          [-1, 256, 40, 40]             512
+      ConvBNLayer-90          [-1, 256, 40, 40]               0
+DepthwiseSeparable-91          [-1, 256, 40, 40]               0
+           Conv2d-92          [-1, 256, 40, 40]           6,400
+      BatchNorm2d-93          [-1, 256, 40, 40]             512
+      ConvBNLayer-94          [-1, 256, 40, 40]               0
+AdaptiveAvgPool2d-95            [-1, 256, 1, 1]               0
+           Conv2d-96             [-1, 64, 1, 1]          16,384
+           Conv2d-97            [-1, 256, 1, 1]          16,384
+         SEModule-98          [-1, 256, 40, 40]               0
+           Conv2d-99          [-1, 256, 40, 40]          65,536
+     BatchNorm2d-100          [-1, 256, 40, 40]             512
+     ConvBNLayer-101          [-1, 256, 40, 40]               0
+DepthwiseSeparable-102          [-1, 256, 40, 40]               0
+          Conv2d-103          [-1, 256, 40, 40]           6,400
+     BatchNorm2d-104          [-1, 256, 40, 40]             512
+     ConvBNLayer-105          [-1, 256, 40, 40]               0
+AdaptiveAvgPool2d-106            [-1, 256, 1, 1]               0
+          Conv2d-107             [-1, 64, 1, 1]          16,384
+          Conv2d-108            [-1, 256, 1, 1]          16,384
+        SEModule-109          [-1, 256, 40, 40]               0
+          Conv2d-110          [-1, 256, 40, 40]          65,536
+     BatchNorm2d-111          [-1, 256, 40, 40]             512
+     ConvBNLayer-112          [-1, 256, 40, 40]               0
+DepthwiseSeparable-113          [-1, 256, 40, 40]               0
+          Conv2d-114          [-1, 256, 40, 40]           6,400
+     BatchNorm2d-115          [-1, 256, 40, 40]             512
+     ConvBNLayer-116          [-1, 256, 40, 40]               0
+AdaptiveAvgPool2d-117            [-1, 256, 1, 1]               0
+          Conv2d-118             [-1, 64, 1, 1]          16,384
+          Conv2d-119            [-1, 256, 1, 1]          16,384
+        SEModule-120          [-1, 256, 40, 40]               0
+          Conv2d-121          [-1, 256, 40, 40]          65,536
+     BatchNorm2d-122          [-1, 256, 40, 40]             512
+     ConvBNLayer-123          [-1, 256, 40, 40]               0
+DepthwiseSeparable-124          [-1, 256, 40, 40]               0
+          Conv2d-125           [-1, 64, 40, 40]          32,768
+     BatchNorm2d-126           [-1, 64, 40, 40]             128
+     ConvBNLayer-127           [-1, 64, 40, 40]               0
+          Conv2d-128           [-1, 64, 40, 40]          32,768
+     BatchNorm2d-129           [-1, 64, 40, 40]             128
+     ConvBNLayer-130           [-1, 64, 40, 40]               0
+          Conv2d-131           [-1, 64, 40, 40]           4,096
+     BatchNorm2d-132           [-1, 64, 40, 40]             128
+     ConvBNLayer-133           [-1, 64, 40, 40]               0
+          Conv2d-134           [-1, 64, 40, 40]          36,864
+     BatchNorm2d-135           [-1, 64, 40, 40]             128
+     ConvBNLayer-136           [-1, 64, 40, 40]               0
+DarknetBottleneck-137           [-1, 64, 40, 40]               0
+          Conv2d-138          [-1, 128, 40, 40]          16,384
+     BatchNorm2d-139          [-1, 128, 40, 40]             256
+     ConvBNLayer-140          [-1, 128, 40, 40]               0
+        CSPLayer-141          [-1, 128, 40, 40]               0
+        Upsample-142          [-1, 128, 80, 80]               0
+              up-143          [-1, 128, 80, 80]               0
+          Conv2d-144           [-1, 32, 80, 80]           8,192
+     BatchNorm2d-145           [-1, 32, 80, 80]              64
+     ConvBNLayer-146           [-1, 32, 80, 80]               0
+          Conv2d-147           [-1, 32, 80, 80]           8,192
+     BatchNorm2d-148           [-1, 32, 80, 80]              64
+     ConvBNLayer-149           [-1, 32, 80, 80]               0
+          Conv2d-150           [-1, 32, 80, 80]           1,024
+     BatchNorm2d-151           [-1, 32, 80, 80]              64
+     ConvBNLayer-152           [-1, 32, 80, 80]               0
+          Conv2d-153           [-1, 32, 80, 80]           9,216
+     BatchNorm2d-154           [-1, 32, 80, 80]              64
+     ConvBNLayer-155           [-1, 32, 80, 80]               0
+DarknetBottleneck-156           [-1, 32, 80, 80]               0
+          Conv2d-157           [-1, 64, 80, 80]           4,096
+     BatchNorm2d-158           [-1, 64, 80, 80]             128
+     ConvBNLayer-159           [-1, 64, 80, 80]               0
+        CSPLayer-160           [-1, 64, 80, 80]               0
+        Upsample-161         [-1, 64, 160, 160]               0
+              up-162         [-1, 64, 160, 160]               0
+          Conv2d-163         [-1, 16, 160, 160]           2,048
+     BatchNorm2d-164         [-1, 16, 160, 160]              32
+     ConvBNLayer-165         [-1, 16, 160, 160]               0
+          Conv2d-166         [-1, 16, 160, 160]           2,048
+     BatchNorm2d-167         [-1, 16, 160, 160]              32
+     ConvBNLayer-168         [-1, 16, 160, 160]               0
+          Conv2d-169         [-1, 16, 160, 160]             256
+     BatchNorm2d-170         [-1, 16, 160, 160]              32
+     ConvBNLayer-171         [-1, 16, 160, 160]               0
+          Conv2d-172         [-1, 16, 160, 160]           2,304
+     BatchNorm2d-173         [-1, 16, 160, 160]              32
+     ConvBNLayer-174         [-1, 16, 160, 160]               0
+DarknetBottleneck-175         [-1, 16, 160, 160]               0
+          Conv2d-176         [-1, 32, 160, 160]           1,024
+     BatchNorm2d-177         [-1, 32, 160, 160]              64
+     ConvBNLayer-178         [-1, 32, 160, 160]               0
+        CSPLayer-179         [-1, 32, 160, 160]               0
+        Upsample-180         [-1, 32, 320, 320]               0
+              up-181         [-1, 32, 320, 320]               0
+         Dropout-182         [-1, 32, 320, 320]               0
+          Conv2d-183          [-1, 1, 320, 320]              33
+         Dropout-184         [-1, 32, 320, 320]               0
+          Conv2d-185          [-1, 1, 320, 320]              33
+         Dropout-186         [-1, 32, 320, 320]               0
+          Conv2d-187          [-1, 1, 320, 320]              33
+         Dropout-188         [-1, 32, 320, 320]               0
+          Conv2d-189          [-1, 1, 320, 320]              33
+================================================================
+Total params: 784,036
+Trainable params: 784,036
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.39
+Forward/backward pass size (MB): 986.75
+Params size (MB): 2.99
+Estimated Total Size (MB): 990.13
+----------------------------------------------------------------
+
+
+import torch.nn as nn
+import torch
+import torch.nn.functional as F
+from torch.nn.parameter import Parameter
+import sys
+sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
+from inference.models.pico_det import CSPLayer, DepthwiseSeparable,ConvBNLayer
+from inference.models.grasp_model import GraspModel
+from inference.models.attention import CoordAtt
+from inference.models.duc import DenseUpsamplingConvolution
+from torchsummary import summary
+
+
+class down(nn.Module):
+    """Downscaling with maxpool then double conv"""
+
+    def __init__(self, in_channels, out_channels,act="hard_swish",use_se=False):
+        super(down, self).__init__()
+        self.maxpool_conv = nn.Sequential(
+            DepthwiseSeparable(num_channels= in_channels, num_filters=in_channels,stride=1,use_se=use_se,act=act),
+            DepthwiseSeparable(num_channels= in_channels, num_filters=out_channels,stride=2,use_se=use_se,act=act)
+        )
+    def forward(self, x):
+        return self.maxpool_conv(x)
+
+class up(nn.Module):
+    def __init__(self, in_ch, out_ch, upsample_type,act="leaky_relu"):
+        super(up, self).__init__()
+        self.upsample_type = upsample_type
+        self.up = self._make_upconv(out_ch, out_ch, upscale_factor = 2)
+
+        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,act=act)
+        
+    def _make_upconv(self, in_channels, out_channels, upscale_factor = 2):
+        if self.upsample_type == 'use_duc':
+            print('duc')
+            return DenseUpsamplingConvolution(in_channels, out_channels, upscale_factor = upscale_factor)
+        elif self.upsample_type == 'use_convt':
+            print('use_convt')
+            return nn.Sequential(
+                nn.ConvTranspose2d(in_channels, out_channels, kernel_size = upscale_factor * 2 , stride = upscale_factor, padding = 1, output_padding = 0)
+            )
+        elif self.upsample_type == 'use_bilinear':
+            print('use_bilinear')
+            return nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
+        else :
+            print('upsample_type error , please check!!!!')
+
+    def forward(self, x1, x2):
+        
+        x = torch.cat([x2, x1], dim=1)
+        
+        x = self.CSPconv(x)
+
+        x = self.up(x)
+
+        return x
+
+class GenerativeResnet(GraspModel):
+
+    def __init__(self, input_channels=1, output_channels=1, channel_size=32,use_mish=False, att = 'use_eca',upsamp='use_convt',dropout=False, prob=0.0):
+        super(GenerativeResnet, self).__init__()
+        print('Model is grc3_imp_dwc1')
+        print('GRCNN upsamp {}'.format(upsamp))
+        print('USE mish {}'.format(use_mish))
+        if use_mish :
+            self.act = "mish"
+        else:
+            self.act = "hard_swish"
+        
+        self.stem = ConvBNLayer(in_channel=input_channels,out_channel=channel_size,kernel_size=3,stride=1,groups=1,act=self.act)
+
+        self.dsc1 = nn.Sequential( #56
+                                DepthwiseSeparable(num_channels= channel_size , num_filters=channel_size ,stride=1,use_se=True,act=self.act),
+                                DepthwiseSeparable(num_channels= channel_size , num_filters=channel_size * 2,stride=2,use_se=True,act=self.act)
+        )
+
+        self.dsc2 = nn.Sequential( #28
+                                DepthwiseSeparable(num_channels= channel_size * 2, num_filters=channel_size * 2,stride=1,use_se=True,act=self.act),
+                                DepthwiseSeparable(num_channels= channel_size * 2, num_filters=channel_size * 4,stride=2,use_se=True,act=self.act)
+        )
+
+        self.dsc3 = nn.Sequential( #14
+                                DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,use_se=True,act=self.act),
+                                DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 8,stride=2,use_se=True,act=self.act)
+        )
+
+        self.dscBottleNeck = nn.Sequential(
+                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,use_se=True,act=self.act),
+                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,use_se=True,act=self.act),
+                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,use_se=True,act=self.act),
+                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,use_se=True,act=self.act),
+                                        DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,use_se=True,act=self.act)  #14
+
+                                        # DepthwiseSeparable(num_channels= channel_size * 16, num_filters=channel_size * 32,dw_size = 5,stride=2,use_se=True),#7
+                                        # DepthwiseSeparable(num_channels= channel_size * 32, num_filters=channel_size * 32,dw_size = 5,stride=1,use_se=True),
+        )
+
+        self.up1 = up(channel_size * (8 + 8), channel_size * 4, upsamp,act=self.act)
+
+        self.up2 = up(channel_size * (4 + 4), channel_size * 2, upsamp,act=self.act)
+
+        self.up3 = up(channel_size * (2 + 2), channel_size * 1, upsamp,act=self.act)
+
+        self.pos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
+        self.cos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
+        self.sin_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
+        self.width_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
+
+        self.dropout = dropout
+        self.dropout_pos = nn.Dropout(p=prob)
+        self.dropout_cos = nn.Dropout(p=prob)
+        self.dropout_sin = nn.Dropout(p=prob)
+        self.dropout_wid = nn.Dropout(p=prob)
+
+        for m in self.modules():
+            if isinstance(m, (nn.Conv2d, nn.ConvTranspose2d)):
+                nn.init.xavier_uniform_(m.weight, gain=1)
+        
+    def forward(self, x_in):
+        dbg=0
+        if dbg == 1:
+            print('x_in.shape  {}'.format(x_in.shape))
+        stem = self.stem(x_in)
+        if dbg == 1:
+            print('stem.shape  {}'.format(stem.shape))
+        d1 = self.dsc1(stem)
+        if dbg == 1:
+            print('d1.shape  {}'.format(d1.shape))
+
+        d2 = self.dsc2(d1)
+        if dbg == 1:
+            print('d2.shape  {}'.format(d2.shape))
+
+        d3 = self.dsc3(d2)
+        if dbg == 1:
+            print('d3.shape  {}'.format(d3.shape))
+
+        x = self.dscBottleNeck(d3)
+        if dbg == 1:
+            print('bt.shape  {}'.format(x.shape))
+
+        x = self.up1(x,d3)
+        if dbg == 1:
+            print('u1.shape  {}'.format(x.shape))
+
+        x = self.up2(x,d2)
+        if dbg == 1:
+            print('u2.shape  {}'.format(x.shape))
+
+        x = self.up3(x,d1)
+        if dbg == 1:
+            print('x.shape  {}'.format(x.shape))
+
+
+        if self.dropout:
+            pos_output = self.pos_output(self.dropout_pos(x))
+            cos_output = self.cos_output(self.dropout_cos(x))
+            sin_output = self.sin_output(self.dropout_sin(x))
+            width_output = self.width_output(self.dropout_wid(x))
+        else:
+            pos_output = self.pos_output(x)
+            cos_output = self.cos_output(x)
+            sin_output = self.sin_output(x)
+            width_output = self.width_output(x)
+        return pos_output, cos_output, sin_output, width_output
+import sys
+sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
+if __name__ == '__main__':
+    model = GenerativeResnet()
+    model.eval()
+    input = torch.rand(1, 1, 224, 224)
+    summary(model, (1, 224, 224),device='cpu')
+    sys.stdout = sys.__stdout__
+    output = model(input)
