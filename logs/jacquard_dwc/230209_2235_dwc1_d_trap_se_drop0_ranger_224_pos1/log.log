@@ -1,0 +1,2075 @@
+[22:35:17] {/home/zzy/workspace/grasp/gitrepo/2D-grasping/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[22:35:17] {train_network.py:269} INFO - Loading Jacquard Dataset...
+[22:35:20] {train_network.py:280} INFO - Dataset size is 54485
+[22:35:20] {train_network.py:293} INFO - Dataset len is 54485
+[22:35:20] {train_network.py:300} INFO - Training size: 51760
+[22:35:20] {train_network.py:301} INFO - Validation size: 2725
+[22:35:20] {train_network.py:320} INFO - Done
+[22:35:20] {train_network.py:323} INFO - Loading Network...
+[22:35:20] {train_network.py:325} INFO - input channel is 1
+[22:35:20] {train_network.py:342} INFO - Done from zero model
+[22:35:23] {train_network.py:357} INFO - optimizer ranger Done
+[22:35:23] {train_network.py:372} INFO - Beginning Epoch 00, lr=0.001
+[22:35:42] {train_network.py:197} INFO - Epoch: 0, Batch: 100, Loss: 0.1821
+[22:35:59] {train_network.py:197} INFO - Epoch: 0, Batch: 200, Loss: 0.0476
+[22:36:16] {train_network.py:197} INFO - Epoch: 0, Batch: 300, Loss: 0.0324
+[22:36:33] {train_network.py:197} INFO - Epoch: 0, Batch: 400, Loss: 0.0500
+[22:36:50] {train_network.py:197} INFO - Epoch: 0, Batch: 500, Loss: 0.0393
+[22:37:07] {train_network.py:197} INFO - Epoch: 0, Batch: 600, Loss: 0.0333
+[22:37:24] {train_network.py:197} INFO - Epoch: 0, Batch: 700, Loss: 0.0274
+[22:37:40] {train_network.py:197} INFO - Epoch: 0, Batch: 800, Loss: 0.0423
+[22:37:58] {train_network.py:197} INFO - Epoch: 0, Batch: 900, Loss: 0.0296
+[22:38:16] {train_network.py:197} INFO - Epoch: 0, Batch: 1000, Loss: 0.0236
+[22:38:34] {train_network.py:197} INFO - Epoch: 0, Batch: 1100, Loss: 0.0401
+[22:38:52] {train_network.py:197} INFO - Epoch: 0, Batch: 1200, Loss: 0.0228
+[22:39:11] {train_network.py:197} INFO - Epoch: 0, Batch: 1300, Loss: 0.0245
+[22:39:29] {train_network.py:197} INFO - Epoch: 0, Batch: 1400, Loss: 0.0204
+[22:39:47] {train_network.py:197} INFO - Epoch: 0, Batch: 1500, Loss: 0.0259
+[22:40:05] {train_network.py:197} INFO - Epoch: 0, Batch: 1600, Loss: 0.0238
+[22:40:24] {train_network.py:197} INFO - Epoch: 0, Batch: 1700, Loss: 0.0192
+[22:40:42] {train_network.py:197} INFO - Epoch: 0, Batch: 1800, Loss: 0.0253
+[22:41:00] {train_network.py:197} INFO - Epoch: 0, Batch: 1900, Loss: 0.0222
+[22:41:18] {train_network.py:197} INFO - Epoch: 0, Batch: 2000, Loss: 0.0228
+[22:41:37] {train_network.py:197} INFO - Epoch: 0, Batch: 2100, Loss: 0.0145
+[22:41:55] {train_network.py:197} INFO - Epoch: 0, Batch: 2200, Loss: 0.0111
+[22:42:13] {train_network.py:197} INFO - Epoch: 0, Batch: 2300, Loss: 0.0217
+[22:42:31] {train_network.py:197} INFO - Epoch: 0, Batch: 2400, Loss: 0.0193
+[22:42:50] {train_network.py:197} INFO - Epoch: 0, Batch: 2500, Loss: 0.0134
+[22:43:08] {train_network.py:197} INFO - Epoch: 0, Batch: 2600, Loss: 0.0165
+[22:43:26] {train_network.py:197} INFO - Epoch: 0, Batch: 2700, Loss: 0.0176
+[22:43:44] {train_network.py:197} INFO - Epoch: 0, Batch: 2800, Loss: 0.0246
+[22:44:03] {train_network.py:197} INFO - Epoch: 0, Batch: 2900, Loss: 0.0187
+[22:44:21] {train_network.py:197} INFO - Epoch: 0, Batch: 3000, Loss: 0.0168
+[22:44:39] {train_network.py:197} INFO - Epoch: 0, Batch: 3100, Loss: 0.0130
+[22:45:05] {train_network.py:395} INFO - Validating 0.25...
+[22:48:00] {train_network.py:398} INFO - 2079/2725 = 0.762936
+[22:48:00] {train_network.py:408} INFO - >>> save model: epoch_00_iou_0.7629
+[22:48:01] {train_network.py:372} INFO - Beginning Epoch 01, lr=0.001
+[22:48:20] {train_network.py:197} INFO - Epoch: 1, Batch: 100, Loss: 0.0105
+[22:48:37] {train_network.py:197} INFO - Epoch: 1, Batch: 200, Loss: 0.0130
+[22:48:53] {train_network.py:197} INFO - Epoch: 1, Batch: 300, Loss: 0.0157
+[22:49:10] {train_network.py:197} INFO - Epoch: 1, Batch: 400, Loss: 0.0124
+[22:49:29] {train_network.py:197} INFO - Epoch: 1, Batch: 500, Loss: 0.0138
+[22:49:47] {train_network.py:197} INFO - Epoch: 1, Batch: 600, Loss: 0.0150
+[22:50:05] {train_network.py:197} INFO - Epoch: 1, Batch: 700, Loss: 0.0259
+[22:50:23] {train_network.py:197} INFO - Epoch: 1, Batch: 800, Loss: 0.0101
+[22:50:42] {train_network.py:197} INFO - Epoch: 1, Batch: 900, Loss: 0.0105
+[22:51:00] {train_network.py:197} INFO - Epoch: 1, Batch: 1000, Loss: 0.0309
+[22:51:18] {train_network.py:197} INFO - Epoch: 1, Batch: 1100, Loss: 0.0137
+[22:51:37] {train_network.py:197} INFO - Epoch: 1, Batch: 1200, Loss: 0.0241
+[22:51:56] {train_network.py:197} INFO - Epoch: 1, Batch: 1300, Loss: 0.0159
+[22:52:14] {train_network.py:197} INFO - Epoch: 1, Batch: 1400, Loss: 0.0163
+[22:52:32] {train_network.py:197} INFO - Epoch: 1, Batch: 1500, Loss: 0.0117
+[22:52:50] {train_network.py:197} INFO - Epoch: 1, Batch: 1600, Loss: 0.0102
+[22:53:09] {train_network.py:197} INFO - Epoch: 1, Batch: 1700, Loss: 0.0124
+[22:53:26] {train_network.py:197} INFO - Epoch: 1, Batch: 1800, Loss: 0.0153
+[22:53:44] {train_network.py:197} INFO - Epoch: 1, Batch: 1900, Loss: 0.0125
+[22:54:02] {train_network.py:197} INFO - Epoch: 1, Batch: 2000, Loss: 0.0141
+[22:54:21] {train_network.py:197} INFO - Epoch: 1, Batch: 2100, Loss: 0.0160
+[22:54:39] {train_network.py:197} INFO - Epoch: 1, Batch: 2200, Loss: 0.0116
+[22:54:57] {train_network.py:197} INFO - Epoch: 1, Batch: 2300, Loss: 0.0098
+[22:55:15] {train_network.py:197} INFO - Epoch: 1, Batch: 2400, Loss: 0.0120
+[22:55:34] {train_network.py:197} INFO - Epoch: 1, Batch: 2500, Loss: 0.0114
+[22:55:52] {train_network.py:197} INFO - Epoch: 1, Batch: 2600, Loss: 0.0162
+[22:56:10] {train_network.py:197} INFO - Epoch: 1, Batch: 2700, Loss: 0.0200
+[22:56:29] {train_network.py:197} INFO - Epoch: 1, Batch: 2800, Loss: 0.0142
+[22:56:48] {train_network.py:197} INFO - Epoch: 1, Batch: 2900, Loss: 0.0114
+[22:57:06] {train_network.py:197} INFO - Epoch: 1, Batch: 3000, Loss: 0.0219
+[22:57:25] {train_network.py:197} INFO - Epoch: 1, Batch: 3100, Loss: 0.0194
+[22:57:51] {train_network.py:395} INFO - Validating 0.25...
+[23:00:40] {train_network.py:398} INFO - 2403/2725 = 0.881835
+[23:00:40] {train_network.py:408} INFO - >>> save model: epoch_01_iou_0.8818
+[23:00:40] {train_network.py:372} INFO - Beginning Epoch 02, lr=0.001
+[23:00:59] {train_network.py:197} INFO - Epoch: 2, Batch: 100, Loss: 0.0136
+[23:01:16] {train_network.py:197} INFO - Epoch: 2, Batch: 200, Loss: 0.0096
+[23:01:33] {train_network.py:197} INFO - Epoch: 2, Batch: 300, Loss: 0.0206
+[23:01:50] {train_network.py:197} INFO - Epoch: 2, Batch: 400, Loss: 0.0126
+[23:02:08] {train_network.py:197} INFO - Epoch: 2, Batch: 500, Loss: 0.0120
+[23:02:26] {train_network.py:197} INFO - Epoch: 2, Batch: 600, Loss: 0.0129
+[23:02:44] {train_network.py:197} INFO - Epoch: 2, Batch: 700, Loss: 0.0106
+[23:03:02] {train_network.py:197} INFO - Epoch: 2, Batch: 800, Loss: 0.0088
+[23:03:21] {train_network.py:197} INFO - Epoch: 2, Batch: 900, Loss: 0.0137
+[23:03:40] {train_network.py:197} INFO - Epoch: 2, Batch: 1000, Loss: 0.0208
+[23:03:58] {train_network.py:197} INFO - Epoch: 2, Batch: 1100, Loss: 0.0159
+[23:04:16] {train_network.py:197} INFO - Epoch: 2, Batch: 1200, Loss: 0.0168
+[23:04:35] {train_network.py:197} INFO - Epoch: 2, Batch: 1300, Loss: 0.0145
+[23:04:53] {train_network.py:197} INFO - Epoch: 2, Batch: 1400, Loss: 0.0110
+[23:05:12] {train_network.py:197} INFO - Epoch: 2, Batch: 1500, Loss: 0.0128
+[23:05:30] {train_network.py:197} INFO - Epoch: 2, Batch: 1600, Loss: 0.0136
+[23:05:48] {train_network.py:197} INFO - Epoch: 2, Batch: 1700, Loss: 0.0084
+[23:06:07] {train_network.py:197} INFO - Epoch: 2, Batch: 1800, Loss: 0.0136
+[23:06:25] {train_network.py:197} INFO - Epoch: 2, Batch: 1900, Loss: 0.0225
+[23:06:44] {train_network.py:197} INFO - Epoch: 2, Batch: 2000, Loss: 0.0143
+[23:07:02] {train_network.py:197} INFO - Epoch: 2, Batch: 2100, Loss: 0.0092
+[23:07:20] {train_network.py:197} INFO - Epoch: 2, Batch: 2200, Loss: 0.0167
+[23:07:39] {train_network.py:197} INFO - Epoch: 2, Batch: 2300, Loss: 0.0134
+[23:07:57] {train_network.py:197} INFO - Epoch: 2, Batch: 2400, Loss: 0.0101
+[23:08:16] {train_network.py:197} INFO - Epoch: 2, Batch: 2500, Loss: 0.0111
+[23:08:34] {train_network.py:197} INFO - Epoch: 2, Batch: 2600, Loss: 0.0116
+[23:08:52] {train_network.py:197} INFO - Epoch: 2, Batch: 2700, Loss: 0.0080
+[23:09:11] {train_network.py:197} INFO - Epoch: 2, Batch: 2800, Loss: 0.0087
+[23:09:30] {train_network.py:197} INFO - Epoch: 2, Batch: 2900, Loss: 0.0109
+[23:09:48] {train_network.py:197} INFO - Epoch: 2, Batch: 3000, Loss: 0.0394
+[23:10:06] {train_network.py:197} INFO - Epoch: 2, Batch: 3100, Loss: 0.0083
+[23:10:32] {train_network.py:395} INFO - Validating 0.25...
+[23:13:17] {train_network.py:398} INFO - 2470/2725 = 0.906422
+[23:13:17] {train_network.py:408} INFO - >>> save model: epoch_02_iou_0.9064
+[23:13:17] {train_network.py:372} INFO - Beginning Epoch 03, lr=0.001
+[23:13:37] {train_network.py:197} INFO - Epoch: 3, Batch: 100, Loss: 0.0161
+[23:13:54] {train_network.py:197} INFO - Epoch: 3, Batch: 200, Loss: 0.0146
+[23:14:11] {train_network.py:197} INFO - Epoch: 3, Batch: 300, Loss: 0.0160
+[23:14:28] {train_network.py:197} INFO - Epoch: 3, Batch: 400, Loss: 0.0122
+[23:14:46] {train_network.py:197} INFO - Epoch: 3, Batch: 500, Loss: 0.0130
+[23:15:04] {train_network.py:197} INFO - Epoch: 3, Batch: 600, Loss: 0.0091
+[23:15:22] {train_network.py:197} INFO - Epoch: 3, Batch: 700, Loss: 0.0099
+[23:15:41] {train_network.py:197} INFO - Epoch: 3, Batch: 800, Loss: 0.0117
+[23:16:00] {train_network.py:197} INFO - Epoch: 3, Batch: 900, Loss: 0.0135
+[23:16:18] {train_network.py:197} INFO - Epoch: 3, Batch: 1000, Loss: 0.0100
+[23:16:37] {train_network.py:197} INFO - Epoch: 3, Batch: 1100, Loss: 0.0155
+[23:16:55] {train_network.py:197} INFO - Epoch: 3, Batch: 1200, Loss: 0.0143
+[23:17:13] {train_network.py:197} INFO - Epoch: 3, Batch: 1300, Loss: 0.0156
+[23:17:32] {train_network.py:197} INFO - Epoch: 3, Batch: 1400, Loss: 0.0080
+[23:17:50] {train_network.py:197} INFO - Epoch: 3, Batch: 1500, Loss: 0.0101
+[23:18:08] {train_network.py:197} INFO - Epoch: 3, Batch: 1600, Loss: 0.0124
+[23:18:27] {train_network.py:197} INFO - Epoch: 3, Batch: 1700, Loss: 0.0155
+[23:18:45] {train_network.py:197} INFO - Epoch: 3, Batch: 1800, Loss: 0.0127
+[23:19:03] {train_network.py:197} INFO - Epoch: 3, Batch: 1900, Loss: 0.0134
+[23:19:22] {train_network.py:197} INFO - Epoch: 3, Batch: 2000, Loss: 0.0089
+[23:19:40] {train_network.py:197} INFO - Epoch: 3, Batch: 2100, Loss: 0.0159
+[23:19:58] {train_network.py:197} INFO - Epoch: 3, Batch: 2200, Loss: 0.0081
+[23:20:17] {train_network.py:197} INFO - Epoch: 3, Batch: 2300, Loss: 0.0145
+[23:20:35] {train_network.py:197} INFO - Epoch: 3, Batch: 2400, Loss: 0.0084
+[23:20:54] {train_network.py:197} INFO - Epoch: 3, Batch: 2500, Loss: 0.0150
+[23:21:12] {train_network.py:197} INFO - Epoch: 3, Batch: 2600, Loss: 0.0140
+[23:21:31] {train_network.py:197} INFO - Epoch: 3, Batch: 2700, Loss: 0.0156
+[23:21:48] {train_network.py:197} INFO - Epoch: 3, Batch: 2800, Loss: 0.0099
+[23:22:07] {train_network.py:197} INFO - Epoch: 3, Batch: 2900, Loss: 0.0130
+[23:22:25] {train_network.py:197} INFO - Epoch: 3, Batch: 3000, Loss: 0.0135
+[23:22:43] {train_network.py:197} INFO - Epoch: 3, Batch: 3100, Loss: 0.0107
+[23:23:09] {train_network.py:395} INFO - Validating 0.25...
+[23:26:02] {train_network.py:398} INFO - 2477/2725 = 0.908991
+[23:26:02] {train_network.py:408} INFO - >>> save model: epoch_03_iou_0.9090
+[23:26:02] {train_network.py:372} INFO - Beginning Epoch 04, lr=0.001
+[23:26:21] {train_network.py:197} INFO - Epoch: 4, Batch: 100, Loss: 0.0098
+[23:26:38] {train_network.py:197} INFO - Epoch: 4, Batch: 200, Loss: 0.0079
+[23:26:55] {train_network.py:197} INFO - Epoch: 4, Batch: 300, Loss: 0.0117
+[23:27:12] {train_network.py:197} INFO - Epoch: 4, Batch: 400, Loss: 0.0123
+[23:27:30] {train_network.py:197} INFO - Epoch: 4, Batch: 500, Loss: 0.0180
+[23:27:48] {train_network.py:197} INFO - Epoch: 4, Batch: 600, Loss: 0.0188
+[23:28:06] {train_network.py:197} INFO - Epoch: 4, Batch: 700, Loss: 0.0091
+[23:28:24] {train_network.py:197} INFO - Epoch: 4, Batch: 800, Loss: 0.0105
+[23:28:43] {train_network.py:197} INFO - Epoch: 4, Batch: 900, Loss: 0.0095
+[23:29:01] {train_network.py:197} INFO - Epoch: 4, Batch: 1000, Loss: 0.0093
+[23:29:19] {train_network.py:197} INFO - Epoch: 4, Batch: 1100, Loss: 0.0099
+[23:29:37] {train_network.py:197} INFO - Epoch: 4, Batch: 1200, Loss: 0.0085
+[23:29:56] {train_network.py:197} INFO - Epoch: 4, Batch: 1300, Loss: 0.0091
+[23:30:14] {train_network.py:197} INFO - Epoch: 4, Batch: 1400, Loss: 0.0162
+[23:30:33] {train_network.py:197} INFO - Epoch: 4, Batch: 1500, Loss: 0.0125
+[23:30:51] {train_network.py:197} INFO - Epoch: 4, Batch: 1600, Loss: 0.0144
+[23:31:09] {train_network.py:197} INFO - Epoch: 4, Batch: 1700, Loss: 0.0141
+[23:31:27] {train_network.py:197} INFO - Epoch: 4, Batch: 1800, Loss: 0.0102
+[23:31:45] {train_network.py:197} INFO - Epoch: 4, Batch: 1900, Loss: 0.0124
+[23:32:04] {train_network.py:197} INFO - Epoch: 4, Batch: 2000, Loss: 0.0113
+[23:32:22] {train_network.py:197} INFO - Epoch: 4, Batch: 2100, Loss: 0.0134
+[23:32:41] {train_network.py:197} INFO - Epoch: 4, Batch: 2200, Loss: 0.0126
+[23:32:59] {train_network.py:197} INFO - Epoch: 4, Batch: 2300, Loss: 0.0087
+[23:33:17] {train_network.py:197} INFO - Epoch: 4, Batch: 2400, Loss: 0.0139
+[23:33:36] {train_network.py:197} INFO - Epoch: 4, Batch: 2500, Loss: 0.0114
+[23:33:54] {train_network.py:197} INFO - Epoch: 4, Batch: 2600, Loss: 0.0118
+[23:34:13] {train_network.py:197} INFO - Epoch: 4, Batch: 2700, Loss: 0.0119
+[23:34:31] {train_network.py:197} INFO - Epoch: 4, Batch: 2800, Loss: 0.0144
+[23:34:50] {train_network.py:197} INFO - Epoch: 4, Batch: 2900, Loss: 0.0126
+[23:35:08] {train_network.py:197} INFO - Epoch: 4, Batch: 3000, Loss: 0.0110
+[23:35:26] {train_network.py:197} INFO - Epoch: 4, Batch: 3100, Loss: 0.0113
+[23:35:52] {train_network.py:395} INFO - Validating 0.25...
+[23:38:38] {train_network.py:398} INFO - 2498/2725 = 0.916697
+[23:38:38] {train_network.py:408} INFO - >>> save model: epoch_04_iou_0.9167
+[23:38:39] {train_network.py:372} INFO - Beginning Epoch 05, lr=0.001
+[23:38:58] {train_network.py:197} INFO - Epoch: 5, Batch: 100, Loss: 0.0109
+[23:39:15] {train_network.py:197} INFO - Epoch: 5, Batch: 200, Loss: 0.0133
+[23:39:32] {train_network.py:197} INFO - Epoch: 5, Batch: 300, Loss: 0.0112
+[23:39:49] {train_network.py:197} INFO - Epoch: 5, Batch: 400, Loss: 0.0143
+[23:40:07] {train_network.py:197} INFO - Epoch: 5, Batch: 500, Loss: 0.0134
+[23:40:25] {train_network.py:197} INFO - Epoch: 5, Batch: 600, Loss: 0.0142
+[23:40:43] {train_network.py:197} INFO - Epoch: 5, Batch: 700, Loss: 0.0092
+[23:41:01] {train_network.py:197} INFO - Epoch: 5, Batch: 800, Loss: 0.0178
+[23:41:20] {train_network.py:197} INFO - Epoch: 5, Batch: 900, Loss: 0.0080
+[23:41:38] {train_network.py:197} INFO - Epoch: 5, Batch: 1000, Loss: 0.0285
+[23:41:56] {train_network.py:197} INFO - Epoch: 5, Batch: 1100, Loss: 0.0160
+[23:42:15] {train_network.py:197} INFO - Epoch: 5, Batch: 1200, Loss: 0.0077
+[23:42:33] {train_network.py:197} INFO - Epoch: 5, Batch: 1300, Loss: 0.0091
+[23:42:52] {train_network.py:197} INFO - Epoch: 5, Batch: 1400, Loss: 0.0102
+[23:43:10] {train_network.py:197} INFO - Epoch: 5, Batch: 1500, Loss: 0.0121
+[23:43:28] {train_network.py:197} INFO - Epoch: 5, Batch: 1600, Loss: 0.0140
+[23:43:46] {train_network.py:197} INFO - Epoch: 5, Batch: 1700, Loss: 0.0114
+[23:44:05] {train_network.py:197} INFO - Epoch: 5, Batch: 1800, Loss: 0.0156
+[23:44:23] {train_network.py:197} INFO - Epoch: 5, Batch: 1900, Loss: 0.0109
+[23:44:41] {train_network.py:197} INFO - Epoch: 5, Batch: 2000, Loss: 0.0084
+[23:44:59] {train_network.py:197} INFO - Epoch: 5, Batch: 2100, Loss: 0.0113
+[23:45:18] {train_network.py:197} INFO - Epoch: 5, Batch: 2200, Loss: 0.0101
+[23:45:37] {train_network.py:197} INFO - Epoch: 5, Batch: 2300, Loss: 0.0081
+[23:45:55] {train_network.py:197} INFO - Epoch: 5, Batch: 2400, Loss: 0.0143
+[23:46:13] {train_network.py:197} INFO - Epoch: 5, Batch: 2500, Loss: 0.0117
+[23:46:32] {train_network.py:197} INFO - Epoch: 5, Batch: 2600, Loss: 0.0095
+[23:46:50] {train_network.py:197} INFO - Epoch: 5, Batch: 2700, Loss: 0.0074
+[23:47:08] {train_network.py:197} INFO - Epoch: 5, Batch: 2800, Loss: 0.0087
+[23:47:27] {train_network.py:197} INFO - Epoch: 5, Batch: 2900, Loss: 0.0101
+[23:47:45] {train_network.py:197} INFO - Epoch: 5, Batch: 3000, Loss: 0.0133
+[23:48:04] {train_network.py:197} INFO - Epoch: 5, Batch: 3100, Loss: 0.0124
+[23:48:31] {train_network.py:395} INFO - Validating 0.25...
+[23:51:21] {train_network.py:398} INFO - 2496/2725 = 0.915963
+[23:51:21] {train_network.py:372} INFO - Beginning Epoch 06, lr=0.001
+[23:51:40] {train_network.py:197} INFO - Epoch: 6, Batch: 100, Loss: 0.0100
+[23:51:57] {train_network.py:197} INFO - Epoch: 6, Batch: 200, Loss: 0.0097
+[23:52:14] {train_network.py:197} INFO - Epoch: 6, Batch: 300, Loss: 0.0120
+[23:52:31] {train_network.py:197} INFO - Epoch: 6, Batch: 400, Loss: 0.0111
+[23:52:49] {train_network.py:197} INFO - Epoch: 6, Batch: 500, Loss: 0.0107
+[23:53:07] {train_network.py:197} INFO - Epoch: 6, Batch: 600, Loss: 0.0088
+[23:53:25] {train_network.py:197} INFO - Epoch: 6, Batch: 700, Loss: 0.0116
+[23:53:44] {train_network.py:197} INFO - Epoch: 6, Batch: 800, Loss: 0.0109
+[23:54:03] {train_network.py:197} INFO - Epoch: 6, Batch: 900, Loss: 0.0079
+[23:54:21] {train_network.py:197} INFO - Epoch: 6, Batch: 1000, Loss: 0.0105
+[23:54:39] {train_network.py:197} INFO - Epoch: 6, Batch: 1100, Loss: 0.0116
+[23:54:57] {train_network.py:197} INFO - Epoch: 6, Batch: 1200, Loss: 0.0094
+[23:55:16] {train_network.py:197} INFO - Epoch: 6, Batch: 1300, Loss: 0.0106
+[23:55:35] {train_network.py:197} INFO - Epoch: 6, Batch: 1400, Loss: 0.0110
+[23:55:53] {train_network.py:197} INFO - Epoch: 6, Batch: 1500, Loss: 0.0103
+[23:56:12] {train_network.py:197} INFO - Epoch: 6, Batch: 1600, Loss: 0.0136
+[23:56:30] {train_network.py:197} INFO - Epoch: 6, Batch: 1700, Loss: 0.0148
+[23:56:48] {train_network.py:197} INFO - Epoch: 6, Batch: 1800, Loss: 0.0177
+[23:57:06] {train_network.py:197} INFO - Epoch: 6, Batch: 1900, Loss: 0.0100
+[23:57:25] {train_network.py:197} INFO - Epoch: 6, Batch: 2000, Loss: 0.0096
+[23:57:43] {train_network.py:197} INFO - Epoch: 6, Batch: 2100, Loss: 0.0116
+[23:58:01] {train_network.py:197} INFO - Epoch: 6, Batch: 2200, Loss: 0.0212
+[23:58:19] {train_network.py:197} INFO - Epoch: 6, Batch: 2300, Loss: 0.0119
+[23:58:37] {train_network.py:197} INFO - Epoch: 6, Batch: 2400, Loss: 0.0149
+[23:58:56] {train_network.py:197} INFO - Epoch: 6, Batch: 2500, Loss: 0.0115
+[23:59:14] {train_network.py:197} INFO - Epoch: 6, Batch: 2600, Loss: 0.0089
+[23:59:32] {train_network.py:197} INFO - Epoch: 6, Batch: 2700, Loss: 0.0108
+[23:59:50] {train_network.py:197} INFO - Epoch: 6, Batch: 2800, Loss: 0.0080
+[00:00:09] {train_network.py:197} INFO - Epoch: 6, Batch: 2900, Loss: 0.0121
+[00:00:28] {train_network.py:197} INFO - Epoch: 6, Batch: 3000, Loss: 0.0103
+[00:00:46] {train_network.py:197} INFO - Epoch: 6, Batch: 3100, Loss: 0.0081
+[00:01:13] {train_network.py:395} INFO - Validating 0.25...
+[00:04:04] {train_network.py:398} INFO - 2459/2725 = 0.902385
+[00:04:04] {train_network.py:372} INFO - Beginning Epoch 07, lr=0.001
+[00:04:23] {train_network.py:197} INFO - Epoch: 7, Batch: 100, Loss: 0.0125
+[00:04:40] {train_network.py:197} INFO - Epoch: 7, Batch: 200, Loss: 0.0114
+[00:04:57] {train_network.py:197} INFO - Epoch: 7, Batch: 300, Loss: 0.0157
+[00:05:14] {train_network.py:197} INFO - Epoch: 7, Batch: 400, Loss: 0.0159
+[00:05:32] {train_network.py:197} INFO - Epoch: 7, Batch: 500, Loss: 0.0125
+[00:05:50] {train_network.py:197} INFO - Epoch: 7, Batch: 600, Loss: 0.0113
+[00:06:09] {train_network.py:197} INFO - Epoch: 7, Batch: 700, Loss: 0.0114
+[00:06:27] {train_network.py:197} INFO - Epoch: 7, Batch: 800, Loss: 0.0132
+[00:06:46] {train_network.py:197} INFO - Epoch: 7, Batch: 900, Loss: 0.0090
+[00:07:04] {train_network.py:197} INFO - Epoch: 7, Batch: 1000, Loss: 0.0124
+[00:07:22] {train_network.py:197} INFO - Epoch: 7, Batch: 1100, Loss: 0.0127
+[00:07:40] {train_network.py:197} INFO - Epoch: 7, Batch: 1200, Loss: 0.0106
+[00:07:59] {train_network.py:197} INFO - Epoch: 7, Batch: 1300, Loss: 0.0115
+[00:08:17] {train_network.py:197} INFO - Epoch: 7, Batch: 1400, Loss: 0.0083
+[00:08:35] {train_network.py:197} INFO - Epoch: 7, Batch: 1500, Loss: 0.0094
+[00:08:54] {train_network.py:197} INFO - Epoch: 7, Batch: 1600, Loss: 0.0151
+[00:09:13] {train_network.py:197} INFO - Epoch: 7, Batch: 1700, Loss: 0.0088
+[00:09:31] {train_network.py:197} INFO - Epoch: 7, Batch: 1800, Loss: 0.0108
+[00:09:49] {train_network.py:197} INFO - Epoch: 7, Batch: 1900, Loss: 0.0144
+[00:10:08] {train_network.py:197} INFO - Epoch: 7, Batch: 2000, Loss: 0.0122
+[00:10:26] {train_network.py:197} INFO - Epoch: 7, Batch: 2100, Loss: 0.0081
+[00:10:44] {train_network.py:197} INFO - Epoch: 7, Batch: 2200, Loss: 0.0110
+[00:11:02] {train_network.py:197} INFO - Epoch: 7, Batch: 2300, Loss: 0.0094
+[00:11:21] {train_network.py:197} INFO - Epoch: 7, Batch: 2400, Loss: 0.0095
+[00:11:39] {train_network.py:197} INFO - Epoch: 7, Batch: 2500, Loss: 0.0096
+[00:11:58] {train_network.py:197} INFO - Epoch: 7, Batch: 2600, Loss: 0.0105
+[00:12:16] {train_network.py:197} INFO - Epoch: 7, Batch: 2700, Loss: 0.0059
+[00:12:34] {train_network.py:197} INFO - Epoch: 7, Batch: 2800, Loss: 0.0072
+[00:12:53] {train_network.py:197} INFO - Epoch: 7, Batch: 2900, Loss: 0.0109
+[00:13:11] {train_network.py:197} INFO - Epoch: 7, Batch: 3000, Loss: 0.0178
+[00:13:29] {train_network.py:197} INFO - Epoch: 7, Batch: 3100, Loss: 0.0144
+[00:13:55] {train_network.py:395} INFO - Validating 0.25...
+[00:16:45] {train_network.py:398} INFO - 2474/2725 = 0.907890
+[00:16:45] {train_network.py:372} INFO - Beginning Epoch 08, lr=0.001
+[00:17:04] {train_network.py:197} INFO - Epoch: 8, Batch: 100, Loss: 0.0097
+[00:17:21] {train_network.py:197} INFO - Epoch: 8, Batch: 200, Loss: 0.0155
+[00:17:38] {train_network.py:197} INFO - Epoch: 8, Batch: 300, Loss: 0.0119
+[00:17:55] {train_network.py:197} INFO - Epoch: 8, Batch: 400, Loss: 0.0208
+[00:18:14] {train_network.py:197} INFO - Epoch: 8, Batch: 500, Loss: 0.0105
+[00:18:32] {train_network.py:197} INFO - Epoch: 8, Batch: 600, Loss: 0.0126
+[00:18:50] {train_network.py:197} INFO - Epoch: 8, Batch: 700, Loss: 0.0086
+[00:19:08] {train_network.py:197} INFO - Epoch: 8, Batch: 800, Loss: 0.0077
+[00:19:27] {train_network.py:197} INFO - Epoch: 8, Batch: 900, Loss: 0.0120
+[00:19:45] {train_network.py:197} INFO - Epoch: 8, Batch: 1000, Loss: 0.0083
+[00:20:04] {train_network.py:197} INFO - Epoch: 8, Batch: 1100, Loss: 0.0102
+[00:20:22] {train_network.py:197} INFO - Epoch: 8, Batch: 1200, Loss: 0.0277
+[00:20:41] {train_network.py:197} INFO - Epoch: 8, Batch: 1300, Loss: 0.0089
+[00:20:59] {train_network.py:197} INFO - Epoch: 8, Batch: 1400, Loss: 0.0131
+[00:21:17] {train_network.py:197} INFO - Epoch: 8, Batch: 1500, Loss: 0.0216
+[00:21:35] {train_network.py:197} INFO - Epoch: 8, Batch: 1600, Loss: 0.0112
+[00:21:54] {train_network.py:197} INFO - Epoch: 8, Batch: 1700, Loss: 0.0084
+[00:22:12] {train_network.py:197} INFO - Epoch: 8, Batch: 1800, Loss: 0.0080
+[00:22:31] {train_network.py:197} INFO - Epoch: 8, Batch: 1900, Loss: 0.0135
+[00:22:49] {train_network.py:197} INFO - Epoch: 8, Batch: 2000, Loss: 0.0097
+[00:23:07] {train_network.py:197} INFO - Epoch: 8, Batch: 2100, Loss: 0.0081
+[00:23:25] {train_network.py:197} INFO - Epoch: 8, Batch: 2200, Loss: 0.0119
+[00:23:44] {train_network.py:197} INFO - Epoch: 8, Batch: 2300, Loss: 0.0117
+[00:24:02] {train_network.py:197} INFO - Epoch: 8, Batch: 2400, Loss: 0.0128
+[00:24:21] {train_network.py:197} INFO - Epoch: 8, Batch: 2500, Loss: 0.0075
+[00:24:39] {train_network.py:197} INFO - Epoch: 8, Batch: 2600, Loss: 0.0094
+[00:24:57] {train_network.py:197} INFO - Epoch: 8, Batch: 2700, Loss: 0.0092
+[00:25:15] {train_network.py:197} INFO - Epoch: 8, Batch: 2800, Loss: 0.0114
+[00:25:34] {train_network.py:197} INFO - Epoch: 8, Batch: 2900, Loss: 0.0072
+[00:25:52] {train_network.py:197} INFO - Epoch: 8, Batch: 3000, Loss: 0.0097
+[00:26:11] {train_network.py:197} INFO - Epoch: 8, Batch: 3100, Loss: 0.0081
+[00:26:38] {train_network.py:395} INFO - Validating 0.25...
+[00:29:29] {train_network.py:398} INFO - 2484/2725 = 0.911560
+[00:29:29] {train_network.py:372} INFO - Beginning Epoch 09, lr=0.001
+[00:29:48] {train_network.py:197} INFO - Epoch: 9, Batch: 100, Loss: 0.0121
+[00:30:05] {train_network.py:197} INFO - Epoch: 9, Batch: 200, Loss: 0.0105
+[00:30:22] {train_network.py:197} INFO - Epoch: 9, Batch: 300, Loss: 0.0149
+[00:30:39] {train_network.py:197} INFO - Epoch: 9, Batch: 400, Loss: 0.0099
+[00:30:57] {train_network.py:197} INFO - Epoch: 9, Batch: 500, Loss: 0.0223
+[00:31:15] {train_network.py:197} INFO - Epoch: 9, Batch: 600, Loss: 0.0098
+[00:31:33] {train_network.py:197} INFO - Epoch: 9, Batch: 700, Loss: 0.0073
+[00:31:51] {train_network.py:197} INFO - Epoch: 9, Batch: 800, Loss: 0.0067
+[00:32:10] {train_network.py:197} INFO - Epoch: 9, Batch: 900, Loss: 0.0072
+[00:32:28] {train_network.py:197} INFO - Epoch: 9, Batch: 1000, Loss: 0.0122
+[00:32:47] {train_network.py:197} INFO - Epoch: 9, Batch: 1100, Loss: 0.0093
+[00:33:05] {train_network.py:197} INFO - Epoch: 9, Batch: 1200, Loss: 0.0117
+[00:33:23] {train_network.py:197} INFO - Epoch: 9, Batch: 1300, Loss: 0.0248
+[00:33:41] {train_network.py:197} INFO - Epoch: 9, Batch: 1400, Loss: 0.0078
+[00:34:00] {train_network.py:197} INFO - Epoch: 9, Batch: 1500, Loss: 0.0097
+[00:34:18] {train_network.py:197} INFO - Epoch: 9, Batch: 1600, Loss: 0.0089
+[00:34:37] {train_network.py:197} INFO - Epoch: 9, Batch: 1700, Loss: 0.0157
+[00:34:55] {train_network.py:197} INFO - Epoch: 9, Batch: 1800, Loss: 0.0114
+[00:35:14] {train_network.py:197} INFO - Epoch: 9, Batch: 1900, Loss: 0.0092
+[00:35:32] {train_network.py:197} INFO - Epoch: 9, Batch: 2000, Loss: 0.0081
+[00:35:50] {train_network.py:197} INFO - Epoch: 9, Batch: 2100, Loss: 0.0086
+[00:36:09] {train_network.py:197} INFO - Epoch: 9, Batch: 2200, Loss: 0.0087
+[00:36:27] {train_network.py:197} INFO - Epoch: 9, Batch: 2300, Loss: 0.0112
+[00:36:46] {train_network.py:197} INFO - Epoch: 9, Batch: 2400, Loss: 0.0105
+[00:37:04] {train_network.py:197} INFO - Epoch: 9, Batch: 2500, Loss: 0.0127
+[00:37:22] {train_network.py:197} INFO - Epoch: 9, Batch: 2600, Loss: 0.0132
+[00:37:40] {train_network.py:197} INFO - Epoch: 9, Batch: 2700, Loss: 0.0103
+[00:37:59] {train_network.py:197} INFO - Epoch: 9, Batch: 2800, Loss: 0.0126
+[00:38:17] {train_network.py:197} INFO - Epoch: 9, Batch: 2900, Loss: 0.0089
+[00:38:36] {train_network.py:197} INFO - Epoch: 9, Batch: 3000, Loss: 0.0088
+[00:38:54] {train_network.py:197} INFO - Epoch: 9, Batch: 3100, Loss: 0.0143
+[00:39:19] {train_network.py:395} INFO - Validating 0.25...
+[00:42:10] {train_network.py:398} INFO - 2490/2725 = 0.913761
+[00:42:10] {train_network.py:372} INFO - Beginning Epoch 10, lr=0.001
+[00:42:29] {train_network.py:197} INFO - Epoch: 10, Batch: 100, Loss: 0.0110
+[00:42:46] {train_network.py:197} INFO - Epoch: 10, Batch: 200, Loss: 0.0172
+[00:43:03] {train_network.py:197} INFO - Epoch: 10, Batch: 300, Loss: 0.0115
+[00:43:20] {train_network.py:197} INFO - Epoch: 10, Batch: 400, Loss: 0.0152
+[00:43:38] {train_network.py:197} INFO - Epoch: 10, Batch: 500, Loss: 0.0128
+[00:43:56] {train_network.py:197} INFO - Epoch: 10, Batch: 600, Loss: 0.0102
+[00:44:15] {train_network.py:197} INFO - Epoch: 10, Batch: 700, Loss: 0.0079
+[00:44:33] {train_network.py:197} INFO - Epoch: 10, Batch: 800, Loss: 0.0113
+[00:44:52] {train_network.py:197} INFO - Epoch: 10, Batch: 900, Loss: 0.0102
+[00:45:10] {train_network.py:197} INFO - Epoch: 10, Batch: 1000, Loss: 0.0103
+[00:45:28] {train_network.py:197} INFO - Epoch: 10, Batch: 1100, Loss: 0.0092
+[00:45:46] {train_network.py:197} INFO - Epoch: 10, Batch: 1200, Loss: 0.0108
+[00:46:05] {train_network.py:197} INFO - Epoch: 10, Batch: 1300, Loss: 0.0119
+[00:46:23] {train_network.py:197} INFO - Epoch: 10, Batch: 1400, Loss: 0.0075
+[00:46:41] {train_network.py:197} INFO - Epoch: 10, Batch: 1500, Loss: 0.0113
+[00:47:00] {train_network.py:197} INFO - Epoch: 10, Batch: 1600, Loss: 0.0070
+[00:47:19] {train_network.py:197} INFO - Epoch: 10, Batch: 1700, Loss: 0.0108
+[00:47:37] {train_network.py:197} INFO - Epoch: 10, Batch: 1800, Loss: 0.0092
+[00:47:55] {train_network.py:197} INFO - Epoch: 10, Batch: 1900, Loss: 0.0119
+[00:48:13] {train_network.py:197} INFO - Epoch: 10, Batch: 2000, Loss: 0.0086
+[00:48:32] {train_network.py:197} INFO - Epoch: 10, Batch: 2100, Loss: 0.0121
+[00:48:50] {train_network.py:197} INFO - Epoch: 10, Batch: 2200, Loss: 0.0106
+[00:49:09] {train_network.py:197} INFO - Epoch: 10, Batch: 2300, Loss: 0.0108
+[00:49:27] {train_network.py:197} INFO - Epoch: 10, Batch: 2400, Loss: 0.0148
+[00:49:46] {train_network.py:197} INFO - Epoch: 10, Batch: 2500, Loss: 0.0175
+[00:50:04] {train_network.py:197} INFO - Epoch: 10, Batch: 2600, Loss: 0.0065
+[00:50:22] {train_network.py:197} INFO - Epoch: 10, Batch: 2700, Loss: 0.0135
+[00:50:40] {train_network.py:197} INFO - Epoch: 10, Batch: 2800, Loss: 0.0133
+[00:50:59] {train_network.py:197} INFO - Epoch: 10, Batch: 2900, Loss: 0.0072
+[00:51:17] {train_network.py:197} INFO - Epoch: 10, Batch: 3000, Loss: 0.0103
+[00:51:36] {train_network.py:197} INFO - Epoch: 10, Batch: 3100, Loss: 0.0123
+[00:52:01] {train_network.py:395} INFO - Validating 0.25...
+[00:54:53] {train_network.py:398} INFO - 2409/2725 = 0.884037
+[00:54:53] {train_network.py:408} INFO - >>> save model: epoch_10_iou_0.8840
+[00:54:53] {train_network.py:372} INFO - Beginning Epoch 11, lr=0.001
+[00:55:12] {train_network.py:197} INFO - Epoch: 11, Batch: 100, Loss: 0.0083
+[00:55:29] {train_network.py:197} INFO - Epoch: 11, Batch: 200, Loss: 0.0097
+[00:55:46] {train_network.py:197} INFO - Epoch: 11, Batch: 300, Loss: 0.0082
+[00:56:03] {train_network.py:197} INFO - Epoch: 11, Batch: 400, Loss: 0.0134
+[00:56:21] {train_network.py:197} INFO - Epoch: 11, Batch: 500, Loss: 0.0151
+[00:56:39] {train_network.py:197} INFO - Epoch: 11, Batch: 600, Loss: 0.0099
+[00:56:57] {train_network.py:197} INFO - Epoch: 11, Batch: 700, Loss: 0.0073
+[00:57:16] {train_network.py:197} INFO - Epoch: 11, Batch: 800, Loss: 0.0093
+[00:57:35] {train_network.py:197} INFO - Epoch: 11, Batch: 900, Loss: 0.0110
+[00:57:53] {train_network.py:197} INFO - Epoch: 11, Batch: 1000, Loss: 0.0151
+[00:58:11] {train_network.py:197} INFO - Epoch: 11, Batch: 1100, Loss: 0.0095
+[00:58:29] {train_network.py:197} INFO - Epoch: 11, Batch: 1200, Loss: 0.0173
+[00:58:48] {train_network.py:197} INFO - Epoch: 11, Batch: 1300, Loss: 0.0102
+[00:59:06] {train_network.py:197} INFO - Epoch: 11, Batch: 1400, Loss: 0.0121
+[00:59:24] {train_network.py:197} INFO - Epoch: 11, Batch: 1500, Loss: 0.0108
+[00:59:42] {train_network.py:197} INFO - Epoch: 11, Batch: 1600, Loss: 0.0082
+[01:00:01] {train_network.py:197} INFO - Epoch: 11, Batch: 1700, Loss: 0.0109
+[01:00:19] {train_network.py:197} INFO - Epoch: 11, Batch: 1800, Loss: 0.0137
+[01:00:37] {train_network.py:197} INFO - Epoch: 11, Batch: 1900, Loss: 0.0121
+[01:00:55] {train_network.py:197} INFO - Epoch: 11, Batch: 2000, Loss: 0.0128
+[01:01:14] {train_network.py:197} INFO - Epoch: 11, Batch: 2100, Loss: 0.0110
+[01:01:32] {train_network.py:197} INFO - Epoch: 11, Batch: 2200, Loss: 0.0103
+[01:01:50] {train_network.py:197} INFO - Epoch: 11, Batch: 2300, Loss: 0.0147
+[01:02:09] {train_network.py:197} INFO - Epoch: 11, Batch: 2400, Loss: 0.0140
+[01:02:27] {train_network.py:197} INFO - Epoch: 11, Batch: 2500, Loss: 0.0126
+[01:02:46] {train_network.py:197} INFO - Epoch: 11, Batch: 2600, Loss: 0.0090
+[01:03:04] {train_network.py:197} INFO - Epoch: 11, Batch: 2700, Loss: 0.0097
+[01:03:22] {train_network.py:197} INFO - Epoch: 11, Batch: 2800, Loss: 0.0139
+[01:03:41] {train_network.py:197} INFO - Epoch: 11, Batch: 2900, Loss: 0.0086
+[01:03:59] {train_network.py:197} INFO - Epoch: 11, Batch: 3000, Loss: 0.0070
+[01:04:18] {train_network.py:197} INFO - Epoch: 11, Batch: 3100, Loss: 0.0070
+[01:04:44] {train_network.py:395} INFO - Validating 0.25...
+[01:07:34] {train_network.py:398} INFO - 2483/2725 = 0.911193
+[01:07:34] {train_network.py:408} INFO - >>> save model: epoch_11_iou_0.9112
+[01:07:34] {train_network.py:372} INFO - Beginning Epoch 12, lr=0.001
+[01:07:54] {train_network.py:197} INFO - Epoch: 12, Batch: 100, Loss: 0.0102
+[01:08:10] {train_network.py:197} INFO - Epoch: 12, Batch: 200, Loss: 0.0114
+[01:08:27] {train_network.py:197} INFO - Epoch: 12, Batch: 300, Loss: 0.0095
+[01:08:44] {train_network.py:197} INFO - Epoch: 12, Batch: 400, Loss: 0.0100
+[01:09:03] {train_network.py:197} INFO - Epoch: 12, Batch: 500, Loss: 0.0142
+[01:09:21] {train_network.py:197} INFO - Epoch: 12, Batch: 600, Loss: 0.0084
+[01:09:39] {train_network.py:197} INFO - Epoch: 12, Batch: 700, Loss: 0.0075
+[01:09:57] {train_network.py:197} INFO - Epoch: 12, Batch: 800, Loss: 0.0129
+[01:10:16] {train_network.py:197} INFO - Epoch: 12, Batch: 900, Loss: 0.0080
+[01:10:35] {train_network.py:197} INFO - Epoch: 12, Batch: 1000, Loss: 0.0067
+[01:10:53] {train_network.py:197} INFO - Epoch: 12, Batch: 1100, Loss: 0.0102
+[01:11:11] {train_network.py:197} INFO - Epoch: 12, Batch: 1200, Loss: 0.0099
+[01:11:30] {train_network.py:197} INFO - Epoch: 12, Batch: 1300, Loss: 0.0095
+[01:11:48] {train_network.py:197} INFO - Epoch: 12, Batch: 1400, Loss: 0.0083
+[01:12:07] {train_network.py:197} INFO - Epoch: 12, Batch: 1500, Loss: 0.0132
+[01:12:25] {train_network.py:197} INFO - Epoch: 12, Batch: 1600, Loss: 0.0100
+[01:12:43] {train_network.py:197} INFO - Epoch: 12, Batch: 1700, Loss: 0.0147
+[01:13:02] {train_network.py:197} INFO - Epoch: 12, Batch: 1800, Loss: 0.0131
+[01:13:20] {train_network.py:197} INFO - Epoch: 12, Batch: 1900, Loss: 0.0129
+[01:13:38] {train_network.py:197} INFO - Epoch: 12, Batch: 2000, Loss: 0.0127
+[01:13:57] {train_network.py:197} INFO - Epoch: 12, Batch: 2100, Loss: 0.0092
+[01:14:15] {train_network.py:197} INFO - Epoch: 12, Batch: 2200, Loss: 0.0109
+[01:14:33] {train_network.py:197} INFO - Epoch: 12, Batch: 2300, Loss: 0.0130
+[01:14:52] {train_network.py:197} INFO - Epoch: 12, Batch: 2400, Loss: 0.0133
+[01:15:10] {train_network.py:197} INFO - Epoch: 12, Batch: 2500, Loss: 0.0246
+[01:15:29] {train_network.py:197} INFO - Epoch: 12, Batch: 2600, Loss: 0.0094
+[01:15:47] {train_network.py:197} INFO - Epoch: 12, Batch: 2700, Loss: 0.0080
+[01:16:05] {train_network.py:197} INFO - Epoch: 12, Batch: 2800, Loss: 0.0111
+[01:16:24] {train_network.py:197} INFO - Epoch: 12, Batch: 2900, Loss: 0.0127
+[01:16:42] {train_network.py:197} INFO - Epoch: 12, Batch: 3000, Loss: 0.0112
+[01:17:00] {train_network.py:197} INFO - Epoch: 12, Batch: 3100, Loss: 0.0103
+[01:17:26] {train_network.py:395} INFO - Validating 0.25...
+[01:20:19] {train_network.py:398} INFO - 2457/2725 = 0.901651
+[01:20:19] {train_network.py:372} INFO - Beginning Epoch 13, lr=0.001
+[01:20:39] {train_network.py:197} INFO - Epoch: 13, Batch: 100, Loss: 0.0124
+[01:20:56] {train_network.py:197} INFO - Epoch: 13, Batch: 200, Loss: 0.0103
+[01:21:13] {train_network.py:197} INFO - Epoch: 13, Batch: 300, Loss: 0.0142
+[01:21:30] {train_network.py:197} INFO - Epoch: 13, Batch: 400, Loss: 0.0093
+[01:21:48] {train_network.py:197} INFO - Epoch: 13, Batch: 500, Loss: 0.0147
+[01:22:06] {train_network.py:197} INFO - Epoch: 13, Batch: 600, Loss: 0.0168
+[01:22:25] {train_network.py:197} INFO - Epoch: 13, Batch: 700, Loss: 0.0085
+[01:22:43] {train_network.py:197} INFO - Epoch: 13, Batch: 800, Loss: 0.0086
+[01:23:02] {train_network.py:197} INFO - Epoch: 13, Batch: 900, Loss: 0.0073
+[01:23:20] {train_network.py:197} INFO - Epoch: 13, Batch: 1000, Loss: 0.0082
+[01:23:38] {train_network.py:197} INFO - Epoch: 13, Batch: 1100, Loss: 0.0125
+[01:23:56] {train_network.py:197} INFO - Epoch: 13, Batch: 1200, Loss: 0.0146
+[01:24:15] {train_network.py:197} INFO - Epoch: 13, Batch: 1300, Loss: 0.0098
+[01:24:33] {train_network.py:197} INFO - Epoch: 13, Batch: 1400, Loss: 0.0116
+[01:24:51] {train_network.py:197} INFO - Epoch: 13, Batch: 1500, Loss: 0.0128
+[01:25:09] {train_network.py:197} INFO - Epoch: 13, Batch: 1600, Loss: 0.0126
+[01:25:28] {train_network.py:197} INFO - Epoch: 13, Batch: 1700, Loss: 0.0089
+[01:25:46] {train_network.py:197} INFO - Epoch: 13, Batch: 1800, Loss: 0.0111
+[01:26:05] {train_network.py:197} INFO - Epoch: 13, Batch: 1900, Loss: 0.0101
+[01:26:23] {train_network.py:197} INFO - Epoch: 13, Batch: 2000, Loss: 0.0111
+[01:26:41] {train_network.py:197} INFO - Epoch: 13, Batch: 2100, Loss: 0.0138
+[01:27:00] {train_network.py:197} INFO - Epoch: 13, Batch: 2200, Loss: 0.0196
+[01:27:18] {train_network.py:197} INFO - Epoch: 13, Batch: 2300, Loss: 0.0073
+[01:27:36] {train_network.py:197} INFO - Epoch: 13, Batch: 2400, Loss: 0.0073
+[01:27:55] {train_network.py:197} INFO - Epoch: 13, Batch: 2500, Loss: 0.0114
+[01:28:14] {train_network.py:197} INFO - Epoch: 13, Batch: 2600, Loss: 0.0061
+[01:28:32] {train_network.py:197} INFO - Epoch: 13, Batch: 2700, Loss: 0.0103
+[01:28:50] {train_network.py:197} INFO - Epoch: 13, Batch: 2800, Loss: 0.0082
+[01:29:08] {train_network.py:197} INFO - Epoch: 13, Batch: 2900, Loss: 0.0074
+[01:29:27] {train_network.py:197} INFO - Epoch: 13, Batch: 3000, Loss: 0.0139
+[01:29:45] {train_network.py:197} INFO - Epoch: 13, Batch: 3100, Loss: 0.0174
+[01:30:11] {train_network.py:395} INFO - Validating 0.25...
+[01:33:02] {train_network.py:398} INFO - 2450/2725 = 0.899083
+[01:33:02] {train_network.py:372} INFO - Beginning Epoch 14, lr=0.001
+[01:33:22] {train_network.py:197} INFO - Epoch: 14, Batch: 100, Loss: 0.0103
+[01:33:38] {train_network.py:197} INFO - Epoch: 14, Batch: 200, Loss: 0.0087
+[01:33:55] {train_network.py:197} INFO - Epoch: 14, Batch: 300, Loss: 0.0138
+[01:34:12] {train_network.py:197} INFO - Epoch: 14, Batch: 400, Loss: 0.0100
+[01:34:30] {train_network.py:197} INFO - Epoch: 14, Batch: 500, Loss: 0.0133
+[01:34:48] {train_network.py:197} INFO - Epoch: 14, Batch: 600, Loss: 0.0119
+[01:35:06] {train_network.py:197} INFO - Epoch: 14, Batch: 700, Loss: 0.0070
+[01:35:25] {train_network.py:197} INFO - Epoch: 14, Batch: 800, Loss: 0.0183
+[01:35:44] {train_network.py:197} INFO - Epoch: 14, Batch: 900, Loss: 0.0085
+[01:36:02] {train_network.py:197} INFO - Epoch: 14, Batch: 1000, Loss: 0.0128
+[01:36:20] {train_network.py:197} INFO - Epoch: 14, Batch: 1100, Loss: 0.0117
+[01:36:39] {train_network.py:197} INFO - Epoch: 14, Batch: 1200, Loss: 0.0115
+[01:36:58] {train_network.py:197} INFO - Epoch: 14, Batch: 1300, Loss: 0.0098
+[01:37:16] {train_network.py:197} INFO - Epoch: 14, Batch: 1400, Loss: 0.0095
+[01:37:34] {train_network.py:197} INFO - Epoch: 14, Batch: 1500, Loss: 0.0123
+[01:37:52] {train_network.py:197} INFO - Epoch: 14, Batch: 1600, Loss: 0.0064
+[01:38:11] {train_network.py:197} INFO - Epoch: 14, Batch: 1700, Loss: 0.0115
+[01:38:29] {train_network.py:197} INFO - Epoch: 14, Batch: 1800, Loss: 0.0110
+[01:38:47] {train_network.py:197} INFO - Epoch: 14, Batch: 1900, Loss: 0.0061
+[01:39:06] {train_network.py:197} INFO - Epoch: 14, Batch: 2000, Loss: 0.0084
+[01:39:24] {train_network.py:197} INFO - Epoch: 14, Batch: 2100, Loss: 0.0096
+[01:39:43] {train_network.py:197} INFO - Epoch: 14, Batch: 2200, Loss: 0.0115
+[01:40:01] {train_network.py:197} INFO - Epoch: 14, Batch: 2300, Loss: 0.0104
+[01:40:19] {train_network.py:197} INFO - Epoch: 14, Batch: 2400, Loss: 0.0116
+[01:40:37] {train_network.py:197} INFO - Epoch: 14, Batch: 2500, Loss: 0.0112
+[01:40:56] {train_network.py:197} INFO - Epoch: 14, Batch: 2600, Loss: 0.0084
+[01:41:14] {train_network.py:197} INFO - Epoch: 14, Batch: 2700, Loss: 0.0092
+[01:41:32] {train_network.py:197} INFO - Epoch: 14, Batch: 2800, Loss: 0.0116
+[01:41:50] {train_network.py:197} INFO - Epoch: 14, Batch: 2900, Loss: 0.0090
+[01:42:09] {train_network.py:197} INFO - Epoch: 14, Batch: 3000, Loss: 0.0114
+[01:42:27] {train_network.py:197} INFO - Epoch: 14, Batch: 3100, Loss: 0.0087
+[01:42:52] {train_network.py:395} INFO - Validating 0.25...
+[01:45:42] {train_network.py:398} INFO - 2451/2725 = 0.899450
+[01:45:42] {train_network.py:372} INFO - Beginning Epoch 15, lr=0.001
+[01:46:01] {train_network.py:197} INFO - Epoch: 15, Batch: 100, Loss: 0.0125
+[01:46:18] {train_network.py:197} INFO - Epoch: 15, Batch: 200, Loss: 0.0127
+[01:46:35] {train_network.py:197} INFO - Epoch: 15, Batch: 300, Loss: 0.0137
+[01:46:52] {train_network.py:197} INFO - Epoch: 15, Batch: 400, Loss: 0.0126
+[01:47:10] {train_network.py:197} INFO - Epoch: 15, Batch: 500, Loss: 0.0152
+[01:47:28] {train_network.py:197} INFO - Epoch: 15, Batch: 600, Loss: 0.0113
+[01:47:46] {train_network.py:197} INFO - Epoch: 15, Batch: 700, Loss: 0.0056
+[01:48:04] {train_network.py:197} INFO - Epoch: 15, Batch: 800, Loss: 0.0116
+[01:48:23] {train_network.py:197} INFO - Epoch: 15, Batch: 900, Loss: 0.0070
+[01:48:42] {train_network.py:197} INFO - Epoch: 15, Batch: 1000, Loss: 0.0087
+[01:48:59] {train_network.py:197} INFO - Epoch: 15, Batch: 1100, Loss: 0.0083
+[01:49:18] {train_network.py:197} INFO - Epoch: 15, Batch: 1200, Loss: 0.0054
+[01:49:36] {train_network.py:197} INFO - Epoch: 15, Batch: 1300, Loss: 0.0097
+[01:49:55] {train_network.py:197} INFO - Epoch: 15, Batch: 1400, Loss: 0.0090
+[01:50:13] {train_network.py:197} INFO - Epoch: 15, Batch: 1500, Loss: 0.0193
+[01:50:32] {train_network.py:197} INFO - Epoch: 15, Batch: 1600, Loss: 0.0115
+[01:50:50] {train_network.py:197} INFO - Epoch: 15, Batch: 1700, Loss: 0.0136
+[01:51:09] {train_network.py:197} INFO - Epoch: 15, Batch: 1800, Loss: 0.0126
+[01:51:27] {train_network.py:197} INFO - Epoch: 15, Batch: 1900, Loss: 0.0081
+[01:51:45] {train_network.py:197} INFO - Epoch: 15, Batch: 2000, Loss: 0.0085
+[01:52:03] {train_network.py:197} INFO - Epoch: 15, Batch: 2100, Loss: 0.0093
+[01:52:22] {train_network.py:197} INFO - Epoch: 15, Batch: 2200, Loss: 0.0077
+[01:52:41] {train_network.py:197} INFO - Epoch: 15, Batch: 2300, Loss: 0.0095
+[01:52:59] {train_network.py:197} INFO - Epoch: 15, Batch: 2400, Loss: 0.0116
+[01:53:17] {train_network.py:197} INFO - Epoch: 15, Batch: 2500, Loss: 0.0137
+[01:53:36] {train_network.py:197} INFO - Epoch: 15, Batch: 2600, Loss: 0.0076
+[01:53:54] {train_network.py:197} INFO - Epoch: 15, Batch: 2700, Loss: 0.0123
+[01:54:13] {train_network.py:197} INFO - Epoch: 15, Batch: 2800, Loss: 0.0095
+[01:54:31] {train_network.py:197} INFO - Epoch: 15, Batch: 2900, Loss: 0.0080
+[01:54:50] {train_network.py:197} INFO - Epoch: 15, Batch: 3000, Loss: 0.0127
+[01:55:08] {train_network.py:197} INFO - Epoch: 15, Batch: 3100, Loss: 0.0086
+[01:55:34] {train_network.py:395} INFO - Validating 0.25...
+[01:58:23] {train_network.py:398} INFO - 2438/2725 = 0.894679
+[01:58:23] {train_network.py:372} INFO - Beginning Epoch 16, lr=0.001
+[01:58:44] {train_network.py:197} INFO - Epoch: 16, Batch: 100, Loss: 0.0108
+[01:59:00] {train_network.py:197} INFO - Epoch: 16, Batch: 200, Loss: 0.0128
+[01:59:17] {train_network.py:197} INFO - Epoch: 16, Batch: 300, Loss: 0.0112
+[01:59:34] {train_network.py:197} INFO - Epoch: 16, Batch: 400, Loss: 0.0146
+[01:59:52] {train_network.py:197} INFO - Epoch: 16, Batch: 500, Loss: 0.0091
+[02:00:10] {train_network.py:197} INFO - Epoch: 16, Batch: 600, Loss: 0.0164
+[02:00:29] {train_network.py:197} INFO - Epoch: 16, Batch: 700, Loss: 0.0084
+[02:00:47] {train_network.py:197} INFO - Epoch: 16, Batch: 800, Loss: 0.0088
+[02:01:06] {train_network.py:197} INFO - Epoch: 16, Batch: 900, Loss: 0.0075
+[02:01:24] {train_network.py:197} INFO - Epoch: 16, Batch: 1000, Loss: 0.0140
+[02:01:42] {train_network.py:197} INFO - Epoch: 16, Batch: 1100, Loss: 0.0093
+[02:02:00] {train_network.py:197} INFO - Epoch: 16, Batch: 1200, Loss: 0.0066
+[02:02:19] {train_network.py:197} INFO - Epoch: 16, Batch: 1300, Loss: 0.0128
+[02:02:37] {train_network.py:197} INFO - Epoch: 16, Batch: 1400, Loss: 0.0105
+[02:02:55] {train_network.py:197} INFO - Epoch: 16, Batch: 1500, Loss: 0.0098
+[02:03:14] {train_network.py:197} INFO - Epoch: 16, Batch: 1600, Loss: 0.0109
+[02:03:32] {train_network.py:197} INFO - Epoch: 16, Batch: 1700, Loss: 0.0107
+[02:03:50] {train_network.py:197} INFO - Epoch: 16, Batch: 1800, Loss: 0.0103
+[02:04:09] {train_network.py:197} INFO - Epoch: 16, Batch: 1900, Loss: 0.0098
+[02:04:27] {train_network.py:197} INFO - Epoch: 16, Batch: 2000, Loss: 0.0102
+[02:04:46] {train_network.py:197} INFO - Epoch: 16, Batch: 2100, Loss: 0.0121
+[02:05:04] {train_network.py:197} INFO - Epoch: 16, Batch: 2200, Loss: 0.0144
+[02:05:22] {train_network.py:197} INFO - Epoch: 16, Batch: 2300, Loss: 0.0106
+[02:05:40] {train_network.py:197} INFO - Epoch: 16, Batch: 2400, Loss: 0.0180
+[02:05:59] {train_network.py:197} INFO - Epoch: 16, Batch: 2500, Loss: 0.0101
+[02:06:17] {train_network.py:197} INFO - Epoch: 16, Batch: 2600, Loss: 0.0083
+[02:06:35] {train_network.py:197} INFO - Epoch: 16, Batch: 2700, Loss: 0.0184
+[02:06:53] {train_network.py:197} INFO - Epoch: 16, Batch: 2800, Loss: 0.0112
+[02:07:12] {train_network.py:197} INFO - Epoch: 16, Batch: 2900, Loss: 0.0098
+[02:07:30] {train_network.py:197} INFO - Epoch: 16, Batch: 3000, Loss: 0.0113
+[02:07:48] {train_network.py:197} INFO - Epoch: 16, Batch: 3100, Loss: 0.0071
+[02:08:15] {train_network.py:395} INFO - Validating 0.25...
+[02:11:06] {train_network.py:398} INFO - 2486/2725 = 0.912294
+[02:11:06] {train_network.py:408} INFO - >>> save model: epoch_16_iou_0.9123
+[02:11:07] {train_network.py:372} INFO - Beginning Epoch 17, lr=0.001
+[02:11:26] {train_network.py:197} INFO - Epoch: 17, Batch: 100, Loss: 0.0094
+[02:11:43] {train_network.py:197} INFO - Epoch: 17, Batch: 200, Loss: 0.0120
+[02:12:00] {train_network.py:197} INFO - Epoch: 17, Batch: 300, Loss: 0.0095
+[02:12:17] {train_network.py:197} INFO - Epoch: 17, Batch: 400, Loss: 0.0163
+[02:12:34] {train_network.py:197} INFO - Epoch: 17, Batch: 500, Loss: 0.0124
+[02:12:52] {train_network.py:197} INFO - Epoch: 17, Batch: 600, Loss: 0.0111
+[02:13:11] {train_network.py:197} INFO - Epoch: 17, Batch: 700, Loss: 0.0129
+[02:13:29] {train_network.py:197} INFO - Epoch: 17, Batch: 800, Loss: 0.0148
+[02:13:48] {train_network.py:197} INFO - Epoch: 17, Batch: 900, Loss: 0.0099
+[02:14:06] {train_network.py:197} INFO - Epoch: 17, Batch: 1000, Loss: 0.0115
+[02:14:25] {train_network.py:197} INFO - Epoch: 17, Batch: 1100, Loss: 0.0177
+[02:14:43] {train_network.py:197} INFO - Epoch: 17, Batch: 1200, Loss: 0.0089
+[02:15:01] {train_network.py:197} INFO - Epoch: 17, Batch: 1300, Loss: 0.0089
+[02:15:20] {train_network.py:197} INFO - Epoch: 17, Batch: 1400, Loss: 0.0108
+[02:15:38] {train_network.py:197} INFO - Epoch: 17, Batch: 1500, Loss: 0.0341
+[02:15:56] {train_network.py:197} INFO - Epoch: 17, Batch: 1600, Loss: 0.0169
+[02:16:15] {train_network.py:197} INFO - Epoch: 17, Batch: 1700, Loss: 0.0097
+[02:16:33] {train_network.py:197} INFO - Epoch: 17, Batch: 1800, Loss: 0.0148
+[02:16:51] {train_network.py:197} INFO - Epoch: 17, Batch: 1900, Loss: 0.0102
+[02:17:09] {train_network.py:197} INFO - Epoch: 17, Batch: 2000, Loss: 0.0117
+[02:17:28] {train_network.py:197} INFO - Epoch: 17, Batch: 2100, Loss: 0.0090
+[02:17:46] {train_network.py:197} INFO - Epoch: 17, Batch: 2200, Loss: 0.0108
+[02:18:05] {train_network.py:197} INFO - Epoch: 17, Batch: 2300, Loss: 0.0148
+[02:18:23] {train_network.py:197} INFO - Epoch: 17, Batch: 2400, Loss: 0.0123
+[02:18:42] {train_network.py:197} INFO - Epoch: 17, Batch: 2500, Loss: 0.0120
+[02:19:00] {train_network.py:197} INFO - Epoch: 17, Batch: 2600, Loss: 0.0102
+[02:19:18] {train_network.py:197} INFO - Epoch: 17, Batch: 2700, Loss: 0.0114
+[02:19:36] {train_network.py:197} INFO - Epoch: 17, Batch: 2800, Loss: 0.0075
+[02:19:55] {train_network.py:197} INFO - Epoch: 17, Batch: 2900, Loss: 0.0091
+[02:20:14] {train_network.py:197} INFO - Epoch: 17, Batch: 3000, Loss: 0.0101
+[02:20:32] {train_network.py:197} INFO - Epoch: 17, Batch: 3100, Loss: 0.0054
+[02:20:59] {train_network.py:395} INFO - Validating 0.25...
+[02:23:50] {train_network.py:398} INFO - 2481/2725 = 0.910459
+[02:23:50] {train_network.py:372} INFO - Beginning Epoch 18, lr=0.001
+[02:24:10] {train_network.py:197} INFO - Epoch: 18, Batch: 100, Loss: 0.0239
+[02:24:27] {train_network.py:197} INFO - Epoch: 18, Batch: 200, Loss: 0.0097
+[02:24:44] {train_network.py:197} INFO - Epoch: 18, Batch: 300, Loss: 0.0107
+[02:25:01] {train_network.py:197} INFO - Epoch: 18, Batch: 400, Loss: 0.0203
+[02:25:20] {train_network.py:197} INFO - Epoch: 18, Batch: 500, Loss: 0.0139
+[02:25:38] {train_network.py:197} INFO - Epoch: 18, Batch: 600, Loss: 0.0137
+[02:25:56] {train_network.py:197} INFO - Epoch: 18, Batch: 700, Loss: 0.0118
+[02:26:14] {train_network.py:197} INFO - Epoch: 18, Batch: 800, Loss: 0.0095
+[02:26:33] {train_network.py:197} INFO - Epoch: 18, Batch: 900, Loss: 0.0082
+[02:26:51] {train_network.py:197} INFO - Epoch: 18, Batch: 1000, Loss: 0.0104
+[02:27:10] {train_network.py:197} INFO - Epoch: 18, Batch: 1100, Loss: 0.0106
+[02:27:28] {train_network.py:197} INFO - Epoch: 18, Batch: 1200, Loss: 0.0071
+[02:27:47] {train_network.py:197} INFO - Epoch: 18, Batch: 1300, Loss: 0.0102
+[02:28:05] {train_network.py:197} INFO - Epoch: 18, Batch: 1400, Loss: 0.0159
+[02:28:23] {train_network.py:197} INFO - Epoch: 18, Batch: 1500, Loss: 0.0188
+[02:28:41] {train_network.py:197} INFO - Epoch: 18, Batch: 1600, Loss: 0.0139
+[02:29:00] {train_network.py:197} INFO - Epoch: 18, Batch: 1700, Loss: 0.0122
+[02:29:18] {train_network.py:197} INFO - Epoch: 18, Batch: 1800, Loss: 0.0091
+[02:29:37] {train_network.py:197} INFO - Epoch: 18, Batch: 1900, Loss: 0.0083
+[02:29:55] {train_network.py:197} INFO - Epoch: 18, Batch: 2000, Loss: 0.0110
+[02:30:14] {train_network.py:197} INFO - Epoch: 18, Batch: 2100, Loss: 0.0094
+[02:30:32] {train_network.py:197} INFO - Epoch: 18, Batch: 2200, Loss: 0.0113
+[02:30:50] {train_network.py:197} INFO - Epoch: 18, Batch: 2300, Loss: 0.0135
+[02:31:08] {train_network.py:197} INFO - Epoch: 18, Batch: 2400, Loss: 0.0120
+[02:31:27] {train_network.py:197} INFO - Epoch: 18, Batch: 2500, Loss: 0.0102
+[02:31:45] {train_network.py:197} INFO - Epoch: 18, Batch: 2600, Loss: 0.0119
+[02:32:03] {train_network.py:197} INFO - Epoch: 18, Batch: 2700, Loss: 0.0070
+[02:32:22] {train_network.py:197} INFO - Epoch: 18, Batch: 2800, Loss: 0.0099
+[02:32:41] {train_network.py:197} INFO - Epoch: 18, Batch: 2900, Loss: 0.0095
+[02:32:58] {train_network.py:197} INFO - Epoch: 18, Batch: 3000, Loss: 0.0091
+[02:33:16] {train_network.py:197} INFO - Epoch: 18, Batch: 3100, Loss: 0.0065
+[02:33:42] {train_network.py:395} INFO - Validating 0.25...
+[02:36:35] {train_network.py:398} INFO - 2474/2725 = 0.907890
+[02:36:35] {train_network.py:372} INFO - Beginning Epoch 19, lr=0.001
+[02:36:54] {train_network.py:197} INFO - Epoch: 19, Batch: 100, Loss: 0.0088
+[02:37:11] {train_network.py:197} INFO - Epoch: 19, Batch: 200, Loss: 0.0070
+[02:37:28] {train_network.py:197} INFO - Epoch: 19, Batch: 300, Loss: 0.0164
+[02:37:45] {train_network.py:197} INFO - Epoch: 19, Batch: 400, Loss: 0.0129
+[02:38:02] {train_network.py:197} INFO - Epoch: 19, Batch: 500, Loss: 0.0158
+[02:38:21] {train_network.py:197} INFO - Epoch: 19, Batch: 600, Loss: 0.0088
+[02:38:39] {train_network.py:197} INFO - Epoch: 19, Batch: 700, Loss: 0.0070
+[02:38:58] {train_network.py:197} INFO - Epoch: 19, Batch: 800, Loss: 0.0164
+[02:39:17] {train_network.py:197} INFO - Epoch: 19, Batch: 900, Loss: 0.0080
+[02:39:35] {train_network.py:197} INFO - Epoch: 19, Batch: 1000, Loss: 0.0113
+[02:39:53] {train_network.py:197} INFO - Epoch: 19, Batch: 1100, Loss: 0.0135
+[02:40:11] {train_network.py:197} INFO - Epoch: 19, Batch: 1200, Loss: 0.0102
+[02:40:30] {train_network.py:197} INFO - Epoch: 19, Batch: 1300, Loss: 0.0104
+[02:40:48] {train_network.py:197} INFO - Epoch: 19, Batch: 1400, Loss: 0.0092
+[02:41:07] {train_network.py:197} INFO - Epoch: 19, Batch: 1500, Loss: 0.0119
+[02:41:25] {train_network.py:197} INFO - Epoch: 19, Batch: 1600, Loss: 0.0094
+[02:41:43] {train_network.py:197} INFO - Epoch: 19, Batch: 1700, Loss: 0.0058
+[02:42:02] {train_network.py:197} INFO - Epoch: 19, Batch: 1800, Loss: 0.0142
+[02:42:20] {train_network.py:197} INFO - Epoch: 19, Batch: 1900, Loss: 0.0099
+[02:42:38] {train_network.py:197} INFO - Epoch: 19, Batch: 2000, Loss: 0.0085
+[02:42:57] {train_network.py:197} INFO - Epoch: 19, Batch: 2100, Loss: 0.0100
+[02:43:15] {train_network.py:197} INFO - Epoch: 19, Batch: 2200, Loss: 0.0123
+[02:43:33] {train_network.py:197} INFO - Epoch: 19, Batch: 2300, Loss: 0.0077
+[02:43:51] {train_network.py:197} INFO - Epoch: 19, Batch: 2400, Loss: 0.0092
+[02:44:09] {train_network.py:197} INFO - Epoch: 19, Batch: 2500, Loss: 0.0084
+[02:44:28] {train_network.py:197} INFO - Epoch: 19, Batch: 2600, Loss: 0.0095
+[02:44:46] {train_network.py:197} INFO - Epoch: 19, Batch: 2700, Loss: 0.0094
+[02:45:04] {train_network.py:197} INFO - Epoch: 19, Batch: 2800, Loss: 0.0054
+[02:45:22] {train_network.py:197} INFO - Epoch: 19, Batch: 2900, Loss: 0.0104
+[02:45:41] {train_network.py:197} INFO - Epoch: 19, Batch: 3000, Loss: 0.0104
+[02:45:59] {train_network.py:197} INFO - Epoch: 19, Batch: 3100, Loss: 0.0077
+[02:46:26] {train_network.py:395} INFO - Validating 0.25...
+[02:49:15] {train_network.py:398} INFO - 2505/2725 = 0.919266
+[02:49:15] {train_network.py:408} INFO - >>> save model: epoch_19_iou_0.9193
+[02:49:15] {train_network.py:372} INFO - Beginning Epoch 20, lr=0.001
+[02:49:34] {train_network.py:197} INFO - Epoch: 20, Batch: 100, Loss: 0.0100
+[02:49:51] {train_network.py:197} INFO - Epoch: 20, Batch: 200, Loss: 0.0089
+[02:50:08] {train_network.py:197} INFO - Epoch: 20, Batch: 300, Loss: 0.0061
+[02:50:25] {train_network.py:197} INFO - Epoch: 20, Batch: 400, Loss: 0.0096
+[02:50:43] {train_network.py:197} INFO - Epoch: 20, Batch: 500, Loss: 0.0133
+[02:51:01] {train_network.py:197} INFO - Epoch: 20, Batch: 600, Loss: 0.0101
+[02:51:19] {train_network.py:197} INFO - Epoch: 20, Batch: 700, Loss: 0.0085
+[02:51:37] {train_network.py:197} INFO - Epoch: 20, Batch: 800, Loss: 0.0154
+[02:51:56] {train_network.py:197} INFO - Epoch: 20, Batch: 900, Loss: 0.0090
+[02:52:14] {train_network.py:197} INFO - Epoch: 20, Batch: 1000, Loss: 0.0175
+[02:52:32] {train_network.py:197} INFO - Epoch: 20, Batch: 1100, Loss: 0.0086
+[02:52:51] {train_network.py:197} INFO - Epoch: 20, Batch: 1200, Loss: 0.0084
+[02:53:09] {train_network.py:197} INFO - Epoch: 20, Batch: 1300, Loss: 0.0090
+[02:53:27] {train_network.py:197} INFO - Epoch: 20, Batch: 1400, Loss: 0.0136
+[02:53:46] {train_network.py:197} INFO - Epoch: 20, Batch: 1500, Loss: 0.0192
+[02:54:04] {train_network.py:197} INFO - Epoch: 20, Batch: 1600, Loss: 0.0119
+[02:54:23] {train_network.py:197} INFO - Epoch: 20, Batch: 1700, Loss: 0.0094
+[02:54:41] {train_network.py:197} INFO - Epoch: 20, Batch: 1800, Loss: 0.0114
+[02:54:59] {train_network.py:197} INFO - Epoch: 20, Batch: 1900, Loss: 0.0090
+[02:55:17] {train_network.py:197} INFO - Epoch: 20, Batch: 2000, Loss: 0.0081
+[02:55:36] {train_network.py:197} INFO - Epoch: 20, Batch: 2100, Loss: 0.0133
+[02:55:54] {train_network.py:197} INFO - Epoch: 20, Batch: 2200, Loss: 0.0067
+[02:56:13] {train_network.py:197} INFO - Epoch: 20, Batch: 2300, Loss: 0.0132
+[02:56:31] {train_network.py:197} INFO - Epoch: 20, Batch: 2400, Loss: 0.0097
+[02:56:49] {train_network.py:197} INFO - Epoch: 20, Batch: 2500, Loss: 0.0090
+[02:57:08] {train_network.py:197} INFO - Epoch: 20, Batch: 2600, Loss: 0.0090
+[02:57:26] {train_network.py:197} INFO - Epoch: 20, Batch: 2700, Loss: 0.0189
+[02:57:44] {train_network.py:197} INFO - Epoch: 20, Batch: 2800, Loss: 0.0094
+[02:58:03] {train_network.py:197} INFO - Epoch: 20, Batch: 2900, Loss: 0.0148
+[02:58:22] {train_network.py:197} INFO - Epoch: 20, Batch: 3000, Loss: 0.0108
+[02:58:40] {train_network.py:197} INFO - Epoch: 20, Batch: 3100, Loss: 0.0075
+[02:59:06] {train_network.py:395} INFO - Validating 0.25...
+[03:01:58] {train_network.py:398} INFO - 2464/2725 = 0.904220
+[03:01:58] {train_network.py:408} INFO - >>> save model: epoch_20_iou_0.9042
+[03:01:58] {train_network.py:372} INFO - Beginning Epoch 21, lr=0.001
+[03:02:18] {train_network.py:197} INFO - Epoch: 21, Batch: 100, Loss: 0.0136
+[03:02:35] {train_network.py:197} INFO - Epoch: 21, Batch: 200, Loss: 0.0123
+[03:02:52] {train_network.py:197} INFO - Epoch: 21, Batch: 300, Loss: 0.0116
+[03:03:09] {train_network.py:197} INFO - Epoch: 21, Batch: 400, Loss: 0.0097
+[03:03:27] {train_network.py:197} INFO - Epoch: 21, Batch: 500, Loss: 0.0105
+[03:03:45] {train_network.py:197} INFO - Epoch: 21, Batch: 600, Loss: 0.0125
+[03:04:03] {train_network.py:197} INFO - Epoch: 21, Batch: 700, Loss: 0.0085
+[03:04:22] {train_network.py:197} INFO - Epoch: 21, Batch: 800, Loss: 0.0105
+[03:04:41] {train_network.py:197} INFO - Epoch: 21, Batch: 900, Loss: 0.0070
+[03:04:59] {train_network.py:197} INFO - Epoch: 21, Batch: 1000, Loss: 0.0123
+[03:05:17] {train_network.py:197} INFO - Epoch: 21, Batch: 1100, Loss: 0.0162
+[03:05:35] {train_network.py:197} INFO - Epoch: 21, Batch: 1200, Loss: 0.0085
+[03:05:54] {train_network.py:197} INFO - Epoch: 21, Batch: 1300, Loss: 0.0207
+[03:06:13] {train_network.py:197} INFO - Epoch: 21, Batch: 1400, Loss: 0.0062
+[03:06:31] {train_network.py:197} INFO - Epoch: 21, Batch: 1500, Loss: 0.0124
+[03:06:49] {train_network.py:197} INFO - Epoch: 21, Batch: 1600, Loss: 0.0097
+[03:07:08] {train_network.py:197} INFO - Epoch: 21, Batch: 1700, Loss: 0.0108
+[03:07:26] {train_network.py:197} INFO - Epoch: 21, Batch: 1800, Loss: 0.0165
+[03:07:44] {train_network.py:197} INFO - Epoch: 21, Batch: 1900, Loss: 0.0065
+[03:08:02] {train_network.py:197} INFO - Epoch: 21, Batch: 2000, Loss: 0.0058
+[03:08:21] {train_network.py:197} INFO - Epoch: 21, Batch: 2100, Loss: 0.0092
+[03:08:40] {train_network.py:197} INFO - Epoch: 21, Batch: 2200, Loss: 0.0134
+[03:08:58] {train_network.py:197} INFO - Epoch: 21, Batch: 2300, Loss: 0.0108
+[03:09:16] {train_network.py:197} INFO - Epoch: 21, Batch: 2400, Loss: 0.0101
+[03:09:34] {train_network.py:197} INFO - Epoch: 21, Batch: 2500, Loss: 0.0113
+[03:09:53] {train_network.py:197} INFO - Epoch: 21, Batch: 2600, Loss: 0.0140
+[03:10:11] {train_network.py:197} INFO - Epoch: 21, Batch: 2700, Loss: 0.0085
+[03:10:29] {train_network.py:197} INFO - Epoch: 21, Batch: 2800, Loss: 0.0134
+[03:10:48] {train_network.py:197} INFO - Epoch: 21, Batch: 2900, Loss: 0.0082
+[03:11:06] {train_network.py:197} INFO - Epoch: 21, Batch: 3000, Loss: 0.0097
+[03:11:24] {train_network.py:197} INFO - Epoch: 21, Batch: 3100, Loss: 0.0123
+[03:11:51] {train_network.py:395} INFO - Validating 0.25...
+[03:14:40] {train_network.py:398} INFO - 2485/2725 = 0.911927
+[03:14:40] {train_network.py:408} INFO - >>> save model: epoch_21_iou_0.9119
+[03:14:40] {train_network.py:372} INFO - Beginning Epoch 22, lr=0.001
+[03:15:00] {train_network.py:197} INFO - Epoch: 22, Batch: 100, Loss: 0.0116
+[03:15:16] {train_network.py:197} INFO - Epoch: 22, Batch: 200, Loss: 0.0084
+[03:15:33] {train_network.py:197} INFO - Epoch: 22, Batch: 300, Loss: 0.0084
+[03:15:51] {train_network.py:197} INFO - Epoch: 22, Batch: 400, Loss: 0.0138
+[03:16:09] {train_network.py:197} INFO - Epoch: 22, Batch: 500, Loss: 0.0072
+[03:16:27] {train_network.py:197} INFO - Epoch: 22, Batch: 600, Loss: 0.0106
+[03:16:45] {train_network.py:197} INFO - Epoch: 22, Batch: 700, Loss: 0.0121
+[03:17:04] {train_network.py:197} INFO - Epoch: 22, Batch: 800, Loss: 0.0094
+[03:17:22] {train_network.py:197} INFO - Epoch: 22, Batch: 900, Loss: 0.0063
+[03:17:40] {train_network.py:197} INFO - Epoch: 22, Batch: 1000, Loss: 0.0133
+[03:17:58] {train_network.py:197} INFO - Epoch: 22, Batch: 1100, Loss: 0.0110
+[03:18:17] {train_network.py:197} INFO - Epoch: 22, Batch: 1200, Loss: 0.0080
+[03:18:36] {train_network.py:197} INFO - Epoch: 22, Batch: 1300, Loss: 0.0120
+[03:18:55] {train_network.py:197} INFO - Epoch: 22, Batch: 1400, Loss: 0.0130
+[03:19:13] {train_network.py:197} INFO - Epoch: 22, Batch: 1500, Loss: 0.0147
+[03:19:31] {train_network.py:197} INFO - Epoch: 22, Batch: 1600, Loss: 0.0079
+[03:19:49] {train_network.py:197} INFO - Epoch: 22, Batch: 1700, Loss: 0.0113
+[03:20:08] {train_network.py:197} INFO - Epoch: 22, Batch: 1800, Loss: 0.0105
+[03:20:27] {train_network.py:197} INFO - Epoch: 22, Batch: 1900, Loss: 0.0128
+[03:20:45] {train_network.py:197} INFO - Epoch: 22, Batch: 2000, Loss: 0.0186
+[03:21:03] {train_network.py:197} INFO - Epoch: 22, Batch: 2100, Loss: 0.0147
+[03:21:22] {train_network.py:197} INFO - Epoch: 22, Batch: 2200, Loss: 0.0066
+[03:21:40] {train_network.py:197} INFO - Epoch: 22, Batch: 2300, Loss: 0.0075
+[03:21:59] {train_network.py:197} INFO - Epoch: 22, Batch: 2400, Loss: 0.0083
+[03:22:16] {train_network.py:197} INFO - Epoch: 22, Batch: 2500, Loss: 0.0129
+[03:22:35] {train_network.py:197} INFO - Epoch: 22, Batch: 2600, Loss: 0.0107
+[03:22:53] {train_network.py:197} INFO - Epoch: 22, Batch: 2700, Loss: 0.0145
+[03:23:12] {train_network.py:197} INFO - Epoch: 22, Batch: 2800, Loss: 0.0124
+[03:23:30] {train_network.py:197} INFO - Epoch: 22, Batch: 2900, Loss: 0.0103
+[03:23:49] {train_network.py:197} INFO - Epoch: 22, Batch: 3000, Loss: 0.0181
+[03:24:06] {train_network.py:197} INFO - Epoch: 22, Batch: 3100, Loss: 0.0099
+[03:24:31] {train_network.py:395} INFO - Validating 0.25...
+[03:27:20] {train_network.py:398} INFO - 2490/2725 = 0.913761
+[03:27:20] {train_network.py:408} INFO - >>> save model: epoch_22_iou_0.9138
+[03:27:20] {train_network.py:372} INFO - Beginning Epoch 23, lr=0.001
+[03:27:40] {train_network.py:197} INFO - Epoch: 23, Batch: 100, Loss: 0.0082
+[03:27:57] {train_network.py:197} INFO - Epoch: 23, Batch: 200, Loss: 0.0127
+[03:28:13] {train_network.py:197} INFO - Epoch: 23, Batch: 300, Loss: 0.0148
+[03:28:30] {train_network.py:197} INFO - Epoch: 23, Batch: 400, Loss: 0.0123
+[03:28:48] {train_network.py:197} INFO - Epoch: 23, Batch: 500, Loss: 0.0175
+[03:29:06] {train_network.py:197} INFO - Epoch: 23, Batch: 600, Loss: 0.0090
+[03:29:24] {train_network.py:197} INFO - Epoch: 23, Batch: 700, Loss: 0.0091
+[03:29:43] {train_network.py:197} INFO - Epoch: 23, Batch: 800, Loss: 0.0113
+[03:30:02] {train_network.py:197} INFO - Epoch: 23, Batch: 900, Loss: 0.0117
+[03:30:20] {train_network.py:197} INFO - Epoch: 23, Batch: 1000, Loss: 0.0100
+[03:30:38] {train_network.py:197} INFO - Epoch: 23, Batch: 1100, Loss: 0.0109
+[03:30:57] {train_network.py:197} INFO - Epoch: 23, Batch: 1200, Loss: 0.0078
+[03:31:15] {train_network.py:197} INFO - Epoch: 23, Batch: 1300, Loss: 0.0072
+[03:31:33] {train_network.py:197} INFO - Epoch: 23, Batch: 1400, Loss: 0.0073
+[03:31:52] {train_network.py:197} INFO - Epoch: 23, Batch: 1500, Loss: 0.0099
+[03:32:10] {train_network.py:197} INFO - Epoch: 23, Batch: 1600, Loss: 0.0108
+[03:32:29] {train_network.py:197} INFO - Epoch: 23, Batch: 1700, Loss: 0.0073
+[03:32:47] {train_network.py:197} INFO - Epoch: 23, Batch: 1800, Loss: 0.0093
+[03:33:05] {train_network.py:197} INFO - Epoch: 23, Batch: 1900, Loss: 0.0103
+[03:33:23] {train_network.py:197} INFO - Epoch: 23, Batch: 2000, Loss: 0.0091
+[03:33:42] {train_network.py:197} INFO - Epoch: 23, Batch: 2100, Loss: 0.0167
+[03:34:00] {train_network.py:197} INFO - Epoch: 23, Batch: 2200, Loss: 0.0121
+[03:34:19] {train_network.py:197} INFO - Epoch: 23, Batch: 2300, Loss: 0.0074
+[03:34:37] {train_network.py:197} INFO - Epoch: 23, Batch: 2400, Loss: 0.0081
+[03:34:55] {train_network.py:197} INFO - Epoch: 23, Batch: 2500, Loss: 0.0108
+[03:35:13] {train_network.py:197} INFO - Epoch: 23, Batch: 2600, Loss: 0.0129
+[03:35:32] {train_network.py:197} INFO - Epoch: 23, Batch: 2700, Loss: 0.0107
+[03:35:50] {train_network.py:197} INFO - Epoch: 23, Batch: 2800, Loss: 0.0059
+[03:36:09] {train_network.py:197} INFO - Epoch: 23, Batch: 2900, Loss: 0.0082
+[03:36:27] {train_network.py:197} INFO - Epoch: 23, Batch: 3000, Loss: 0.0076
+[03:36:45] {train_network.py:197} INFO - Epoch: 23, Batch: 3100, Loss: 0.0083
+[03:37:11] {train_network.py:395} INFO - Validating 0.25...
+[03:40:02] {train_network.py:398} INFO - 2491/2725 = 0.914128
+[03:40:02] {train_network.py:408} INFO - >>> save model: epoch_23_iou_0.9141
+[03:40:02] {train_network.py:372} INFO - Beginning Epoch 24, lr=0.001
+[03:40:22] {train_network.py:197} INFO - Epoch: 24, Batch: 100, Loss: 0.0148
+[03:40:38] {train_network.py:197} INFO - Epoch: 24, Batch: 200, Loss: 0.0111
+[03:40:55] {train_network.py:197} INFO - Epoch: 24, Batch: 300, Loss: 0.0081
+[03:41:12] {train_network.py:197} INFO - Epoch: 24, Batch: 400, Loss: 0.0072
+[03:41:30] {train_network.py:197} INFO - Epoch: 24, Batch: 500, Loss: 0.0127
+[03:41:48] {train_network.py:197} INFO - Epoch: 24, Batch: 600, Loss: 0.0151
+[03:42:06] {train_network.py:197} INFO - Epoch: 24, Batch: 700, Loss: 0.0119
+[03:42:25] {train_network.py:197} INFO - Epoch: 24, Batch: 800, Loss: 0.0065
+[03:42:44] {train_network.py:197} INFO - Epoch: 24, Batch: 900, Loss: 0.0091
+[03:43:02] {train_network.py:197} INFO - Epoch: 24, Batch: 1000, Loss: 0.0136
+[03:43:20] {train_network.py:197} INFO - Epoch: 24, Batch: 1100, Loss: 0.0149
+[03:43:38] {train_network.py:197} INFO - Epoch: 24, Batch: 1200, Loss: 0.0114
+[03:43:57] {train_network.py:197} INFO - Epoch: 24, Batch: 1300, Loss: 0.0113
+[03:44:15] {train_network.py:197} INFO - Epoch: 24, Batch: 1400, Loss: 0.0067
+[03:44:33] {train_network.py:197} INFO - Epoch: 24, Batch: 1500, Loss: 0.0137
+[03:44:51] {train_network.py:197} INFO - Epoch: 24, Batch: 1600, Loss: 0.0097
+[03:45:10] {train_network.py:197} INFO - Epoch: 24, Batch: 1700, Loss: 0.0076
+[03:45:29] {train_network.py:197} INFO - Epoch: 24, Batch: 1800, Loss: 0.0096
+[03:45:47] {train_network.py:197} INFO - Epoch: 24, Batch: 1900, Loss: 0.0168
+[03:46:05] {train_network.py:197} INFO - Epoch: 24, Batch: 2000, Loss: 0.0087
+[03:46:24] {train_network.py:197} INFO - Epoch: 24, Batch: 2100, Loss: 0.0097
+[03:46:42] {train_network.py:197} INFO - Epoch: 24, Batch: 2200, Loss: 0.0092
+[03:47:00] {train_network.py:197} INFO - Epoch: 24, Batch: 2300, Loss: 0.0094
+[03:47:18] {train_network.py:197} INFO - Epoch: 24, Batch: 2400, Loss: 0.0103
+[03:47:36] {train_network.py:197} INFO - Epoch: 24, Batch: 2500, Loss: 0.0106
+[03:47:55] {train_network.py:197} INFO - Epoch: 24, Batch: 2600, Loss: 0.0064
+[03:48:13] {train_network.py:197} INFO - Epoch: 24, Batch: 2700, Loss: 0.0080
+[03:48:31] {train_network.py:197} INFO - Epoch: 24, Batch: 2800, Loss: 0.0104
+[03:48:50] {train_network.py:197} INFO - Epoch: 24, Batch: 2900, Loss: 0.0120
+[03:49:08] {train_network.py:197} INFO - Epoch: 24, Batch: 3000, Loss: 0.0079
+[03:49:26] {train_network.py:197} INFO - Epoch: 24, Batch: 3100, Loss: 0.0099
+[03:49:52] {train_network.py:395} INFO - Validating 0.25...
+[03:52:44] {train_network.py:398} INFO - 2449/2725 = 0.898716
+[03:52:44] {train_network.py:372} INFO - Beginning Epoch 25, lr=0.001
+[03:53:04] {train_network.py:197} INFO - Epoch: 25, Batch: 100, Loss: 0.0072
+[03:53:20] {train_network.py:197} INFO - Epoch: 25, Batch: 200, Loss: 0.0085
+[03:53:37] {train_network.py:197} INFO - Epoch: 25, Batch: 300, Loss: 0.0081
+[03:53:54] {train_network.py:197} INFO - Epoch: 25, Batch: 400, Loss: 0.0068
+[03:54:12] {train_network.py:197} INFO - Epoch: 25, Batch: 500, Loss: 0.0119
+[03:54:30] {train_network.py:197} INFO - Epoch: 25, Batch: 600, Loss: 0.0123
+[03:54:48] {train_network.py:197} INFO - Epoch: 25, Batch: 700, Loss: 0.0083
+[03:55:07] {train_network.py:197} INFO - Epoch: 25, Batch: 800, Loss: 0.0108
+[03:55:26] {train_network.py:197} INFO - Epoch: 25, Batch: 900, Loss: 0.0071
+[03:55:44] {train_network.py:197} INFO - Epoch: 25, Batch: 1000, Loss: 0.0090
+[03:56:02] {train_network.py:197} INFO - Epoch: 25, Batch: 1100, Loss: 0.0169
+[03:56:21] {train_network.py:197} INFO - Epoch: 25, Batch: 1200, Loss: 0.0145
+[03:56:39] {train_network.py:197} INFO - Epoch: 25, Batch: 1300, Loss: 0.0143
+[03:56:58] {train_network.py:197} INFO - Epoch: 25, Batch: 1400, Loss: 0.0097
+[03:57:16] {train_network.py:197} INFO - Epoch: 25, Batch: 1500, Loss: 0.0073
+[03:57:34] {train_network.py:197} INFO - Epoch: 25, Batch: 1600, Loss: 0.0065
+[03:57:53] {train_network.py:197} INFO - Epoch: 25, Batch: 1700, Loss: 0.0165
+[03:58:11] {train_network.py:197} INFO - Epoch: 25, Batch: 1800, Loss: 0.0073
+[03:58:30] {train_network.py:197} INFO - Epoch: 25, Batch: 1900, Loss: 0.0082
+[03:58:48] {train_network.py:197} INFO - Epoch: 25, Batch: 2000, Loss: 0.0082
+[03:59:06] {train_network.py:197} INFO - Epoch: 25, Batch: 2100, Loss: 0.0096
+[03:59:25] {train_network.py:197} INFO - Epoch: 25, Batch: 2200, Loss: 0.0086
+[03:59:43] {train_network.py:197} INFO - Epoch: 25, Batch: 2300, Loss: 0.0071
+[04:00:01] {train_network.py:197} INFO - Epoch: 25, Batch: 2400, Loss: 0.0092
+[04:00:21] {train_network.py:197} INFO - Epoch: 25, Batch: 2500, Loss: 0.0099
+[04:00:39] {train_network.py:197} INFO - Epoch: 25, Batch: 2600, Loss: 0.0102
+[04:00:57] {train_network.py:197} INFO - Epoch: 25, Batch: 2700, Loss: 0.0103
+[04:01:15] {train_network.py:197} INFO - Epoch: 25, Batch: 2800, Loss: 0.0084
+[04:01:34] {train_network.py:197} INFO - Epoch: 25, Batch: 2900, Loss: 0.0108
+[04:01:52] {train_network.py:197} INFO - Epoch: 25, Batch: 3000, Loss: 0.0124
+[04:02:10] {train_network.py:197} INFO - Epoch: 25, Batch: 3100, Loss: 0.0098
+[04:02:37] {train_network.py:395} INFO - Validating 0.25...
+[04:05:28] {train_network.py:398} INFO - 2484/2725 = 0.911560
+[04:05:28] {train_network.py:372} INFO - Beginning Epoch 26, lr=0.001
+[04:05:48] {train_network.py:197} INFO - Epoch: 26, Batch: 100, Loss: 0.0069
+[04:06:05] {train_network.py:197} INFO - Epoch: 26, Batch: 200, Loss: 0.0106
+[04:06:22] {train_network.py:197} INFO - Epoch: 26, Batch: 300, Loss: 0.0088
+[04:06:39] {train_network.py:197} INFO - Epoch: 26, Batch: 400, Loss: 0.0100
+[04:06:57] {train_network.py:197} INFO - Epoch: 26, Batch: 500, Loss: 0.0101
+[04:07:14] {train_network.py:197} INFO - Epoch: 26, Batch: 600, Loss: 0.0116
+[04:07:33] {train_network.py:197} INFO - Epoch: 26, Batch: 700, Loss: 0.0124
+[04:07:51] {train_network.py:197} INFO - Epoch: 26, Batch: 800, Loss: 0.0119
+[04:08:10] {train_network.py:197} INFO - Epoch: 26, Batch: 900, Loss: 0.0137
+[04:08:28] {train_network.py:197} INFO - Epoch: 26, Batch: 1000, Loss: 0.0079
+[04:08:46] {train_network.py:197} INFO - Epoch: 26, Batch: 1100, Loss: 0.0159
+[04:09:05] {train_network.py:197} INFO - Epoch: 26, Batch: 1200, Loss: 0.0070
+[04:09:23] {train_network.py:197} INFO - Epoch: 26, Batch: 1300, Loss: 0.0090
+[04:09:42] {train_network.py:197} INFO - Epoch: 26, Batch: 1400, Loss: 0.0123
+[04:10:00] {train_network.py:197} INFO - Epoch: 26, Batch: 1500, Loss: 0.0118
+[04:10:18] {train_network.py:197} INFO - Epoch: 26, Batch: 1600, Loss: 0.0107
+[04:10:37] {train_network.py:197} INFO - Epoch: 26, Batch: 1700, Loss: 0.0131
+[04:10:55] {train_network.py:197} INFO - Epoch: 26, Batch: 1800, Loss: 0.0160
+[04:11:14] {train_network.py:197} INFO - Epoch: 26, Batch: 1900, Loss: 0.0105
+[04:11:32] {train_network.py:197} INFO - Epoch: 26, Batch: 2000, Loss: 0.0109
+[04:11:50] {train_network.py:197} INFO - Epoch: 26, Batch: 2100, Loss: 0.0069
+[04:12:08] {train_network.py:197} INFO - Epoch: 26, Batch: 2200, Loss: 0.0061
+[04:12:26] {train_network.py:197} INFO - Epoch: 26, Batch: 2300, Loss: 0.0084
+[04:12:46] {train_network.py:197} INFO - Epoch: 26, Batch: 2400, Loss: 0.0114
+[04:13:04] {train_network.py:197} INFO - Epoch: 26, Batch: 2500, Loss: 0.0084
+[04:13:22] {train_network.py:197} INFO - Epoch: 26, Batch: 2600, Loss: 0.0109
+[04:13:40] {train_network.py:197} INFO - Epoch: 26, Batch: 2700, Loss: 0.0062
+[04:13:59] {train_network.py:197} INFO - Epoch: 26, Batch: 2800, Loss: 0.0125
+[04:14:17] {train_network.py:197} INFO - Epoch: 26, Batch: 2900, Loss: 0.0137
+[04:14:35] {train_network.py:197} INFO - Epoch: 26, Batch: 3000, Loss: 0.0127
+[04:14:53] {train_network.py:197} INFO - Epoch: 26, Batch: 3100, Loss: 0.0073
+[04:15:19] {train_network.py:395} INFO - Validating 0.25...
+[04:18:08] {train_network.py:398} INFO - 2440/2725 = 0.895413
+[04:18:08] {train_network.py:372} INFO - Beginning Epoch 27, lr=0.001
+[04:18:27] {train_network.py:197} INFO - Epoch: 27, Batch: 100, Loss: 0.0102
+[04:18:44] {train_network.py:197} INFO - Epoch: 27, Batch: 200, Loss: 0.0092
+[04:19:01] {train_network.py:197} INFO - Epoch: 27, Batch: 300, Loss: 0.0107
+[04:19:18] {train_network.py:197} INFO - Epoch: 27, Batch: 400, Loss: 0.0100
+[04:19:36] {train_network.py:197} INFO - Epoch: 27, Batch: 500, Loss: 0.0096
+[04:19:54] {train_network.py:197} INFO - Epoch: 27, Batch: 600, Loss: 0.0080
+[04:20:12] {train_network.py:197} INFO - Epoch: 27, Batch: 700, Loss: 0.0062
+[04:20:31] {train_network.py:197} INFO - Epoch: 27, Batch: 800, Loss: 0.0171
+[04:20:49] {train_network.py:197} INFO - Epoch: 27, Batch: 900, Loss: 0.0084
+[04:21:08] {train_network.py:197} INFO - Epoch: 27, Batch: 1000, Loss: 0.0085
+[04:21:26] {train_network.py:197} INFO - Epoch: 27, Batch: 1100, Loss: 0.0112
+[04:21:46] {train_network.py:197} INFO - Epoch: 27, Batch: 1200, Loss: 0.0107
+[04:22:06] {train_network.py:197} INFO - Epoch: 27, Batch: 1300, Loss: 0.0109
+[04:22:24] {train_network.py:197} INFO - Epoch: 27, Batch: 1400, Loss: 0.0106
+[04:22:42] {train_network.py:197} INFO - Epoch: 27, Batch: 1500, Loss: 0.0165
+[04:23:01] {train_network.py:197} INFO - Epoch: 27, Batch: 1600, Loss: 0.0089
+[04:23:19] {train_network.py:197} INFO - Epoch: 27, Batch: 1700, Loss: 0.0107
+[04:23:37] {train_network.py:197} INFO - Epoch: 27, Batch: 1800, Loss: 0.0074
+[04:23:56] {train_network.py:197} INFO - Epoch: 27, Batch: 1900, Loss: 0.0120
+[04:24:14] {train_network.py:197} INFO - Epoch: 27, Batch: 2000, Loss: 0.0089
+[04:24:32] {train_network.py:197} INFO - Epoch: 27, Batch: 2100, Loss: 0.0076
+[04:24:51] {train_network.py:197} INFO - Epoch: 27, Batch: 2200, Loss: 0.0104
+[04:25:08] {train_network.py:197} INFO - Epoch: 27, Batch: 2300, Loss: 0.0140
+[04:25:27] {train_network.py:197} INFO - Epoch: 27, Batch: 2400, Loss: 0.0130
+[04:25:45] {train_network.py:197} INFO - Epoch: 27, Batch: 2500, Loss: 0.0074
+[04:26:04] {train_network.py:197} INFO - Epoch: 27, Batch: 2600, Loss: 0.0090
+[04:26:22] {train_network.py:197} INFO - Epoch: 27, Batch: 2700, Loss: 0.0084
+[04:26:40] {train_network.py:197} INFO - Epoch: 27, Batch: 2800, Loss: 0.0059
+[04:26:59] {train_network.py:197} INFO - Epoch: 27, Batch: 2900, Loss: 0.0089
+[04:27:17] {train_network.py:197} INFO - Epoch: 27, Batch: 3000, Loss: 0.0127
+[04:27:36] {train_network.py:197} INFO - Epoch: 27, Batch: 3100, Loss: 0.0117
+[04:28:02] {train_network.py:395} INFO - Validating 0.25...
+[04:30:53] {train_network.py:398} INFO - 2521/2725 = 0.925138
+[04:30:53] {train_network.py:408} INFO - >>> save model: epoch_27_iou_0.9251
+[04:30:53] {train_network.py:372} INFO - Beginning Epoch 28, lr=0.001
+[04:31:13] {train_network.py:197} INFO - Epoch: 28, Batch: 100, Loss: 0.0084
+[04:31:30] {train_network.py:197} INFO - Epoch: 28, Batch: 200, Loss: 0.0111
+[04:31:47] {train_network.py:197} INFO - Epoch: 28, Batch: 300, Loss: 0.0163
+[04:32:04] {train_network.py:197} INFO - Epoch: 28, Batch: 400, Loss: 0.0042
+[04:32:22] {train_network.py:197} INFO - Epoch: 28, Batch: 500, Loss: 0.0117
+[04:32:40] {train_network.py:197} INFO - Epoch: 28, Batch: 600, Loss: 0.0119
+[04:32:59] {train_network.py:197} INFO - Epoch: 28, Batch: 700, Loss: 0.0175
+[04:33:17] {train_network.py:197} INFO - Epoch: 28, Batch: 800, Loss: 0.0105
+[04:33:35] {train_network.py:197} INFO - Epoch: 28, Batch: 900, Loss: 0.0065
+[04:33:54] {train_network.py:197} INFO - Epoch: 28, Batch: 1000, Loss: 0.0080
+[04:34:12] {train_network.py:197} INFO - Epoch: 28, Batch: 1100, Loss: 0.0099
+[04:34:30] {train_network.py:197} INFO - Epoch: 28, Batch: 1200, Loss: 0.0109
+[04:34:49] {train_network.py:197} INFO - Epoch: 28, Batch: 1300, Loss: 0.0123
+[04:35:08] {train_network.py:197} INFO - Epoch: 28, Batch: 1400, Loss: 0.0074
+[04:35:26] {train_network.py:197} INFO - Epoch: 28, Batch: 1500, Loss: 0.0112
+[04:35:44] {train_network.py:197} INFO - Epoch: 28, Batch: 1600, Loss: 0.0119
+[04:36:03] {train_network.py:197} INFO - Epoch: 28, Batch: 1700, Loss: 0.0089
+[04:36:21] {train_network.py:197} INFO - Epoch: 28, Batch: 1800, Loss: 0.0112
+[04:36:39] {train_network.py:197} INFO - Epoch: 28, Batch: 1900, Loss: 0.0107
+[04:36:57] {train_network.py:197} INFO - Epoch: 28, Batch: 2000, Loss: 0.0163
+[04:37:16] {train_network.py:197} INFO - Epoch: 28, Batch: 2100, Loss: 0.0090
+[04:37:35] {train_network.py:197} INFO - Epoch: 28, Batch: 2200, Loss: 0.0082
+[04:37:53] {train_network.py:197} INFO - Epoch: 28, Batch: 2300, Loss: 0.0058
+[04:38:11] {train_network.py:197} INFO - Epoch: 28, Batch: 2400, Loss: 0.0095
+[04:38:30] {train_network.py:197} INFO - Epoch: 28, Batch: 2500, Loss: 0.0113
+[04:38:48] {train_network.py:197} INFO - Epoch: 28, Batch: 2600, Loss: 0.0114
+[04:39:06] {train_network.py:197} INFO - Epoch: 28, Batch: 2700, Loss: 0.0088
+[04:39:24] {train_network.py:197} INFO - Epoch: 28, Batch: 2800, Loss: 0.0101
+[04:39:43] {train_network.py:197} INFO - Epoch: 28, Batch: 2900, Loss: 0.0099
+[04:40:01] {train_network.py:197} INFO - Epoch: 28, Batch: 3000, Loss: 0.0118
+[04:40:20] {train_network.py:197} INFO - Epoch: 28, Batch: 3100, Loss: 0.0107
+[04:40:46] {train_network.py:395} INFO - Validating 0.25...
+[04:43:35] {train_network.py:398} INFO - 2494/2725 = 0.915229
+[04:43:35] {train_network.py:372} INFO - Beginning Epoch 29, lr=0.001
+[04:43:55] {train_network.py:197} INFO - Epoch: 29, Batch: 100, Loss: 0.0111
+[04:44:11] {train_network.py:197} INFO - Epoch: 29, Batch: 200, Loss: 0.0049
+[04:44:28] {train_network.py:197} INFO - Epoch: 29, Batch: 300, Loss: 0.0069
+[04:44:46] {train_network.py:197} INFO - Epoch: 29, Batch: 400, Loss: 0.0201
+[04:45:03] {train_network.py:197} INFO - Epoch: 29, Batch: 500, Loss: 0.0108
+[04:45:22] {train_network.py:197} INFO - Epoch: 29, Batch: 600, Loss: 0.0120
+[04:45:40] {train_network.py:197} INFO - Epoch: 29, Batch: 700, Loss: 0.0118
+[04:45:58] {train_network.py:197} INFO - Epoch: 29, Batch: 800, Loss: 0.0066
+[04:46:17] {train_network.py:197} INFO - Epoch: 29, Batch: 900, Loss: 0.0085
+[04:46:35] {train_network.py:197} INFO - Epoch: 29, Batch: 1000, Loss: 0.0113
+[04:46:54] {train_network.py:197} INFO - Epoch: 29, Batch: 1100, Loss: 0.0093
+[04:47:12] {train_network.py:197} INFO - Epoch: 29, Batch: 1200, Loss: 0.0118
+[04:47:30] {train_network.py:197} INFO - Epoch: 29, Batch: 1300, Loss: 0.0082
+[04:47:49] {train_network.py:197} INFO - Epoch: 29, Batch: 1400, Loss: 0.0093
+[04:48:08] {train_network.py:197} INFO - Epoch: 29, Batch: 1500, Loss: 0.0090
+[04:48:26] {train_network.py:197} INFO - Epoch: 29, Batch: 1600, Loss: 0.0112
+[04:48:45] {train_network.py:197} INFO - Epoch: 29, Batch: 1700, Loss: 0.0084
+[04:49:03] {train_network.py:197} INFO - Epoch: 29, Batch: 1800, Loss: 0.0089
+[04:49:22] {train_network.py:197} INFO - Epoch: 29, Batch: 1900, Loss: 0.0105
+[04:49:40] {train_network.py:197} INFO - Epoch: 29, Batch: 2000, Loss: 0.0067
+[04:49:58] {train_network.py:197} INFO - Epoch: 29, Batch: 2100, Loss: 0.0081
+[04:50:16] {train_network.py:197} INFO - Epoch: 29, Batch: 2200, Loss: 0.0091
+[04:50:35] {train_network.py:197} INFO - Epoch: 29, Batch: 2300, Loss: 0.0094
+[04:50:53] {train_network.py:197} INFO - Epoch: 29, Batch: 2400, Loss: 0.0106
+[04:51:11] {train_network.py:197} INFO - Epoch: 29, Batch: 2500, Loss: 0.0160
+[04:51:30] {train_network.py:197} INFO - Epoch: 29, Batch: 2600, Loss: 0.0107
+[04:51:48] {train_network.py:197} INFO - Epoch: 29, Batch: 2700, Loss: 0.0048
+[04:52:06] {train_network.py:197} INFO - Epoch: 29, Batch: 2800, Loss: 0.0141
+[04:52:25] {train_network.py:197} INFO - Epoch: 29, Batch: 2900, Loss: 0.0103
+[04:52:43] {train_network.py:197} INFO - Epoch: 29, Batch: 3000, Loss: 0.0103
+[04:53:02] {train_network.py:197} INFO - Epoch: 29, Batch: 3100, Loss: 0.0120
+[04:53:28] {train_network.py:395} INFO - Validating 0.25...
+[04:56:20] {train_network.py:398} INFO - 2445/2725 = 0.897248
+[04:56:20] {train_network.py:372} INFO - Beginning Epoch 30, lr=0.001
+[04:56:39] {train_network.py:197} INFO - Epoch: 30, Batch: 100, Loss: 0.0086
+[04:56:56] {train_network.py:197} INFO - Epoch: 30, Batch: 200, Loss: 0.0103
+[04:57:13] {train_network.py:197} INFO - Epoch: 30, Batch: 300, Loss: 0.0119
+[04:57:30] {train_network.py:197} INFO - Epoch: 30, Batch: 400, Loss: 0.0076
+[04:57:48] {train_network.py:197} INFO - Epoch: 30, Batch: 500, Loss: 0.0123
+[04:58:06] {train_network.py:197} INFO - Epoch: 30, Batch: 600, Loss: 0.0160
+[04:58:24] {train_network.py:197} INFO - Epoch: 30, Batch: 700, Loss: 0.0097
+[04:58:42] {train_network.py:197} INFO - Epoch: 30, Batch: 800, Loss: 0.0088
+[04:59:01] {train_network.py:197} INFO - Epoch: 30, Batch: 900, Loss: 0.0152
+[04:59:19] {train_network.py:197} INFO - Epoch: 30, Batch: 1000, Loss: 0.0087
+[04:59:38] {train_network.py:197} INFO - Epoch: 30, Batch: 1100, Loss: 0.0055
+[04:59:56] {train_network.py:197} INFO - Epoch: 30, Batch: 1200, Loss: 0.0119
+[05:00:16] {train_network.py:197} INFO - Epoch: 30, Batch: 1300, Loss: 0.0086
+[05:00:34] {train_network.py:197} INFO - Epoch: 30, Batch: 1400, Loss: 0.0080
+[05:00:52] {train_network.py:197} INFO - Epoch: 30, Batch: 1500, Loss: 0.0129
+[05:01:10] {train_network.py:197} INFO - Epoch: 30, Batch: 1600, Loss: 0.0103
+[05:01:29] {train_network.py:197} INFO - Epoch: 30, Batch: 1700, Loss: 0.0156
+[05:01:48] {train_network.py:197} INFO - Epoch: 30, Batch: 1800, Loss: 0.0115
+[05:02:06] {train_network.py:197} INFO - Epoch: 30, Batch: 1900, Loss: 0.0119
+[05:02:24] {train_network.py:197} INFO - Epoch: 30, Batch: 2000, Loss: 0.0100
+[05:02:43] {train_network.py:197} INFO - Epoch: 30, Batch: 2100, Loss: 0.0156
+[05:03:01] {train_network.py:197} INFO - Epoch: 30, Batch: 2200, Loss: 0.0115
+[05:03:19] {train_network.py:197} INFO - Epoch: 30, Batch: 2300, Loss: 0.0088
+[05:03:37] {train_network.py:197} INFO - Epoch: 30, Batch: 2400, Loss: 0.0170
+[05:03:56] {train_network.py:197} INFO - Epoch: 30, Batch: 2500, Loss: 0.0118
+[05:04:14] {train_network.py:197} INFO - Epoch: 30, Batch: 2600, Loss: 0.0084
+[05:04:32] {train_network.py:197} INFO - Epoch: 30, Batch: 2700, Loss: 0.0098
+[05:04:51] {train_network.py:197} INFO - Epoch: 30, Batch: 2800, Loss: 0.0125
+[05:05:09] {train_network.py:197} INFO - Epoch: 30, Batch: 2900, Loss: 0.0067
+[05:05:27] {train_network.py:197} INFO - Epoch: 30, Batch: 3000, Loss: 0.0085
+[05:05:45] {train_network.py:197} INFO - Epoch: 30, Batch: 3100, Loss: 0.0073
+[05:06:12] {train_network.py:395} INFO - Validating 0.25...
+[05:09:02] {train_network.py:398} INFO - 2471/2725 = 0.906789
+[05:09:02] {train_network.py:408} INFO - >>> save model: epoch_30_iou_0.9068
+[05:09:02] {train_network.py:372} INFO - Beginning Epoch 31, lr=0.001
+[05:09:22] {train_network.py:197} INFO - Epoch: 31, Batch: 100, Loss: 0.0119
+[05:09:39] {train_network.py:197} INFO - Epoch: 31, Batch: 200, Loss: 0.0165
+[05:09:56] {train_network.py:197} INFO - Epoch: 31, Batch: 300, Loss: 0.0072
+[05:10:13] {train_network.py:197} INFO - Epoch: 31, Batch: 400, Loss: 0.0122
+[05:10:31] {train_network.py:197} INFO - Epoch: 31, Batch: 500, Loss: 0.0071
+[05:10:49] {train_network.py:197} INFO - Epoch: 31, Batch: 600, Loss: 0.0063
+[05:11:07] {train_network.py:197} INFO - Epoch: 31, Batch: 700, Loss: 0.0095
+[05:11:25] {train_network.py:197} INFO - Epoch: 31, Batch: 800, Loss: 0.0133
+[05:11:44] {train_network.py:197} INFO - Epoch: 31, Batch: 900, Loss: 0.0117
+[05:12:02] {train_network.py:197} INFO - Epoch: 31, Batch: 1000, Loss: 0.0054
+[05:12:21] {train_network.py:197} INFO - Epoch: 31, Batch: 1100, Loss: 0.0183
+[05:12:39] {train_network.py:197} INFO - Epoch: 31, Batch: 1200, Loss: 0.0139
+[05:12:58] {train_network.py:197} INFO - Epoch: 31, Batch: 1300, Loss: 0.0121
+[05:13:16] {train_network.py:197} INFO - Epoch: 31, Batch: 1400, Loss: 0.0097
+[05:13:34] {train_network.py:197} INFO - Epoch: 31, Batch: 1500, Loss: 0.0101
+[05:13:52] {train_network.py:197} INFO - Epoch: 31, Batch: 1600, Loss: 0.0066
+[05:14:11] {train_network.py:197} INFO - Epoch: 31, Batch: 1700, Loss: 0.0121
+[05:14:29] {train_network.py:197} INFO - Epoch: 31, Batch: 1800, Loss: 0.0118
+[05:14:47] {train_network.py:197} INFO - Epoch: 31, Batch: 1900, Loss: 0.0080
+[05:15:06] {train_network.py:197} INFO - Epoch: 31, Batch: 2000, Loss: 0.0095
+[05:15:24] {train_network.py:197} INFO - Epoch: 31, Batch: 2100, Loss: 0.0173
+[05:15:43] {train_network.py:197} INFO - Epoch: 31, Batch: 2200, Loss: 0.0058
+[05:16:01] {train_network.py:197} INFO - Epoch: 31, Batch: 2300, Loss: 0.0127
+[05:16:19] {train_network.py:197} INFO - Epoch: 31, Batch: 2400, Loss: 0.0141
+[05:16:38] {train_network.py:197} INFO - Epoch: 31, Batch: 2500, Loss: 0.0123
+[05:16:56] {train_network.py:197} INFO - Epoch: 31, Batch: 2600, Loss: 0.0070
+[05:17:14] {train_network.py:197} INFO - Epoch: 31, Batch: 2700, Loss: 0.0106
+[05:17:32] {train_network.py:197} INFO - Epoch: 31, Batch: 2800, Loss: 0.0083
+[05:17:51] {train_network.py:197} INFO - Epoch: 31, Batch: 2900, Loss: 0.0094
+[05:18:10] {train_network.py:197} INFO - Epoch: 31, Batch: 3000, Loss: 0.0165
+[05:18:28] {train_network.py:197} INFO - Epoch: 31, Batch: 3100, Loss: 0.0165
+[05:18:54] {train_network.py:395} INFO - Validating 0.25...
+[05:21:43] {train_network.py:398} INFO - 2493/2725 = 0.914862
+[05:21:43] {train_network.py:408} INFO - >>> save model: epoch_31_iou_0.9149
+[05:21:43] {train_network.py:372} INFO - Beginning Epoch 32, lr=0.001
+[05:22:03] {train_network.py:197} INFO - Epoch: 32, Batch: 100, Loss: 0.0105
+[05:22:19] {train_network.py:197} INFO - Epoch: 32, Batch: 200, Loss: 0.0134
+[05:22:36] {train_network.py:197} INFO - Epoch: 32, Batch: 300, Loss: 0.0085
+[05:22:53] {train_network.py:197} INFO - Epoch: 32, Batch: 400, Loss: 0.0132
+[05:23:12] {train_network.py:197} INFO - Epoch: 32, Batch: 500, Loss: 0.0106
+[05:23:30] {train_network.py:197} INFO - Epoch: 32, Batch: 600, Loss: 0.0130
+[05:23:48] {train_network.py:197} INFO - Epoch: 32, Batch: 700, Loss: 0.0070
+[05:24:06] {train_network.py:197} INFO - Epoch: 32, Batch: 800, Loss: 0.0092
+[05:24:25] {train_network.py:197} INFO - Epoch: 32, Batch: 900, Loss: 0.0093
+[05:24:43] {train_network.py:197} INFO - Epoch: 32, Batch: 1000, Loss: 0.0104
+[05:25:01] {train_network.py:197} INFO - Epoch: 32, Batch: 1100, Loss: 0.0103
+[05:25:20] {train_network.py:197} INFO - Epoch: 32, Batch: 1200, Loss: 0.0159
+[05:25:38] {train_network.py:197} INFO - Epoch: 32, Batch: 1300, Loss: 0.0082
+[05:25:57] {train_network.py:197} INFO - Epoch: 32, Batch: 1400, Loss: 0.0109
+[05:26:15] {train_network.py:197} INFO - Epoch: 32, Batch: 1500, Loss: 0.0094
+[05:26:33] {train_network.py:197} INFO - Epoch: 32, Batch: 1600, Loss: 0.0090
+[05:26:51] {train_network.py:197} INFO - Epoch: 32, Batch: 1700, Loss: 0.0128
+[05:27:10] {train_network.py:197} INFO - Epoch: 32, Batch: 1800, Loss: 0.0124
+[05:27:28] {train_network.py:197} INFO - Epoch: 32, Batch: 1900, Loss: 0.0070
+[05:27:47] {train_network.py:197} INFO - Epoch: 32, Batch: 2000, Loss: 0.0093
+[05:28:05] {train_network.py:197} INFO - Epoch: 32, Batch: 2100, Loss: 0.0077
+[05:28:24] {train_network.py:197} INFO - Epoch: 32, Batch: 2200, Loss: 0.0079
+[05:28:42] {train_network.py:197} INFO - Epoch: 32, Batch: 2300, Loss: 0.0120
+[05:29:00] {train_network.py:197} INFO - Epoch: 32, Batch: 2400, Loss: 0.0071
+[05:29:18] {train_network.py:197} INFO - Epoch: 32, Batch: 2500, Loss: 0.0091
+[05:29:37] {train_network.py:197} INFO - Epoch: 32, Batch: 2600, Loss: 0.0079
+[05:29:56] {train_network.py:197} INFO - Epoch: 32, Batch: 2700, Loss: 0.0070
+[05:30:14] {train_network.py:197} INFO - Epoch: 32, Batch: 2800, Loss: 0.0178
+[05:30:32] {train_network.py:197} INFO - Epoch: 32, Batch: 2900, Loss: 0.0101
+[05:30:51] {train_network.py:197} INFO - Epoch: 32, Batch: 3000, Loss: 0.0162
+[05:31:09] {train_network.py:197} INFO - Epoch: 32, Batch: 3100, Loss: 0.0067
+[05:31:35] {train_network.py:395} INFO - Validating 0.25...
+[05:34:24] {train_network.py:398} INFO - 2472/2725 = 0.907156
+[05:34:24] {train_network.py:372} INFO - Beginning Epoch 33, lr=0.001
+[05:34:43] {train_network.py:197} INFO - Epoch: 33, Batch: 100, Loss: 0.0112
+[05:35:00] {train_network.py:197} INFO - Epoch: 33, Batch: 200, Loss: 0.0113
+[05:35:17] {train_network.py:197} INFO - Epoch: 33, Batch: 300, Loss: 0.0064
+[05:35:34] {train_network.py:197} INFO - Epoch: 33, Batch: 400, Loss: 0.0108
+[05:35:52] {train_network.py:197} INFO - Epoch: 33, Batch: 500, Loss: 0.0183
+[05:36:10] {train_network.py:197} INFO - Epoch: 33, Batch: 600, Loss: 0.0067
+[05:36:29] {train_network.py:197} INFO - Epoch: 33, Batch: 700, Loss: 0.0069
+[05:36:47] {train_network.py:197} INFO - Epoch: 33, Batch: 800, Loss: 0.0095
+[05:37:06] {train_network.py:197} INFO - Epoch: 33, Batch: 900, Loss: 0.0095
+[05:37:24] {train_network.py:197} INFO - Epoch: 33, Batch: 1000, Loss: 0.0101
+[05:37:43] {train_network.py:197} INFO - Epoch: 33, Batch: 1100, Loss: 0.0137
+[05:38:01] {train_network.py:197} INFO - Epoch: 33, Batch: 1200, Loss: 0.0071
+[05:38:19] {train_network.py:197} INFO - Epoch: 33, Batch: 1300, Loss: 0.0109
+[05:38:38] {train_network.py:197} INFO - Epoch: 33, Batch: 1400, Loss: 0.0121
+[05:38:56] {train_network.py:197} INFO - Epoch: 33, Batch: 1500, Loss: 0.0110
+[05:39:14] {train_network.py:197} INFO - Epoch: 33, Batch: 1600, Loss: 0.0116
+[05:39:33] {train_network.py:197} INFO - Epoch: 33, Batch: 1700, Loss: 0.0121
+[05:39:51] {train_network.py:197} INFO - Epoch: 33, Batch: 1800, Loss: 0.0098
+[05:40:09] {train_network.py:197} INFO - Epoch: 33, Batch: 1900, Loss: 0.0097
+[05:40:27] {train_network.py:197} INFO - Epoch: 33, Batch: 2000, Loss: 0.0065
+[05:40:46] {train_network.py:197} INFO - Epoch: 33, Batch: 2100, Loss: 0.0082
+[05:41:04] {train_network.py:197} INFO - Epoch: 33, Batch: 2200, Loss: 0.0098
+[05:41:22] {train_network.py:197} INFO - Epoch: 33, Batch: 2300, Loss: 0.0126
+[05:41:41] {train_network.py:197} INFO - Epoch: 33, Batch: 2400, Loss: 0.0146
+[05:42:00] {train_network.py:197} INFO - Epoch: 33, Batch: 2500, Loss: 0.0169
+[05:42:18] {train_network.py:197} INFO - Epoch: 33, Batch: 2600, Loss: 0.0086
+[05:42:37] {train_network.py:197} INFO - Epoch: 33, Batch: 2700, Loss: 0.0086
+[05:42:55] {train_network.py:197} INFO - Epoch: 33, Batch: 2800, Loss: 0.0102
+[05:43:13] {train_network.py:197} INFO - Epoch: 33, Batch: 2900, Loss: 0.0123
+[05:43:31] {train_network.py:197} INFO - Epoch: 33, Batch: 3000, Loss: 0.0078
+[05:43:49] {train_network.py:197} INFO - Epoch: 33, Batch: 3100, Loss: 0.0108
+[05:44:16] {train_network.py:395} INFO - Validating 0.25...
+[05:47:08] {train_network.py:398} INFO - 2466/2725 = 0.904954
+[05:47:08] {train_network.py:372} INFO - Beginning Epoch 34, lr=0.001
+[05:47:28] {train_network.py:197} INFO - Epoch: 34, Batch: 100, Loss: 0.0119
+[05:47:44] {train_network.py:197} INFO - Epoch: 34, Batch: 200, Loss: 0.0084
+[05:48:01] {train_network.py:197} INFO - Epoch: 34, Batch: 300, Loss: 0.0083
+[05:48:18] {train_network.py:197} INFO - Epoch: 34, Batch: 400, Loss: 0.0089
+[05:48:37] {train_network.py:197} INFO - Epoch: 34, Batch: 500, Loss: 0.0134
+[05:48:55] {train_network.py:197} INFO - Epoch: 34, Batch: 600, Loss: 0.0094
+[05:49:13] {train_network.py:197} INFO - Epoch: 34, Batch: 700, Loss: 0.0102
+[05:49:31] {train_network.py:197} INFO - Epoch: 34, Batch: 800, Loss: 0.0085
+[05:49:50] {train_network.py:197} INFO - Epoch: 34, Batch: 900, Loss: 0.0087
+[05:50:08] {train_network.py:197} INFO - Epoch: 34, Batch: 1000, Loss: 0.0097
+[05:50:27] {train_network.py:197} INFO - Epoch: 34, Batch: 1100, Loss: 0.0107
+[05:50:46] {train_network.py:197} INFO - Epoch: 34, Batch: 1200, Loss: 0.0115
+[05:51:04] {train_network.py:197} INFO - Epoch: 34, Batch: 1300, Loss: 0.0134
+[05:51:22] {train_network.py:197} INFO - Epoch: 34, Batch: 1400, Loss: 0.0090
+[05:51:41] {train_network.py:197} INFO - Epoch: 34, Batch: 1500, Loss: 0.0105
+[05:51:59] {train_network.py:197} INFO - Epoch: 34, Batch: 1600, Loss: 0.0103
+[05:52:18] {train_network.py:197} INFO - Epoch: 34, Batch: 1700, Loss: 0.0058
+[05:52:36] {train_network.py:197} INFO - Epoch: 34, Batch: 1800, Loss: 0.0081
+[05:52:54] {train_network.py:197} INFO - Epoch: 34, Batch: 1900, Loss: 0.0104
+[05:53:13] {train_network.py:197} INFO - Epoch: 34, Batch: 2000, Loss: 0.0117
+[05:53:31] {train_network.py:197} INFO - Epoch: 34, Batch: 2100, Loss: 0.0073
+[05:53:49] {train_network.py:197} INFO - Epoch: 34, Batch: 2200, Loss: 0.0077
+[05:54:07] {train_network.py:197} INFO - Epoch: 34, Batch: 2300, Loss: 0.0105
+[05:54:26] {train_network.py:197} INFO - Epoch: 34, Batch: 2400, Loss: 0.0090
+[05:54:44] {train_network.py:197} INFO - Epoch: 34, Batch: 2500, Loss: 0.0104
+[05:55:03] {train_network.py:197} INFO - Epoch: 34, Batch: 2600, Loss: 0.0130
+[05:55:21] {train_network.py:197} INFO - Epoch: 34, Batch: 2700, Loss: 0.0061
+[05:55:39] {train_network.py:197} INFO - Epoch: 34, Batch: 2800, Loss: 0.0091
+[05:55:58] {train_network.py:197} INFO - Epoch: 34, Batch: 2900, Loss: 0.0071
+[05:56:16] {train_network.py:197} INFO - Epoch: 34, Batch: 3000, Loss: 0.0123
+[05:56:34] {train_network.py:197} INFO - Epoch: 34, Batch: 3100, Loss: 0.0159
+[05:56:59] {train_network.py:395} INFO - Validating 0.25...
+[05:59:52] {train_network.py:398} INFO - 2494/2725 = 0.915229
+[05:59:52] {train_network.py:408} INFO - >>> save model: epoch_34_iou_0.9152
+[05:59:52] {train_network.py:372} INFO - Beginning Epoch 35, lr=0.001
+[06:00:11] {train_network.py:197} INFO - Epoch: 35, Batch: 100, Loss: 0.0096
+[06:00:28] {train_network.py:197} INFO - Epoch: 35, Batch: 200, Loss: 0.0161
+[06:00:45] {train_network.py:197} INFO - Epoch: 35, Batch: 300, Loss: 0.0121
+[06:01:02] {train_network.py:197} INFO - Epoch: 35, Batch: 400, Loss: 0.0142
+[06:01:20] {train_network.py:197} INFO - Epoch: 35, Batch: 500, Loss: 0.0175
+[06:01:39] {train_network.py:197} INFO - Epoch: 35, Batch: 600, Loss: 0.0123
+[06:01:58] {train_network.py:197} INFO - Epoch: 35, Batch: 700, Loss: 0.0106
+[06:02:17] {train_network.py:197} INFO - Epoch: 35, Batch: 800, Loss: 0.0071
+[06:02:37] {train_network.py:197} INFO - Epoch: 35, Batch: 900, Loss: 0.0063
+[06:02:56] {train_network.py:197} INFO - Epoch: 35, Batch: 1000, Loss: 0.0094
+[06:03:18] {train_network.py:197} INFO - Epoch: 35, Batch: 1100, Loss: 0.0069
+[06:03:44] {train_network.py:197} INFO - Epoch: 35, Batch: 1200, Loss: 0.0098
+[06:04:03] {train_network.py:197} INFO - Epoch: 35, Batch: 1300, Loss: 0.0164
+[06:04:22] {train_network.py:197} INFO - Epoch: 35, Batch: 1400, Loss: 0.0108
+[06:04:40] {train_network.py:197} INFO - Epoch: 35, Batch: 1500, Loss: 0.0093
+[06:04:58] {train_network.py:197} INFO - Epoch: 35, Batch: 1600, Loss: 0.0082
+[06:05:17] {train_network.py:197} INFO - Epoch: 35, Batch: 1700, Loss: 0.0119
+[06:05:35] {train_network.py:197} INFO - Epoch: 35, Batch: 1800, Loss: 0.0085
+[06:05:54] {train_network.py:197} INFO - Epoch: 35, Batch: 1900, Loss: 0.0105
+[06:06:12] {train_network.py:197} INFO - Epoch: 35, Batch: 2000, Loss: 0.0096
+[06:06:31] {train_network.py:197} INFO - Epoch: 35, Batch: 2100, Loss: 0.0100
+[06:06:49] {train_network.py:197} INFO - Epoch: 35, Batch: 2200, Loss: 0.0099
+[06:07:07] {train_network.py:197} INFO - Epoch: 35, Batch: 2300, Loss: 0.0143
+[06:07:26] {train_network.py:197} INFO - Epoch: 35, Batch: 2400, Loss: 0.0171
+[06:07:44] {train_network.py:197} INFO - Epoch: 35, Batch: 2500, Loss: 0.0099
+[06:08:03] {train_network.py:197} INFO - Epoch: 35, Batch: 2600, Loss: 0.0077
+[06:08:21] {train_network.py:197} INFO - Epoch: 35, Batch: 2700, Loss: 0.0090
+[06:08:39] {train_network.py:197} INFO - Epoch: 35, Batch: 2800, Loss: 0.0086
+[06:08:58] {train_network.py:197} INFO - Epoch: 35, Batch: 2900, Loss: 0.0104
+[06:09:16] {train_network.py:197} INFO - Epoch: 35, Batch: 3000, Loss: 0.0094
+[06:09:34] {train_network.py:197} INFO - Epoch: 35, Batch: 3100, Loss: 0.0113
+[06:10:00] {train_network.py:395} INFO - Validating 0.25...
+[06:12:50] {train_network.py:398} INFO - 2441/2725 = 0.895780
+[06:12:50] {train_network.py:372} INFO - Beginning Epoch 36, lr=0.001
+[06:13:10] {train_network.py:197} INFO - Epoch: 36, Batch: 100, Loss: 0.0075
+[06:13:27] {train_network.py:197} INFO - Epoch: 36, Batch: 200, Loss: 0.0087
+[06:13:43] {train_network.py:197} INFO - Epoch: 36, Batch: 300, Loss: 0.0072
+[06:14:00] {train_network.py:197} INFO - Epoch: 36, Batch: 400, Loss: 0.0155
+[06:14:19] {train_network.py:197} INFO - Epoch: 36, Batch: 500, Loss: 0.0105
+[06:14:37] {train_network.py:197} INFO - Epoch: 36, Batch: 600, Loss: 0.0107
+[06:14:55] {train_network.py:197} INFO - Epoch: 36, Batch: 700, Loss: 0.0132
+[06:15:13] {train_network.py:197} INFO - Epoch: 36, Batch: 800, Loss: 0.0135
+[06:15:32] {train_network.py:197} INFO - Epoch: 36, Batch: 900, Loss: 0.0076
+[06:15:51] {train_network.py:197} INFO - Epoch: 36, Batch: 1000, Loss: 0.0085
+[06:16:09] {train_network.py:197} INFO - Epoch: 36, Batch: 1100, Loss: 0.0113
+[06:16:27] {train_network.py:197} INFO - Epoch: 36, Batch: 1200, Loss: 0.0075
+[06:16:45] {train_network.py:197} INFO - Epoch: 36, Batch: 1300, Loss: 0.0103
+[06:17:04] {train_network.py:197} INFO - Epoch: 36, Batch: 1400, Loss: 0.0093
+[06:17:22] {train_network.py:197} INFO - Epoch: 36, Batch: 1500, Loss: 0.0113
+[06:17:41] {train_network.py:197} INFO - Epoch: 36, Batch: 1600, Loss: 0.0048
+[06:17:59] {train_network.py:197} INFO - Epoch: 36, Batch: 1700, Loss: 0.0085
+[06:18:18] {train_network.py:197} INFO - Epoch: 36, Batch: 1800, Loss: 0.0192
+[06:18:36] {train_network.py:197} INFO - Epoch: 36, Batch: 1900, Loss: 0.0081
+[06:18:55] {train_network.py:197} INFO - Epoch: 36, Batch: 2000, Loss: 0.0088
+[06:19:13] {train_network.py:197} INFO - Epoch: 36, Batch: 2100, Loss: 0.0072
+[06:19:32] {train_network.py:197} INFO - Epoch: 36, Batch: 2200, Loss: 0.0066
+[06:19:50] {train_network.py:197} INFO - Epoch: 36, Batch: 2300, Loss: 0.0064
+[06:20:08] {train_network.py:197} INFO - Epoch: 36, Batch: 2400, Loss: 0.0125
+[06:20:27] {train_network.py:197} INFO - Epoch: 36, Batch: 2500, Loss: 0.0114
+[06:20:45] {train_network.py:197} INFO - Epoch: 36, Batch: 2600, Loss: 0.0061
+[06:21:04] {train_network.py:197} INFO - Epoch: 36, Batch: 2700, Loss: 0.0072
+[06:21:22] {train_network.py:197} INFO - Epoch: 36, Batch: 2800, Loss: 0.0117
+[06:21:41] {train_network.py:197} INFO - Epoch: 36, Batch: 2900, Loss: 0.0096
+[06:21:59] {train_network.py:197} INFO - Epoch: 36, Batch: 3000, Loss: 0.0125
+[06:22:17] {train_network.py:197} INFO - Epoch: 36, Batch: 3100, Loss: 0.0099
+[06:22:44] {train_network.py:395} INFO - Validating 0.25...
+[06:25:34] {train_network.py:398} INFO - 2471/2725 = 0.906789
+[06:25:34] {train_network.py:372} INFO - Beginning Epoch 37, lr=0.001
+[06:25:53] {train_network.py:197} INFO - Epoch: 37, Batch: 100, Loss: 0.0120
+[06:26:10] {train_network.py:197} INFO - Epoch: 37, Batch: 200, Loss: 0.0124
+[06:26:27] {train_network.py:197} INFO - Epoch: 37, Batch: 300, Loss: 0.0125
+[06:26:44] {train_network.py:197} INFO - Epoch: 37, Batch: 400, Loss: 0.0072
+[06:27:02] {train_network.py:197} INFO - Epoch: 37, Batch: 500, Loss: 0.0131
+[06:27:20] {train_network.py:197} INFO - Epoch: 37, Batch: 600, Loss: 0.0089
+[06:27:38] {train_network.py:197} INFO - Epoch: 37, Batch: 700, Loss: 0.0073
+[06:27:57] {train_network.py:197} INFO - Epoch: 37, Batch: 800, Loss: 0.0085
+[06:28:15] {train_network.py:197} INFO - Epoch: 37, Batch: 900, Loss: 0.0136
+[06:28:34] {train_network.py:197} INFO - Epoch: 37, Batch: 1000, Loss: 0.0113
+[06:28:52] {train_network.py:197} INFO - Epoch: 37, Batch: 1100, Loss: 0.0147
+[06:29:10] {train_network.py:197} INFO - Epoch: 37, Batch: 1200, Loss: 0.0118
+[06:29:29] {train_network.py:197} INFO - Epoch: 37, Batch: 1300, Loss: 0.0094
+[06:29:48] {train_network.py:197} INFO - Epoch: 37, Batch: 1400, Loss: 0.0101
+[06:30:05] {train_network.py:197} INFO - Epoch: 37, Batch: 1500, Loss: 0.0139
+[06:30:23] {train_network.py:197} INFO - Epoch: 37, Batch: 1600, Loss: 0.0118
+[06:30:42] {train_network.py:197} INFO - Epoch: 37, Batch: 1700, Loss: 0.0105
+[06:31:00] {train_network.py:197} INFO - Epoch: 37, Batch: 1800, Loss: 0.0110
+[06:31:19] {train_network.py:197} INFO - Epoch: 37, Batch: 1900, Loss: 0.0072
+[06:31:37] {train_network.py:197} INFO - Epoch: 37, Batch: 2000, Loss: 0.0107
+[06:31:55] {train_network.py:197} INFO - Epoch: 37, Batch: 2100, Loss: 0.0098
+[06:32:13] {train_network.py:197} INFO - Epoch: 37, Batch: 2200, Loss: 0.0094
+[06:32:32] {train_network.py:197} INFO - Epoch: 37, Batch: 2300, Loss: 0.0172
+[06:32:50] {train_network.py:197} INFO - Epoch: 37, Batch: 2400, Loss: 0.0192
+[06:33:08] {train_network.py:197} INFO - Epoch: 37, Batch: 2500, Loss: 0.0123
+[06:33:27] {train_network.py:197} INFO - Epoch: 37, Batch: 2600, Loss: 0.0142
+[06:33:45] {train_network.py:197} INFO - Epoch: 37, Batch: 2700, Loss: 0.0082
+[06:34:03] {train_network.py:197} INFO - Epoch: 37, Batch: 2800, Loss: 0.0051
+[06:34:22] {train_network.py:197} INFO - Epoch: 37, Batch: 2900, Loss: 0.0173
+[06:34:40] {train_network.py:197} INFO - Epoch: 37, Batch: 3000, Loss: 0.0128
+[06:34:59] {train_network.py:197} INFO - Epoch: 37, Batch: 3100, Loss: 0.0117
+[06:35:26] {train_network.py:395} INFO - Validating 0.25...
+[06:38:15] {train_network.py:398} INFO - 2476/2725 = 0.908624
+[06:38:15] {train_network.py:372} INFO - Beginning Epoch 38, lr=0.001
+[06:38:35] {train_network.py:197} INFO - Epoch: 38, Batch: 100, Loss: 0.0085
+[06:38:52] {train_network.py:197} INFO - Epoch: 38, Batch: 200, Loss: 0.0069
+[06:39:09] {train_network.py:197} INFO - Epoch: 38, Batch: 300, Loss: 0.0114
+[06:39:26] {train_network.py:197} INFO - Epoch: 38, Batch: 400, Loss: 0.0138
+[06:39:44] {train_network.py:197} INFO - Epoch: 38, Batch: 500, Loss: 0.0100
+[06:40:02] {train_network.py:197} INFO - Epoch: 38, Batch: 600, Loss: 0.0076
+[06:40:20] {train_network.py:197} INFO - Epoch: 38, Batch: 700, Loss: 0.0071
+[06:40:39] {train_network.py:197} INFO - Epoch: 38, Batch: 800, Loss: 0.0092
+[06:40:57] {train_network.py:197} INFO - Epoch: 38, Batch: 900, Loss: 0.0056
+[06:41:16] {train_network.py:197} INFO - Epoch: 38, Batch: 1000, Loss: 0.0121
+[06:41:34] {train_network.py:197} INFO - Epoch: 38, Batch: 1100, Loss: 0.0121
+[06:41:52] {train_network.py:197} INFO - Epoch: 38, Batch: 1200, Loss: 0.0142
+[06:42:11] {train_network.py:197} INFO - Epoch: 38, Batch: 1300, Loss: 0.0091
+[06:42:29] {train_network.py:197} INFO - Epoch: 38, Batch: 1400, Loss: 0.0100
+[06:42:47] {train_network.py:197} INFO - Epoch: 38, Batch: 1500, Loss: 0.0098
+[06:43:06] {train_network.py:197} INFO - Epoch: 38, Batch: 1600, Loss: 0.0132
+[06:43:24] {train_network.py:197} INFO - Epoch: 38, Batch: 1700, Loss: 0.0130
+[06:43:42] {train_network.py:197} INFO - Epoch: 38, Batch: 1800, Loss: 0.0182
+[06:44:01] {train_network.py:197} INFO - Epoch: 38, Batch: 1900, Loss: 0.0114
+[06:44:19] {train_network.py:197} INFO - Epoch: 38, Batch: 2000, Loss: 0.0094
+[06:44:38] {train_network.py:197} INFO - Epoch: 38, Batch: 2100, Loss: 0.0073
+[06:44:56] {train_network.py:197} INFO - Epoch: 38, Batch: 2200, Loss: 0.0079
+[06:45:14] {train_network.py:197} INFO - Epoch: 38, Batch: 2300, Loss: 0.0151
+[06:45:32] {train_network.py:197} INFO - Epoch: 38, Batch: 2400, Loss: 0.0062
+[06:45:51] {train_network.py:197} INFO - Epoch: 38, Batch: 2500, Loss: 0.0115
+[06:46:09] {train_network.py:197} INFO - Epoch: 38, Batch: 2600, Loss: 0.0111
+[06:46:27] {train_network.py:197} INFO - Epoch: 38, Batch: 2700, Loss: 0.0062
+[06:46:45] {train_network.py:197} INFO - Epoch: 38, Batch: 2800, Loss: 0.0104
+[06:47:03] {train_network.py:197} INFO - Epoch: 38, Batch: 2900, Loss: 0.0072
+[06:47:22] {train_network.py:197} INFO - Epoch: 38, Batch: 3000, Loss: 0.0093
+[06:47:41] {train_network.py:197} INFO - Epoch: 38, Batch: 3100, Loss: 0.0132
+[06:48:07] {train_network.py:395} INFO - Validating 0.25...
+[06:50:57] {train_network.py:398} INFO - 2472/2725 = 0.907156
+[06:50:57] {train_network.py:372} INFO - Beginning Epoch 39, lr=0.001
+[06:51:16] {train_network.py:197} INFO - Epoch: 39, Batch: 100, Loss: 0.0081
+[06:51:33] {train_network.py:197} INFO - Epoch: 39, Batch: 200, Loss: 0.0119
+[06:51:50] {train_network.py:197} INFO - Epoch: 39, Batch: 300, Loss: 0.0114
+[06:52:07] {train_network.py:197} INFO - Epoch: 39, Batch: 400, Loss: 0.0122
+[06:52:25] {train_network.py:197} INFO - Epoch: 39, Batch: 500, Loss: 0.0100
+[06:52:43] {train_network.py:197} INFO - Epoch: 39, Batch: 600, Loss: 0.0059
+[06:53:02] {train_network.py:197} INFO - Epoch: 39, Batch: 700, Loss: 0.0064
+[06:53:20] {train_network.py:197} INFO - Epoch: 39, Batch: 800, Loss: 0.0091
+[06:53:39] {train_network.py:197} INFO - Epoch: 39, Batch: 900, Loss: 0.0083
+[06:53:57] {train_network.py:197} INFO - Epoch: 39, Batch: 1000, Loss: 0.0115
+[06:54:15] {train_network.py:197} INFO - Epoch: 39, Batch: 1100, Loss: 0.0083
+[06:54:33] {train_network.py:197} INFO - Epoch: 39, Batch: 1200, Loss: 0.0128
+[06:54:52] {train_network.py:197} INFO - Epoch: 39, Batch: 1300, Loss: 0.0066
+[06:55:10] {train_network.py:197} INFO - Epoch: 39, Batch: 1400, Loss: 0.0074
+[06:55:29] {train_network.py:197} INFO - Epoch: 39, Batch: 1500, Loss: 0.0110
+[06:55:47] {train_network.py:197} INFO - Epoch: 39, Batch: 1600, Loss: 0.0094
+[06:56:06] {train_network.py:197} INFO - Epoch: 39, Batch: 1700, Loss: 0.0076
+[06:56:24] {train_network.py:197} INFO - Epoch: 39, Batch: 1800, Loss: 0.0110
+[06:56:42] {train_network.py:197} INFO - Epoch: 39, Batch: 1900, Loss: 0.0103
+[06:57:00] {train_network.py:197} INFO - Epoch: 39, Batch: 2000, Loss: 0.0092
+[06:57:19] {train_network.py:197} INFO - Epoch: 39, Batch: 2100, Loss: 0.0110
+[06:57:37] {train_network.py:197} INFO - Epoch: 39, Batch: 2200, Loss: 0.0089
+[06:57:55] {train_network.py:197} INFO - Epoch: 39, Batch: 2300, Loss: 0.0102
+[06:58:13] {train_network.py:197} INFO - Epoch: 39, Batch: 2400, Loss: 0.0060
+[06:58:32] {train_network.py:197} INFO - Epoch: 39, Batch: 2500, Loss: 0.0129
+[06:58:51] {train_network.py:197} INFO - Epoch: 39, Batch: 2600, Loss: 0.0124
+[06:59:08] {train_network.py:197} INFO - Epoch: 39, Batch: 2700, Loss: 0.0068
+[06:59:27] {train_network.py:197} INFO - Epoch: 39, Batch: 2800, Loss: 0.0103
+[06:59:45] {train_network.py:197} INFO - Epoch: 39, Batch: 2900, Loss: 0.0121
+[07:00:03] {train_network.py:197} INFO - Epoch: 39, Batch: 3000, Loss: 0.0085
+[07:00:22] {train_network.py:197} INFO - Epoch: 39, Batch: 3100, Loss: 0.0082
+[07:00:48] {train_network.py:395} INFO - Validating 0.25...
+[07:03:36] {train_network.py:398} INFO - 2478/2725 = 0.909358
+[07:03:36] {train_network.py:372} INFO - Beginning Epoch 40, lr=0.001
+[07:03:55] {train_network.py:197} INFO - Epoch: 40, Batch: 100, Loss: 0.0113
+[07:04:12] {train_network.py:197} INFO - Epoch: 40, Batch: 200, Loss: 0.0095
+[07:04:29] {train_network.py:197} INFO - Epoch: 40, Batch: 300, Loss: 0.0083
+[07:04:46] {train_network.py:197} INFO - Epoch: 40, Batch: 400, Loss: 0.0130
+[07:05:04] {train_network.py:197} INFO - Epoch: 40, Batch: 500, Loss: 0.0114
+[07:05:22] {train_network.py:197} INFO - Epoch: 40, Batch: 600, Loss: 0.0082
+[07:05:41] {train_network.py:197} INFO - Epoch: 40, Batch: 700, Loss: 0.0064
+[07:05:59] {train_network.py:197} INFO - Epoch: 40, Batch: 800, Loss: 0.0074
+[07:06:18] {train_network.py:197} INFO - Epoch: 40, Batch: 900, Loss: 0.0081
+[07:06:36] {train_network.py:197} INFO - Epoch: 40, Batch: 1000, Loss: 0.0123
+[07:06:54] {train_network.py:197} INFO - Epoch: 40, Batch: 1100, Loss: 0.0079
+[07:07:12] {train_network.py:197} INFO - Epoch: 40, Batch: 1200, Loss: 0.0113
+[07:07:31] {train_network.py:197} INFO - Epoch: 40, Batch: 1300, Loss: 0.0120
+[07:07:49] {train_network.py:197} INFO - Epoch: 40, Batch: 1400, Loss: 0.0103
+[07:08:07] {train_network.py:197} INFO - Epoch: 40, Batch: 1500, Loss: 0.0080
+[07:08:25] {train_network.py:197} INFO - Epoch: 40, Batch: 1600, Loss: 0.0090
+[07:08:44] {train_network.py:197} INFO - Epoch: 40, Batch: 1700, Loss: 0.0080
+[07:09:03] {train_network.py:197} INFO - Epoch: 40, Batch: 1800, Loss: 0.0086
+[07:09:22] {train_network.py:197} INFO - Epoch: 40, Batch: 1900, Loss: 0.0087
+[07:09:40] {train_network.py:197} INFO - Epoch: 40, Batch: 2000, Loss: 0.0087
+[07:09:58] {train_network.py:197} INFO - Epoch: 40, Batch: 2100, Loss: 0.0059
+[07:10:17] {train_network.py:197} INFO - Epoch: 40, Batch: 2200, Loss: 0.0138
+[07:10:35] {train_network.py:197} INFO - Epoch: 40, Batch: 2300, Loss: 0.0107
+[07:10:53] {train_network.py:197} INFO - Epoch: 40, Batch: 2400, Loss: 0.0142
+[07:11:11] {train_network.py:197} INFO - Epoch: 40, Batch: 2500, Loss: 0.0101
+[07:11:30] {train_network.py:197} INFO - Epoch: 40, Batch: 2600, Loss: 0.0084
+[07:11:48] {train_network.py:197} INFO - Epoch: 40, Batch: 2700, Loss: 0.0073
+[07:12:06] {train_network.py:197} INFO - Epoch: 40, Batch: 2800, Loss: 0.0124
+[07:12:24] {train_network.py:197} INFO - Epoch: 40, Batch: 2900, Loss: 0.0120
+[07:12:43] {train_network.py:197} INFO - Epoch: 40, Batch: 3000, Loss: 0.0151
+[07:13:01] {train_network.py:197} INFO - Epoch: 40, Batch: 3100, Loss: 0.0068
+[07:13:28] {train_network.py:395} INFO - Validating 0.25...
+[07:16:20] {train_network.py:398} INFO - 2485/2725 = 0.911927
+[07:16:20] {train_network.py:408} INFO - >>> save model: epoch_40_iou_0.9119
+[07:16:20] {train_network.py:372} INFO - Beginning Epoch 41, lr=0.001
+[07:16:39] {train_network.py:197} INFO - Epoch: 41, Batch: 100, Loss: 0.0066
+[07:16:56] {train_network.py:197} INFO - Epoch: 41, Batch: 200, Loss: 0.0115
+[07:17:13] {train_network.py:197} INFO - Epoch: 41, Batch: 300, Loss: 0.0065
+[07:17:30] {train_network.py:197} INFO - Epoch: 41, Batch: 400, Loss: 0.0117
+[07:17:48] {train_network.py:197} INFO - Epoch: 41, Batch: 500, Loss: 0.0120
+[07:18:06] {train_network.py:197} INFO - Epoch: 41, Batch: 600, Loss: 0.0140
+[07:18:24] {train_network.py:197} INFO - Epoch: 41, Batch: 700, Loss: 0.0061
+[07:18:42] {train_network.py:197} INFO - Epoch: 41, Batch: 800, Loss: 0.0107
+[07:19:01] {train_network.py:197} INFO - Epoch: 41, Batch: 900, Loss: 0.0137
+[07:19:19] {train_network.py:197} INFO - Epoch: 41, Batch: 1000, Loss: 0.0105
+[07:19:37] {train_network.py:197} INFO - Epoch: 41, Batch: 1100, Loss: 0.0118
+[07:19:56] {train_network.py:197} INFO - Epoch: 41, Batch: 1200, Loss: 0.0088
+[07:20:14] {train_network.py:197} INFO - Epoch: 41, Batch: 1300, Loss: 0.0127
+[07:20:33] {train_network.py:197} INFO - Epoch: 41, Batch: 1400, Loss: 0.0093
+[07:20:51] {train_network.py:197} INFO - Epoch: 41, Batch: 1500, Loss: 0.0078
+[07:21:09] {train_network.py:197} INFO - Epoch: 41, Batch: 1600, Loss: 0.0095
+[07:21:28] {train_network.py:197} INFO - Epoch: 41, Batch: 1700, Loss: 0.0111
+[07:21:46] {train_network.py:197} INFO - Epoch: 41, Batch: 1800, Loss: 0.0092
+[07:22:05] {train_network.py:197} INFO - Epoch: 41, Batch: 1900, Loss: 0.0111
+[07:22:23] {train_network.py:197} INFO - Epoch: 41, Batch: 2000, Loss: 0.0067
+[07:22:41] {train_network.py:197} INFO - Epoch: 41, Batch: 2100, Loss: 0.0145
+[07:23:00] {train_network.py:197} INFO - Epoch: 41, Batch: 2200, Loss: 0.0136
+[07:23:18] {train_network.py:197} INFO - Epoch: 41, Batch: 2300, Loss: 0.0108
+[07:23:36] {train_network.py:197} INFO - Epoch: 41, Batch: 2400, Loss: 0.0053
+[07:23:55] {train_network.py:197} INFO - Epoch: 41, Batch: 2500, Loss: 0.0136
+[07:24:13] {train_network.py:197} INFO - Epoch: 41, Batch: 2600, Loss: 0.0106
+[07:24:32] {train_network.py:197} INFO - Epoch: 41, Batch: 2700, Loss: 0.0067
+[07:24:50] {train_network.py:197} INFO - Epoch: 41, Batch: 2800, Loss: 0.0125
+[07:25:09] {train_network.py:197} INFO - Epoch: 41, Batch: 2900, Loss: 0.0056
+[07:25:26] {train_network.py:197} INFO - Epoch: 41, Batch: 3000, Loss: 0.0121
+[07:25:45] {train_network.py:197} INFO - Epoch: 41, Batch: 3100, Loss: 0.0114
+[07:26:11] {train_network.py:395} INFO - Validating 0.25...
+[07:29:02] {train_network.py:398} INFO - 2453/2725 = 0.900183
+[07:29:02] {train_network.py:372} INFO - Beginning Epoch 42, lr=0.001
+[07:29:21] {train_network.py:197} INFO - Epoch: 42, Batch: 100, Loss: 0.0122
+[07:29:38] {train_network.py:197} INFO - Epoch: 42, Batch: 200, Loss: 0.0065
+[07:29:55] {train_network.py:197} INFO - Epoch: 42, Batch: 300, Loss: 0.0076
+[07:30:12] {train_network.py:197} INFO - Epoch: 42, Batch: 400, Loss: 0.0092
+[07:30:30] {train_network.py:197} INFO - Epoch: 42, Batch: 500, Loss: 0.0123
+[07:30:48] {train_network.py:197} INFO - Epoch: 42, Batch: 600, Loss: 0.0088
+[07:31:06] {train_network.py:197} INFO - Epoch: 42, Batch: 700, Loss: 0.0084
+[07:31:25] {train_network.py:197} INFO - Epoch: 42, Batch: 800, Loss: 0.0084
+[07:31:43] {train_network.py:197} INFO - Epoch: 42, Batch: 900, Loss: 0.0063
+[07:32:02] {train_network.py:197} INFO - Epoch: 42, Batch: 1000, Loss: 0.0114
+[07:32:20] {train_network.py:197} INFO - Epoch: 42, Batch: 1100, Loss: 0.0074
+[07:32:38] {train_network.py:197} INFO - Epoch: 42, Batch: 1200, Loss: 0.0095
+[07:32:57] {train_network.py:197} INFO - Epoch: 42, Batch: 1300, Loss: 0.0066
+[07:33:15] {train_network.py:197} INFO - Epoch: 42, Batch: 1400, Loss: 0.0079
+[07:33:34] {train_network.py:197} INFO - Epoch: 42, Batch: 1500, Loss: 0.0108
+[07:33:52] {train_network.py:197} INFO - Epoch: 42, Batch: 1600, Loss: 0.0091
+[07:34:11] {train_network.py:197} INFO - Epoch: 42, Batch: 1700, Loss: 0.0079
+[07:34:29] {train_network.py:197} INFO - Epoch: 42, Batch: 1800, Loss: 0.0113
+[07:34:47] {train_network.py:197} INFO - Epoch: 42, Batch: 1900, Loss: 0.0096
+[07:35:06] {train_network.py:197} INFO - Epoch: 42, Batch: 2000, Loss: 0.0070
+[07:35:24] {train_network.py:197} INFO - Epoch: 42, Batch: 2100, Loss: 0.0097
+[07:35:43] {train_network.py:197} INFO - Epoch: 42, Batch: 2200, Loss: 0.0082
+[07:36:01] {train_network.py:197} INFO - Epoch: 42, Batch: 2300, Loss: 0.0085
+[07:36:19] {train_network.py:197} INFO - Epoch: 42, Batch: 2400, Loss: 0.0151
+[07:36:37] {train_network.py:197} INFO - Epoch: 42, Batch: 2500, Loss: 0.0076
+[07:36:55] {train_network.py:197} INFO - Epoch: 42, Batch: 2600, Loss: 0.0054
+[07:37:13] {train_network.py:197} INFO - Epoch: 42, Batch: 2700, Loss: 0.0079
+[07:37:31] {train_network.py:197} INFO - Epoch: 42, Batch: 2800, Loss: 0.0074
+[07:37:50] {train_network.py:197} INFO - Epoch: 42, Batch: 2900, Loss: 0.0185
+[07:38:08] {train_network.py:197} INFO - Epoch: 42, Batch: 3000, Loss: 0.0081
+[07:38:27] {train_network.py:197} INFO - Epoch: 42, Batch: 3100, Loss: 0.0070
+[07:38:54] {train_network.py:395} INFO - Validating 0.25...
+[07:41:44] {train_network.py:398} INFO - 2425/2725 = 0.889908
+[07:41:44] {train_network.py:372} INFO - Beginning Epoch 43, lr=0.001
+[07:42:04] {train_network.py:197} INFO - Epoch: 43, Batch: 100, Loss: 0.0108
+[07:42:21] {train_network.py:197} INFO - Epoch: 43, Batch: 200, Loss: 0.0078
+[07:42:37] {train_network.py:197} INFO - Epoch: 43, Batch: 300, Loss: 0.0083
+[07:42:54] {train_network.py:197} INFO - Epoch: 43, Batch: 400, Loss: 0.0120
+[07:43:12] {train_network.py:197} INFO - Epoch: 43, Batch: 500, Loss: 0.0073
+[07:43:31] {train_network.py:197} INFO - Epoch: 43, Batch: 600, Loss: 0.0102
+[07:43:49] {train_network.py:197} INFO - Epoch: 43, Batch: 700, Loss: 0.0071
+[07:44:07] {train_network.py:197} INFO - Epoch: 43, Batch: 800, Loss: 0.0082
+[07:44:26] {train_network.py:197} INFO - Epoch: 43, Batch: 900, Loss: 0.0099
+[07:44:44] {train_network.py:197} INFO - Epoch: 43, Batch: 1000, Loss: 0.0154
+[07:45:02] {train_network.py:197} INFO - Epoch: 43, Batch: 1100, Loss: 0.0090
+[07:45:21] {train_network.py:197} INFO - Epoch: 43, Batch: 1200, Loss: 0.0056
+[07:45:39] {train_network.py:197} INFO - Epoch: 43, Batch: 1300, Loss: 0.0117
+[07:45:58] {train_network.py:197} INFO - Epoch: 43, Batch: 1400, Loss: 0.0069
+[07:46:16] {train_network.py:197} INFO - Epoch: 43, Batch: 1500, Loss: 0.0124
+[07:46:34] {train_network.py:197} INFO - Epoch: 43, Batch: 1600, Loss: 0.0083
+[07:46:53] {train_network.py:197} INFO - Epoch: 43, Batch: 1700, Loss: 0.0083
+[07:47:11] {train_network.py:197} INFO - Epoch: 43, Batch: 1800, Loss: 0.0155
+[07:47:29] {train_network.py:197} INFO - Epoch: 43, Batch: 1900, Loss: 0.0103
+[07:47:48] {train_network.py:197} INFO - Epoch: 43, Batch: 2000, Loss: 0.0079
+[07:48:06] {train_network.py:197} INFO - Epoch: 43, Batch: 2100, Loss: 0.0081
+[07:48:24] {train_network.py:197} INFO - Epoch: 43, Batch: 2200, Loss: 0.0099
+[07:48:43] {train_network.py:197} INFO - Epoch: 43, Batch: 2300, Loss: 0.0110
+[07:49:01] {train_network.py:197} INFO - Epoch: 43, Batch: 2400, Loss: 0.0163
+[07:49:20] {train_network.py:197} INFO - Epoch: 43, Batch: 2500, Loss: 0.0193
+[07:49:37] {train_network.py:197} INFO - Epoch: 43, Batch: 2600, Loss: 0.0074
+[07:49:55] {train_network.py:197} INFO - Epoch: 43, Batch: 2700, Loss: 0.0067
+[07:50:14] {train_network.py:197} INFO - Epoch: 43, Batch: 2800, Loss: 0.0161
+[07:50:33] {train_network.py:197} INFO - Epoch: 43, Batch: 2900, Loss: 0.0098
+[07:50:51] {train_network.py:197} INFO - Epoch: 43, Batch: 3000, Loss: 0.0113
+[07:51:09] {train_network.py:197} INFO - Epoch: 43, Batch: 3100, Loss: 0.0130
+[07:51:35] {train_network.py:395} INFO - Validating 0.25...
+[07:54:26] {train_network.py:398} INFO - 2452/2725 = 0.899817
+[07:54:26] {train_network.py:372} INFO - Beginning Epoch 44, lr=0.001
+[07:54:46] {train_network.py:197} INFO - Epoch: 44, Batch: 100, Loss: 0.0095
+[07:55:02] {train_network.py:197} INFO - Epoch: 44, Batch: 200, Loss: 0.0104
+[07:55:20] {train_network.py:197} INFO - Epoch: 44, Batch: 300, Loss: 0.0109
+[07:55:37] {train_network.py:197} INFO - Epoch: 44, Batch: 400, Loss: 0.0080
+[07:55:55] {train_network.py:197} INFO - Epoch: 44, Batch: 500, Loss: 0.0075
+[07:56:13] {train_network.py:197} INFO - Epoch: 44, Batch: 600, Loss: 0.0118
+[07:56:31] {train_network.py:197} INFO - Epoch: 44, Batch: 700, Loss: 0.0110
+[07:56:49] {train_network.py:197} INFO - Epoch: 44, Batch: 800, Loss: 0.0163
+[07:57:08] {train_network.py:197} INFO - Epoch: 44, Batch: 900, Loss: 0.0081
+[07:57:27] {train_network.py:197} INFO - Epoch: 44, Batch: 1000, Loss: 0.0059
+[07:57:45] {train_network.py:197} INFO - Epoch: 44, Batch: 1100, Loss: 0.0095
+[07:58:03] {train_network.py:197} INFO - Epoch: 44, Batch: 1200, Loss: 0.0096
+[07:58:22] {train_network.py:197} INFO - Epoch: 44, Batch: 1300, Loss: 0.0103
+[07:58:40] {train_network.py:197} INFO - Epoch: 44, Batch: 1400, Loss: 0.0140
+[07:58:58] {train_network.py:197} INFO - Epoch: 44, Batch: 1500, Loss: 0.0102
+[07:59:16] {train_network.py:197} INFO - Epoch: 44, Batch: 1600, Loss: 0.0091
+[07:59:35] {train_network.py:197} INFO - Epoch: 44, Batch: 1700, Loss: 0.0093
+[07:59:54] {train_network.py:197} INFO - Epoch: 44, Batch: 1800, Loss: 0.0137
+[08:00:11] {train_network.py:197} INFO - Epoch: 44, Batch: 1900, Loss: 0.0122
+[08:00:29] {train_network.py:197} INFO - Epoch: 44, Batch: 2000, Loss: 0.0097
+[08:00:48] {train_network.py:197} INFO - Epoch: 44, Batch: 2100, Loss: 0.0117
+[08:01:07] {train_network.py:197} INFO - Epoch: 44, Batch: 2200, Loss: 0.0058
+[08:01:25] {train_network.py:197} INFO - Epoch: 44, Batch: 2300, Loss: 0.0159
+[08:01:43] {train_network.py:197} INFO - Epoch: 44, Batch: 2400, Loss: 0.0094
+[08:02:02] {train_network.py:197} INFO - Epoch: 44, Batch: 2500, Loss: 0.0138
+[08:02:21] {train_network.py:197} INFO - Epoch: 44, Batch: 2600, Loss: 0.0077
+[08:02:38] {train_network.py:197} INFO - Epoch: 44, Batch: 2700, Loss: 0.0111
+[08:02:57] {train_network.py:197} INFO - Epoch: 44, Batch: 2800, Loss: 0.0113
+[08:03:16] {train_network.py:197} INFO - Epoch: 44, Batch: 2900, Loss: 0.0114
+[08:03:34] {train_network.py:197} INFO - Epoch: 44, Batch: 3000, Loss: 0.0101
+[08:03:52] {train_network.py:197} INFO - Epoch: 44, Batch: 3100, Loss: 0.0055
+[08:04:19] {train_network.py:395} INFO - Validating 0.25...
+[08:07:09] {train_network.py:398} INFO - 2488/2725 = 0.913028
+[08:07:09] {train_network.py:408} INFO - >>> save model: epoch_44_iou_0.9130
+[08:07:09] {train_network.py:372} INFO - Beginning Epoch 45, lr=0.001
+[08:07:29] {train_network.py:197} INFO - Epoch: 45, Batch: 100, Loss: 0.0141
+[08:07:46] {train_network.py:197} INFO - Epoch: 45, Batch: 200, Loss: 0.0121
+[08:08:03] {train_network.py:197} INFO - Epoch: 45, Batch: 300, Loss: 0.0115
+[08:08:20] {train_network.py:197} INFO - Epoch: 45, Batch: 400, Loss: 0.0119
+[08:08:38] {train_network.py:197} INFO - Epoch: 45, Batch: 500, Loss: 0.0121
+[08:08:56] {train_network.py:197} INFO - Epoch: 45, Batch: 600, Loss: 0.0098
+[08:09:14] {train_network.py:197} INFO - Epoch: 45, Batch: 700, Loss: 0.0115
+[08:09:33] {train_network.py:197} INFO - Epoch: 45, Batch: 800, Loss: 0.0074
+[08:09:51] {train_network.py:197} INFO - Epoch: 45, Batch: 900, Loss: 0.0070
+[08:10:10] {train_network.py:197} INFO - Epoch: 45, Batch: 1000, Loss: 0.0073
+[08:10:28] {train_network.py:197} INFO - Epoch: 45, Batch: 1100, Loss: 0.0129
+[08:10:46] {train_network.py:197} INFO - Epoch: 45, Batch: 1200, Loss: 0.0093
+[08:11:05] {train_network.py:197} INFO - Epoch: 45, Batch: 1300, Loss: 0.0097
+[08:11:23] {train_network.py:197} INFO - Epoch: 45, Batch: 1400, Loss: 0.0065
+[08:11:41] {train_network.py:197} INFO - Epoch: 45, Batch: 1500, Loss: 0.0078
+[08:12:00] {train_network.py:197} INFO - Epoch: 45, Batch: 1600, Loss: 0.0069
+[08:12:18] {train_network.py:197} INFO - Epoch: 45, Batch: 1700, Loss: 0.0077
+[08:12:37] {train_network.py:197} INFO - Epoch: 45, Batch: 1800, Loss: 0.0099
+[08:12:55] {train_network.py:197} INFO - Epoch: 45, Batch: 1900, Loss: 0.0138
+[08:13:13] {train_network.py:197} INFO - Epoch: 45, Batch: 2000, Loss: 0.0077
+[08:13:32] {train_network.py:197} INFO - Epoch: 45, Batch: 2100, Loss: 0.0067
+[08:13:50] {train_network.py:197} INFO - Epoch: 45, Batch: 2200, Loss: 0.0076
+[08:14:08] {train_network.py:197} INFO - Epoch: 45, Batch: 2300, Loss: 0.0121
+[08:14:26] {train_network.py:197} INFO - Epoch: 45, Batch: 2400, Loss: 0.0118
+[08:14:45] {train_network.py:197} INFO - Epoch: 45, Batch: 2500, Loss: 0.0063
+[08:15:03] {train_network.py:197} INFO - Epoch: 45, Batch: 2600, Loss: 0.0097
+[08:15:22] {train_network.py:197} INFO - Epoch: 45, Batch: 2700, Loss: 0.0070
+[08:15:40] {train_network.py:197} INFO - Epoch: 45, Batch: 2800, Loss: 0.0061
+[08:15:59] {train_network.py:197} INFO - Epoch: 45, Batch: 2900, Loss: 0.0088
+[08:16:17] {train_network.py:197} INFO - Epoch: 45, Batch: 3000, Loss: 0.0238
+[08:16:35] {train_network.py:197} INFO - Epoch: 45, Batch: 3100, Loss: 0.0085
+[08:17:01] {train_network.py:395} INFO - Validating 0.25...
+[08:19:49] {train_network.py:398} INFO - 2463/2725 = 0.903853
+[08:19:49] {train_network.py:372} INFO - Beginning Epoch 46, lr=0.001
+[08:20:09] {train_network.py:197} INFO - Epoch: 46, Batch: 100, Loss: 0.0076
+[08:20:26] {train_network.py:197} INFO - Epoch: 46, Batch: 200, Loss: 0.0171
+[08:20:43] {train_network.py:197} INFO - Epoch: 46, Batch: 300, Loss: 0.0072
+[08:21:00] {train_network.py:197} INFO - Epoch: 46, Batch: 400, Loss: 0.0088
+[08:21:18] {train_network.py:197} INFO - Epoch: 46, Batch: 500, Loss: 0.0099
+[08:21:36] {train_network.py:197} INFO - Epoch: 46, Batch: 600, Loss: 0.0112
+[08:21:54] {train_network.py:197} INFO - Epoch: 46, Batch: 700, Loss: 0.0096
+[08:22:12] {train_network.py:197} INFO - Epoch: 46, Batch: 800, Loss: 0.0095
+[08:22:31] {train_network.py:197} INFO - Epoch: 46, Batch: 900, Loss: 0.0072
+[08:22:50] {train_network.py:197} INFO - Epoch: 46, Batch: 1000, Loss: 0.0151
+[08:23:08] {train_network.py:197} INFO - Epoch: 46, Batch: 1100, Loss: 0.0130
+[08:23:26] {train_network.py:197} INFO - Epoch: 46, Batch: 1200, Loss: 0.0100
+[08:23:45] {train_network.py:197} INFO - Epoch: 46, Batch: 1300, Loss: 0.0110
+[08:24:04] {train_network.py:197} INFO - Epoch: 46, Batch: 1400, Loss: 0.0121
+[08:24:22] {train_network.py:197} INFO - Epoch: 46, Batch: 1500, Loss: 0.0075
+[08:24:40] {train_network.py:197} INFO - Epoch: 46, Batch: 1600, Loss: 0.0223
+[08:24:59] {train_network.py:197} INFO - Epoch: 46, Batch: 1700, Loss: 0.0131
+[08:25:17] {train_network.py:197} INFO - Epoch: 46, Batch: 1800, Loss: 0.0093
+[08:25:35] {train_network.py:197} INFO - Epoch: 46, Batch: 1900, Loss: 0.0083
+[08:25:53] {train_network.py:197} INFO - Epoch: 46, Batch: 2000, Loss: 0.0095
+[08:26:11] {train_network.py:197} INFO - Epoch: 46, Batch: 2100, Loss: 0.0119
+[08:26:31] {train_network.py:197} INFO - Epoch: 46, Batch: 2200, Loss: 0.0101
+[08:26:49] {train_network.py:197} INFO - Epoch: 46, Batch: 2300, Loss: 0.0083
+[08:27:07] {train_network.py:197} INFO - Epoch: 46, Batch: 2400, Loss: 0.0088
+[08:27:25] {train_network.py:197} INFO - Epoch: 46, Batch: 2500, Loss: 0.0122
+[08:27:44] {train_network.py:197} INFO - Epoch: 46, Batch: 2600, Loss: 0.0101
+[08:28:02] {train_network.py:197} INFO - Epoch: 46, Batch: 2700, Loss: 0.0063
+[08:28:20] {train_network.py:197} INFO - Epoch: 46, Batch: 2800, Loss: 0.0048
+[08:28:39] {train_network.py:197} INFO - Epoch: 46, Batch: 2900, Loss: 0.0102
+[08:28:57] {train_network.py:197} INFO - Epoch: 46, Batch: 3000, Loss: 0.0073
+[08:29:15] {train_network.py:197} INFO - Epoch: 46, Batch: 3100, Loss: 0.0099
+[08:29:41] {train_network.py:395} INFO - Validating 0.25...
+[08:32:25] {train_network.py:398} INFO - 2478/2725 = 0.909358
+[08:32:25] {train_network.py:372} INFO - Beginning Epoch 47, lr=0.001
+[08:32:45] {train_network.py:197} INFO - Epoch: 47, Batch: 100, Loss: 0.0103
+[08:33:01] {train_network.py:197} INFO - Epoch: 47, Batch: 200, Loss: 0.0155
+[08:33:18] {train_network.py:197} INFO - Epoch: 47, Batch: 300, Loss: 0.0091
+[08:33:35] {train_network.py:197} INFO - Epoch: 47, Batch: 400, Loss: 0.0133
+[08:33:53] {train_network.py:197} INFO - Epoch: 47, Batch: 500, Loss: 0.0145
+[08:34:11] {train_network.py:197} INFO - Epoch: 47, Batch: 600, Loss: 0.0089
+[08:34:29] {train_network.py:197} INFO - Epoch: 47, Batch: 700, Loss: 0.0093
+[08:34:48] {train_network.py:197} INFO - Epoch: 47, Batch: 800, Loss: 0.0068
+[08:35:06] {train_network.py:197} INFO - Epoch: 47, Batch: 900, Loss: 0.0083
+[08:35:25] {train_network.py:197} INFO - Epoch: 47, Batch: 1000, Loss: 0.0109
+[08:35:43] {train_network.py:197} INFO - Epoch: 47, Batch: 1100, Loss: 0.0108
+[08:36:01] {train_network.py:197} INFO - Epoch: 47, Batch: 1200, Loss: 0.0085
+[08:36:19] {train_network.py:197} INFO - Epoch: 47, Batch: 1300, Loss: 0.0097
+[08:36:38] {train_network.py:197} INFO - Epoch: 47, Batch: 1400, Loss: 0.0095
+[08:36:56] {train_network.py:197} INFO - Epoch: 47, Batch: 1500, Loss: 0.0104
+[08:37:14] {train_network.py:197} INFO - Epoch: 47, Batch: 1600, Loss: 0.0089
+[08:37:32] {train_network.py:197} INFO - Epoch: 47, Batch: 1700, Loss: 0.0133
+[08:37:51] {train_network.py:197} INFO - Epoch: 47, Batch: 1800, Loss: 0.0126
+[08:38:09] {train_network.py:197} INFO - Epoch: 47, Batch: 1900, Loss: 0.0099
+[08:38:28] {train_network.py:197} INFO - Epoch: 47, Batch: 2000, Loss: 0.0095
+[08:38:46] {train_network.py:197} INFO - Epoch: 47, Batch: 2100, Loss: 0.0077
+[08:39:05] {train_network.py:197} INFO - Epoch: 47, Batch: 2200, Loss: 0.0087
+[08:39:24] {train_network.py:197} INFO - Epoch: 47, Batch: 2300, Loss: 0.0083
+[08:39:42] {train_network.py:197} INFO - Epoch: 47, Batch: 2400, Loss: 0.0107
+[08:40:00] {train_network.py:197} INFO - Epoch: 47, Batch: 2500, Loss: 0.0107
+[08:40:18] {train_network.py:197} INFO - Epoch: 47, Batch: 2600, Loss: 0.0068
+[08:40:37] {train_network.py:197} INFO - Epoch: 47, Batch: 2700, Loss: 0.0082
+[08:40:55] {train_network.py:197} INFO - Epoch: 47, Batch: 2800, Loss: 0.0088
+[08:41:13] {train_network.py:197} INFO - Epoch: 47, Batch: 2900, Loss: 0.0093
+[08:41:32] {train_network.py:197} INFO - Epoch: 47, Batch: 3000, Loss: 0.0085
+[08:41:50] {train_network.py:197} INFO - Epoch: 47, Batch: 3100, Loss: 0.0112
+[08:42:17] {train_network.py:395} INFO - Validating 0.25...
+[08:45:07] {train_network.py:398} INFO - 2442/2725 = 0.896147
+[08:45:07] {train_network.py:372} INFO - Beginning Epoch 48, lr=0.001
+[08:45:27] {train_network.py:197} INFO - Epoch: 48, Batch: 100, Loss: 0.0136
+[08:45:43] {train_network.py:197} INFO - Epoch: 48, Batch: 200, Loss: 0.0092
+[08:46:00] {train_network.py:197} INFO - Epoch: 48, Batch: 300, Loss: 0.0066
+[08:46:17] {train_network.py:197} INFO - Epoch: 48, Batch: 400, Loss: 0.0089
+[08:46:35] {train_network.py:197} INFO - Epoch: 48, Batch: 500, Loss: 0.0094
+[08:46:53] {train_network.py:197} INFO - Epoch: 48, Batch: 600, Loss: 0.0057
+[08:47:11] {train_network.py:197} INFO - Epoch: 48, Batch: 700, Loss: 0.0078
+[08:47:29] {train_network.py:197} INFO - Epoch: 48, Batch: 800, Loss: 0.0118
+[08:47:48] {train_network.py:197} INFO - Epoch: 48, Batch: 900, Loss: 0.0122
+[08:48:06] {train_network.py:197} INFO - Epoch: 48, Batch: 1000, Loss: 0.0103
+[08:48:24] {train_network.py:197} INFO - Epoch: 48, Batch: 1100, Loss: 0.0175
+[08:48:43] {train_network.py:197} INFO - Epoch: 48, Batch: 1200, Loss: 0.0068
+[08:49:02] {train_network.py:197} INFO - Epoch: 48, Batch: 1300, Loss: 0.0108
+[08:49:20] {train_network.py:197} INFO - Epoch: 48, Batch: 1400, Loss: 0.0124
+[08:49:38] {train_network.py:197} INFO - Epoch: 48, Batch: 1500, Loss: 0.0133
+[08:49:56] {train_network.py:197} INFO - Epoch: 48, Batch: 1600, Loss: 0.0122
+[08:50:15] {train_network.py:197} INFO - Epoch: 48, Batch: 1700, Loss: 0.0098
+[08:50:34] {train_network.py:197} INFO - Epoch: 48, Batch: 1800, Loss: 0.0114
+[08:50:52] {train_network.py:197} INFO - Epoch: 48, Batch: 1900, Loss: 0.0052
+[08:51:10] {train_network.py:197} INFO - Epoch: 48, Batch: 2000, Loss: 0.0087
+[08:51:29] {train_network.py:197} INFO - Epoch: 48, Batch: 2100, Loss: 0.0094
+[08:51:47] {train_network.py:197} INFO - Epoch: 48, Batch: 2200, Loss: 0.0110
+[08:52:05] {train_network.py:197} INFO - Epoch: 48, Batch: 2300, Loss: 0.0158
+[08:52:24] {train_network.py:197} INFO - Epoch: 48, Batch: 2400, Loss: 0.0082
+[08:52:43] {train_network.py:197} INFO - Epoch: 48, Batch: 2500, Loss: 0.0134
+[08:53:01] {train_network.py:197} INFO - Epoch: 48, Batch: 2600, Loss: 0.0076
+[08:53:18] {train_network.py:197} INFO - Epoch: 48, Batch: 2700, Loss: 0.0100
+[08:53:37] {train_network.py:197} INFO - Epoch: 48, Batch: 2800, Loss: 0.0062
+[08:53:56] {train_network.py:197} INFO - Epoch: 48, Batch: 2900, Loss: 0.0085
+[08:54:14] {train_network.py:197} INFO - Epoch: 48, Batch: 3000, Loss: 0.0101
+[08:54:32] {train_network.py:197} INFO - Epoch: 48, Batch: 3100, Loss: 0.0167
+[08:54:59] {train_network.py:395} INFO - Validating 0.25...
+[08:57:51] {train_network.py:398} INFO - 2462/2725 = 0.903486
+[08:57:51] {train_network.py:372} INFO - Beginning Epoch 49, lr=0.001
+[08:58:11] {train_network.py:197} INFO - Epoch: 49, Batch: 100, Loss: 0.0112
+[08:58:28] {train_network.py:197} INFO - Epoch: 49, Batch: 200, Loss: 0.0205
+[08:58:45] {train_network.py:197} INFO - Epoch: 49, Batch: 300, Loss: 0.0094
+[08:59:02] {train_network.py:197} INFO - Epoch: 49, Batch: 400, Loss: 0.0092
+[08:59:20] {train_network.py:197} INFO - Epoch: 49, Batch: 500, Loss: 0.0096
+[08:59:38] {train_network.py:197} INFO - Epoch: 49, Batch: 600, Loss: 0.0117
+[08:59:56] {train_network.py:197} INFO - Epoch: 49, Batch: 700, Loss: 0.0076
+[09:00:14] {train_network.py:197} INFO - Epoch: 49, Batch: 800, Loss: 0.0099
+[09:00:33] {train_network.py:197} INFO - Epoch: 49, Batch: 900, Loss: 0.0126
+[09:00:51] {train_network.py:197} INFO - Epoch: 49, Batch: 1000, Loss: 0.0061
+[09:01:10] {train_network.py:197} INFO - Epoch: 49, Batch: 1100, Loss: 0.0245
+[09:01:28] {train_network.py:197} INFO - Epoch: 49, Batch: 1200, Loss: 0.0106
+[09:01:47] {train_network.py:197} INFO - Epoch: 49, Batch: 1300, Loss: 0.0123
+[09:02:05] {train_network.py:197} INFO - Epoch: 49, Batch: 1400, Loss: 0.0099
+[09:02:23] {train_network.py:197} INFO - Epoch: 49, Batch: 1500, Loss: 0.0099
+[09:02:42] {train_network.py:197} INFO - Epoch: 49, Batch: 1600, Loss: 0.0074
+[09:03:01] {train_network.py:197} INFO - Epoch: 49, Batch: 1700, Loss: 0.0064
+[09:03:19] {train_network.py:197} INFO - Epoch: 49, Batch: 1800, Loss: 0.0090
+[09:03:37] {train_network.py:197} INFO - Epoch: 49, Batch: 1900, Loss: 0.0093
+[09:03:55] {train_network.py:197} INFO - Epoch: 49, Batch: 2000, Loss: 0.0106
+[09:04:14] {train_network.py:197} INFO - Epoch: 49, Batch: 2100, Loss: 0.0075
+[09:04:33] {train_network.py:197} INFO - Epoch: 49, Batch: 2200, Loss: 0.0092
+[09:04:51] {train_network.py:197} INFO - Epoch: 49, Batch: 2300, Loss: 0.0159
+[09:05:09] {train_network.py:197} INFO - Epoch: 49, Batch: 2400, Loss: 0.0064
+[09:05:28] {train_network.py:197} INFO - Epoch: 49, Batch: 2500, Loss: 0.0100
+[09:05:46] {train_network.py:197} INFO - Epoch: 49, Batch: 2600, Loss: 0.0071
+[09:06:04] {train_network.py:197} INFO - Epoch: 49, Batch: 2700, Loss: 0.0074
+[09:06:22] {train_network.py:197} INFO - Epoch: 49, Batch: 2800, Loss: 0.0068
+[09:06:41] {train_network.py:197} INFO - Epoch: 49, Batch: 2900, Loss: 0.0117
+[09:06:59] {train_network.py:197} INFO - Epoch: 49, Batch: 3000, Loss: 0.0122
+[09:07:17] {train_network.py:197} INFO - Epoch: 49, Batch: 3100, Loss: 0.0102
+[09:07:43] {train_network.py:395} INFO - Validating 0.25...
+[09:10:35] {train_network.py:398} INFO - 2410/2725 = 0.884404
+[09:10:35] {train_network.py:372} INFO - Beginning Epoch 50, lr=0.001
+[09:10:54] {train_network.py:197} INFO - Epoch: 50, Batch: 100, Loss: 0.0071
+[09:11:11] {train_network.py:197} INFO - Epoch: 50, Batch: 200, Loss: 0.0085
+[09:11:28] {train_network.py:197} INFO - Epoch: 50, Batch: 300, Loss: 0.0090
+[09:11:45] {train_network.py:197} INFO - Epoch: 50, Batch: 400, Loss: 0.0085
+[09:12:03] {train_network.py:197} INFO - Epoch: 50, Batch: 500, Loss: 0.0087
+[09:12:21] {train_network.py:197} INFO - Epoch: 50, Batch: 600, Loss: 0.0087
+[09:12:39] {train_network.py:197} INFO - Epoch: 50, Batch: 700, Loss: 0.0101
+[09:12:57] {train_network.py:197} INFO - Epoch: 50, Batch: 800, Loss: 0.0094
+[09:13:16] {train_network.py:197} INFO - Epoch: 50, Batch: 900, Loss: 0.0086
+[09:13:35] {train_network.py:197} INFO - Epoch: 50, Batch: 1000, Loss: 0.0091
+[09:13:53] {train_network.py:197} INFO - Epoch: 50, Batch: 1100, Loss: 0.0089
+[09:14:11] {train_network.py:197} INFO - Epoch: 50, Batch: 1200, Loss: 0.0083
+[09:14:30] {train_network.py:197} INFO - Epoch: 50, Batch: 1300, Loss: 0.0085
+[09:14:48] {train_network.py:197} INFO - Epoch: 50, Batch: 1400, Loss: 0.0084
+[09:15:06] {train_network.py:197} INFO - Epoch: 50, Batch: 1500, Loss: 0.0112
+[09:15:25] {train_network.py:197} INFO - Epoch: 50, Batch: 1600, Loss: 0.0091
+[09:15:43] {train_network.py:197} INFO - Epoch: 50, Batch: 1700, Loss: 0.0145
+[09:16:01] {train_network.py:197} INFO - Epoch: 50, Batch: 1800, Loss: 0.0151
+[09:16:20] {train_network.py:197} INFO - Epoch: 50, Batch: 1900, Loss: 0.0083
+[09:16:39] {train_network.py:197} INFO - Epoch: 50, Batch: 2000, Loss: 0.0085
+[09:16:58] {train_network.py:197} INFO - Epoch: 50, Batch: 2100, Loss: 0.0088
+[09:17:16] {train_network.py:197} INFO - Epoch: 50, Batch: 2200, Loss: 0.0076
+[09:17:34] {train_network.py:197} INFO - Epoch: 50, Batch: 2300, Loss: 0.0099
+[09:17:52] {train_network.py:197} INFO - Epoch: 50, Batch: 2400, Loss: 0.0107
+[09:18:11] {train_network.py:197} INFO - Epoch: 50, Batch: 2500, Loss: 0.0141
+[09:18:29] {train_network.py:197} INFO - Epoch: 50, Batch: 2600, Loss: 0.0162
+[09:18:47] {train_network.py:197} INFO - Epoch: 50, Batch: 2700, Loss: 0.0130
+[09:19:05] {train_network.py:197} INFO - Epoch: 50, Batch: 2800, Loss: 0.0074
+[09:19:24] {train_network.py:197} INFO - Epoch: 50, Batch: 2900, Loss: 0.0104
+[09:19:42] {train_network.py:197} INFO - Epoch: 50, Batch: 3000, Loss: 0.0172
+[09:20:00] {train_network.py:197} INFO - Epoch: 50, Batch: 3100, Loss: 0.0116
+[09:20:28] {train_network.py:395} INFO - Validating 0.25...
+[09:23:23] {train_network.py:398} INFO - 2414/2725 = 0.885872
+[09:23:23] {train_network.py:408} INFO - >>> save model: epoch_50_iou_0.8859
+[09:23:23] {train_network.py:372} INFO - Beginning Epoch 51, lr=0.001
+[09:23:43] {train_network.py:197} INFO - Epoch: 51, Batch: 100, Loss: 0.0063
+[09:24:00] {train_network.py:197} INFO - Epoch: 51, Batch: 200, Loss: 0.0108
+[09:24:16] {train_network.py:197} INFO - Epoch: 51, Batch: 300, Loss: 0.0085
+[09:24:33] {train_network.py:197} INFO - Epoch: 51, Batch: 400, Loss: 0.0105
+[09:24:51] {train_network.py:197} INFO - Epoch: 51, Batch: 500, Loss: 0.0112
+[09:25:09] {train_network.py:197} INFO - Epoch: 51, Batch: 600, Loss: 0.0098
+[09:25:28] {train_network.py:197} INFO - Epoch: 51, Batch: 700, Loss: 0.0080
+[09:25:46] {train_network.py:197} INFO - Epoch: 51, Batch: 800, Loss: 0.0127
+[09:26:04] {train_network.py:197} INFO - Epoch: 51, Batch: 900, Loss: 0.0089
+[09:26:23] {train_network.py:197} INFO - Epoch: 51, Batch: 1000, Loss: 0.0115
+[09:26:41] {train_network.py:197} INFO - Epoch: 51, Batch: 1100, Loss: 0.0086
+[09:26:59] {train_network.py:197} INFO - Epoch: 51, Batch: 1200, Loss: 0.0110
+[09:27:17] {train_network.py:197} INFO - Epoch: 51, Batch: 1300, Loss: 0.0087
+[09:27:36] {train_network.py:197} INFO - Epoch: 51, Batch: 1400, Loss: 0.0114
+[09:27:54] {train_network.py:197} INFO - Epoch: 51, Batch: 1500, Loss: 0.0109
+[09:28:13] {train_network.py:197} INFO - Epoch: 51, Batch: 1600, Loss: 0.0075
+[09:28:31] {train_network.py:197} INFO - Epoch: 51, Batch: 1700, Loss: 0.0096
+[09:28:50] {train_network.py:197} INFO - Epoch: 51, Batch: 1800, Loss: 0.0120
+[09:29:08] {train_network.py:197} INFO - Epoch: 51, Batch: 1900, Loss: 0.0115
+[09:29:26] {train_network.py:197} INFO - Epoch: 51, Batch: 2000, Loss: 0.0095
+[09:29:44] {train_network.py:197} INFO - Epoch: 51, Batch: 2100, Loss: 0.0114
+[09:30:03] {train_network.py:197} INFO - Epoch: 51, Batch: 2200, Loss: 0.0142
+[09:30:21] {train_network.py:197} INFO - Epoch: 51, Batch: 2300, Loss: 0.0058
+[09:30:39] {train_network.py:197} INFO - Epoch: 51, Batch: 2400, Loss: 0.0160
+[09:30:58] {train_network.py:197} INFO - Epoch: 51, Batch: 2500, Loss: 0.0128
+[09:31:16] {train_network.py:197} INFO - Epoch: 51, Batch: 2600, Loss: 0.0062
+[09:31:35] {train_network.py:197} INFO - Epoch: 51, Batch: 2700, Loss: 0.0068
+[09:31:53] {train_network.py:197} INFO - Epoch: 51, Batch: 2800, Loss: 0.0115
+[09:32:11] {train_network.py:197} INFO - Epoch: 51, Batch: 2900, Loss: 0.0097
+[09:32:30] {train_network.py:197} INFO - Epoch: 51, Batch: 3000, Loss: 0.0137
+[09:32:48] {train_network.py:197} INFO - Epoch: 51, Batch: 3100, Loss: 0.0123
+[09:33:15] {train_network.py:395} INFO - Validating 0.25...
+[09:36:04] {train_network.py:398} INFO - 2447/2725 = 0.897982
+[09:36:04] {train_network.py:408} INFO - >>> save model: epoch_51_iou_0.8980
+[09:36:04] {train_network.py:372} INFO - Beginning Epoch 52, lr=0.001
+[09:36:24] {train_network.py:197} INFO - Epoch: 52, Batch: 100, Loss: 0.0109
+[09:36:40] {train_network.py:197} INFO - Epoch: 52, Batch: 200, Loss: 0.0093
+[09:36:57] {train_network.py:197} INFO - Epoch: 52, Batch: 300, Loss: 0.0084
+[09:37:14] {train_network.py:197} INFO - Epoch: 52, Batch: 400, Loss: 0.0071
+[09:37:32] {train_network.py:197} INFO - Epoch: 52, Batch: 500, Loss: 0.0126
+[09:37:50] {train_network.py:197} INFO - Epoch: 52, Batch: 600, Loss: 0.0161
+[09:38:08] {train_network.py:197} INFO - Epoch: 52, Batch: 700, Loss: 0.0069
+[09:38:26] {train_network.py:197} INFO - Epoch: 52, Batch: 800, Loss: 0.0132
+[09:38:45] {train_network.py:197} INFO - Epoch: 52, Batch: 900, Loss: 0.0095
+[09:39:03] {train_network.py:197} INFO - Epoch: 52, Batch: 1000, Loss: 0.0132
+[09:39:22] {train_network.py:197} INFO - Epoch: 52, Batch: 1100, Loss: 0.0137
+[09:39:40] {train_network.py:197} INFO - Epoch: 52, Batch: 1200, Loss: 0.0155
+[09:39:59] {train_network.py:197} INFO - Epoch: 52, Batch: 1300, Loss: 0.0077
+[09:40:17] {train_network.py:197} INFO - Epoch: 52, Batch: 1400, Loss: 0.0121
+[09:40:35] {train_network.py:197} INFO - Epoch: 52, Batch: 1500, Loss: 0.0113
+[09:40:53] {train_network.py:197} INFO - Epoch: 52, Batch: 1600, Loss: 0.0058
+[09:41:12] {train_network.py:197} INFO - Epoch: 52, Batch: 1700, Loss: 0.0090
+[09:41:31] {train_network.py:197} INFO - Epoch: 52, Batch: 1800, Loss: 0.0083
+[09:41:49] {train_network.py:197} INFO - Epoch: 52, Batch: 1900, Loss: 0.0073
+[09:42:07] {train_network.py:197} INFO - Epoch: 52, Batch: 2000, Loss: 0.0066
+[09:42:26] {train_network.py:197} INFO - Epoch: 52, Batch: 2100, Loss: 0.0060
+[09:42:44] {train_network.py:197} INFO - Epoch: 52, Batch: 2200, Loss: 0.0073
+[09:43:03] {train_network.py:197} INFO - Epoch: 52, Batch: 2300, Loss: 0.0082
+[09:43:21] {train_network.py:197} INFO - Epoch: 52, Batch: 2400, Loss: 0.0091
+[09:43:40] {train_network.py:197} INFO - Epoch: 52, Batch: 2500, Loss: 0.0106
+[09:43:58] {train_network.py:197} INFO - Epoch: 52, Batch: 2600, Loss: 0.0098
+[09:44:16] {train_network.py:197} INFO - Epoch: 52, Batch: 2700, Loss: 0.0091
+[09:44:34] {train_network.py:197} INFO - Epoch: 52, Batch: 2800, Loss: 0.0102
+[09:44:52] {train_network.py:197} INFO - Epoch: 52, Batch: 2900, Loss: 0.0163
+[09:45:10] {train_network.py:197} INFO - Epoch: 52, Batch: 3000, Loss: 0.0115
+[09:45:29] {train_network.py:197} INFO - Epoch: 52, Batch: 3100, Loss: 0.0095
+[09:45:55] {train_network.py:395} INFO - Validating 0.25...
+[09:48:43] {train_network.py:398} INFO - 2491/2725 = 0.914128
+[09:48:43] {train_network.py:408} INFO - >>> save model: epoch_52_iou_0.9141
+[09:48:43] {train_network.py:372} INFO - Beginning Epoch 53, lr=0.001
+[09:49:03] {train_network.py:197} INFO - Epoch: 53, Batch: 100, Loss: 0.0074
+[09:49:20] {train_network.py:197} INFO - Epoch: 53, Batch: 200, Loss: 0.0088
+[09:49:37] {train_network.py:197} INFO - Epoch: 53, Batch: 300, Loss: 0.0091
+[09:49:54] {train_network.py:197} INFO - Epoch: 53, Batch: 400, Loss: 0.0077
+[09:50:11] {train_network.py:197} INFO - Epoch: 53, Batch: 500, Loss: 0.0090
+[09:50:29] {train_network.py:197} INFO - Epoch: 53, Batch: 600, Loss: 0.0094
+[09:50:48] {train_network.py:197} INFO - Epoch: 53, Batch: 700, Loss: 0.0133
+[09:51:06] {train_network.py:197} INFO - Epoch: 53, Batch: 800, Loss: 0.0104
+[09:51:24] {train_network.py:197} INFO - Epoch: 53, Batch: 900, Loss: 0.0080
+[09:51:43] {train_network.py:197} INFO - Epoch: 53, Batch: 1000, Loss: 0.0076
+[09:52:01] {train_network.py:197} INFO - Epoch: 53, Batch: 1100, Loss: 0.0073
+[09:52:19] {train_network.py:197} INFO - Epoch: 53, Batch: 1200, Loss: 0.0081
+[09:52:37] {train_network.py:197} INFO - Epoch: 53, Batch: 1300, Loss: 0.0126
+[09:52:56] {train_network.py:197} INFO - Epoch: 53, Batch: 1400, Loss: 0.0101
+[09:53:14] {train_network.py:197} INFO - Epoch: 53, Batch: 1500, Loss: 0.0081
+[09:53:33] {train_network.py:197} INFO - Epoch: 53, Batch: 1600, Loss: 0.0082
+[09:53:51] {train_network.py:197} INFO - Epoch: 53, Batch: 1700, Loss: 0.0077
+[09:54:10] {train_network.py:197} INFO - Epoch: 53, Batch: 1800, Loss: 0.0106
+[09:54:28] {train_network.py:197} INFO - Epoch: 53, Batch: 1900, Loss: 0.0154
+[09:54:46] {train_network.py:197} INFO - Epoch: 53, Batch: 2000, Loss: 0.0072
+[09:55:05] {train_network.py:197} INFO - Epoch: 53, Batch: 2100, Loss: 0.0117
+[09:55:23] {train_network.py:197} INFO - Epoch: 53, Batch: 2200, Loss: 0.0072
+[09:55:42] {train_network.py:197} INFO - Epoch: 53, Batch: 2300, Loss: 0.0075
+[09:56:00] {train_network.py:197} INFO - Epoch: 53, Batch: 2400, Loss: 0.0083
+[09:56:18] {train_network.py:197} INFO - Epoch: 53, Batch: 2500, Loss: 0.0137
+[09:56:37] {train_network.py:197} INFO - Epoch: 53, Batch: 2600, Loss: 0.0089
+[09:56:55] {train_network.py:197} INFO - Epoch: 53, Batch: 2700, Loss: 0.0075
+[09:57:13] {train_network.py:197} INFO - Epoch: 53, Batch: 2800, Loss: 0.0138
+[09:57:31] {train_network.py:197} INFO - Epoch: 53, Batch: 2900, Loss: 0.0130
+[09:57:50] {train_network.py:197} INFO - Epoch: 53, Batch: 3000, Loss: 0.0096
+[09:58:08] {train_network.py:197} INFO - Epoch: 53, Batch: 3100, Loss: 0.0058
+[09:58:34] {train_network.py:395} INFO - Validating 0.25...
+[10:01:26] {train_network.py:398} INFO - 2442/2725 = 0.896147
+[10:01:26] {train_network.py:372} INFO - Beginning Epoch 54, lr=0.001
+[10:01:46] {train_network.py:197} INFO - Epoch: 54, Batch: 100, Loss: 0.0073
+[10:02:03] {train_network.py:197} INFO - Epoch: 54, Batch: 200, Loss: 0.0070
+[10:02:20] {train_network.py:197} INFO - Epoch: 54, Batch: 300, Loss: 0.0151
+[10:02:37] {train_network.py:197} INFO - Epoch: 54, Batch: 400, Loss: 0.0073
+[10:02:55] {train_network.py:197} INFO - Epoch: 54, Batch: 500, Loss: 0.0094
+[10:03:13] {train_network.py:197} INFO - Epoch: 54, Batch: 600, Loss: 0.0082
+[10:03:31] {train_network.py:197} INFO - Epoch: 54, Batch: 700, Loss: 0.0098
+[10:03:50] {train_network.py:197} INFO - Epoch: 54, Batch: 800, Loss: 0.0080
+[10:04:09] {train_network.py:197} INFO - Epoch: 54, Batch: 900, Loss: 0.0108
+[10:04:27] {train_network.py:197} INFO - Epoch: 54, Batch: 1000, Loss: 0.0096
+[10:04:45] {train_network.py:197} INFO - Epoch: 54, Batch: 1100, Loss: 0.0152
+[10:05:03] {train_network.py:197} INFO - Epoch: 54, Batch: 1200, Loss: 0.0092
+[10:05:22] {train_network.py:197} INFO - Epoch: 54, Batch: 1300, Loss: 0.0083
+[10:05:40] {train_network.py:197} INFO - Epoch: 54, Batch: 1400, Loss: 0.0063
+[10:05:58] {train_network.py:197} INFO - Epoch: 54, Batch: 1500, Loss: 0.0119
+[10:06:16] {train_network.py:197} INFO - Epoch: 54, Batch: 1600, Loss: 0.0119
+[10:06:35] {train_network.py:197} INFO - Epoch: 54, Batch: 1700, Loss: 0.0096
+[10:06:53] {train_network.py:197} INFO - Epoch: 54, Batch: 1800, Loss: 0.0120
+[10:07:12] {train_network.py:197} INFO - Epoch: 54, Batch: 1900, Loss: 0.0087
+[10:07:30] {train_network.py:197} INFO - Epoch: 54, Batch: 2000, Loss: 0.0077
+[10:07:48] {train_network.py:197} INFO - Epoch: 54, Batch: 2100, Loss: 0.0110
+[10:08:07] {train_network.py:197} INFO - Epoch: 54, Batch: 2200, Loss: 0.0101
+[10:08:25] {train_network.py:197} INFO - Epoch: 54, Batch: 2300, Loss: 0.0107
+[10:08:43] {train_network.py:197} INFO - Epoch: 54, Batch: 2400, Loss: 0.0079
+[10:09:02] {train_network.py:197} INFO - Epoch: 54, Batch: 2500, Loss: 0.0085
+[10:09:20] {train_network.py:197} INFO - Epoch: 54, Batch: 2600, Loss: 0.0098
+[10:09:38] {train_network.py:197} INFO - Epoch: 54, Batch: 2700, Loss: 0.0085
+[10:09:56] {train_network.py:197} INFO - Epoch: 54, Batch: 2800, Loss: 0.0091
+[10:10:15] {train_network.py:197} INFO - Epoch: 54, Batch: 2900, Loss: 0.0080
+[10:10:33] {train_network.py:197} INFO - Epoch: 54, Batch: 3000, Loss: 0.0139
+[10:10:52] {train_network.py:197} INFO - Epoch: 54, Batch: 3100, Loss: 0.0091
+[10:11:17] {train_network.py:395} INFO - Validating 0.25...
+[10:14:08] {train_network.py:398} INFO - 2462/2725 = 0.903486
+[10:14:08] {train_network.py:372} INFO - Beginning Epoch 55, lr=0.001
+[10:14:28] {train_network.py:197} INFO - Epoch: 55, Batch: 100, Loss: 0.0089
+[10:14:44] {train_network.py:197} INFO - Epoch: 55, Batch: 200, Loss: 0.0162
+[10:15:02] {train_network.py:197} INFO - Epoch: 55, Batch: 300, Loss: 0.0116
+[10:15:19] {train_network.py:197} INFO - Epoch: 55, Batch: 400, Loss: 0.0120
+[10:15:37] {train_network.py:197} INFO - Epoch: 55, Batch: 500, Loss: 0.0226
+[10:15:55] {train_network.py:197} INFO - Epoch: 55, Batch: 600, Loss: 0.0105
+[10:16:14] {train_network.py:197} INFO - Epoch: 55, Batch: 700, Loss: 0.0076
+[10:16:32] {train_network.py:197} INFO - Epoch: 55, Batch: 800, Loss: 0.0118
+[10:16:50] {train_network.py:197} INFO - Epoch: 55, Batch: 900, Loss: 0.0101
+[10:17:09] {train_network.py:197} INFO - Epoch: 55, Batch: 1000, Loss: 0.0132
+[10:17:27] {train_network.py:197} INFO - Epoch: 55, Batch: 1100, Loss: 0.0089
+[10:17:45] {train_network.py:197} INFO - Epoch: 55, Batch: 1200, Loss: 0.0082
+[10:18:03] {train_network.py:197} INFO - Epoch: 55, Batch: 1300, Loss: 0.0077
+[10:18:22] {train_network.py:197} INFO - Epoch: 55, Batch: 1400, Loss: 0.0077
+[10:18:40] {train_network.py:197} INFO - Epoch: 55, Batch: 1500, Loss: 0.0076
+[10:18:58] {train_network.py:197} INFO - Epoch: 55, Batch: 1600, Loss: 0.0130
+[10:19:16] {train_network.py:197} INFO - Epoch: 55, Batch: 1700, Loss: 0.0084
+[10:19:35] {train_network.py:197} INFO - Epoch: 55, Batch: 1800, Loss: 0.0085
+[10:19:53] {train_network.py:197} INFO - Epoch: 55, Batch: 1900, Loss: 0.0074
+[10:20:12] {train_network.py:197} INFO - Epoch: 55, Batch: 2000, Loss: 0.0105
+[10:20:30] {train_network.py:197} INFO - Epoch: 55, Batch: 2100, Loss: 0.0097
+[10:20:49] {train_network.py:197} INFO - Epoch: 55, Batch: 2200, Loss: 0.0073
+[10:21:07] {train_network.py:197} INFO - Epoch: 55, Batch: 2300, Loss: 0.0090
+[10:21:26] {train_network.py:197} INFO - Epoch: 55, Batch: 2400, Loss: 0.0085
+[10:21:44] {train_network.py:197} INFO - Epoch: 55, Batch: 2500, Loss: 0.0084
+[10:22:02] {train_network.py:197} INFO - Epoch: 55, Batch: 2600, Loss: 0.0076
+[10:22:20] {train_network.py:197} INFO - Epoch: 55, Batch: 2700, Loss: 0.0099
+[10:22:39] {train_network.py:197} INFO - Epoch: 55, Batch: 2800, Loss: 0.0172
+[10:22:57] {train_network.py:197} INFO - Epoch: 55, Batch: 2900, Loss: 0.0093
+[10:23:16] {train_network.py:197} INFO - Epoch: 55, Batch: 3000, Loss: 0.0069
+[10:23:34] {train_network.py:197} INFO - Epoch: 55, Batch: 3100, Loss: 0.0143
+[10:23:59] {train_network.py:395} INFO - Validating 0.25...
+[10:26:51] {train_network.py:398} INFO - 2493/2725 = 0.914862
+[10:26:51] {train_network.py:408} INFO - >>> save model: epoch_55_iou_0.9149
+[10:26:51] {train_network.py:372} INFO - Beginning Epoch 56, lr=0.001
+[10:27:11] {train_network.py:197} INFO - Epoch: 56, Batch: 100, Loss: 0.0095
+[10:27:27] {train_network.py:197} INFO - Epoch: 56, Batch: 200, Loss: 0.0095
+[10:27:44] {train_network.py:197} INFO - Epoch: 56, Batch: 300, Loss: 0.0057
+[10:28:01] {train_network.py:197} INFO - Epoch: 56, Batch: 400, Loss: 0.0201
+[10:28:19] {train_network.py:197} INFO - Epoch: 56, Batch: 500, Loss: 0.0083
+[10:28:37] {train_network.py:197} INFO - Epoch: 56, Batch: 600, Loss: 0.0121
+[10:28:55] {train_network.py:197} INFO - Epoch: 56, Batch: 700, Loss: 0.0080
+[10:29:13] {train_network.py:197} INFO - Epoch: 56, Batch: 800, Loss: 0.0098
+[10:29:32] {train_network.py:197} INFO - Epoch: 56, Batch: 900, Loss: 0.0137
+[10:29:50] {train_network.py:197} INFO - Epoch: 56, Batch: 1000, Loss: 0.0138
+[10:30:08] {train_network.py:197} INFO - Epoch: 56, Batch: 1100, Loss: 0.0111
+[10:30:26] {train_network.py:197} INFO - Epoch: 56, Batch: 1200, Loss: 0.0060
+[10:30:45] {train_network.py:197} INFO - Epoch: 56, Batch: 1300, Loss: 0.0126
+[10:31:03] {train_network.py:197} INFO - Epoch: 56, Batch: 1400, Loss: 0.0083
+[10:31:21] {train_network.py:197} INFO - Epoch: 56, Batch: 1500, Loss: 0.0170
+[10:31:39] {train_network.py:197} INFO - Epoch: 56, Batch: 1600, Loss: 0.0075
+[10:31:58] {train_network.py:197} INFO - Epoch: 56, Batch: 1700, Loss: 0.0064
+[10:32:16] {train_network.py:197} INFO - Epoch: 56, Batch: 1800, Loss: 0.0117
+[10:32:35] {train_network.py:197} INFO - Epoch: 56, Batch: 1900, Loss: 0.0188
+[10:32:53] {train_network.py:197} INFO - Epoch: 56, Batch: 2000, Loss: 0.0097
+[10:33:12] {train_network.py:197} INFO - Epoch: 56, Batch: 2100, Loss: 0.0099
+[10:33:30] {train_network.py:197} INFO - Epoch: 56, Batch: 2200, Loss: 0.0081
+[10:33:48] {train_network.py:197} INFO - Epoch: 56, Batch: 2300, Loss: 0.0141
+[10:34:06] {train_network.py:197} INFO - Epoch: 56, Batch: 2400, Loss: 0.0084
+[10:34:25] {train_network.py:197} INFO - Epoch: 56, Batch: 2500, Loss: 0.0068
+[10:34:44] {train_network.py:197} INFO - Epoch: 56, Batch: 2600, Loss: 0.0107
+[10:35:02] {train_network.py:197} INFO - Epoch: 56, Batch: 2700, Loss: 0.0064
+[10:35:20] {train_network.py:197} INFO - Epoch: 56, Batch: 2800, Loss: 0.0113
+[10:35:39] {train_network.py:197} INFO - Epoch: 56, Batch: 2900, Loss: 0.0090
+[10:35:57] {train_network.py:197} INFO - Epoch: 56, Batch: 3000, Loss: 0.0109
+[10:36:15] {train_network.py:197} INFO - Epoch: 56, Batch: 3100, Loss: 0.0090
+[10:36:41] {train_network.py:395} INFO - Validating 0.25...
+[10:39:37] {train_network.py:398} INFO - 2402/2725 = 0.881468
+[10:39:37] {train_network.py:372} INFO - Beginning Epoch 57, lr=0.001
+[10:39:56] {train_network.py:197} INFO - Epoch: 57, Batch: 100, Loss: 0.0115
+[10:40:13] {train_network.py:197} INFO - Epoch: 57, Batch: 200, Loss: 0.0072
+[10:40:30] {train_network.py:197} INFO - Epoch: 57, Batch: 300, Loss: 0.0071
+[10:40:47] {train_network.py:197} INFO - Epoch: 57, Batch: 400, Loss: 0.0093
+[10:41:05] {train_network.py:197} INFO - Epoch: 57, Batch: 500, Loss: 0.0116
+[10:41:23] {train_network.py:197} INFO - Epoch: 57, Batch: 600, Loss: 0.0133
+[10:41:41] {train_network.py:197} INFO - Epoch: 57, Batch: 700, Loss: 0.0096
+[10:42:00] {train_network.py:197} INFO - Epoch: 57, Batch: 800, Loss: 0.0098
+[10:42:18] {train_network.py:197} INFO - Epoch: 57, Batch: 900, Loss: 0.0103
+[10:42:37] {train_network.py:197} INFO - Epoch: 57, Batch: 1000, Loss: 0.0117
+[10:42:55] {train_network.py:197} INFO - Epoch: 57, Batch: 1100, Loss: 0.0183
+[10:43:13] {train_network.py:197} INFO - Epoch: 57, Batch: 1200, Loss: 0.0089
+[10:43:31] {train_network.py:197} INFO - Epoch: 57, Batch: 1300, Loss: 0.0124
+[10:43:50] {train_network.py:197} INFO - Epoch: 57, Batch: 1400, Loss: 0.0155
+[10:44:08] {train_network.py:197} INFO - Epoch: 57, Batch: 1500, Loss: 0.0127
+[10:44:26] {train_network.py:197} INFO - Epoch: 57, Batch: 1600, Loss: 0.0102
+[10:44:45] {train_network.py:197} INFO - Epoch: 57, Batch: 1700, Loss: 0.0073
+[10:45:03] {train_network.py:197} INFO - Epoch: 57, Batch: 1800, Loss: 0.0092
+[10:45:21] {train_network.py:197} INFO - Epoch: 57, Batch: 1900, Loss: 0.0128
+[10:45:39] {train_network.py:197} INFO - Epoch: 57, Batch: 2000, Loss: 0.0090
+[10:45:58] {train_network.py:197} INFO - Epoch: 57, Batch: 2100, Loss: 0.0081
+[10:46:17] {train_network.py:197} INFO - Epoch: 57, Batch: 2200, Loss: 0.0079
+[10:46:35] {train_network.py:197} INFO - Epoch: 57, Batch: 2300, Loss: 0.0084
+[10:46:53] {train_network.py:197} INFO - Epoch: 57, Batch: 2400, Loss: 0.0061
+[10:47:11] {train_network.py:197} INFO - Epoch: 57, Batch: 2500, Loss: 0.0117
+[10:47:30] {train_network.py:197} INFO - Epoch: 57, Batch: 2600, Loss: 0.0101
+[10:47:48] {train_network.py:197} INFO - Epoch: 57, Batch: 2700, Loss: 0.0118
+[10:48:06] {train_network.py:197} INFO - Epoch: 57, Batch: 2800, Loss: 0.0055
+[10:48:25] {train_network.py:197} INFO - Epoch: 57, Batch: 2900, Loss: 0.0066
+[10:48:44] {train_network.py:197} INFO - Epoch: 57, Batch: 3000, Loss: 0.0109
+[10:49:01] {train_network.py:197} INFO - Epoch: 57, Batch: 3100, Loss: 0.0081
+[10:49:27] {train_network.py:395} INFO - Validating 0.25...
+[10:52:22] {train_network.py:398} INFO - 2495/2725 = 0.915596
+[10:52:22] {train_network.py:408} INFO - >>> save model: epoch_57_iou_0.9156
+[10:52:22] {train_network.py:372} INFO - Beginning Epoch 58, lr=0.001
+[10:52:41] {train_network.py:197} INFO - Epoch: 58, Batch: 100, Loss: 0.0137
+[10:52:58] {train_network.py:197} INFO - Epoch: 58, Batch: 200, Loss: 0.0107
+[10:53:15] {train_network.py:197} INFO - Epoch: 58, Batch: 300, Loss: 0.0129
+[10:53:32] {train_network.py:197} INFO - Epoch: 58, Batch: 400, Loss: 0.0128
+[10:53:50] {train_network.py:197} INFO - Epoch: 58, Batch: 500, Loss: 0.0095
+[10:54:09] {train_network.py:197} INFO - Epoch: 58, Batch: 600, Loss: 0.0166
+[10:54:27] {train_network.py:197} INFO - Epoch: 58, Batch: 700, Loss: 0.0103
+[10:54:45] {train_network.py:197} INFO - Epoch: 58, Batch: 800, Loss: 0.0113
+[10:55:04] {train_network.py:197} INFO - Epoch: 58, Batch: 900, Loss: 0.0087
+[10:55:22] {train_network.py:197} INFO - Epoch: 58, Batch: 1000, Loss: 0.0117
+[10:55:40] {train_network.py:197} INFO - Epoch: 58, Batch: 1100, Loss: 0.0094
+[10:55:58] {train_network.py:197} INFO - Epoch: 58, Batch: 1200, Loss: 0.0120
+[10:56:17] {train_network.py:197} INFO - Epoch: 58, Batch: 1300, Loss: 0.0105
+[10:56:35] {train_network.py:197} INFO - Epoch: 58, Batch: 1400, Loss: 0.0074
+[10:56:53] {train_network.py:197} INFO - Epoch: 58, Batch: 1500, Loss: 0.0102
+[10:57:12] {train_network.py:197} INFO - Epoch: 58, Batch: 1600, Loss: 0.0142
+[10:57:31] {train_network.py:197} INFO - Epoch: 58, Batch: 1700, Loss: 0.0071
+[10:57:49] {train_network.py:197} INFO - Epoch: 58, Batch: 1800, Loss: 0.0120
+[10:58:07] {train_network.py:197} INFO - Epoch: 58, Batch: 1900, Loss: 0.0136
+[10:58:25] {train_network.py:197} INFO - Epoch: 58, Batch: 2000, Loss: 0.0051
+[10:58:44] {train_network.py:197} INFO - Epoch: 58, Batch: 2100, Loss: 0.0102
+[10:59:02] {train_network.py:197} INFO - Epoch: 58, Batch: 2200, Loss: 0.0042
+[10:59:20] {train_network.py:197} INFO - Epoch: 58, Batch: 2300, Loss: 0.0071
+[10:59:39] {train_network.py:197} INFO - Epoch: 58, Batch: 2400, Loss: 0.0080
+[10:59:57] {train_network.py:197} INFO - Epoch: 58, Batch: 2500, Loss: 0.0084
+[11:00:15] {train_network.py:197} INFO - Epoch: 58, Batch: 2600, Loss: 0.0066
+[11:00:34] {train_network.py:197} INFO - Epoch: 58, Batch: 2700, Loss: 0.0067
+[11:00:52] {train_network.py:197} INFO - Epoch: 58, Batch: 2800, Loss: 0.0073
+[11:01:10] {train_network.py:197} INFO - Epoch: 58, Batch: 2900, Loss: 0.0071
+[11:01:29] {train_network.py:197} INFO - Epoch: 58, Batch: 3000, Loss: 0.0121
+[11:01:48] {train_network.py:197} INFO - Epoch: 58, Batch: 3100, Loss: 0.0091
+[11:02:14] {train_network.py:395} INFO - Validating 0.25...
+[11:05:07] {train_network.py:398} INFO - 2493/2725 = 0.914862
+[11:05:07] {train_network.py:372} INFO - Beginning Epoch 59, lr=0.001
+[11:05:26] {train_network.py:197} INFO - Epoch: 59, Batch: 100, Loss: 0.0145
+[11:05:43] {train_network.py:197} INFO - Epoch: 59, Batch: 200, Loss: 0.0112
+[11:06:00] {train_network.py:197} INFO - Epoch: 59, Batch: 300, Loss: 0.0108
+[11:06:17] {train_network.py:197} INFO - Epoch: 59, Batch: 400, Loss: 0.0093
+[11:06:35] {train_network.py:197} INFO - Epoch: 59, Batch: 500, Loss: 0.0120
+[11:06:54] {train_network.py:197} INFO - Epoch: 59, Batch: 600, Loss: 0.0098
+[11:07:12] {train_network.py:197} INFO - Epoch: 59, Batch: 700, Loss: 0.0081
+[11:07:30] {train_network.py:197} INFO - Epoch: 59, Batch: 800, Loss: 0.0103
+[11:07:49] {train_network.py:197} INFO - Epoch: 59, Batch: 900, Loss: 0.0070
+[11:08:07] {train_network.py:197} INFO - Epoch: 59, Batch: 1000, Loss: 0.0122
+[11:08:25] {train_network.py:197} INFO - Epoch: 59, Batch: 1100, Loss: 0.0089
+[11:08:43] {train_network.py:197} INFO - Epoch: 59, Batch: 1200, Loss: 0.0115
+[11:09:02] {train_network.py:197} INFO - Epoch: 59, Batch: 1300, Loss: 0.0159
+[11:09:21] {train_network.py:197} INFO - Epoch: 59, Batch: 1400, Loss: 0.0063
+[11:09:39] {train_network.py:197} INFO - Epoch: 59, Batch: 1500, Loss: 0.0108
+[11:09:57] {train_network.py:197} INFO - Epoch: 59, Batch: 1600, Loss: 0.0163
+[11:10:16] {train_network.py:197} INFO - Epoch: 59, Batch: 1700, Loss: 0.0173
+[11:10:34] {train_network.py:197} INFO - Epoch: 59, Batch: 1800, Loss: 0.0057
+[11:10:52] {train_network.py:197} INFO - Epoch: 59, Batch: 1900, Loss: 0.0092
+[11:11:11] {train_network.py:197} INFO - Epoch: 59, Batch: 2000, Loss: 0.0091
+[11:11:30] {train_network.py:197} INFO - Epoch: 59, Batch: 2100, Loss: 0.0056
+[11:11:48] {train_network.py:197} INFO - Epoch: 59, Batch: 2200, Loss: 0.0117
+[11:12:06] {train_network.py:197} INFO - Epoch: 59, Batch: 2300, Loss: 0.0112
+[11:12:24] {train_network.py:197} INFO - Epoch: 59, Batch: 2400, Loss: 0.0108
+[11:12:43] {train_network.py:197} INFO - Epoch: 59, Batch: 2500, Loss: 0.0093
+[11:13:01] {train_network.py:197} INFO - Epoch: 59, Batch: 2600, Loss: 0.0082
+[11:13:19] {train_network.py:197} INFO - Epoch: 59, Batch: 2700, Loss: 0.0061
+[11:13:37] {train_network.py:197} INFO - Epoch: 59, Batch: 2800, Loss: 0.0100
+[11:13:56] {train_network.py:197} INFO - Epoch: 59, Batch: 2900, Loss: 0.0088
+[11:14:14] {train_network.py:197} INFO - Epoch: 59, Batch: 3000, Loss: 0.0115
+[11:14:33] {train_network.py:197} INFO - Epoch: 59, Batch: 3100, Loss: 0.0125
+[11:14:59] {train_network.py:395} INFO - Validating 0.25...
+[11:17:50] {train_network.py:398} INFO - 2459/2725 = 0.902385

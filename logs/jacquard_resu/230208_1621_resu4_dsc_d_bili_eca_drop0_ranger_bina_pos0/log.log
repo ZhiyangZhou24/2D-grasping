@@ -1,0 +1,49 @@
+[16:21:05] {/home/zzy/workspace/grasp/gitrepo/2D-grasping/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[16:21:05] {train_network.py:269} INFO - Loading Jacquard Dataset...
+[16:21:09] {train_network.py:280} INFO - Dataset size is 54485
+[16:21:09] {train_network.py:293} INFO - Dataset len is 54485
+[16:21:09] {train_network.py:300} INFO - Training size: 51760
+[16:21:09] {train_network.py:301} INFO - Validation size: 2725
+[16:21:09] {train_network.py:320} INFO - Done
+[16:21:09] {train_network.py:323} INFO - Loading Network...
+[16:21:09] {train_network.py:325} INFO - input channel is 1
+[16:21:09] {train_network.py:342} INFO - Done from zero model
+[16:21:11] {train_network.py:357} INFO - optimizer ranger Done
+[16:21:11] {train_network.py:372} INFO - Beginning Epoch 00, lr=0.001
+[16:21:22] {/home/zzy/workspace/grasp/gitrepo/2D-grasping/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[16:21:22] {train_network.py:269} INFO - Loading Jacquard Dataset...
+[16:21:25] {train_network.py:280} INFO - Dataset size is 54485
+[16:21:25] {train_network.py:293} INFO - Dataset len is 54485
+[16:21:25] {train_network.py:300} INFO - Training size: 51760
+[16:21:25] {train_network.py:301} INFO - Validation size: 2725
+[16:21:25] {train_network.py:320} INFO - Done
+[16:21:25] {train_network.py:323} INFO - Loading Network...
+[16:21:25] {train_network.py:325} INFO - input channel is 1
+[16:21:25] {train_network.py:342} INFO - Done from zero model
+[16:21:27] {train_network.py:357} INFO - optimizer ranger Done
+[16:21:28] {train_network.py:372} INFO - Beginning Epoch 00, lr=0.001
+[16:21:39] {train_network.py:197} INFO - Epoch: 0, Batch: 100, Loss: 0.5946
+[16:21:48] {train_network.py:197} INFO - Epoch: 0, Batch: 200, Loss: 0.2163
+[16:21:57] {train_network.py:197} INFO - Epoch: 0, Batch: 300, Loss: 0.1111
+[16:22:06] {train_network.py:197} INFO - Epoch: 0, Batch: 400, Loss: 0.0709
+[16:22:16] {train_network.py:197} INFO - Epoch: 0, Batch: 500, Loss: 0.0339
+[16:22:25] {train_network.py:197} INFO - Epoch: 0, Batch: 600, Loss: 0.0741
+[16:22:35] {train_network.py:197} INFO - Epoch: 0, Batch: 700, Loss: 0.0364
+[16:22:44] {train_network.py:197} INFO - Epoch: 0, Batch: 800, Loss: 0.0353
+[16:22:54] {train_network.py:197} INFO - Epoch: 0, Batch: 900, Loss: 0.0456
+[16:23:03] {train_network.py:197} INFO - Epoch: 0, Batch: 1000, Loss: 0.0438
+[16:23:13] {train_network.py:197} INFO - Epoch: 0, Batch: 1100, Loss: 0.0321
+[16:23:22] {train_network.py:197} INFO - Epoch: 0, Batch: 1200, Loss: 0.0272
+[16:23:32] {train_network.py:197} INFO - Epoch: 0, Batch: 1300, Loss: 0.0418
+[16:23:41] {train_network.py:197} INFO - Epoch: 0, Batch: 1400, Loss: 0.0459
+[16:23:51] {train_network.py:197} INFO - Epoch: 0, Batch: 1500, Loss: 0.0487
+[16:24:00] {train_network.py:197} INFO - Epoch: 0, Batch: 1600, Loss: 0.0214
+[16:24:10] {train_network.py:197} INFO - Epoch: 0, Batch: 1700, Loss: 0.0330
+[16:24:20] {train_network.py:197} INFO - Epoch: 0, Batch: 1800, Loss: 0.0318
+[16:24:29] {train_network.py:197} INFO - Epoch: 0, Batch: 1900, Loss: 0.0311
+[16:24:39] {train_network.py:197} INFO - Epoch: 0, Batch: 2000, Loss: 0.0347
+[16:24:49] {train_network.py:197} INFO - Epoch: 0, Batch: 2100, Loss: 0.0285
+[16:24:58] {train_network.py:197} INFO - Epoch: 0, Batch: 2200, Loss: 0.0263
+[16:25:08] {train_network.py:197} INFO - Epoch: 0, Batch: 2300, Loss: 0.0235
+[16:25:18] {train_network.py:197} INFO - Epoch: 0, Batch: 2400, Loss: 0.0251
+[16:25:27] {train_network.py:197} INFO - Epoch: 0, Batch: 2500, Loss: 0.0319

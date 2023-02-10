@@ -128,7 +128,7 @@ class up(nn.Module):
 
 class GenerativeResnet(GraspModel):
 
-    def __init__(self, input_channels=4, output_channels=1, channel_size=32, att = 'use_eca',upsamp='use_bilinear',dropout=False, prob=0.0):
+    def __init__(self, input_channels=4, output_channels=1, channel_size=32,use_mish=False, att = 'use_eca',upsamp='use_bilinear',dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
         print('Model is grc3_imp_dwc')
         print('GRCNN upsamp {}'.format(upsamp))
