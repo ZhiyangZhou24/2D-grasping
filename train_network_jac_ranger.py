@@ -77,7 +77,7 @@ def parse_args():
                         help='Ranger alpha')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
-    parser.add_argument('--epochs', type=int, default=50,
+    parser.add_argument('--epochs', type=int, default=100,
                         help='Training epochs')
     parser.add_argument('--batches-per-epoch', type=int, default=1600,
                         help='Batches per Epoch')
@@ -86,7 +86,7 @@ def parse_args():
 
     # Logging etc.
     # https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
-    parser.add_argument('--description', type=str, default='resu1_depth_1600_32_320_drop1_ranger_bina',
+    parser.add_argument('--description', type=str, default='resu_depth_1600_320_drop1_ranger_bina_pos1',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/resu_jacquard',
                         help='Log directory')
@@ -129,7 +129,7 @@ def validate(net, device, val_data, iou_threshold):
         for x, y, didx, rot, zoom_factor in val_data:
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc)
+            lossd = net.compute_loss(xc, yc,pos_loss=True)
 
             loss = lossd['loss']
 
@@ -188,7 +188,7 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
 
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc)
+            lossd = net.compute_loss(xc, yc,pos_loss = True)
 
             loss = lossd['loss']
 

@@ -6,6 +6,7 @@ sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 from inference.models.attention import CoordAtt, eca_block, se_block,cbam_block
 from inference.models.grasp_model import GraspModel, Mish
 from inference.models.duc import DenseUpsamplingConvolution
+from inference.models.RFB_Net_E_vgg import BasicRFB
 from torchsummary import summary
 
 class conv_att(nn.Module):
@@ -179,7 +180,7 @@ class up_final(nn.Module):
 
 class GenerativeResnet(GraspModel):
 
-    def __init__(self, input_channels=4, output_channels=1, channel_size=32,use_mish=False, att = 'use_eca',upsamp='use_convt', dropout=False, prob=0.0):
+    def __init__(self, input_channels=4, output_channels=1, channel_size=32,use_mish=True, att = 'use_eca',upsamp='use_convt', dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
         print('Model is resunet2')
         print('Model upsamp {}'.format(upsamp))
@@ -191,10 +192,15 @@ class GenerativeResnet(GraspModel):
         self.down2 = down(channel_size * 4, channel_size * 8, att_type=att,use_mish=use_mish)
         self.down3 = down(channel_size * 8, channel_size * 16, att_type=att,use_mish=use_mish)
         self.down4 = down(channel_size * 16, channel_size * 16, att_type=att,use_mish=use_mish)
+
+        self.rfb1 = BasicRFB(in_planes = channel_size * 16 ,out_planes = channel_size * 16)
+
         self.up1 = up(channel_size * 16 * 2, channel_size * 8, att_type=att,upsample_type=upsamp,use_mish=use_mish)
         self.up2 = up(channel_size * 8 * 2, channel_size * 4, att_type=att,upsample_type=upsamp,use_mish=use_mish)
         self.up3 = up(channel_size * 4 * 2, channel_size * 2, att_type=att,upsample_type=upsamp,use_mish=use_mish)
         self.up4 = up(channel_size * 2 * 2, channel_size * 2, att_type=att,upsample_type=upsamp,use_mish=use_mish)
+
+        self.rfb2 = BasicRFB(in_planes = channel_size * 2 ,out_planes = channel_size * 2)
 
         self.up_final = up_final(channel_size * 2, channel_size)
 
@@ -215,25 +221,29 @@ class GenerativeResnet(GraspModel):
 
     def forward(self, x_in):
         dbg = 0
-        x1 = self.inconv(x_in)
+        x1 = self.inconv(x_in) #64, 112, 112
         if dbg == 1:
-            print('x1.shape  {}'.format(x1.shape))
+            print('x1.shape  {}'.format(x1.shape)) #
 
-        x2 = self.down1(x1) 
+        x2 = self.down1(x1) #128, 56, 56
         if dbg == 1:
             print('x2.shape  {}'.format(x2.shape))
 
-        x3 = self.down2(x2) 
+        x3 = self.down2(x2) #256, 28, 28
         if dbg == 1:
             print('x3.shape  {}'.format(x3.shape))
 
-        x4 = self.down3(x3) 
+        x4 = self.down3(x3) #512, 14, 14
         if dbg == 1:
             print('x4.shape  {}'.format(x4.shape))
 
-        x5 = self.down4(x4) 
+        x5 = self.down4(x4) #512, 7, 7
         if dbg == 1:
             print('x5.shape  {}'.format(x5.shape))
+        
+        x5 = self.rfb1(x5)
+        if dbg == 1:
+            print('rfb_x5.shape  {}'.format(x5.shape))
 
         x44 = self.up1(x5, x4) #512 + 512 256 14
         if dbg == 1:
@@ -247,7 +257,9 @@ class GenerativeResnet(GraspModel):
         x11 = self.up4(x22,x1) #64 112
         if dbg == 1:
             print('x11.shape  {}'.format(x11.shape))
-
+        x11 = self.rfb2(x11)
+        if dbg == 1:
+            print('rfb_x11.shape  {}'.format(x11.shape))
         # x = F.relu(self.bn5(self.conv5(self.up_out(x11)))) #32 224
         x = self.up_final(x11)
         if dbg == 1:
@@ -270,7 +282,7 @@ sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 if __name__ == '__main__':
     model = GenerativeResnet()
     model.eval()
-    input = torch.rand(1, 4, 224, 224)
-    summary(model, (4, 224, 224),device='cpu')
+    input = torch.rand(1, 4, 320, 320)
+    summary(model, (4, 320, 320),device='cpu')
     sys.stdout = sys.__stdout__
     output = model(input)

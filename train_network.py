@@ -26,7 +26,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3_seresunet4',
+    parser.add_argument('--network', type=str, default='grconvnet3_seresunet2_rfb',
                         help='Network name in inference/models  grconvnet')
     parser.add_argument('--input-size', type=int, default=320,
                         help='Input image size for the network')
@@ -34,7 +34,7 @@ def parse_args():
                         help='Use Depth image for training (1/0)')
     parser.add_argument('--use-rgb', type=int, default=0,
                         help='Use RGB image for training (1/0)')
-    parser.add_argument('--use-dropout', type=int, default=0,
+    parser.add_argument('--use-dropout', type=int, default=1,
                         help='Use dropout for training (1/0)')
     parser.add_argument('--dropout-prob', type=float, default=0.1,
                         help='Dropout prob for training (0-1)')
@@ -47,7 +47,7 @@ def parse_args():
     
     parser.add_argument('--use-mish', type=bool, default=False,
                         help='(  True  False  )')
-    parser.add_argument('--posloss', type=bool, default=False,
+    parser.add_argument('--posloss', type=bool, default=True,
                         help='(  True  False  )')
     parser.add_argument('--upsamp', type=str, default='use_convt',
                         help='Use upsamp type (  use_duc  use_convt use_bilinear  )')
@@ -79,7 +79,7 @@ def parse_args():
                         help='Batch size')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
-    parser.add_argument('--epochs', type=int, default=60,
+    parser.add_argument('--epochs', type=int, default=100,
                         help='Training epochs')
     parser.add_argument('--batches-per-epoch', type=int, default=1600,
                         help='Batches per Epoch')
@@ -87,7 +87,7 @@ def parse_args():
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='resu4_dsc_d_bili_eca_drop0_ranger_bina_pos0',
+    parser.add_argument('--description', type=str, default='resu2_rfb_d_trap_eca_drop1_ranger_bina_pos1',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_resu',
                         help='Log directory')
@@ -95,11 +95,11 @@ def parse_args():
                         help='Visualise the training process')
     parser.add_argument('--cpu', dest='force_cpu', action='store_true', default=False,
                         help='Force code to run in CPU mode')
-    parser.add_argument('--random-seed', type=int, default=1234,
+    parser.add_argument('--random-seed', type=int, default=123,
                         help='Random seed for numpy')
     parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
-    parser.add_argument('--model', type=str, default='logs/seres_u/221210_1659_trainnin_seresu_rgbd_32_alfa3_3000/epoch_24_iou_0.9737', help='保存的模型')
-    parser.add_argument('--start-epoch', type=int, default=24, help='继续训练开始的epoch')
+    parser.add_argument('--model', type=str, default='logs/jacquard_resu/230208_1452_resu2_d_trap_eca_drop1_ranger_bina_pos0/epoch_07_iou_0.9354', help='保存的模型')
+    parser.add_argument('--start-epoch', type=int, default=8, help='继续训练开始的epoch')
     args = parser.parse_args()
     return args
 
@@ -130,7 +130,7 @@ def validate(net, device, val_data, iou_threshold):
         for x, y, didx, rot, zoom_factor in val_data:
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc,pos_loss=False)
+            lossd = net.compute_loss(xc, yc,pos_loss=True)
 
             loss = lossd['loss']
 
@@ -189,7 +189,7 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
 
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc,pos_loss=False)
+            lossd = net.compute_loss(xc, yc,pos_loss=True)
 
             loss = lossd['loss']
 

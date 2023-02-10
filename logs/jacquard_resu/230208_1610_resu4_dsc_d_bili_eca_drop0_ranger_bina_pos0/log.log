@@ -1,9 +1,0 @@
-[16:10:22] {/home/lab/zzy/grasp/2D-grasping-my/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
-[16:10:22] {train_network.py:269} INFO - Loading Jacquard Dataset...
-[16:10:23] {train_network.py:280} INFO - Dataset size is 54485
-[16:10:23] {train_network.py:293} INFO - Dataset len is 54485
-[16:10:23] {train_network.py:300} INFO - Training size: 51760
-[16:10:23] {train_network.py:301} INFO - Validation size: 2725
-[16:10:23] {train_network.py:320} INFO - Done
-[16:10:23] {train_network.py:323} INFO - Loading Network...
-[16:10:23] {train_network.py:325} INFO - input channel is 1

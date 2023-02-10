@@ -2,6 +2,9 @@ import torch.nn as nn
 import torch
 import torch.nn.functional as F
 from torch.nn.parameter import Parameter
+import sys
+sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
+from torchsummary import summary
 from inference.models.pico_det import CSPLayer
 from inference.models.grasp_model import GraspModel, ResidualBlock
 from inference.models.pp_lcnet import DepthwiseSeparable
@@ -247,8 +250,10 @@ class GenerativeResnet(GraspModel):
             sin_output = self.sin_output(x)
             width_output = self.width_output(x)
         return pos_output, cos_output, sin_output, width_output
-if __name__ == "__main__":
+if __name__ == '__main__':
     model = GenerativeResnet()
     model.eval()
     input = torch.rand(1, 4, 224, 224)
+    summary(model, (4, 224, 224),device='cpu')
+    sys.stdout = sys.__stdout__
     output = model(input)

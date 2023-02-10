@@ -153,7 +153,7 @@ class up(nn.Module):
         x = self.conv(x)
         return x
 
-
+# not used
 class GenerativeResnet(GraspModel):
 
     def __init__(self, input_channels=4, output_channels=1, channel_size=32,use_mish=False, att = 'use_eca',upsamp='use_convt', dropout=False, prob=0.0):
