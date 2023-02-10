@@ -26,9 +26,9 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3_seresunet4',
+    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc1',
                         help='Network name in inference/models  grconvnet')
-    parser.add_argument('--input-size', type=int, default=320,
+    parser.add_argument('--input-size', type=int, default=224,
                         help='Input image size for the network')
     parser.add_argument('--use-depth', type=int, default=1,
                         help='Use Depth image for training (1/0)')
@@ -61,7 +61,7 @@ def parse_args():
     # /media/lab/e/zzy/datasets/Cornell
     parser.add_argument('--dataset', type=str,default='jacquard',
                         help='Dataset Name ("cornell" or "jacquard")')
-    parser.add_argument('--dataset-path', type=str,default='/media/lab/ChainGOAT/Jacquard',
+    parser.add_argument('--dataset-path', type=str,default='/media/zzy/TOSHIBA480/0.Datasets/Jacquard',
                         help='Path to dataset')
     parser.add_argument('--alfa', type=int, default=1,
                         help='len(Dataset)*alfa')
@@ -75,27 +75,27 @@ def parse_args():
                         help='Dataset workers')
 
     # Training
-    parser.add_argument('--batch-size', type=int, default=32,
+    parser.add_argument('--batch-size', type=int, default=16,
                         help='Batch size')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
     parser.add_argument('--epochs', type=int, default=60,
                         help='Training epochs')
-    parser.add_argument('--batches-per-epoch', type=int, default=1600,
+    parser.add_argument('--batches-per-epoch', type=int, default=3200,
                         help='Batches per Epoch')
     parser.add_argument('--optim', type=str, default='ranger',
-                        help='Optmizer for the training. (adam or SGD)')
+                        help='Optmizer for the training. (ranger adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='resu4_dsc_d_bili_eca_drop0_ranger_bina_pos0',
+    parser.add_argument('--description', type=str, default='dwc1_d_trapk4_seall_drop0_ranger_224_pos1',
                         help='Training description')
-    parser.add_argument('--logdir', type=str, default='logs/jacquard_resu',
+    parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
                         help='Log directory')
     parser.add_argument('--vis', action='store_true',
                         help='Visualise the training process')
     parser.add_argument('--cpu', dest='force_cpu', action='store_true', default=False,
                         help='Force code to run in CPU mode')
-    parser.add_argument('--random-seed', type=int, default=1234,
+    parser.add_argument('--random-seed', type=int, default=123,
                         help='Random seed for numpy')
     parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
     parser.add_argument('--model', type=str, default='logs/seres_u/221210_1659_trainnin_seresu_rgbd_32_alfa3_3000/epoch_24_iou_0.9737', help='保存的模型')
@@ -130,7 +130,7 @@ def validate(net, device, val_data, iou_threshold):
         for x, y, didx, rot, zoom_factor in val_data:
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc,pos_loss=False)
+            lossd = net.compute_loss(xc, yc,pos_loss=True)
 
             loss = lossd['loss']
 
@@ -189,7 +189,7 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
 
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc,pos_loss=False)
+            lossd = net.compute_loss(xc, yc,pos_loss=True)
 
             loss = lossd['loss']
 

@@ -2,7 +2,18 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from numbers import Integral
+import math
 
+class Mish(nn.Module):
+    def __init__(self):
+        super().__init__()
+        print("Mish activation loaded...")
+    def forward(self,x):
+        x = x * (torch.tanh(F.softplus(x)))
+        return x
+
+def mish(x):
+    return x*(torch.tanh(F.softplus(x)))
 
 def make_divisible(v, divisor=16, min_value=None):
     if min_value is None:
@@ -21,7 +32,6 @@ def conv_3x3_bn(inp, oup, act, stride=1, group=1):
         act(inplace=True)
     )
 
-
 def conv_1x1_bn(inp, oup, act, group=1):
     return nn.Sequential(
         nn.Conv2d(inp, oup, 1, 1, 0, bias=False, groups=group),
@@ -37,7 +47,7 @@ def channel_shuffle(x, num_groups):
     x = x.permute(0, 2, 1, 3, 4)
     return x.contiguous().view(batch_size, num_channels, height, width)
 
-
+# this module is different from pp-lcnet
 class SEModule(nn.Module):
     def __init__(self, channel, reduction=4):
         super(SEModule, self).__init__()
@@ -215,11 +225,11 @@ class ConvBNLayer(nn.Module):
                  kernel_size=3,
                  stride=1,
                  groups=1,
-                 act='leaky_relu'):
+                 act='hard_swish'):
         super(ConvBNLayer, self).__init__()
 
         self.act = act
-        assert self.act in ['leaky_relu', "hard_swish"]
+        assert self.act in ['leaky_relu', "hard_swish","mish"]
         self.conv = nn.Conv2d(
             in_channels=in_channel,
             out_channels=out_channel,
@@ -236,6 +246,41 @@ class ConvBNLayer(nn.Module):
             x = F.leaky_relu(x)
         elif self.act == "hard_swish":
             x = F.hardswish(x)
+        elif self.act == "mish":
+            x = mish(x)
+        return x
+
+class DepthwiseSeparable(nn.Module):
+    def __init__(self,
+                 num_channels,
+                 num_filters,
+                 stride,
+                 dw_size=3,
+                 use_se=False,
+                 act="hard_swish"):
+        super().__init__()
+        self.use_se = use_se
+        self.dw_conv = ConvBNLayer(
+            in_channel=num_channels,
+            out_channel=num_channels,
+            kernel_size=dw_size,
+            stride=stride,
+            groups=num_channels,
+            act=act)
+        if use_se:
+            self.se = SEModule(num_channels)
+        self.pw_conv = ConvBNLayer(
+            in_channel=num_channels,
+            kernel_size=1,
+            out_channel=num_filters,
+            stride=1,
+            act=act)
+
+    def forward(self, x):
+        x = self.dw_conv(x)
+        if self.use_se:
+            x = self.se(x)
+        x = self.pw_conv(x)
         return x
 
 
@@ -289,59 +334,6 @@ class DPModule(nn.Module):
         x = self.act_func(self.bn2(self.pwconv(x)))
         return x
 
-
-class DarknetBottleneck(nn.Module):
-    """The basic bottleneck block used in Darknet.
-
-    Each Block consists of two ConvModules and the input is added to the
-    final output. Each ConvModule is composed of Conv, BN, and act.
-    The first convLayer has filter size of 1x1 and the second one has the
-    filter size of 3x3.
-
-    Args:
-        in_channels (int): The input channels of this Module.
-        out_channels (int): The output channels of this Module.
-        expansion (int): The kernel size of the convolution. Default: 0.5
-        add_identity (bool): Whether to add identity to the out.
-            Default: True
-        use_depthwise (bool): Whether to use depthwise separable convolution.
-            Default: False
-    """
-
-    def __init__(self,
-                 in_channels,
-                 out_channels,
-                 kernel_size=3,
-                 expansion=0.5,
-                 add_identity=True,
-                 use_depthwise=False,
-                 act="leaky_relu"):
-        super(DarknetBottleneck, self).__init__()
-        hidden_channels = int(out_channels * expansion)
-        conv_func = DPModule if use_depthwise else ConvBNLayer
-        self.conv1 = ConvBNLayer(
-            in_channel=in_channels,
-            out_channel=hidden_channels,
-            kernel_size=1,
-            act=act)
-        self.conv2 = conv_func(
-            in_channel=hidden_channels,
-            out_channel=out_channels,
-            kernel_size=kernel_size,
-            stride=1,
-            act=act)
-        self.add_identity = \
-            add_identity and in_channels == out_channels
-
-    def forward(self, x):
-        identity = x
-        out = self.conv1(x)
-        out = self.conv2(out)
-
-        if self.add_identity:
-            return out + identity
-        else:
-            return out
 
 class DarknetBottleneck(nn.Module):
     """The basic bottleneck block used in Darknet.

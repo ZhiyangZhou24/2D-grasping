@@ -52,6 +52,12 @@ def get_network(network_name):
     elif network_name == 'grconvnet3_imp_dwc':
         from .grconvnet3_imp_dwc import GenerativeResnet
         return GenerativeResnet
+    elif network_name == 'grconvnet3_imp_dwc1':
+        from .grconvnet3_imp_dwc1 import GenerativeResnet
+        return GenerativeResnet
+    elif network_name == 'grconvnet3_imp_dwc2':
+        from .grconvnet3_imp_dwc2 import GenerativeResnet
+        return GenerativeResnet
     elif network_name == 'unet':
         from .unet import GenerativeResnet
         return GenerativeResnet
