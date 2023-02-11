@@ -87,7 +87,7 @@ def parse_args():
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_d_bili_se_drop1_ranger_bina_pos1',
+    parser.add_argument('--description', type=str, default='dwc1_d_bili_eca_drop1_ranger_bina_pos1',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
                         help='Log directory')

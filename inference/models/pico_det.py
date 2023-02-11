@@ -285,7 +285,7 @@ class DepthwiseSeparable(nn.Module):
                 nn.Conv2d(num_channels, num_filters, kernel_size=1, stride=1, bias=False),
                 nn.BatchNorm2d(num_filters),
             )
-    def _make_att(self, in_channels, out_channels,reduc_ratio):
+    def _make_att(self, in_channels, out_channels,reduc_ratio=4):
         if self.att_type == 'use_coora':
             print('use_coora reduc_ratio = {}'.format(reduc_ratio))
             return CoordAtt(in_channels,out_channels,reduc_ratio)
