@@ -51,7 +51,7 @@ def parse_args():
                         help='(  True  False  )')
     parser.add_argument('--upsamp', type=str, default='use_bilinear',
                         help='Use upsamp type (  use_duc  use_convt use_bilinear  )')
-    parser.add_argument('--att', type=str, default='use_eca',
+    parser.add_argument('--att', type=str, default='use_coora',
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
     parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
                         help='Dataset gaussian progress 0.0 means not use gauss')
@@ -87,7 +87,7 @@ def parse_args():
                         help='Optmizer for the training. (adam or SGD)')
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_d_bili_eca_drop1_ranger_bina_pos1',
+    parser.add_argument('--description', type=str, default='dwc1_d_bili_corra_drop1_ranger_bina_pos1',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
                         help='Log directory')
