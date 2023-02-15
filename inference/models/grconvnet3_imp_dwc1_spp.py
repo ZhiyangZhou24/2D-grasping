@@ -5,10 +5,9 @@ from torch.nn.parameter import Parameter
 import sys
 sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 from inference.models.pico_det import CSPLayer, DepthwiseSeparable,ConvBNLayer
-from inference.models.grasp_model import GraspModel,SpatialPyramidPooling
+from inference.models.grasp_model import GraspModel,SPPF
 from inference.models.attention import CoordAtt
 from inference.models.duc import DenseUpsamplingConvolution
-from inference.models.RFB_Net_E_vgg import BasicRFB
 from torchsummary import summary
 
 
@@ -30,7 +29,7 @@ class up(nn.Module):
         self.upsample_type = upsample_type
         self.up = self._make_upconv(out_ch, out_ch, upscale_factor = 2)
 
-        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,act=act)
+        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,act=act,use_depthwise=False)
         
     def _make_upconv(self, in_channels, out_channels, upscale_factor = 2):
         if self.upsample_type == 'use_duc':
@@ -59,9 +58,9 @@ class up(nn.Module):
 
 class GenerativeResnet(GraspModel):
 
-    def __init__(self, input_channels=1, output_channels=1, channel_size=32,use_mish=True, att = 'use_se',upsamp='use_bilinear',dropout=False, prob=0.0):
+    def __init__(self, input_channels=1, output_channels=1, channel_size=32,use_mish=True, att = 'use_eca',upsamp='use_bilinear',dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
-        print('Model is grc3_imp_dwc1')
+        print('Model is grc3_imp_dwc1_spp')
         print('GRCNN upsamp {}'.format(upsamp))
         print('USE mish {}'.format(use_mish))
         print('USE att {}'.format(att))
@@ -77,19 +76,18 @@ class GenerativeResnet(GraspModel):
                     DepthwiseSeparable(num_channels= channel_size , num_filters=channel_size ,stride=1,att_type = self.att,act=self.act),
                     DepthwiseSeparable(num_channels= channel_size , num_filters=channel_size * 2,stride=2,att_type = self.att,act=self.act)
         )
-        self.rfb1 = BasicRFB(in_planes = channel_size * 2 ,out_planes = channel_size * 2)
 
         self.dsc2 = nn.Sequential( #28
                     DepthwiseSeparable(num_channels= channel_size * 2, num_filters=channel_size * 2,stride=1,att_type = self.att,act=self.act),
                     DepthwiseSeparable(num_channels= channel_size * 2, num_filters=channel_size * 4,stride=2,att_type = self.att,act=self.act)
         )
-        self.rfb2 = BasicRFB(in_planes = channel_size * 4 ,out_planes = channel_size * 4)
 
         self.dsc3 = nn.Sequential( #14
                     DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 4,stride=1,att_type = self.att,act=self.act),
                     DepthwiseSeparable(num_channels= channel_size * 4, num_filters=channel_size * 8,stride=2,att_type = self.att,act=self.act)
         )
-        self.rfb3 = BasicRFB(in_planes = channel_size * 8 ,out_planes = channel_size * 8)
+
+        self.sppf = SPPF(c1=channel_size * 8,c2=channel_size * 8)
 
         self.dscBottleNeck = nn.Sequential(
                     DepthwiseSeparable(num_channels= channel_size * 8, num_filters=channel_size * 8,dw_size = 5,stride=1,att_type = self.att,act=self.act),
@@ -141,25 +139,26 @@ class GenerativeResnet(GraspModel):
         d3 = self.dsc3(d2)
         if dbg == 1:
             print('d3.shape  {}'.format(d3.shape))
+        
+        d3 = self.sppf(d3)
+        if dbg == 1:
+            print('d3_spp.shape  {}'.format(d3.shape))
 
         x = self.dscBottleNeck(d3)
         if dbg == 1:
             print('bt.shape  {}'.format(x.shape))
 
-        # d3 = self.rfb3(d3)
         x = self.up1(x,d3)
         if dbg == 1:
             print('u1.shape  {}'.format(x.shape))
 
-        # d2 = self.rfb2(d2)
         x = self.up2(x,d2)
         if dbg == 1:
             print('u2.shape  {}'.format(x.shape))
 
-        d1 = self.rfb1(d1)
         x = self.up3(x,d1)
         if dbg == 1:
-            print('up3.shape  {}'.format(x.shape))
+            print('x.shape  {}'.format(x.shape))
 
 
         if self.dropout:
@@ -178,7 +177,7 @@ sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 if __name__ == '__main__':
     model = GenerativeResnet()
     model.eval()
-    input = torch.rand(1, 1, 320, 320)
-    summary(model, (1, 320, 320),device='cpu')
+    input = torch.rand(1, 1, 224, 224)
+    summary(model, (1, 224, 224),device='cpu')
     sys.stdout = sys.__stdout__
     output = model(input)

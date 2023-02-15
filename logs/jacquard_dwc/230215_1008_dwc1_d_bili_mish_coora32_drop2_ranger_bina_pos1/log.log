@@ -1,0 +1,517 @@
+[10:08:38] {/home/lab/zzy/grasp/2D-grasping-my/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[10:08:38] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:269} INFO - Loading Jacquard Dataset...
+[10:08:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:280} INFO - Dataset size is 54485
+[10:08:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:293} INFO - Dataset len is 54485
+[10:08:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:300} INFO - Training size: 49036
+[10:08:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:301} INFO - Validation size: 5449
+[10:08:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:320} INFO - Done
+[10:08:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:323} INFO - Loading Network...
+[10:08:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:325} INFO - input channel is 1
+[10:08:40] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:340} INFO - Done from goon checkpoint logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358
+[10:08:40] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:357} INFO - optimizer ranger Done
+[10:08:41] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 05, lr=0.0005
+[10:08:57] {/home/lab/zzy/grasp/2D-grasping-my/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[10:08:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:269} INFO - Loading Jacquard Dataset...
+[10:08:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:280} INFO - Dataset size is 54485
+[10:08:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:293} INFO - Dataset len is 54485
+[10:08:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:300} INFO - Training size: 49036
+[10:08:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:301} INFO - Validation size: 5449
+[10:08:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:320} INFO - Done
+[10:08:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:323} INFO - Loading Network...
+[10:08:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:325} INFO - input channel is 1
+[10:08:58] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:340} INFO - Done from goon checkpoint logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358
+[10:08:58] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:357} INFO - optimizer ranger Done
+[10:08:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 04, lr=0.001
+[10:09:29] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 100, Loss: 0.0096
+[10:09:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 200, Loss: 0.0083
+[10:10:18] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 300, Loss: 0.0118
+[10:10:42] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 400, Loss: 0.0119
+[10:11:07] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 500, Loss: 0.0145
+[10:11:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 600, Loss: 0.0109
+[10:11:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 700, Loss: 0.0091
+[10:12:20] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 800, Loss: 0.0147
+[10:12:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 900, Loss: 0.0105
+[10:13:09] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 1000, Loss: 0.0099
+[10:13:34] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 1100, Loss: 0.0103
+[10:13:58] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 1200, Loss: 0.0129
+[10:14:23] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 1300, Loss: 0.0184
+[10:14:47] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 1400, Loss: 0.0135
+[10:15:12] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 4, Batch: 1500, Loss: 0.0133
+[10:15:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[10:19:19] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5086/5449 = 0.933382
+[10:19:19] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_04_iou_0.9334
+[10:19:19] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 05, lr=0.0005
+[10:19:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 100, Loss: 0.0131
+[10:20:12] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 200, Loss: 0.0132
+[10:20:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 300, Loss: 0.0111
+[10:21:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 400, Loss: 0.0114
+[10:21:26] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 500, Loss: 0.0120
+[10:21:51] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 600, Loss: 0.0137
+[10:22:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 700, Loss: 0.0100
+[10:22:40] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 800, Loss: 0.0114
+[10:23:04] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 900, Loss: 0.0080
+[10:23:29] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 1000, Loss: 0.0083
+[10:23:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 1100, Loss: 0.0107
+[10:24:18] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 1200, Loss: 0.0102
+[10:24:42] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 1300, Loss: 0.0113
+[10:25:07] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 1400, Loss: 0.0081
+[10:25:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 5, Batch: 1500, Loss: 0.0127
+[10:26:07] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[10:29:38] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5055/5449 = 0.927693
+[10:29:38] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 06, lr=0.0005
+[10:30:07] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 100, Loss: 0.0105
+[10:30:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 200, Loss: 0.0096
+[10:30:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 300, Loss: 0.0116
+[10:31:20] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 400, Loss: 0.0101
+[10:31:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 500, Loss: 0.0125
+[10:32:09] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 600, Loss: 0.0102
+[10:32:34] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 700, Loss: 0.0158
+[10:32:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 800, Loss: 0.0103
+[10:33:23] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 900, Loss: 0.0140
+[10:33:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 1000, Loss: 0.0123
+[10:34:12] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 1100, Loss: 0.0108
+[10:34:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 1200, Loss: 0.0093
+[10:35:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 1300, Loss: 0.0154
+[10:35:26] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 1400, Loss: 0.0104
+[10:35:51] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 6, Batch: 1500, Loss: 0.0121
+[10:36:28] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[10:39:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5083/5449 = 0.932832
+[10:39:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 07, lr=0.0005
+[10:40:27] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 100, Loss: 0.0129
+[10:40:52] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 200, Loss: 0.0170
+[10:41:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 300, Loss: 0.0087
+[10:41:41] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 400, Loss: 0.0101
+[10:42:06] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 500, Loss: 0.0149
+[10:42:30] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 600, Loss: 0.0096
+[10:42:55] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 700, Loss: 0.0089
+[10:43:19] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 800, Loss: 0.0112
+[10:43:44] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 900, Loss: 0.0089
+[10:44:08] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 1000, Loss: 0.0148
+[10:44:33] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 1100, Loss: 0.0104
+[10:44:58] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 1200, Loss: 0.0074
+[10:45:22] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 1300, Loss: 0.0092
+[10:45:47] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 1400, Loss: 0.0140
+[10:46:11] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 7, Batch: 1500, Loss: 0.0095
+[10:46:47] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[10:50:19] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5076/5449 = 0.931547
+[10:50:19] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 08, lr=0.0005
+[10:50:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 100, Loss: 0.0099
+[10:51:13] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 200, Loss: 0.0111
+[10:51:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 300, Loss: 0.0114
+[10:52:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 400, Loss: 0.0133
+[10:52:26] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 500, Loss: 0.0116
+[10:52:51] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 600, Loss: 0.0108
+[10:53:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 700, Loss: 0.0113
+[10:53:40] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 800, Loss: 0.0097
+[10:54:05] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 900, Loss: 0.0114
+[10:54:29] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 1000, Loss: 0.0100
+[10:54:54] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 1100, Loss: 0.0094
+[10:55:18] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 1200, Loss: 0.0125
+[10:55:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 1300, Loss: 0.0096
+[10:56:07] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 1400, Loss: 0.0148
+[10:56:32] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 8, Batch: 1500, Loss: 0.0098
+[10:57:09] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[11:00:41] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5093/5449 = 0.934667
+[11:00:41] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_08_iou_0.9347
+[11:00:41] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 09, lr=0.0005
+[11:01:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 100, Loss: 0.0113
+[11:01:34] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 200, Loss: 0.0112
+[11:01:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 300, Loss: 0.0124
+[11:02:23] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 400, Loss: 0.0153
+[11:02:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 500, Loss: 0.0099
+[11:03:12] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 600, Loss: 0.0114
+[11:03:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 700, Loss: 0.0098
+[11:04:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 800, Loss: 0.0124
+[11:04:26] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 900, Loss: 0.0087
+[11:04:51] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 1000, Loss: 0.0100
+[11:05:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 1100, Loss: 0.0155
+[11:05:40] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 1200, Loss: 0.0103
+[11:06:05] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 1300, Loss: 0.0141
+[11:06:29] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 1400, Loss: 0.0098
+[11:06:54] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 9, Batch: 1500, Loss: 0.0150
+[11:07:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[11:11:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5097/5449 = 0.935401
+[11:11:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_09_iou_0.9354
+[11:11:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 10, lr=0.0005
+[11:11:30] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 100, Loss: 0.0110
+[11:11:55] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 200, Loss: 0.0104
+[11:12:19] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 300, Loss: 0.0110
+[11:12:44] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 400, Loss: 0.0114
+[11:13:08] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 500, Loss: 0.0106
+[11:13:33] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 600, Loss: 0.0105
+[11:13:58] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 700, Loss: 0.0104
+[11:14:22] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 800, Loss: 0.0100
+[11:14:47] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 900, Loss: 0.0125
+[11:15:12] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 1000, Loss: 0.0133
+[11:15:36] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 1100, Loss: 0.0113
+[11:16:01] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 1200, Loss: 0.0139
+[11:16:25] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 1300, Loss: 0.0079
+[11:16:50] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 1400, Loss: 0.0086
+[11:17:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 10, Batch: 1500, Loss: 0.0101
+[11:17:50] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[11:21:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5090/5449 = 0.934116
+[11:21:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_10_iou_0.9341
+[11:21:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 11, lr=0.0005
+[11:21:50] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 100, Loss: 0.0112
+[11:22:14] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 200, Loss: 0.0107
+[11:22:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 300, Loss: 0.0117
+[11:23:04] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 400, Loss: 0.0109
+[11:23:28] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 500, Loss: 0.0099
+[11:23:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 600, Loss: 0.0117
+[11:24:17] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 700, Loss: 0.0091
+[11:24:42] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 800, Loss: 0.0116
+[11:25:07] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 900, Loss: 0.0103
+[11:25:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 1000, Loss: 0.0110
+[11:25:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 1100, Loss: 0.0152
+[11:26:20] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 1200, Loss: 0.0126
+[11:26:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 1300, Loss: 0.0115
+[11:27:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 1400, Loss: 0.0132
+[11:27:34] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 11, Batch: 1500, Loss: 0.0140
+[11:28:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[11:31:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5138/5449 = 0.942925
+[11:31:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_11_iou_0.9429
+[11:31:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 12, lr=0.0005
+[11:32:11] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 100, Loss: 0.0140
+[11:32:36] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 200, Loss: 0.0093
+[11:33:00] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 300, Loss: 0.0094
+[11:33:25] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 400, Loss: 0.0075
+[11:33:50] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 500, Loss: 0.0095
+[11:34:14] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 600, Loss: 0.0113
+[11:34:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 700, Loss: 0.0071
+[11:35:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 800, Loss: 0.0084
+[11:35:28] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 900, Loss: 0.0132
+[11:35:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 1000, Loss: 0.0097
+[11:36:17] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 1100, Loss: 0.0107
+[11:36:42] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 1200, Loss: 0.0143
+[11:37:06] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 1300, Loss: 0.0109
+[11:37:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 1400, Loss: 0.0123
+[11:37:55] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 12, Batch: 1500, Loss: 0.0095
+[11:38:34] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[11:42:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5073/5449 = 0.930997
+[11:42:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 13, lr=0.0005
+[11:42:32] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 100, Loss: 0.0088
+[11:42:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 200, Loss: 0.0078
+[11:43:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 300, Loss: 0.0140
+[11:43:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 400, Loss: 0.0106
+[11:44:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 500, Loss: 0.0120
+[11:44:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 600, Loss: 0.0077
+[11:44:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 700, Loss: 0.0109
+[11:45:24] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 800, Loss: 0.0133
+[11:45:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 900, Loss: 0.0099
+[11:46:13] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 1000, Loss: 0.0122
+[11:46:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 1100, Loss: 0.0126
+[11:47:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 1200, Loss: 0.0152
+[11:47:27] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 1300, Loss: 0.0144
+[11:47:51] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 1400, Loss: 0.0105
+[11:48:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 13, Batch: 1500, Loss: 0.0120
+[11:48:52] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[11:52:26] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5110/5449 = 0.937787
+[11:52:26] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 14, lr=0.0005
+[11:52:54] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 100, Loss: 0.0100
+[11:53:18] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 200, Loss: 0.0126
+[11:53:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 300, Loss: 0.0118
+[11:54:08] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 400, Loss: 0.0101
+[11:54:32] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 500, Loss: 0.0126
+[11:54:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 600, Loss: 0.0128
+[11:55:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 700, Loss: 0.0123
+[11:55:46] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 800, Loss: 0.0106
+[11:56:11] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 900, Loss: 0.0117
+[11:56:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 1000, Loss: 0.0112
+[11:57:00] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 1100, Loss: 0.0164
+[11:57:24] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 1200, Loss: 0.0083
+[11:57:49] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 1300, Loss: 0.0119
+[11:58:13] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 1400, Loss: 0.0095
+[11:58:38] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 14, Batch: 1500, Loss: 0.0103
+[11:59:14] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[12:02:47] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5098/5449 = 0.935585
+[12:02:47] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 15, lr=0.00025
+[12:03:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 100, Loss: 0.0102
+[12:03:40] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 200, Loss: 0.0067
+[12:04:04] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 300, Loss: 0.0144
+[12:04:29] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 400, Loss: 0.0117
+[12:04:54] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 500, Loss: 0.0091
+[12:05:18] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 600, Loss: 0.0096
+[12:05:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 700, Loss: 0.0131
+[12:06:07] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 800, Loss: 0.0085
+[12:06:32] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 900, Loss: 0.0099
+[12:06:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 1000, Loss: 0.0075
+[12:07:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 1100, Loss: 0.0120
+[12:07:46] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 1200, Loss: 0.0145
+[12:08:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 1300, Loss: 0.0093
+[12:08:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 1400, Loss: 0.0081
+[12:09:00] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 15, Batch: 1500, Loss: 0.0109
+[12:09:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[12:13:08] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5125/5449 = 0.940540
+[12:13:08] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 16, lr=0.00025
+[12:13:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 100, Loss: 0.0074
+[12:14:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 200, Loss: 0.0138
+[12:14:26] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 300, Loss: 0.0111
+[12:14:51] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 400, Loss: 0.0105
+[12:15:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 500, Loss: 0.0072
+[12:15:40] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 600, Loss: 0.0132
+[12:16:05] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 700, Loss: 0.0089
+[12:16:29] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 800, Loss: 0.0100
+[12:16:54] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 900, Loss: 0.0111
+[12:17:18] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 1000, Loss: 0.0114
+[12:17:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 1100, Loss: 0.0065
+[12:18:08] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 1200, Loss: 0.0135
+[12:18:32] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 1300, Loss: 0.0127
+[12:18:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 1400, Loss: 0.0129
+[12:19:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 16, Batch: 1500, Loss: 0.0113
+[12:19:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[12:23:30] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5127/5449 = 0.940907
+[12:23:30] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 17, lr=0.00025
+[12:23:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 100, Loss: 0.0102
+[12:24:23] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 200, Loss: 0.0104
+[12:24:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 300, Loss: 0.0080
+[12:25:12] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 400, Loss: 0.0113
+[12:25:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 500, Loss: 0.0083
+[12:26:01] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 600, Loss: 0.0139
+[12:26:26] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 700, Loss: 0.0087
+[12:26:51] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 800, Loss: 0.0104
+[12:27:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 900, Loss: 0.0100
+[12:27:40] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 1000, Loss: 0.0109
+[12:28:05] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 1100, Loss: 0.0101
+[12:28:29] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 1200, Loss: 0.0145
+[12:28:54] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 1300, Loss: 0.0099
+[12:29:18] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 1400, Loss: 0.0099
+[12:29:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 17, Batch: 1500, Loss: 0.0081
+[12:30:20] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[12:33:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5119/5449 = 0.939438
+[12:33:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 18, lr=0.00025
+[12:34:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 100, Loss: 0.0109
+[12:34:46] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 200, Loss: 0.0093
+[12:35:11] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 300, Loss: 0.0120
+[12:35:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 400, Loss: 0.0086
+[12:36:00] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 500, Loss: 0.0111
+[12:36:24] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 600, Loss: 0.0111
+[12:36:49] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 700, Loss: 0.0101
+[12:37:13] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 800, Loss: 0.0101
+[12:37:38] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 900, Loss: 0.0085
+[12:38:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 1000, Loss: 0.0080
+[12:38:27] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 1100, Loss: 0.0108
+[12:38:52] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 1200, Loss: 0.0137
+[12:39:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 1300, Loss: 0.0085
+[12:39:41] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 1400, Loss: 0.0121
+[12:40:05] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 18, Batch: 1500, Loss: 0.0075
+[12:40:42] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[12:44:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5146/5449 = 0.944393
+[12:44:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_18_iou_0.9444
+[12:44:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 19, lr=0.00025
+[12:44:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 100, Loss: 0.0094
+[12:45:08] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 200, Loss: 0.0102
+[12:45:32] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 300, Loss: 0.0085
+[12:45:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 400, Loss: 0.0113
+[12:46:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 500, Loss: 0.0116
+[12:46:46] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 600, Loss: 0.0082
+[12:47:11] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 700, Loss: 0.0113
+[12:47:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 800, Loss: 0.0061
+[12:48:00] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 900, Loss: 0.0111
+[12:48:24] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 1000, Loss: 0.0119
+[12:48:49] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 1100, Loss: 0.0111
+[12:49:13] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 1200, Loss: 0.0064
+[12:49:38] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 1300, Loss: 0.0115
+[12:50:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 1400, Loss: 0.0137
+[12:50:27] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 19, Batch: 1500, Loss: 0.0084
+[12:51:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[12:54:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5167/5449 = 0.948247
+[12:54:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_19_iou_0.9482
+[12:54:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 20, lr=0.00025
+[12:55:04] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 100, Loss: 0.0098
+[12:55:28] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 200, Loss: 0.0127
+[12:55:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 300, Loss: 0.0133
+[12:56:17] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 400, Loss: 0.0080
+[12:56:42] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 500, Loss: 0.0108
+[12:57:07] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 600, Loss: 0.0134
+[12:57:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 700, Loss: 0.0086
+[12:57:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 800, Loss: 0.0081
+[12:58:20] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 900, Loss: 0.0157
+[12:58:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 1000, Loss: 0.0089
+[12:59:09] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 1100, Loss: 0.0124
+[12:59:34] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 1200, Loss: 0.0096
+[12:59:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 1300, Loss: 0.0107
+[13:00:23] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 1400, Loss: 0.0103
+[13:00:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 20, Batch: 1500, Loss: 0.0082
+[13:01:24] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[13:04:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5132/5449 = 0.941824
+[13:04:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_20_iou_0.9418
+[13:04:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 21, lr=0.00025
+[13:05:25] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 100, Loss: 0.0158
+[13:05:49] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 200, Loss: 0.0108
+[13:06:14] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 300, Loss: 0.0106
+[13:06:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 400, Loss: 0.0112
+[13:07:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 500, Loss: 0.0143
+[13:07:28] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 600, Loss: 0.0110
+[13:07:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 700, Loss: 0.0093
+[13:08:17] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 800, Loss: 0.0128
+[13:08:42] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 900, Loss: 0.0099
+[13:09:06] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 1000, Loss: 0.0089
+[13:09:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 1100, Loss: 0.0099
+[13:09:55] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 1200, Loss: 0.0131
+[13:10:20] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 1300, Loss: 0.0087
+[13:10:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 1400, Loss: 0.0117
+[13:11:09] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 21, Batch: 1500, Loss: 0.0092
+[13:11:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[13:15:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5133/5449 = 0.942008
+[13:15:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_21_iou_0.9420
+[13:15:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 22, lr=0.00025
+[13:15:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 100, Loss: 0.0112
+[13:16:09] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 200, Loss: 0.0107
+[13:16:34] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 300, Loss: 0.0119
+[13:16:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 400, Loss: 0.0116
+[13:17:23] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 500, Loss: 0.0083
+[13:17:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 600, Loss: 0.0113
+[13:18:12] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 700, Loss: 0.0112
+[13:18:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 800, Loss: 0.0079
+[13:19:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 900, Loss: 0.0094
+[13:19:26] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 1000, Loss: 0.0159
+[13:19:51] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 1100, Loss: 0.0157
+[13:20:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 1200, Loss: 0.0111
+[13:20:40] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 1300, Loss: 0.0105
+[13:21:04] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 1400, Loss: 0.0109
+[13:21:29] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 22, Batch: 1500, Loss: 0.0125
+[13:22:05] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[13:25:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5147/5449 = 0.944577
+[13:25:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_22_iou_0.9446
+[13:25:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 23, lr=0.00025
+[13:26:06] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 100, Loss: 0.0103
+[13:26:30] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 200, Loss: 0.0107
+[13:26:55] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 300, Loss: 0.0133
+[13:27:19] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 400, Loss: 0.0087
+[13:27:44] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 500, Loss: 0.0103
+[13:28:09] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 600, Loss: 0.0096
+[13:28:33] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 700, Loss: 0.0121
+[13:28:58] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 800, Loss: 0.0107
+[13:29:22] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 900, Loss: 0.0119
+[13:29:47] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 1000, Loss: 0.0085
+[13:30:12] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 1100, Loss: 0.0074
+[13:30:36] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 1200, Loss: 0.0099
+[13:31:01] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 1300, Loss: 0.0114
+[13:31:25] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 1400, Loss: 0.0137
+[13:31:50] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 23, Batch: 1500, Loss: 0.0118
+[13:32:27] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[13:36:00] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5150/5449 = 0.945128
+[13:36:00] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_23_iou_0.9451
+[13:36:00] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 24, lr=0.00025
+[13:36:28] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 100, Loss: 0.0099
+[13:36:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 200, Loss: 0.0103
+[13:37:18] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 300, Loss: 0.0113
+[13:37:42] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 400, Loss: 0.0090
+[13:38:07] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 500, Loss: 0.0098
+[13:38:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 600, Loss: 0.0077
+[13:38:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 700, Loss: 0.0086
+[13:39:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 800, Loss: 0.0103
+[13:39:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 900, Loss: 0.0109
+[13:40:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 1000, Loss: 0.0118
+[13:40:34] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 1100, Loss: 0.0113
+[13:40:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 1200, Loss: 0.0152
+[13:41:23] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 1300, Loss: 0.0111
+[13:41:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 1400, Loss: 0.0089
+[13:42:13] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 24, Batch: 1500, Loss: 0.0092
+[13:42:50] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[13:46:22] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5143/5449 = 0.943843
+[13:46:22] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 25, lr=0.000125
+[13:46:50] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 100, Loss: 0.0072
+[13:47:15] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 200, Loss: 0.0089
+[13:47:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 300, Loss: 0.0096
+[13:48:04] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 400, Loss: 0.0104
+[13:48:29] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 500, Loss: 0.0124
+[13:48:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 600, Loss: 0.0115
+[13:49:18] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 700, Loss: 0.0111
+[13:49:42] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 800, Loss: 0.0123
+[13:50:07] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 900, Loss: 0.0089
+[13:50:32] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 1000, Loss: 0.0091
+[13:50:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 1100, Loss: 0.0112
+[13:51:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 1200, Loss: 0.0108
+[13:51:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 1300, Loss: 0.0097
+[13:52:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 1400, Loss: 0.0083
+[13:52:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 25, Batch: 1500, Loss: 0.0120
+[13:53:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[13:56:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5142/5449 = 0.943659
+[13:56:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 26, lr=0.000125
+[13:57:12] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 100, Loss: 0.0100
+[13:57:36] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 200, Loss: 0.0120
+[13:58:01] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 300, Loss: 0.0146
+[13:58:25] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 400, Loss: 0.0114
+[13:58:50] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 500, Loss: 0.0114
+[13:59:14] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 600, Loss: 0.0091
+[13:59:39] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 700, Loss: 0.0090
+[14:00:04] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 800, Loss: 0.0108
+[14:00:28] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 900, Loss: 0.0071
+[14:00:53] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 1000, Loss: 0.0119
+[14:01:17] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 1100, Loss: 0.0082
+[14:01:42] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 1200, Loss: 0.0093
+[14:02:06] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 1300, Loss: 0.0092
+[14:02:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 1400, Loss: 0.0112
+[14:02:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 26, Batch: 1500, Loss: 0.0083
+[14:03:32] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[14:07:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5169/5449 = 0.948614
+[14:07:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:408} INFO - >>> save model: epoch_26_iou_0.9486
+[14:07:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 27, lr=0.000125
+[14:07:31] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 100, Loss: 0.0100
+[14:07:56] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 200, Loss: 0.0111
+[14:08:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 300, Loss: 0.0113
+[14:08:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 400, Loss: 0.0114
+[14:09:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 500, Loss: 0.0087
+[14:09:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 600, Loss: 0.0137
+[14:09:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 700, Loss: 0.0135
+[14:10:24] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 800, Loss: 0.0124
+[14:10:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 900, Loss: 0.0088
+[14:11:13] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 1000, Loss: 0.0218
+[14:11:38] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 1100, Loss: 0.0114
+[14:12:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 1200, Loss: 0.0126
+[14:12:27] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 1300, Loss: 0.0104
+[14:12:52] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 1400, Loss: 0.0122
+[14:13:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 27, Batch: 1500, Loss: 0.0112
+[14:13:54] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[14:17:28] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5149/5449 = 0.944944
+[14:17:28] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 28, lr=0.000125
+[14:17:57] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 100, Loss: 0.0086
+[14:18:21] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 200, Loss: 0.0094
+[14:18:46] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 300, Loss: 0.0101
+[14:19:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 400, Loss: 0.0126
+[14:19:35] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 500, Loss: 0.0119
+[14:20:00] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 600, Loss: 0.0101
+[14:20:24] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 700, Loss: 0.0115
+[14:20:49] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 800, Loss: 0.0112
+[14:21:14] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 900, Loss: 0.0074
+[14:21:38] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 1000, Loss: 0.0110
+[14:22:03] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 1100, Loss: 0.0088
+[14:22:28] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 1200, Loss: 0.0116
+[14:22:52] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 1300, Loss: 0.0149
+[14:23:17] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 1400, Loss: 0.0099
+[14:23:41] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 28, Batch: 1500, Loss: 0.0093
+[14:24:19] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[14:27:52] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5146/5449 = 0.944393
+[14:27:52] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 29, lr=0.000125
+[14:28:20] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 100, Loss: 0.0103
+[14:28:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 200, Loss: 0.0146
+[14:29:10] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 300, Loss: 0.0083
+[14:29:34] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 400, Loss: 0.0146
+[14:29:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 500, Loss: 0.0126
+[14:30:24] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 600, Loss: 0.0117
+[14:30:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 700, Loss: 0.0088
+[14:31:13] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 800, Loss: 0.0104
+[14:31:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 900, Loss: 0.0104
+[14:32:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 1000, Loss: 0.0120
+[14:32:26] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 1100, Loss: 0.0096
+[14:32:51] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 1200, Loss: 0.0095
+[14:33:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 1300, Loss: 0.0141
+[14:33:40] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 1400, Loss: 0.0116
+[14:34:05] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 29, Batch: 1500, Loss: 0.0108
+[14:34:43] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:395} INFO - Validating 0.25...
+[14:38:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:397} INFO - 5160/5449 = 0.946963
+[14:38:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:372} INFO - Beginning Epoch 30, lr=0.000125
+[14:38:45] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 100, Loss: 0.0091
+[14:39:09] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 200, Loss: 0.0085
+[14:39:34] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 300, Loss: 0.0089
+[14:39:59] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 400, Loss: 0.0101
+[14:40:23] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 500, Loss: 0.0117
+[14:40:48] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 600, Loss: 0.0147
+[14:41:13] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 700, Loss: 0.0132
+[14:41:37] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 800, Loss: 0.0137
+[14:42:02] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 900, Loss: 0.0131
+[14:42:27] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 1000, Loss: 0.0111
+[14:42:52] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 1100, Loss: 0.0072
+[14:43:16] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 1200, Loss: 0.0085
+[14:43:41] {/home/lab/zzy/grasp/2D-grasping-my/train_network.py:197} INFO - Epoch: 30, Batch: 1300, Loss: 0.0109

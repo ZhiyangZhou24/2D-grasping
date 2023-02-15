@@ -1,0 +1,27 @@
+[23:16:39] {/home/lab/zzy/grasp/2D-grasping-my/hardware/device.py:11} INFO - CUDA detected. Running with GPU acceleration.
+[23:16:39] {train_network.py:269} INFO - Loading Jacquard Dataset...
+[23:16:40] {train_network.py:280} INFO - Dataset size is 54485
+[23:16:40] {train_network.py:293} INFO - Dataset len is 54485
+[23:16:40] {train_network.py:300} INFO - Training size: 49036
+[23:16:40] {train_network.py:301} INFO - Validation size: 5449
+[23:16:40] {train_network.py:320} INFO - Done
+[23:16:40] {train_network.py:323} INFO - Loading Network...
+[23:16:40] {train_network.py:325} INFO - input channel is 1
+[23:16:40] {train_network.py:342} INFO - Done from zero model
+[23:16:42] {train_network.py:357} INFO - optimizer ranger Done
+[23:16:42] {train_network.py:372} INFO - Beginning Epoch 00, lr=0.001
+[23:17:06] {train_network.py:197} INFO - Epoch: 0, Batch: 100, Loss: 0.1129
+[23:17:27] {train_network.py:197} INFO - Epoch: 0, Batch: 200, Loss: 0.0936
+[23:17:48] {train_network.py:197} INFO - Epoch: 0, Batch: 300, Loss: 0.0517
+[23:18:08] {train_network.py:197} INFO - Epoch: 0, Batch: 400, Loss: 0.0369
+[23:18:29] {train_network.py:197} INFO - Epoch: 0, Batch: 500, Loss: 0.0407
+[23:18:48] {train_network.py:197} INFO - Epoch: 0, Batch: 600, Loss: 0.0311
+[23:19:08] {train_network.py:197} INFO - Epoch: 0, Batch: 700, Loss: 0.0234
+[23:19:28] {train_network.py:197} INFO - Epoch: 0, Batch: 800, Loss: 0.0265
+[23:19:50] {train_network.py:197} INFO - Epoch: 0, Batch: 900, Loss: 0.0352
+[23:20:10] {train_network.py:197} INFO - Epoch: 0, Batch: 1000, Loss: 0.0214
+[23:20:31] {train_network.py:197} INFO - Epoch: 0, Batch: 1100, Loss: 0.0169
+[23:20:52] {train_network.py:197} INFO - Epoch: 0, Batch: 1200, Loss: 0.0290
+[23:21:12] {train_network.py:197} INFO - Epoch: 0, Batch: 1300, Loss: 0.0302
+[23:21:33] {train_network.py:197} INFO - Epoch: 0, Batch: 1400, Loss: 0.0228
+[23:22:00] {train_network.py:395} INFO - Validating 0.25...

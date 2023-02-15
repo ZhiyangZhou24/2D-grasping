@@ -21,6 +21,8 @@ from utils.data import get_dataset
 from utils.dataset_processing import evaluation
 from utils.visualisation.gridshow import gridshow
 from ranger import Ranger  # this is from ranger.py
+from test_lr_curve import flat_and_anneal_lr_scheduler
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
@@ -55,6 +57,8 @@ def parse_args():
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
     parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
                         help='Dataset gaussian progress 0.0 means not use gauss')
+    parser.add_argument('--data-aug', type=bool, default=True,
+                        help='Threshold albation for evaluation, need more time')
 
     # Datasets
     # /media/lab/ChainGOAT/Jacquard
@@ -85,7 +89,10 @@ def parse_args():
                         help='Batches per Epoch')
     parser.add_argument('--optim', type=str, default='ranger',
                         help='Optmizer for the training. (adam or SGD)')
-
+    parser.add_argument('--scheduler', type=str, default='flat',
+                        help='scheduler for the training. (flat or multi-step or fixe)')
+    parser.add_argument('--vis-lr', type=bool, default=False,
+                        help='scheduler for the seeing. (False or True)')
     # Logging etc.
     parser.add_argument('--description', type=str, default='dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1',
                         help='Training description')
@@ -103,6 +110,11 @@ def parse_args():
     args = parser.parse_args()
     return args
 
+
+steps = []
+lrs = []
+epoch_lrs = []
+global_step = 0
 
 def validate(net, device, val_data, iou_threshold):
     """
@@ -159,14 +171,14 @@ def validate(net, device, val_data, iou_threshold):
     return results
 
 
-def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=False):
+def train(epoch, net, device, train_data, scheduler, batches_per_epoch, vis=False):
     """
     Run one training epoch
     :param epoch: Current epoch
     :param net: Network
     :param device: Torch device
     :param train_data: Training Dataset
-    :param optimizer: Optimizer
+    :param scheduler: scheduler
     :param batches_per_epoch:  Data batches to train on
     :param vis:  Visualise training progress
     :return:  Average Losses for Epoch
@@ -202,9 +214,13 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
                     results['losses'][ln] = 0
                 results['losses'][ln] += l.item()
 
-            optimizer.zero_grad()
+            scheduler.zero_grad()
             loss.backward()
-            optimizer.step()
+            steps.append(global_step)
+            cur_lr = scheduler.get_lr()[0]
+            lrs.append(cur_lr)
+            global_step+=1
+            scheduler.step()
 
             # Display the images
             if vis:
@@ -268,12 +284,13 @@ def run():
     # Load Dataset
     logging.info('Loading {} Dataset...'.format(args.dataset.title()))
     Dataset = get_dataset(args.dataset)
+    logging.info('Dataset augmentation is {}'.format(args.data_aug))
     dataset = Dataset(args.dataset_path,
                       output_size=args.input_size,
                       ds_rotate=args.ds_rotate,
                       alfa=args.alfa,
-                      random_rotate=True,
-                      random_zoom=True,
+                      random_rotate=args.data_aug,
+                      random_zoom=args.data_aug,
                       include_depth=args.use_depth,
                       include_rgb=args.use_rgb,
                       use_gauss_kernel = args.use_gauss_kernel)
@@ -337,7 +354,7 @@ def run():
         # 加载预训练模型
         net = torch.load(args.model, map_location=torch.device(device))
         # net.load_state_dict(pretrained_dict, strict=True)   # True:完全吻合，False:只加载键值相同的参数，其他加载默认值。
-        logging.info('Done from goon checkpoint {}'.format(args.model))
+        logging.info('Done from goon checkpoint >>>{}'.format(args.model))
     else :
         logging.info('Done from zero model')
     net = net.to(device)
@@ -346,16 +363,39 @@ def run():
     if args.optim.lower() == 'adam':
         # 优化器
         optimizer = optim.Adam(net.parameters(), lr=args.lr, weight_decay=args.weight_decay)
-        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[1000], gamma=0.5)     # 学习率衰减    20, 30, 60
     elif args.optim.lower() == 'sgd':
         optimizer = optim.SGD(net.parameters(), lr=0.005, momentum=0.9)
     elif args.optim.lower() == 'ranger':
         optimizer = Ranger(net.parameters(), lr=args.lr)
-        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[5,15,25,35], gamma=0.5)
     else:
         raise NotImplementedError('Optimizer {} is not implemented'.format(args.optim))
     logging.info('optimizer {} Done'.format(args.optim))
 
+    total_epochs = args.epochs
+    epoch_len = args.batches_per_epoch
+    total_iters = epoch_len * total_epochs // 2
+
+    if args.scheduler.lower() == 'flat':
+        scheduler = flat_and_anneal_lr_scheduler(
+        optimizer=optimizer,
+        total_iters=total_iters,
+        warmup_method="linear",
+        warmup_factor=0.1,
+        warmup_iters=800,
+        anneal_method="cosine",
+        anneal_point=0.72,
+        target_lr_factor=0.0,
+        poly_power=5,
+        step_gamma=0.1,
+        steps=[0.5, 0.75, 0.9],
+        )
+    elif args.scheduler.lower() == 'multi_step':
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[5,15,25,35], gamma=0.5)
+    else :
+        logging.info('scheduler para error check')
+
+    logging.info('scheduler {} Done'.format(args.optim))
+    logging.info("start lr: {}".format(scheduler.get_lr()))
     # Print model architecture.
     summary(net, (input_channels, args.input_size, args.input_size))
     f = open(os.path.join(save_folder, 'arch.txt'), 'w')
@@ -367,10 +407,14 @@ def run():
     best_iou = 0.0
     start_epoch = args.start_epoch if args.goon_train else 0
     for _ in range(start_epoch):
-        scheduler.step()
-    for epoch in range(args.epochs)[start_epoch:]:
-        logging.info('Beginning Epoch {:02d}, lr={}'.format(epoch, optimizer.state_dict()['param_groups'][0]['lr']))
-        train_results = train(epoch, net, device, train_data, optimizer, args.batches_per_epoch, vis=args.vis)
+        for batch in range(epoch_len):
+            scheduler.step() # when no state_dict availble
+            global_step += 1
+
+    for epoch in range(start_epoch,total_epochs):
+        logging.info('Beginning Epoch {:02d}, lr={}'.format(epoch, scheduler.get_lr()[0]))
+        epoch_lrs.append([epoch, scheduler.get_lr()[0]])  # only get the first lr (maybe a group of lrs)
+        train_results = train(epoch, net, device, train_data, scheduler, epoch_len, vis=args.vis)
         scheduler.step()
         # Log training losses to tensorboard
         tb.add_scalar('loss/train_loss', train_results['loss'], epoch)
@@ -409,6 +453,22 @@ def run():
             # torch.save(net.state_dict(), os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             best_iou = iou
+
+    if args.vis_lr:
+        import matplotlib.pyplot as plt
+        epoch_lrs = np.asarray(epoch_lrs, dtype=np.float32)
+        for i in range(len(epoch_lrs)):
+            print("{:02d} {}".format(int(epoch_lrs[i][0]), epoch_lrs[i][1]))
+
+        plt.figure(dpi=100)
+        plt.suptitle("learning rate curve")
+        plt.subplot(1, 2, 1)
+        plt.plot(steps, lrs, "-.")
+        # plt.show()
+        plt.subplot(1, 2, 2)
+        # print(epoch_lrs.dtype)
+        plt.plot(epoch_lrs[:, 0], epoch_lrs[:, 1], "-.")
+        plt.show()
 
 if __name__ == '__main__':
     run()

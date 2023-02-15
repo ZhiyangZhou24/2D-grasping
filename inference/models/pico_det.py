@@ -248,7 +248,7 @@ class ConvBNLayer(nn.Module):
         elif self.act == "hard_swish":
             x = F.hardswish(x,inplace=True)
         elif self.act == "mish":
-            x = mish(x)
+            x = F.mish(x,inplace=True)
         return x
 
 class DepthwiseSeparable(nn.Module):
@@ -285,7 +285,7 @@ class DepthwiseSeparable(nn.Module):
                 nn.Conv2d(num_channels, num_filters, kernel_size=1, stride=1, bias=False),
                 nn.BatchNorm2d(num_filters),
             )
-    def _make_att(self, in_channels, out_channels,reduc_ratio=4):
+    def _make_att(self, in_channels, out_channels,reduc_ratio=32):
         if self.att_type == 'use_coora':
             print('use_coora reduc_ratio = {}'.format(reduc_ratio))
             return CoordAtt(in_channels,out_channels,reduc_ratio)
@@ -358,6 +358,8 @@ class DPModule(nn.Module):
             x = F.leaky_relu(x,inplace=True)
         elif self.act == "hard_swish":
             x = F.hardswish(x,inplace=True)
+        elif self.act == "mish":
+            x = mish(x)
         return x
 
     def forward(self, x):
