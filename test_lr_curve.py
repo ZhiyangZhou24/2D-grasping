@@ -149,7 +149,6 @@ def test_flat_and_anneal():
     print("start lr: {}".format(scheduler.get_lr()))
     steps = []
     lrs = []
-
     epoch_lrs = []
     global_step = 0
 

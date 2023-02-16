@@ -22,7 +22,7 @@ from utils.dataset_processing import evaluation
 from utils.visualisation.gridshow import gridshow
 from ranger import Ranger  # this is from ranger.py
 from test_lr_curve import flat_and_anneal_lr_scheduler
-import tqdm
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
@@ -57,16 +57,15 @@ def parse_args():
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
     parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
                         help='Dataset gaussian progress 0.0 means not use gauss')
-    parser.add_argument('--data-aug', type=bool, default=False,
+    parser.add_argument('--data-aug', type=bool, default=True,
                         help='Threshold albation for evaluation, need more time')
 
     # Datasets
     # /media/lab/ChainGOAT/Jacquard
     # /media/lab/e/zzy/datasets/Cornell
-    # /media/lab/TOSHIBA480/0.Datasets/Jacquard
     parser.add_argument('--dataset', type=str,default='jacquard',
                         help='Dataset Name ("cornell" or "jacquard")')
-    parser.add_argument('--dataset-path', type=str,default='/media/lab/TOSHIBA480/0.Datasets/Jacquard',
+    parser.add_argument('--dataset-path', type=str,default='/media/lab/ChainGOAT/Jacquard',
                         help='Path to dataset')
     parser.add_argument('--alfa', type=int, default=1,
                         help='len(Dataset)*alfa')
@@ -86,7 +85,7 @@ def parse_args():
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
     parser.add_argument('--epochs', type=int, default=60,
                         help='Training epochs')
-    parser.add_argument('--batches-per-epoch', type=int, default=1530,
+    parser.add_argument('--batches-per-epoch', type=int, default=1600,
                         help='Batches per Epoch')
     parser.add_argument('--optim', type=str, default='ranger',
                         help='Optmizer for the training. (adam or SGD)')
@@ -95,11 +94,11 @@ def parse_args():
     parser.add_argument('--vis-lr', type=bool, default=True,
                         help='scheduler for the seeing. (False or True)')
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_d_bili_mish_coora32_drop1_bina_pos1',
+    parser.add_argument('--description', type=str, default='dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1',
                         help='Training description')
-    parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc_flat',
+    parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
                         help='Log directory')
-    parser.add_argument('--vis', type=bool, default=False,
+    parser.add_argument('--vis', action='store_true',
                         help='Visualise the training process')
     parser.add_argument('--cpu', dest='force_cpu', action='store_true', default=False,
                         help='Force code to run in CPU mode')
@@ -138,8 +137,9 @@ def validate(net, device, val_data, iou_threshold):
     }
 
     ld = len(val_data)
+
     with torch.no_grad():
-        for x, y, didx, rot, zoom_factor in tqdm.tqdm(val_data):
+        for x, y, didx, rot, zoom_factor in val_data:
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
             lossd = net.compute_loss(xc, yc,pos_loss=True)
@@ -167,10 +167,11 @@ def validate(net, device, val_data, iou_threshold):
                 results['correct'] += 1
             else:
                 results['failed'] += 1
+
     return results
 
 
-def train(epoch, net, device, train_data, scheduler,optimizer, batches_per_epoch, vis=False):
+def train(epoch, net, device, train_data, scheduler, batches_per_epoch, vis=False):
     """
     Run one training epoch
     :param epoch: Current epoch
@@ -197,48 +198,47 @@ def train(epoch, net, device, train_data, scheduler,optimizer, batches_per_epoch
     global global_step
     # Use batches per epoch to make training on different sized datasets (cornell/jacquard) more equivalent.
     while batch_idx <= batches_per_epoch:
-        for x, y, _, _, _ in train_data:
+        for batch in range(batches_per_epoch):
             batch_idx += 1
             if batch_idx >= batches_per_epoch:
                 break
 
-            xc = x.to(device)
-            yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc,pos_loss=True)
+            # lossd = net.compute_loss(xc, yc,pos_loss=True)
 
-            loss = lossd['loss']
-            cur_lr = scheduler.get_lr()[0]
-            if batch_idx % 100 == 0:
-                logging.info('Epoch: {}, Batch: {}, Lr {:0.6f} Loss: {:0.4f}'.format(epoch, batch_idx,cur_lr,loss.item()))
+            # loss = lossd['loss']
 
-            results['loss'] += loss.item()
-            for ln, l in lossd['losses'].items():
-                if ln not in results['losses']:
-                    results['losses'][ln] = 0
-                results['losses'][ln] += l.item()
+            # if batch_idx % 100 == 0:
 
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-            scheduler.step()
+            # results['loss'] += loss.item()
+            # for ln, l in lossd['losses'].items():
+            #     if ln not in results['losses']:
+            #         results['losses'][ln] = 0
+            #     results['losses'][ln] += l.item()
 
+            # scheduler.zero_grad()
+            # loss.backward()
+            # if global_step == 0 or (len(lrs) >= 1 and cur_lr != lrs[-1]):
+            
             steps.append(global_step)
+            cur_lr = scheduler.get_lr()[0]
             lrs.append(cur_lr)
             global_step+=1
-            
+            print("epoch {}, batch: {}, global_step:{} lr: {}".format(epoch, batch, global_step, cur_lr))
+            scheduler.step()
+
             # Display the images
-            if vis:
-                imgs = []
-                n_img = min(4, x.shape[0])
-                for idx in range(n_img):
-                    imgs.extend([x[idx,].numpy().squeeze()] + [yi[idx,].numpy().squeeze() for yi in y] + [
-                        x[idx,].numpy().squeeze()] + [pc[idx,].detach().cpu().numpy().squeeze() for pc in
-                                                      lossd['pred'].values()])
-                gridshow('Display', imgs,
-                         [(xc.min().item(), xc.max().item()), (0.0, 1.0), (0.0, 1.0), (-1.0, 1.0),
-                          (0.0, 1.0)] * 2 * n_img,
-                         [cv2.COLORMAP_BONE] * 10 * n_img, 10)
-                cv2.waitKey(2)
+            # if vis:
+            #     imgs = []
+            #     n_img = min(4, x.shape[0])
+            #     for idx in range(n_img):
+            #         imgs.extend([x[idx,].numpy().squeeze()] + [yi[idx,].numpy().squeeze() for yi in y] + [
+            #             x[idx,].numpy().squeeze()] + [pc[idx,].detach().cpu().numpy().squeeze() for pc in
+            #                                           lossd['pred'].values()])
+            #     gridshow('Display', imgs,
+            #              [(xc.min().item(), xc.max().item()), (0.0, 1.0), (0.0, 1.0), (-1.0, 1.0),
+            #               (0.0, 1.0)] * 2 * n_img,
+            #              [cv2.COLORMAP_BONE] * 10 * n_img, 10)
+            #     cv2.waitKey(2)
 
     results['loss'] /= batch_idx
     for l in results['losses']:
@@ -374,7 +374,7 @@ def run():
     elif args.optim.lower() == 'sgd':
         optimizer = optim.SGD(net.parameters(), lr=0.005, momentum=0.9)
     elif args.optim.lower() == 'ranger':
-        # base_lr = 1e-4
+        base_lr = 1e-4
         optimizer = Ranger(net.parameters(), lr=base_lr)
     else:
         raise NotImplementedError('Optimizer {} is not implemented'.format(args.optim))
@@ -423,44 +423,44 @@ def run():
     for epoch in range(start_epoch,total_epochs):
         logging.info('Beginning Epoch {:02d}, lr={}'.format(epoch, scheduler.get_lr()[0]))
         epoch_lrs.append([epoch, scheduler.get_lr()[0]])  # only get the first lr (maybe a group of lrs)
-        train_results = train(epoch, net, device, train_data, scheduler,optimizer, epoch_len, vis=args.vis)
-        # Log training losses to tensorboard
-        tb.add_scalar('loss/train_loss', train_results['loss'], epoch)
-        for n, l in train_results['losses'].items():
-            tb.add_scalar('train_loss/' + n, l, epoch)
+        train_results = train(epoch, net, device, train_data, scheduler, epoch_len, vis=args.vis)
+        # # Log training losses to tensorboard
+        # tb.add_scalar('loss/train_loss', train_results['loss'], epoch)
+        # for n, l in train_results['losses'].items():
+        #     tb.add_scalar('train_loss/' + n, l, epoch)
 
-        if args.iou_abla == True:
-            logging.info('Validating 0.40...')
-            test_results = validate(net, device, val_data, 0.40)
-            logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-                                        test_results['correct'] / (test_results['correct'] + test_results['failed'])))
-            logging.info('Validating 0.35...')
-            test_results = validate(net, device, val_data, 0.35)
-            logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-                                        test_results['correct'] / (test_results['correct'] + test_results['failed'])))
-            logging.info('Validating 0.30...')
-            test_results = validate(net, device, val_data, 0.30)
-            logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-                                        test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+        # if args.iou_abla == True:
+        #     logging.info('Validating 0.40...')
+        #     test_results = validate(net, device, val_data, 0.40)
+        #     logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
+        #                                 test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+        #     logging.info('Validating 0.35...')
+        #     test_results = validate(net, device, val_data, 0.35)
+        #     logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
+        #                                 test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+        #     logging.info('Validating 0.30...')
+        #     test_results = validate(net, device, val_data, 0.30)
+        #     logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
+        #                                 test_results['correct'] / (test_results['correct'] + test_results['failed'])))
 
-        # Run Validation
-        logging.info('Validating 0.25...')
-        test_results = validate(net, device, val_data, 0.25)
-        logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-                                     test_results['correct'] / (test_results['correct'] + test_results['failed'])))
-        # Log validation results to tensorbaord
-        tb.add_scalar('loss/IOU', test_results['correct'] / (test_results['correct'] + test_results['failed']), epoch)
-        tb.add_scalar('loss/val_loss', test_results['loss'], epoch)
-        for n, l in test_results['losses'].items():
-            tb.add_scalar('val_loss/' + n, l, epoch)
+        # # Run Validation
+        # logging.info('Validating 0.25...')
+        # test_results = validate(net, device, val_data, 0.25)
+        # logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
+        #                              test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+        # # Log validation results to tensorbaord
+        # tb.add_scalar('loss/IOU', test_results['correct'] / (test_results['correct'] + test_results['failed']), epoch)
+        # tb.add_scalar('loss/val_loss', test_results['loss'], epoch)
+        # for n, l in test_results['losses'].items():
+        #     tb.add_scalar('val_loss/' + n, l, epoch)
 
-        # Save best performing network
-        iou = test_results['correct'] / (test_results['correct'] + test_results['failed'])
-        if iou > best_iou or epoch == 0 or (epoch % 10) == 0:
-            logging.info('>>> save model: epoch_%02d_iou_%0.4f' % (epoch, iou))
-            # torch.save(net.state_dict(), os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
-            torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
-            best_iou = iou
+        # # Save best performing network
+        # iou = test_results['correct'] / (test_results['correct'] + test_results['failed'])
+        # if iou > best_iou or epoch == 0 or (epoch % 10) == 0:
+        #     logging.info('>>> save model: epoch_%02d_iou_%0.4f' % (epoch, iou))
+        #     # torch.save(net.state_dict(), os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
+        #     torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
+        #     best_iou = iou
 
     if args.vis_lr:
         import matplotlib.pyplot as plt

@@ -21,7 +21,7 @@ from utils.data import get_dataset
 from utils.dataset_processing import evaluation
 from utils.visualisation.gridshow import gridshow
 from ranger import Ranger  # this is from ranger.py
-
+import tqdm
 def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
@@ -55,17 +55,21 @@ def parse_args():
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
     parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
                         help='Dataset gaussian progress 0.0 means not use gauss')
+    parser.add_argument('--datarotate', type=bool, default=False,
+                        help='Threshold albation for evaluation, need more time')
+    parser.add_argument('--datazoom', type=bool, default=False,
+                        help='Threshold albation for evaluation, need more time')
 
     # Datasets
     # /media/lab/ChainGOAT/Jacquard
     # /media/lab/e/zzy/datasets/Cornell
     parser.add_argument('--dataset', type=str,default='jacquard',
-                        help='Dataset Name ("cornell" or "jacquard")')
+                        help='Dataset Name ("cornell" or "jacquard"  graspnet1b )')
     parser.add_argument('--dataset-path', type=str,default='/media/lab/ChainGOAT/Jacquard',
                         help='Path to dataset')
     parser.add_argument('--alfa', type=int, default=1,
                         help='len(Dataset)*alfa')
-    parser.add_argument('--split', type=float, default=0.90,
+    parser.add_argument('--split', type=float, default=0.9,
                         help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-shuffle', action='store_true', default=False,
                         help='Shuffle the dataset')
@@ -77,17 +81,26 @@ def parse_args():
     # Training
     parser.add_argument('--batch-size', type=int, default=32,
                         help='Batch size')
+    
+    parser.add_argument('--optim', type=str, default='ranger',
+                        help='Optmizer for the training. (adam or SGD)')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
+    parser.add_argument('--schedu-milestone', type=int, default=[5,15,25,35], help='学习率tiaozheng stone')
+    parser.add_argument('--schedu-gamma', type=float, default=0.5, help='学习率 hsuaijian xishu ')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
-    parser.add_argument('--epochs', type=int, default=100,
+
+    parser.add_argument('--epochs', type=int, default=60,
                         help='Training epochs')
     parser.add_argument('--batches-per-epoch', type=int, default=1600,
                         help='Batches per Epoch')
-    parser.add_argument('--optim', type=str, default='ranger',
-                        help='Optmizer for the training. (adam or SGD)')
+    
+    parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
+    parser.add_argument('--model', type=str, default='logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358', help='保存的模型')
+    parser.add_argument('--start-epoch', type=int, default=4, help='继续训练开始的epoch')
+    
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1',
+    parser.add_argument('--description', type=str, default='dwc1_d_bili_mish_ca32_drop2_bina',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
                         help='Log directory')
@@ -97,14 +110,11 @@ def parse_args():
                         help='Force code to run in CPU mode')
     parser.add_argument('--random-seed', type=int, default=123,
                         help='Random seed for numpy')
-    parser.add_argument('--goon-train', type=bool, default=True, help='是否从已有网络继续训练')
-    parser.add_argument('--model', type=str, default='logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358', help='保存的模型')
-    parser.add_argument('--start-epoch', type=int, default=4, help='继续训练开始的epoch')
     args = parser.parse_args()
     return args
 
 
-def validate(net, device, val_data, iou_threshold):
+def validate(net, device, val_data, iou_threshold,posloss=True):
     """
     Run validation.
     :param net: Network
@@ -116,21 +126,30 @@ def validate(net, device, val_data, iou_threshold):
     net.eval()
 
     results = {
-        'correct': 0,
-        'failed': 0,
+        'correct': {
+        'th25':0,
+        'th30':0,
+        'th35':0,
+        'th40':0,
+        },
+        'failed': {
+        'th25':0,
+        'th30':0,
+        'th35':0,
+        'th40':0,
+        },
         'loss': 0,
         'losses': {
-
         }
     }
 
     ld = len(val_data)
 
     with torch.no_grad():
-        for x, y, didx, rot, zoom_factor in val_data:
+        for x, y, didx, rot, zoom_factor in tqdm.tqdm(val_data):
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc,pos_loss=True)
+            lossd = net.compute_loss(xc, yc,pos_loss=posloss)
 
             loss = lossd['loss']
 
@@ -143,23 +162,24 @@ def validate(net, device, val_data, iou_threshold):
             q_out, ang_out, w_out = post_process_output(lossd['pred']['pos'], lossd['pred']['cos'],
                                                         lossd['pred']['sin'], lossd['pred']['width'])
 
-            s = evaluation.calculate_iou_match(q_out,
+
+            iou_results = evaluation.calculate_iou_match_multi(q_out,
                                                ang_out,
                                                val_data.dataset.get_gtbb(didx, rot, zoom_factor),
                                                no_grasps=1,
-                                               grasp_width=w_out,
-                                               threshold=iou_threshold
+                                               grasp_width=w_out
                                                )
 
-            if s:
-                results['correct'] += 1
-            else:
-                results['failed'] += 1
+            for iou in iou_results:
+                if iou_results[iou] == True:
+                    results['correct'][iou] +=1
+                else :
+                    results['failed'][iou] +=1
 
     return results
 
 
-def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=False):
+def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=False,posloss=True):
     """
     Run one training epoch
     :param epoch: Current epoch
@@ -189,7 +209,7 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
 
             xc = x.to(device)
             yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc,pos_loss=True)
+            lossd = net.compute_loss(xc, yc,pos_loss=posloss)
 
             loss = lossd['loss']
 
@@ -250,7 +270,7 @@ def run():
     logging.basicConfig(
         level=logging.INFO,
         filename="{0}/{1}.log".format(save_folder, 'log'),
-        format='[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s',
+        format='[%(asctime)s] %(levelname)s - %(message)s',
         datefmt='%H:%M:%S'
     )
     # set up logging to console
@@ -272,13 +292,11 @@ def run():
                       output_size=args.input_size,
                       ds_rotate=args.ds_rotate,
                       alfa=args.alfa,
-                      random_rotate=True,
-                      random_zoom=True,
+                      random_rotate=args.datarotate,
+                      random_zoom=args.datazoom,
                       include_depth=args.use_depth,
                       include_rgb=args.use_rgb,
                       use_gauss_kernel = args.use_gauss_kernel)
-    logging.info('Dataset size is {}'.format(dataset.length))
-
     # Creating data indices for training and validation splits
     if args.dataset.title() != 'Jacquard':
         indices = list(range(dataset.len))
@@ -346,16 +364,19 @@ def run():
     if args.optim.lower() == 'adam':
         # 优化器
         optimizer = optim.Adam(net.parameters(), lr=args.lr, weight_decay=args.weight_decay)
-        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[1000], gamma=0.5)     # 学习率衰减    20, 30, 60
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.schedu_milestone, gamma=args.schedu_gamma)     # 学习率衰减    20, 30, 60
+    elif args.optim.lower() == 'adamw':
+        optimizer = optim.AdamW(net.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.schedu_milestone, gamma=args.schedu_gamma)     # 学习率衰减    20, 30, 60
     elif args.optim.lower() == 'sgd':
-        optimizer = optim.SGD(net.parameters(), lr=0.005, momentum=0.9)
+        optimizer = optim.SGD(net.parameters(), lr=args.lr, momentum=0.9)
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.schedu_milestone, gamma=args.schedu_gamma)     # 学习率衰减    20, 30, 60
     elif args.optim.lower() == 'ranger':
         optimizer = Ranger(net.parameters(), lr=args.lr)
-        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[5,15,25,35], gamma=0.5)
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.schedu_milestone, gamma=args.schedu_gamma)
     else:
         raise NotImplementedError('Optimizer {} is not implemented'.format(args.optim))
-    logging.info('optimizer {} Done'.format(args.optim))
-
+    
     # Print model architecture.
     summary(net, (input_channels, args.input_size, args.input_size))
     f = open(os.path.join(save_folder, 'arch.txt'), 'w')
@@ -364,40 +385,30 @@ def run():
     sys.stdout = sys.__stdout__
     f.close()
 
+    logging.info('Optimizer {} Done || Base LR: {} || Milestone: {} || Gamma: {}'.format(args.optim,args.lr,args.schedu_milestone,args.schedu_gamma))
+    logging.info('Dataset size {} ||rotate :{} || zoom :{} || ds_shuffle {} || ds_rotate {}'.format(dataset.length,args.datarotate,args.datazoom,args.ds_shuffle,args.ds_rotate))
+
     best_iou = 0.0
     start_epoch = args.start_epoch if args.goon_train else 0
     for _ in range(start_epoch):
         scheduler.step()
     for epoch in range(args.epochs)[start_epoch:]:
         logging.info('Beginning Epoch {:02d}, lr={}'.format(epoch, optimizer.state_dict()['param_groups'][0]['lr']))
-        train_results = train(epoch, net, device, train_data, optimizer, args.batches_per_epoch, vis=args.vis)
+        train_results = train(epoch, net, device, train_data, optimizer, args.batches_per_epoch, vis=args.vis,posloss=args.posloss)
         scheduler.step()
         # Log training losses to tensorboard
         tb.add_scalar('loss/train_loss', train_results['loss'], epoch)
         for n, l in train_results['losses'].items():
             tb.add_scalar('train_loss/' + n, l, epoch)
 
-        if args.iou_abla == True:
-            logging.info('Validating 0.40...')
-            test_results = validate(net, device, val_data, 0.40)
-            logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-                                        test_results['correct'] / (test_results['correct'] + test_results['failed'])))
-            logging.info('Validating 0.35...')
-            test_results = validate(net, device, val_data, 0.35)
-            logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-                                        test_results['correct'] / (test_results['correct'] + test_results['failed'])))
-            logging.info('Validating 0.30...')
-            test_results = validate(net, device, val_data, 0.30)
-            logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-                                        test_results['correct'] / (test_results['correct'] + test_results['failed'])))
-
         # Run Validation
-        logging.info('Validating 0.25...')
-        test_results = validate(net, device, val_data, 0.25)
-        logging.info('%d/%d = %f' % (test_results['correct'], test_results['correct'] + test_results['failed'],
-                                     test_results['correct'] / (test_results['correct'] + test_results['failed'])))
+        logging.info('Validating ...')
+        test_results = validate(net, device, val_data, iou_threshold=args.iou_threshold,posloss=args.posloss)
+        for result in test_results['correct']:
+            logging.info('Jacquard index %s  %d/%d = %f' % (result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
+                                     test_results['correct'][result] / (test_results['correct'][result] + test_results['failed'][result])))
         # Log validation results to tensorbaord
-        tb.add_scalar('loss/IOU', test_results['correct'] / (test_results['correct'] + test_results['failed']), epoch)
+        tb.add_scalar('loss/IOU', test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25']), epoch)
         tb.add_scalar('loss/val_loss', test_results['loss'], epoch)
         for n, l in test_results['losses'].items():
             tb.add_scalar('val_loss/' + n, l, epoch)
@@ -406,7 +417,6 @@ def run():
         iou = test_results['correct'] / (test_results['correct'] + test_results['failed'])
         if iou > best_iou or epoch == 0 or (epoch % 10) == 0:
             logging.info('>>> save model: epoch_%02d_iou_%0.4f' % (epoch, iou))
-            # torch.save(net.state_dict(), os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             best_iou = iou
 

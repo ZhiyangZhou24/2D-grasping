@@ -85,3 +85,39 @@ def calculate_iou_match(grasp_q, grasp_angle, ground_truth_bbs, no_grasps=1, gra
             return True
     else:
         return False
+
+    
+def calculate_iou_match_multi(grasp_q, grasp_angle, ground_truth_bbs, no_grasps=1, grasp_width=None):
+    """
+    Calculate grasp success using the IoU (Jacquard) metric (e.g. in https://arxiv.org/abs/1301.3592)
+    A success is counted if grasp rectangle has a 25% IoU with a ground truth, and is withing 30 degrees.
+    :param grasp_q: Q outputs of network (Nx300x300x3)
+    :param grasp_angle: Angle outputs of network
+    :param ground_truth_bbs: Corresponding ground-truth BoundingBoxes
+    :param no_grasps: Maximum number of grasps to consider per image.
+    :param grasp_width: (optional) Width output from network
+    :param threshold: Threshold for IOU matching. Detect with IOU ≥ threshold
+    :return: success
+    """
+    results_iou = {
+        'th25': False,
+        'th30': False,
+        'th35': False,
+        'th40': False
+    }
+    if not isinstance(ground_truth_bbs, GraspRectangles):
+        gt_bbs = GraspRectangles.load_from_array(ground_truth_bbs)
+    else:
+        gt_bbs = ground_truth_bbs
+    gs = detect_grasps(grasp_q, grasp_angle, width_img=grasp_width, no_grasps=no_grasps)
+    for g in gs:
+        if g.max_iou(gt_bbs) > 0.25:
+            results_iou['th25'] = True
+        if g.max_iou(gt_bbs) > 0.30:
+            results_iou['th30'] = True
+        if g.max_iou(gt_bbs) > 0.35:
+            results_iou['th35'] = True
+        if g.max_iou(gt_bbs) > 0.40:
+            results_iou['th40'] = True
+    
+    return results_iou
