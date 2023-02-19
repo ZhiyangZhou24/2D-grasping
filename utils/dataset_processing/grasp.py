@@ -4,7 +4,7 @@ from skimage.draw import polygon
 from skimage.feature import peak_local_max
 
 
-def _gr_text_to_no(l, offset=(0, 0)):
+def _gr_text_to_no(l, scale=1.0, offset=(0, 0)):
     """
     Transform a single point from a Cornell file line to a pair of ints.
     :param l: Line from Cornell grasp file (str)
@@ -12,7 +12,7 @@ def _gr_text_to_no(l, offset=(0, 0)):
     :return: Point [y, x]
     """
     x, y = l.split()
-    return [int(round(float(y))) - offset[0], int(round(float(x))) - offset[1]]
+    return [int(round(float(y) / scale)) - offset[0], int(round(float(x) / scale)) - offset[1]]
 
 
 class GraspRectangles:
@@ -59,7 +59,7 @@ class GraspRectangles:
         return cls(grs)
 
     @classmethod
-    def load_from_cornell_file(cls, fname):
+    def load_from_cornell_file(cls, fname, scale=1.0):
         """
         Load grasp rectangles from a Cornell dataset grasp file.
         :param fname: Path to text file.
@@ -75,10 +75,10 @@ class GraspRectangles:
                 p1, p2, p3 = f.readline(), f.readline(), f.readline()
                 try:
                     gr = np.array([
-                        _gr_text_to_no(p0),
-                        _gr_text_to_no(p1),
-                        _gr_text_to_no(p2),
-                        _gr_text_to_no(p3)
+                        _gr_text_to_no(p0, scale),
+                        _gr_text_to_no(p1, scale),
+                        _gr_text_to_no(p2, scale),
+                        _gr_text_to_no(p3, scale)
                     ])
 
                     grs.append(GraspRectangle(gr))

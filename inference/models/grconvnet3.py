@@ -6,7 +6,7 @@ from inference.models.grasp_model import GraspModel, ResidualBlock
 
 class GenerativeResnet(GraspModel):
 
-    def __init__(self, input_channels=4, output_channels=1, channel_size=32, dropout=False, prob=0.0):
+    def __init__(self, input_channels=1, output_channels=1, channel_size=32,use_mish=True, att = 'use_eca',upsamp='use_bilinear',dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
         self.conv1 = nn.Conv2d(input_channels, channel_size, kernel_size=9, stride=1, padding=4)
         self.bn1 = nn.BatchNorm2d(channel_size)

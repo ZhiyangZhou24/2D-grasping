@@ -291,3 +291,22 @@ if __name__ == '__main__':
     for i in range(1000):
         y0, y1, y2, y3, y4 = model(x)
         print(y0.shape, y1.shape, y2.shape, y3.shape, y4.shape)
+
+
+from time import time
+import multiprocessing as mp
+print(f"num of CPU: {mp.cpu_count()}")
+for num_workers in range(6, mp.cpu_count(), 2):  
+    train_data = torch.utils.data.DataLoader(
+        val_dataset_novel,
+        batch_size=1,
+        shuffle=True,
+        num_workers=num_workers,
+        pin_memory=True
+    )
+    start = time()
+    for i in tqdm.tqdm(train_data):
+        pass
+    end = time()
+    logging.info("Finish with:{} second, num_workers={}".format(end - start, num_workers))
+sys.exit() 

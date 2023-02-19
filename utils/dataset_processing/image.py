@@ -169,8 +169,8 @@ class DepthImage(Image):
         return cls(img / 1000.0)
 
     @classmethod
-    def from_tiff(cls, fname):
-        return cls(imread(fname))
+    def from_tiff(cls, fname, depth_scale=1.0):
+        return cls(imread(fname) / depth_scale)
 
     def inpaint(self, missing_value=0):
         """

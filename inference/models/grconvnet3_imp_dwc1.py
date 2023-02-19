@@ -115,10 +115,10 @@ class GenerativeResnet(GraspModel):
         self.dropout_sin = nn.Dropout(p=prob)
         self.dropout_wid = nn.Dropout(p=prob)
 
-        # for m in self.modules():
-        #     if isinstance(m, (nn.Conv2d, nn.ConvTranspose2d)):
-        #         nn.init.xavier_normal_(m.weight, gain=1)
-        #         # nn.init.constant_(m.weight, 0.3)
+        for m in self.modules():
+            if isinstance(m, (nn.Conv2d, nn.ConvTranspose2d)):
+                nn.init.xavier_uniform_(m.weight, gain=1)
+        
         
     def forward(self, x_in):
         dbg=0

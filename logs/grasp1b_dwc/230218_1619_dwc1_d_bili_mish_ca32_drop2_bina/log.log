@@ -1,0 +1,477 @@
+[16:19:18] INFO - CUDA detected. Running with GPU acceleration.
+[16:19:18] INFO - Loading Graspnet1B Dataset...
+[16:19:19] WARNING - Failed to import geometry msgs in rigid_transformations.py.
+[16:19:19] WARNING - Failed to import ros dependencies in rigid_transforms.py
+[16:19:19] WARNING - autolab_core not installed as catkin package, RigidTransform ros methods will be unavailable
+[16:19:19] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[16:19:19] INFO - Using data from camera realsense
+[16:19:19] INFO - Graspnet 1Billion dataset created!! lenth is 25600
+[16:19:19] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[16:19:19] INFO - Using data from camera realsense
+[16:19:19] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[16:19:19] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[16:19:19] INFO - Using data from camera realsense
+[16:19:19] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[16:19:19] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[16:19:19] INFO - Using data from camera realsense
+[16:19:19] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[16:19:19] INFO - Done
+[16:19:19] INFO - Loading Network...
+[16:19:19] INFO - input channel is 1
+[16:19:19] INFO - Done from zero model
+[16:19:21] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [1000] || Gamma: 0.5
+[16:19:21] INFO - Dataset size 25600 ||rotate :False || zoom :False || ds_shuffle False || ds_rotate 0.0
+[16:19:21] INFO - Dataset train 25600 || seen 7680 || similar :7680 || novel :7680 
+[16:19:21] INFO - Beginning Epoch 00, lr=0.001
+[16:20:05] INFO - Epoch: 0, Batch: 100, Loss: 0.6904
+[16:20:42] INFO - Epoch: 0, Batch: 200, Loss: 0.4323
+[16:21:20] INFO - Epoch: 0, Batch: 300, Loss: 0.3023
+[16:21:57] INFO - Epoch: 0, Batch: 400, Loss: 0.2896
+[16:22:37] INFO - Epoch: 0, Batch: 500, Loss: 0.2553
+[16:23:15] INFO - Epoch: 0, Batch: 600, Loss: 0.2583
+[16:23:53] INFO - Epoch: 0, Batch: 700, Loss: 0.2138
+[16:24:40] INFO - Validating Seen...
+[16:27:25] INFO -  seen 164/199 = 0.824121
+[16:27:25] INFO - Validating Similar...
+[16:29:53] INFO -  Similar 138/199 = 0.693467
+[16:29:53] INFO - Validating Novel...
+[16:31:27] INFO -  Novel 124/199 = 0.623116
+[16:31:27] INFO - >>> save model: epoch_00_iou_0.6231
+[16:31:27] INFO - Beginning Epoch 01, lr=0.001
+[16:32:10] INFO - Epoch: 1, Batch: 100, Loss: 0.2110
+[16:32:48] INFO - Epoch: 1, Batch: 200, Loss: 0.1965
+[16:33:25] INFO - Epoch: 1, Batch: 300, Loss: 0.1878
+[16:34:04] INFO - Epoch: 1, Batch: 400, Loss: 0.1870
+[16:34:45] INFO - Epoch: 1, Batch: 500, Loss: 0.1884
+[16:35:20] INFO - Epoch: 1, Batch: 600, Loss: 0.1650
+[16:35:58] INFO - Epoch: 1, Batch: 700, Loss: 0.1942
+[16:36:42] INFO - Validating Seen...
+[16:39:14] INFO -  seen 175/199 = 0.879397
+[16:39:14] INFO - Validating Similar...
+[16:41:53] INFO -  Similar 158/199 = 0.793970
+[16:41:53] INFO - Validating Novel...
+[16:43:16] INFO -  Novel 147/199 = 0.738693
+[16:43:16] INFO - >>> save model: epoch_01_iou_0.7387
+[16:43:16] INFO - Beginning Epoch 02, lr=0.001
+[16:43:59] INFO - Epoch: 2, Batch: 100, Loss: 0.1679
+[16:44:37] INFO - Epoch: 2, Batch: 200, Loss: 0.1516
+[16:45:14] INFO - Epoch: 2, Batch: 300, Loss: 0.1557
+[16:45:52] INFO - Epoch: 2, Batch: 400, Loss: 0.1749
+[16:46:31] INFO - Epoch: 2, Batch: 500, Loss: 0.1730
+[16:47:09] INFO - Epoch: 2, Batch: 600, Loss: 0.1415
+[16:47:48] INFO - Epoch: 2, Batch: 700, Loss: 0.1728
+[16:48:33] INFO - Validating Seen...
+[16:51:17] INFO -  seen 176/199 = 0.884422
+[16:51:17] INFO - Validating Similar...
+[16:53:54] INFO -  Similar 165/199 = 0.829146
+[16:53:54] INFO - Validating Novel...
+[16:55:20] INFO -  Novel 153/199 = 0.768844
+[16:55:20] INFO - >>> save model: epoch_02_iou_0.7688
+[16:55:20] INFO - Beginning Epoch 03, lr=0.001
+[16:56:03] INFO - Epoch: 3, Batch: 100, Loss: 0.1372
+[16:56:44] INFO - Epoch: 3, Batch: 200, Loss: 0.1549
+[16:57:21] INFO - Epoch: 3, Batch: 300, Loss: 0.1330
+[16:57:57] INFO - Epoch: 3, Batch: 400, Loss: 0.1436
+[16:58:35] INFO - Epoch: 3, Batch: 500, Loss: 0.1300
+[16:59:15] INFO - Epoch: 3, Batch: 600, Loss: 0.1338
+[16:59:50] INFO - Epoch: 3, Batch: 700, Loss: 0.1347
+[17:00:35] INFO - Validating Seen...
+[17:03:17] INFO -  seen 179/199 = 0.899497
+[17:03:17] INFO - Validating Similar...
+[17:05:39] INFO -  Similar 169/199 = 0.849246
+[17:05:39] INFO - Validating Novel...
+[17:06:55] INFO -  Novel 147/199 = 0.738693
+[17:06:55] INFO - Beginning Epoch 04, lr=0.001
+[17:07:40] INFO - Epoch: 4, Batch: 100, Loss: 0.1378
+[17:08:19] INFO - Epoch: 4, Batch: 200, Loss: 0.1273
+[17:08:57] INFO - Epoch: 4, Batch: 300, Loss: 0.1110
+[17:09:34] INFO - Epoch: 4, Batch: 400, Loss: 0.1287
+[17:10:09] INFO - Epoch: 4, Batch: 500, Loss: 0.1223
+[17:10:49] INFO - Epoch: 4, Batch: 600, Loss: 0.1271
+[17:11:28] INFO - Epoch: 4, Batch: 700, Loss: 0.1123
+[17:12:12] INFO - Validating Seen...
+[17:14:54] INFO -  seen 183/199 = 0.919598
+[17:14:54] INFO - Validating Similar...
+[17:17:14] INFO -  Similar 165/199 = 0.829146
+[17:17:14] INFO - Validating Novel...
+[17:18:25] INFO -  Novel 143/199 = 0.718593
+[17:18:25] INFO - Beginning Epoch 05, lr=0.001
+[17:19:10] INFO - Epoch: 5, Batch: 100, Loss: 0.1119
+[17:19:48] INFO - Epoch: 5, Batch: 200, Loss: 0.1051
+[17:20:25] INFO - Epoch: 5, Batch: 300, Loss: 0.1129
+[17:21:00] INFO - Epoch: 5, Batch: 400, Loss: 0.1205
+[17:21:39] INFO - Epoch: 5, Batch: 500, Loss: 0.1226
+[17:22:17] INFO - Epoch: 5, Batch: 600, Loss: 0.1244
+[17:22:56] INFO - Epoch: 5, Batch: 700, Loss: 0.1166
+[17:23:41] INFO - Validating Seen...
+[17:26:30] INFO -  seen 188/199 = 0.944724
+[17:26:30] INFO - Validating Similar...
+[17:28:59] INFO -  Similar 161/199 = 0.809045
+[17:28:59] INFO - Validating Novel...
+[17:30:23] INFO -  Novel 150/199 = 0.753769
+[17:30:23] INFO - Beginning Epoch 06, lr=0.001
+[17:31:06] INFO - Epoch: 6, Batch: 100, Loss: 0.1119
+[17:31:47] INFO - Epoch: 6, Batch: 200, Loss: 0.1081
+[17:32:23] INFO - Epoch: 6, Batch: 300, Loss: 0.1136
+[17:33:00] INFO - Epoch: 6, Batch: 400, Loss: 0.1049
+[17:33:37] INFO - Epoch: 6, Batch: 500, Loss: 0.1142
+[17:34:13] INFO - Epoch: 6, Batch: 600, Loss: 0.1067
+[17:34:52] INFO - Epoch: 6, Batch: 700, Loss: 0.1058
+[17:35:40] INFO - Validating Seen...
+[17:38:31] INFO -  seen 184/199 = 0.924623
+[17:38:31] INFO - Validating Similar...
+[17:40:42] INFO -  Similar 155/199 = 0.778894
+[17:40:42] INFO - Validating Novel...
+[17:41:59] INFO -  Novel 137/199 = 0.688442
+[17:41:59] INFO - Beginning Epoch 07, lr=0.001
+[17:42:44] INFO - Epoch: 7, Batch: 100, Loss: 0.1057
+[17:43:21] INFO - Epoch: 7, Batch: 200, Loss: 0.1018
+[17:43:57] INFO - Epoch: 7, Batch: 300, Loss: 0.1161
+[17:44:33] INFO - Epoch: 7, Batch: 400, Loss: 0.1150
+[17:45:12] INFO - Epoch: 7, Batch: 500, Loss: 0.0998
+[17:45:52] INFO - Epoch: 7, Batch: 600, Loss: 0.1029
+[17:46:28] INFO - Epoch: 7, Batch: 700, Loss: 0.0963
+[17:47:15] INFO - Validating Seen...
+[17:49:50] INFO -  seen 179/199 = 0.899497
+[17:49:50] INFO - Validating Similar...
+[17:52:06] INFO -  Similar 168/199 = 0.844221
+[17:52:06] INFO - Validating Novel...
+[17:53:24] INFO -  Novel 143/199 = 0.718593
+[17:53:24] INFO - Beginning Epoch 08, lr=0.001
+[17:54:09] INFO - Epoch: 8, Batch: 100, Loss: 0.0911
+[17:54:46] INFO - Epoch: 8, Batch: 200, Loss: 0.1066
+[17:55:21] INFO - Epoch: 8, Batch: 300, Loss: 0.1024
+[17:56:00] INFO - Epoch: 8, Batch: 400, Loss: 0.0971
+[17:56:39] INFO - Epoch: 8, Batch: 500, Loss: 0.1047
+[17:57:16] INFO - Epoch: 8, Batch: 600, Loss: 0.0965
+[17:57:54] INFO - Epoch: 8, Batch: 700, Loss: 0.1117
+[17:58:38] INFO - Validating Seen...
+[18:01:18] INFO -  seen 186/199 = 0.934673
+[18:01:18] INFO - Validating Similar...
+[18:03:41] INFO -  Similar 158/199 = 0.793970
+[18:03:41] INFO - Validating Novel...
+[18:05:09] INFO -  Novel 149/199 = 0.748744
+[18:05:09] INFO - Beginning Epoch 09, lr=0.001
+[18:05:51] INFO - Epoch: 9, Batch: 100, Loss: 0.1046
+[18:06:30] INFO - Epoch: 9, Batch: 200, Loss: 0.0903
+[18:07:06] INFO - Epoch: 9, Batch: 300, Loss: 0.0993
+[18:07:42] INFO - Epoch: 9, Batch: 400, Loss: 0.0949
+[18:08:19] INFO - Epoch: 9, Batch: 500, Loss: 0.1034
+[18:08:56] INFO - Epoch: 9, Batch: 600, Loss: 0.1147
+[18:09:34] INFO - Epoch: 9, Batch: 700, Loss: 0.1004
+[18:10:21] INFO - Validating Seen...
+[18:13:12] INFO -  seen 194/199 = 0.974874
+[18:13:12] INFO - Validating Similar...
+[18:15:41] INFO -  Similar 161/199 = 0.809045
+[18:15:41] INFO - Validating Novel...
+[18:16:59] INFO -  Novel 152/199 = 0.763819
+[18:16:59] INFO - Beginning Epoch 10, lr=0.001
+[18:17:42] INFO - Epoch: 10, Batch: 100, Loss: 0.1017
+[18:18:21] INFO - Epoch: 10, Batch: 200, Loss: 0.0977
+[18:18:58] INFO - Epoch: 10, Batch: 300, Loss: 0.0855
+[18:19:35] INFO - Epoch: 10, Batch: 400, Loss: 0.0994
+[18:20:13] INFO - Epoch: 10, Batch: 500, Loss: 0.0919
+[18:20:52] INFO - Epoch: 10, Batch: 600, Loss: 0.0935
+[18:21:29] INFO - Epoch: 10, Batch: 700, Loss: 0.1007
+[18:22:15] INFO - Validating Seen...
+[18:24:51] INFO -  seen 192/199 = 0.964824
+[18:24:51] INFO - Validating Similar...
+[18:27:13] INFO -  Similar 165/199 = 0.829146
+[18:27:13] INFO - Validating Novel...
+[18:28:28] INFO -  Novel 145/199 = 0.728643
+[18:28:28] INFO - >>> save model: epoch_10_iou_0.7286
+[18:28:28] INFO - Beginning Epoch 11, lr=0.001
+[18:29:11] INFO - Epoch: 11, Batch: 100, Loss: 0.1064
+[18:29:52] INFO - Epoch: 11, Batch: 200, Loss: 0.0900
+[18:30:28] INFO - Epoch: 11, Batch: 300, Loss: 0.0969
+[18:31:03] INFO - Epoch: 11, Batch: 400, Loss: 0.0969
+[18:31:42] INFO - Epoch: 11, Batch: 500, Loss: 0.0900
+[18:32:21] INFO - Epoch: 11, Batch: 600, Loss: 0.0891
+[18:32:57] INFO - Epoch: 11, Batch: 700, Loss: 0.1068
+[18:33:42] INFO - Validating Seen...
+[18:36:35] INFO -  seen 178/199 = 0.894472
+[18:36:35] INFO - Validating Similar...
+[18:38:57] INFO -  Similar 161/199 = 0.809045
+[18:38:57] INFO - Validating Novel...
+[18:40:14] INFO -  Novel 145/199 = 0.728643
+[18:40:14] INFO - Beginning Epoch 12, lr=0.001
+[18:40:58] INFO - Epoch: 12, Batch: 100, Loss: 0.0921
+[18:41:38] INFO - Epoch: 12, Batch: 200, Loss: 0.0887
+[18:42:16] INFO - Epoch: 12, Batch: 300, Loss: 0.0966
+[18:42:51] INFO - Epoch: 12, Batch: 400, Loss: 0.0837
+[18:43:32] INFO - Epoch: 12, Batch: 500, Loss: 0.0838
+[18:44:07] INFO - Epoch: 12, Batch: 600, Loss: 0.0883
+[18:44:44] INFO - Epoch: 12, Batch: 700, Loss: 0.0861
+[18:45:28] INFO - Validating Seen...
+[18:48:07] INFO -  seen 179/199 = 0.899497
+[18:48:07] INFO - Validating Similar...
+[18:50:21] INFO -  Similar 167/199 = 0.839196
+[18:50:21] INFO - Validating Novel...
+[18:51:39] INFO -  Novel 137/199 = 0.688442
+[18:51:39] INFO - Beginning Epoch 13, lr=0.001
+[18:52:25] INFO - Epoch: 13, Batch: 100, Loss: 0.0943
+[18:53:02] INFO - Epoch: 13, Batch: 200, Loss: 0.0962
+[18:53:37] INFO - Epoch: 13, Batch: 300, Loss: 0.0874
+[18:54:15] INFO - Epoch: 13, Batch: 400, Loss: 0.0909
+[18:54:52] INFO - Epoch: 13, Batch: 500, Loss: 0.0836
+[18:55:30] INFO - Epoch: 13, Batch: 600, Loss: 0.0848
+[18:56:07] INFO - Epoch: 13, Batch: 700, Loss: 0.0821
+[18:56:52] INFO - Validating Seen...
+[18:59:29] INFO -  seen 187/199 = 0.939698
+[18:59:29] INFO - Validating Similar...
+[19:01:52] INFO -  Similar 160/199 = 0.804020
+[19:01:52] INFO - Validating Novel...
+[19:03:20] INFO -  Novel 157/199 = 0.788945
+[19:03:20] INFO - >>> save model: epoch_13_iou_0.7889
+[19:03:20] INFO - Beginning Epoch 14, lr=0.001
+[19:04:02] INFO - Epoch: 14, Batch: 100, Loss: 0.0892
+[19:04:41] INFO - Epoch: 14, Batch: 200, Loss: 0.0955
+[19:05:19] INFO - Epoch: 14, Batch: 300, Loss: 0.0895
+[19:05:56] INFO - Epoch: 14, Batch: 400, Loss: 0.0863
+[19:06:33] INFO - Epoch: 14, Batch: 500, Loss: 0.1034
+[19:07:11] INFO - Epoch: 14, Batch: 600, Loss: 0.0923
+[19:07:49] INFO - Epoch: 14, Batch: 700, Loss: 0.0931
+[19:08:34] INFO - Validating Seen...
+[19:11:16] INFO -  seen 181/199 = 0.909548
+[19:11:16] INFO - Validating Similar...
+[19:13:41] INFO -  Similar 170/199 = 0.854271
+[19:13:41] INFO - Validating Novel...
+[19:15:00] INFO -  Novel 141/199 = 0.708543
+[19:15:00] INFO - Beginning Epoch 15, lr=0.001
+[19:15:45] INFO - Epoch: 15, Batch: 100, Loss: 0.0827
+[19:16:23] INFO - Epoch: 15, Batch: 200, Loss: 0.0768
+[19:16:59] INFO - Epoch: 15, Batch: 300, Loss: 0.0908
+[19:17:37] INFO - Epoch: 15, Batch: 400, Loss: 0.0871
+[19:18:15] INFO - Epoch: 15, Batch: 500, Loss: 0.0915
+[19:18:52] INFO - Epoch: 15, Batch: 600, Loss: 0.0740
+[19:19:29] INFO - Epoch: 15, Batch: 700, Loss: 0.0889
+[19:20:16] INFO - Validating Seen...
+[19:22:58] INFO -  seen 187/199 = 0.939698
+[19:22:58] INFO - Validating Similar...
+[19:25:14] INFO -  Similar 151/199 = 0.758794
+[19:25:14] INFO - Validating Novel...
+[19:26:33] INFO -  Novel 146/199 = 0.733668
+[19:26:33] INFO - Beginning Epoch 16, lr=0.001
+[19:27:17] INFO - Epoch: 16, Batch: 100, Loss: 0.0918
+[19:27:56] INFO - Epoch: 16, Batch: 200, Loss: 0.0876
+[19:28:32] INFO - Epoch: 16, Batch: 300, Loss: 0.0904
+[19:29:09] INFO - Epoch: 16, Batch: 400, Loss: 0.0855
+[19:29:48] INFO - Epoch: 16, Batch: 500, Loss: 0.0926
+[19:30:24] INFO - Epoch: 16, Batch: 600, Loss: 0.0976
+[19:31:01] INFO - Epoch: 16, Batch: 700, Loss: 0.0807
+[19:31:45] INFO - Validating Seen...
+[19:34:32] INFO -  seen 188/199 = 0.944724
+[19:34:32] INFO - Validating Similar...
+[19:36:57] INFO -  Similar 164/199 = 0.824121
+[19:36:57] INFO - Validating Novel...
+[19:38:09] INFO -  Novel 141/199 = 0.708543
+[19:38:09] INFO - Beginning Epoch 17, lr=0.001
+[19:38:52] INFO - Epoch: 17, Batch: 100, Loss: 0.0830
+[19:39:33] INFO - Epoch: 17, Batch: 200, Loss: 0.0832
+[19:40:09] INFO - Epoch: 17, Batch: 300, Loss: 0.0776
+[19:40:47] INFO - Epoch: 17, Batch: 400, Loss: 0.0818
+[19:41:25] INFO - Epoch: 17, Batch: 500, Loss: 0.0819
+[19:42:05] INFO - Epoch: 17, Batch: 600, Loss: 0.0828
+[19:42:39] INFO - Epoch: 17, Batch: 700, Loss: 0.0791
+[19:43:24] INFO - Validating Seen...
+[19:46:01] INFO -  seen 179/199 = 0.899497
+[19:46:01] INFO - Validating Similar...
+[19:48:31] INFO -  Similar 163/199 = 0.819095
+[19:48:31] INFO - Validating Novel...
+[19:50:02] INFO -  Novel 148/199 = 0.743719
+[19:50:02] INFO - Beginning Epoch 18, lr=0.001
+[19:50:45] INFO - Epoch: 18, Batch: 100, Loss: 0.0823
+[19:51:25] INFO - Epoch: 18, Batch: 200, Loss: 0.0855
+[19:52:02] INFO - Epoch: 18, Batch: 300, Loss: 0.0923
+[19:52:38] INFO - Epoch: 18, Batch: 400, Loss: 0.0863
+[19:53:17] INFO - Epoch: 18, Batch: 500, Loss: 0.0787
+[19:53:53] INFO - Epoch: 18, Batch: 600, Loss: 0.0818
+[19:54:30] INFO - Epoch: 18, Batch: 700, Loss: 0.0869
+[19:55:16] INFO - Validating Seen...
+[19:57:58] INFO -  seen 179/199 = 0.899497
+[19:57:58] INFO - Validating Similar...
+[20:00:20] INFO -  Similar 163/199 = 0.819095
+[20:00:20] INFO - Validating Novel...
+[20:01:36] INFO -  Novel 141/199 = 0.708543
+[20:01:36] INFO - Beginning Epoch 19, lr=0.001
+[20:02:23] INFO - Epoch: 19, Batch: 100, Loss: 0.0888
+[20:02:57] INFO - Epoch: 19, Batch: 200, Loss: 0.0886
+[20:03:34] INFO - Epoch: 19, Batch: 300, Loss: 0.0845
+[20:04:13] INFO - Epoch: 19, Batch: 400, Loss: 0.0846
+[20:04:53] INFO - Epoch: 19, Batch: 500, Loss: 0.0800
+[20:05:31] INFO - Epoch: 19, Batch: 600, Loss: 0.0904
+[20:06:09] INFO - Epoch: 19, Batch: 700, Loss: 0.0833
+[20:06:52] INFO - Validating Seen...
+[20:09:34] INFO -  seen 190/199 = 0.954774
+[20:09:34] INFO - Validating Similar...
+[20:12:01] INFO -  Similar 166/199 = 0.834171
+[20:12:01] INFO - Validating Novel...
+[20:13:17] INFO -  Novel 136/199 = 0.683417
+[20:13:17] INFO - Beginning Epoch 20, lr=0.001
+[20:13:58] INFO - Epoch: 20, Batch: 100, Loss: 0.0795
+[20:14:38] INFO - Epoch: 20, Batch: 200, Loss: 0.0820
+[20:15:19] INFO - Epoch: 20, Batch: 300, Loss: 0.0875
+[20:15:57] INFO - Epoch: 20, Batch: 400, Loss: 0.0845
+[20:16:32] INFO - Epoch: 20, Batch: 500, Loss: 0.0755
+[20:17:06] INFO - Epoch: 20, Batch: 600, Loss: 0.0846
+[20:17:48] INFO - Epoch: 20, Batch: 700, Loss: 0.0876
+[20:18:33] INFO - Validating Seen...
+[20:21:08] INFO -  seen 181/199 = 0.909548
+[20:21:08] INFO - Validating Similar...
+[20:23:27] INFO -  Similar 160/199 = 0.804020
+[20:23:27] INFO - Validating Novel...
+[20:24:46] INFO -  Novel 137/199 = 0.688442
+[20:24:46] INFO - >>> save model: epoch_20_iou_0.6884
+[20:24:46] INFO - Beginning Epoch 21, lr=0.001
+[20:25:32] INFO - Epoch: 21, Batch: 100, Loss: 0.0774
+[20:26:08] INFO - Epoch: 21, Batch: 200, Loss: 0.0807
+[20:26:43] INFO - Epoch: 21, Batch: 300, Loss: 0.0786
+[20:27:20] INFO - Epoch: 21, Batch: 400, Loss: 0.0790
+[20:27:59] INFO - Epoch: 21, Batch: 500, Loss: 0.0734
+[20:28:36] INFO - Epoch: 21, Batch: 600, Loss: 0.0840
+[20:29:11] INFO - Epoch: 21, Batch: 700, Loss: 0.0853
+[20:29:57] INFO - Validating Seen...
+[20:32:54] INFO -  seen 182/199 = 0.914573
+[20:32:54] INFO - Validating Similar...
+[20:35:11] INFO -  Similar 159/199 = 0.798995
+[20:35:11] INFO - Validating Novel...
+[20:36:28] INFO -  Novel 135/199 = 0.678392
+[20:36:28] INFO - Beginning Epoch 22, lr=0.001
+[20:37:13] INFO - Epoch: 22, Batch: 100, Loss: 0.0811
+[20:37:48] INFO - Epoch: 22, Batch: 200, Loss: 0.0766
+[20:38:26] INFO - Epoch: 22, Batch: 300, Loss: 0.0790
+[20:39:04] INFO - Epoch: 22, Batch: 400, Loss: 0.0766
+[20:39:41] INFO - Epoch: 22, Batch: 500, Loss: 0.0680
+[20:40:20] INFO - Epoch: 22, Batch: 600, Loss: 0.0893
+[20:40:57] INFO - Epoch: 22, Batch: 700, Loss: 0.0787
+[20:41:40] INFO - Validating Seen...
+[20:44:14] INFO -  seen 185/199 = 0.929648
+[20:44:14] INFO - Validating Similar...
+[20:46:53] INFO -  Similar 164/199 = 0.824121
+[20:46:53] INFO - Validating Novel...
+[20:48:23] INFO -  Novel 145/199 = 0.728643
+[20:48:23] INFO - >>> save model: epoch_22_iou_0.7286
+[20:48:23] INFO - Beginning Epoch 23, lr=0.001
+[20:49:10] INFO - Epoch: 23, Batch: 100, Loss: 0.0782
+[20:49:44] INFO - Epoch: 23, Batch: 200, Loss: 0.0832
+[20:50:21] INFO - Epoch: 23, Batch: 300, Loss: 0.0779
+[20:50:58] INFO - Epoch: 23, Batch: 400, Loss: 0.0789
+[20:51:38] INFO - Epoch: 23, Batch: 500, Loss: 0.0829
+[20:52:15] INFO - Epoch: 23, Batch: 600, Loss: 0.0823
+[20:52:52] INFO - Epoch: 23, Batch: 700, Loss: 0.0988
+[20:53:38] INFO - Validating Seen...
+[20:56:10] INFO -  seen 182/199 = 0.914573
+[20:56:10] INFO - Validating Similar...
+[20:58:38] INFO -  Similar 162/199 = 0.814070
+[20:58:38] INFO - Validating Novel...
+[20:59:52] INFO -  Novel 127/199 = 0.638191
+[20:59:52] INFO - Beginning Epoch 24, lr=0.001
+[21:00:35] INFO - Epoch: 24, Batch: 100, Loss: 0.0814
+[21:01:17] INFO - Epoch: 24, Batch: 200, Loss: 0.0776
+[21:01:52] INFO - Epoch: 24, Batch: 300, Loss: 0.0745
+[21:02:30] INFO - Epoch: 24, Batch: 400, Loss: 0.0829
+[21:03:04] INFO - Epoch: 24, Batch: 500, Loss: 0.0761
+[21:03:42] INFO - Epoch: 24, Batch: 600, Loss: 0.0755
+[21:04:20] INFO - Epoch: 24, Batch: 700, Loss: 0.0824
+[21:05:07] INFO - Validating Seen...
+[21:07:34] INFO -  seen 183/199 = 0.919598
+[21:07:34] INFO - Validating Similar...
+[21:10:01] INFO -  Similar 167/199 = 0.839196
+[21:10:01] INFO - Validating Novel...
+[21:11:17] INFO -  Novel 143/199 = 0.718593
+[21:11:17] INFO - Beginning Epoch 25, lr=0.001
+[21:12:02] INFO - Epoch: 25, Batch: 100, Loss: 0.0821
+[21:12:40] INFO - Epoch: 25, Batch: 200, Loss: 0.0816
+[21:13:19] INFO - Epoch: 25, Batch: 300, Loss: 0.0760
+[21:13:56] INFO - Epoch: 25, Batch: 400, Loss: 0.0958
+[21:14:32] INFO - Epoch: 25, Batch: 500, Loss: 0.0844
+[21:15:10] INFO - Epoch: 25, Batch: 600, Loss: 0.0767
+[21:15:49] INFO - Epoch: 25, Batch: 700, Loss: 0.0799
+[21:16:34] INFO - Validating Seen...
+[21:19:08] INFO -  seen 180/199 = 0.904523
+[21:19:08] INFO - Validating Similar...
+[21:21:37] INFO -  Similar 166/199 = 0.834171
+[21:21:37] INFO - Validating Novel...
+[21:22:58] INFO -  Novel 140/199 = 0.703518
+[21:22:58] INFO - Beginning Epoch 26, lr=0.001
+[21:23:43] INFO - Epoch: 26, Batch: 100, Loss: 0.0776
+[21:24:19] INFO - Epoch: 26, Batch: 200, Loss: 0.0814
+[21:24:55] INFO - Epoch: 26, Batch: 300, Loss: 0.0798
+[21:25:32] INFO - Epoch: 26, Batch: 400, Loss: 0.0788
+[21:26:12] INFO - Epoch: 26, Batch: 500, Loss: 0.0830
+[21:26:50] INFO - Epoch: 26, Batch: 600, Loss: 0.0714
+[21:27:27] INFO - Epoch: 26, Batch: 700, Loss: 0.0843
+[21:28:14] INFO - Validating Seen...
+[21:30:57] INFO -  seen 177/199 = 0.889447
+[21:30:57] INFO - Validating Similar...
+[21:33:28] INFO -  Similar 163/199 = 0.819095
+[21:33:28] INFO - Validating Novel...
+[21:34:51] INFO -  Novel 141/199 = 0.708543
+[21:34:51] INFO - Beginning Epoch 27, lr=0.001
+[21:35:36] INFO - Epoch: 27, Batch: 100, Loss: 0.0775
+[21:36:12] INFO - Epoch: 27, Batch: 200, Loss: 0.0716
+[21:36:51] INFO - Epoch: 27, Batch: 300, Loss: 0.0757
+[21:37:27] INFO - Epoch: 27, Batch: 400, Loss: 0.0834
+[21:38:06] INFO - Epoch: 27, Batch: 500, Loss: 0.0746
+[21:38:43] INFO - Epoch: 27, Batch: 600, Loss: 0.0822
+[21:39:21] INFO - Epoch: 27, Batch: 700, Loss: 0.0761
+[21:40:06] INFO - Validating Seen...
+[21:42:47] INFO -  seen 184/199 = 0.924623
+[21:42:47] INFO - Validating Similar...
+[21:45:09] INFO -  Similar 177/199 = 0.889447
+[21:45:09] INFO - Validating Novel...
+[21:46:21] INFO -  Novel 136/199 = 0.683417
+[21:46:21] INFO - Beginning Epoch 28, lr=0.001
+[21:47:04] INFO - Epoch: 28, Batch: 100, Loss: 0.0843
+[21:47:43] INFO - Epoch: 28, Batch: 200, Loss: 0.0789
+[21:48:20] INFO - Epoch: 28, Batch: 300, Loss: 0.0708
+[21:48:57] INFO - Epoch: 28, Batch: 400, Loss: 0.0764
+[21:49:39] INFO - Epoch: 28, Batch: 500, Loss: 0.0742
+[21:50:15] INFO - Epoch: 28, Batch: 600, Loss: 0.0788
+[21:50:51] INFO - Epoch: 28, Batch: 700, Loss: 0.0825
+[21:51:35] INFO - Validating Seen...
+[21:54:30] INFO -  seen 190/199 = 0.954774
+[21:54:30] INFO - Validating Similar...
+[21:56:51] INFO -  Similar 165/199 = 0.829146
+[21:56:51] INFO - Validating Novel...
+[21:58:14] INFO -  Novel 135/199 = 0.678392
+[21:58:14] INFO - Beginning Epoch 29, lr=0.001
+[21:58:58] INFO - Epoch: 29, Batch: 100, Loss: 0.0849
+[21:59:36] INFO - Epoch: 29, Batch: 200, Loss: 0.0736
+[22:00:13] INFO - Epoch: 29, Batch: 300, Loss: 0.0768
+[22:00:51] INFO - Epoch: 29, Batch: 400, Loss: 0.0648
+[22:01:27] INFO - Epoch: 29, Batch: 500, Loss: 0.0836
+[22:02:09] INFO - Epoch: 29, Batch: 600, Loss: 0.0864
+[22:02:43] INFO - Epoch: 29, Batch: 700, Loss: 0.0728
+[22:03:26] INFO - Validating Seen...
+[22:06:03] INFO -  seen 183/199 = 0.919598
+[22:06:03] INFO - Validating Similar...
+[22:08:20] INFO -  Similar 162/199 = 0.814070
+[22:08:20] INFO - Validating Novel...
+[22:09:35] INFO -  Novel 136/199 = 0.683417
+[22:09:35] INFO - Beginning Epoch 30, lr=0.001
+[22:10:19] INFO - Epoch: 30, Batch: 100, Loss: 0.0783
+[22:10:58] INFO - Epoch: 30, Batch: 200, Loss: 0.0690
+[22:11:34] INFO - Epoch: 30, Batch: 300, Loss: 0.0750
+[22:12:12] INFO - Epoch: 30, Batch: 400, Loss: 0.0812
+[22:12:50] INFO - Epoch: 30, Batch: 500, Loss: 0.0757
+[22:13:30] INFO - Epoch: 30, Batch: 600, Loss: 0.0649
+[22:14:05] INFO - Epoch: 30, Batch: 700, Loss: 0.0679
+[22:14:52] INFO - Validating Seen...
+[22:17:43] INFO -  seen 186/199 = 0.934673
+[22:17:43] INFO - Validating Similar...
+[22:20:10] INFO -  Similar 165/199 = 0.829146
+[22:20:10] INFO - Validating Novel...
+[22:21:28] INFO -  Novel 142/199 = 0.713568
+[22:21:28] INFO - >>> save model: epoch_30_iou_0.7136
+[22:21:28] INFO - Beginning Epoch 31, lr=0.001
+[22:22:12] INFO - Epoch: 31, Batch: 100, Loss: 0.0680
+[22:22:51] INFO - Epoch: 31, Batch: 200, Loss: 0.0663
+[22:23:29] INFO - Epoch: 31, Batch: 300, Loss: 0.0760
+[22:24:06] INFO - Epoch: 31, Batch: 400, Loss: 0.0811
+[22:24:45] INFO - Epoch: 31, Batch: 500, Loss: 0.0770
+[22:25:23] INFO - Epoch: 31, Batch: 600, Loss: 0.0814
+[22:25:58] INFO - Epoch: 31, Batch: 700, Loss: 0.0796
+[22:26:46] INFO - Validating Seen...
+[22:29:19] INFO -  seen 186/199 = 0.934673
+[22:29:19] INFO - Validating Similar...

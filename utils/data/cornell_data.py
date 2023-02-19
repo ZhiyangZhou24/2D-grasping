@@ -11,7 +11,7 @@ class CornellDataset(torch.utils.data.Dataset):
     Dataset wrapper for the Cornell dataset.
     """
 
-    def __init__(self, file_path, alfa=1, ds_rotate = 0.0, output_size=224,include_depth=True, include_rgb=False, random_rotate=False,
+    def __init__(self, file_path, alfa=1, start=0.0, end=1.0, ds_rotate = 0.0, output_size=224,include_depth=True, include_rgb=False, random_rotate=False,
                  random_zoom=False,use_gauss_kernel = 0.0, **kwargs):
         """
         :param file_path: Cornell Dataset directory.
@@ -40,6 +40,10 @@ class CornellDataset(torch.utils.data.Dataset):
         self.depth_files = [f.replace('cpos.txt', 'd.tiff') for f in self.grasp_files]
         self.rgb_files = [f.replace('d.tiff', 'r.png') for f in self.depth_files]
         
+        self.grasp_files = self.grasp_files[int(self.length*start):int(self.length*end)]
+        self.depth_files = self.depth_files[int(self.length*start):int(self.length*end)]
+        self.rgb_files = self.rgb_files[int(self.length*start):int(self.length*end)]
+
         self.output_size = output_size
         self.resize_size = output_size
         #self.netinput = netinput

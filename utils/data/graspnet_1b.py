@@ -7,8 +7,7 @@ import torch
 import torch.utils.data
 from graspnetAPI import GraspNet
 from .grasp_data import GraspDatasetBase
-from .cornell_data import CornellDataset
-
+import numpy as np
 from utils.dataset_processing import grasp, image
 
 graspnet_root = "/media/lab/TOSHIBA480/0.Datasets/graspnet1bilion"
@@ -20,9 +19,11 @@ class GraspNet1BDataset(GraspDatasetBase):
                                 random_rotate=True, random_zoom=True,
                                 include_depth=True,
                                 include_rgb=True,
+                                use_gauss_kernel = 0.0,
+                                alfa=1
                                 ):
         super(GraspNet1BDataset, self).__init__(output_size=output_size, include_depth=include_depth, include_rgb=include_rgb, random_rotate=random_rotate,
-                 random_zoom=random_zoom, input_only=False)
+                 random_zoom=random_zoom, input_only=False,use_gauss_kernel=use_gauss_kernel)
         logging.info('Graspnet root = {}'.format(graspnet_root))
         logging.info('Using data from camera {}'.format(camera))
         self.graspnet_root = graspnet_root
@@ -42,8 +43,8 @@ class GraspNet1BDataset(GraspDatasetBase):
                     .replace('rect', 'rect_cornell')
                     .replace('.npy', '.txt')
             )
-
-        logging.info('Graspnet 1Billion dataset created!!')
+        self.length = len(self.g_rect_files)
+        logging.info('Graspnet 1Billion dataset created!! lenth is {}'.format(self.length))
 
     def _get_crop_attrs(self, idx, return_gtbbs=False):
         gtbbs = grasp.GraspRectangles.load_from_cornell_file(self.g_rect_files[idx], scale=self.scale)
@@ -65,7 +66,7 @@ class GraspNet1BDataset(GraspDatasetBase):
 
     def get_depth(self, idx, rot=0, zoom=1.0):
         # graspnet 1b中的深度图单位转换成m
-        depth_img = image.DepthImage.from_tiff(self.g_depth_files[idx], depth_scale=1000.0)
+        depth_img = image.DepthImage.from_tiff(self.g_depth_files[idx],depth_scale=1000.0)
         rh, rw = int(720 // self.scale), int(1280 // self.scale)
         # 读入的是wxh=1280x720 resize成目标尺寸
         depth_img.resize((rh, rw))

@@ -1,0 +1,32 @@
+[22:14:26] INFO - CUDA detected. Running with GPU acceleration.
+[22:14:26] INFO - Loading Jacquard Dataset...
+[22:14:27] INFO - Dataset len is 54485
+[22:14:27] INFO - Training size: 49036
+[22:14:27] INFO - Validation size: 5449
+[22:14:27] INFO - Done
+[22:14:27] INFO - Loading Network...
+[22:14:27] INFO - input channel is 1
+[22:14:27] INFO - Done from zero model
+[22:14:29] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [5, 15, 25, 35] || Gamma: 0.5
+[22:14:29] INFO - Dataset size 54485 ||rotate :False || zoom :False || ds_shuffle False || ds_rotate 0.0
+[22:14:29] INFO - Beginning Epoch 00, lr=0.001
+[22:14:59] INFO - Epoch: 0, Batch: 100, Loss: 0.0325
+[22:15:23] INFO - Epoch: 0, Batch: 200, Loss: 0.0188
+[22:15:47] INFO - Epoch: 0, Batch: 300, Loss: 0.0193
+[22:16:12] INFO - Epoch: 0, Batch: 400, Loss: 0.0131
+[22:16:36] INFO - Epoch: 0, Batch: 500, Loss: 0.0156
+[22:17:01] INFO - Epoch: 0, Batch: 600, Loss: 0.0119
+[22:17:25] INFO - Epoch: 0, Batch: 700, Loss: 0.0107
+[22:17:50] INFO - Epoch: 0, Batch: 800, Loss: 0.0127
+[22:18:14] INFO - Epoch: 0, Batch: 900, Loss: 0.0106
+[22:18:39] INFO - Epoch: 0, Batch: 1000, Loss: 0.0108
+[22:19:03] INFO - Epoch: 0, Batch: 1100, Loss: 0.0074
+[22:19:28] INFO - Epoch: 0, Batch: 1200, Loss: 0.0094
+[22:19:52] INFO - Epoch: 0, Batch: 1300, Loss: 0.0101
+[22:20:17] INFO - Epoch: 0, Batch: 1400, Loss: 0.0090
+[22:20:41] INFO - Epoch: 0, Batch: 1500, Loss: 0.0079
+[22:21:17] INFO - Validating ...
+[22:28:19] INFO - Jacquard index th25  4832/5449 = 0.886768
+[22:28:19] INFO - Jacquard index th30  4697/5449 = 0.861993
+[22:28:19] INFO - Jacquard index th35  4499/5449 = 0.825656
+[22:28:19] INFO - Jacquard index th40  4281/5449 = 0.785649

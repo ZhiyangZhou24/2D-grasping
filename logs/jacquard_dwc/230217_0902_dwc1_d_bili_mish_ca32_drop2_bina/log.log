@@ -1,0 +1,537 @@
+[09:02:41] INFO - CUDA detected. Running with GPU acceleration.
+[09:02:41] INFO - Loading Jacquard Dataset...
+[09:02:41] INFO - Dataset len is 54485
+[09:02:41] INFO - Training size: 49036
+[09:02:41] INFO - Validation size: 5449
+[09:02:41] INFO - Done
+[09:02:41] INFO - Loading Network...
+[09:02:41] INFO - input channel is 1
+[09:02:42] INFO - Done from goon checkpoint logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358
+[09:02:43] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [5, 15, 25, 35] || Gamma: 0.5
+[09:02:43] INFO - Dataset size 54485 ||rotate :False || zoom :False || ds_shuffle False || ds_rotate 0.0
+[09:02:43] INFO - Beginning Epoch 04, lr=0.001
+[09:03:12] INFO - Epoch: 4, Batch: 100, Loss: 0.0069
+[09:03:37] INFO - Epoch: 4, Batch: 200, Loss: 0.0065
+[09:04:01] INFO - Epoch: 4, Batch: 300, Loss: 0.0052
+[09:04:26] INFO - Epoch: 4, Batch: 400, Loss: 0.0063
+[09:04:50] INFO - Epoch: 4, Batch: 500, Loss: 0.0060
+[09:05:15] INFO - Epoch: 4, Batch: 600, Loss: 0.0046
+[09:05:40] INFO - Epoch: 4, Batch: 700, Loss: 0.0044
+[09:06:04] INFO - Epoch: 4, Batch: 800, Loss: 0.0052
+[09:06:29] INFO - Epoch: 4, Batch: 900, Loss: 0.0054
+[09:06:53] INFO - Epoch: 4, Batch: 1000, Loss: 0.0053
+[09:07:18] INFO - Epoch: 4, Batch: 1100, Loss: 0.0055
+[09:07:42] INFO - Epoch: 4, Batch: 1200, Loss: 0.0053
+[09:08:07] INFO - Epoch: 4, Batch: 1300, Loss: 0.0051
+[09:08:31] INFO - Epoch: 4, Batch: 1400, Loss: 0.0074
+[09:08:56] INFO - Epoch: 4, Batch: 1500, Loss: 0.0053
+[09:09:33] INFO - Validating ...
+[09:15:03] INFO - Jacquard index th25  5105/5449 = 0.936869
+[09:15:03] INFO - Jacquard index th30  5030/5449 = 0.923105
+[09:15:03] INFO - Jacquard index th35  4892/5449 = 0.897779
+[09:15:03] INFO - Jacquard index th40  4710/5449 = 0.864379
+[09:15:03] INFO - >>> save model: epoch_04_iou_0.9369
+[09:15:03] INFO - Beginning Epoch 05, lr=0.0005
+[09:15:31] INFO - Epoch: 5, Batch: 100, Loss: 0.0068
+[09:15:56] INFO - Epoch: 5, Batch: 200, Loss: 0.0055
+[09:16:20] INFO - Epoch: 5, Batch: 300, Loss: 0.0054
+[09:16:45] INFO - Epoch: 5, Batch: 400, Loss: 0.0063
+[09:17:09] INFO - Epoch: 5, Batch: 500, Loss: 0.0054
+[09:17:34] INFO - Epoch: 5, Batch: 600, Loss: 0.0058
+[09:17:58] INFO - Epoch: 5, Batch: 700, Loss: 0.0052
+[09:18:23] INFO - Epoch: 5, Batch: 800, Loss: 0.0066
+[09:18:48] INFO - Epoch: 5, Batch: 900, Loss: 0.0102
+[09:19:12] INFO - Epoch: 5, Batch: 1000, Loss: 0.0061
+[09:19:37] INFO - Epoch: 5, Batch: 1100, Loss: 0.0079
+[09:20:01] INFO - Epoch: 5, Batch: 1200, Loss: 0.0056
+[09:20:26] INFO - Epoch: 5, Batch: 1300, Loss: 0.0066
+[09:20:50] INFO - Epoch: 5, Batch: 1400, Loss: 0.0056
+[09:21:15] INFO - Epoch: 5, Batch: 1500, Loss: 0.0057
+[09:21:51] INFO - Validating ...
+[09:27:21] INFO - Jacquard index th25  5110/5449 = 0.937787
+[09:27:21] INFO - Jacquard index th30  5022/5449 = 0.921637
+[09:27:21] INFO - Jacquard index th35  4888/5449 = 0.897045
+[09:27:21] INFO - Jacquard index th40  4729/5449 = 0.867866
+[09:27:21] INFO - >>> save model: epoch_05_iou_0.9378
+[09:27:21] INFO - Beginning Epoch 06, lr=0.0005
+[09:27:50] INFO - Epoch: 6, Batch: 100, Loss: 0.0055
+[09:28:14] INFO - Epoch: 6, Batch: 200, Loss: 0.0074
+[09:28:39] INFO - Epoch: 6, Batch: 300, Loss: 0.0045
+[09:29:03] INFO - Epoch: 6, Batch: 400, Loss: 0.0067
+[09:29:28] INFO - Epoch: 6, Batch: 500, Loss: 0.0063
+[09:29:52] INFO - Epoch: 6, Batch: 600, Loss: 0.0060
+[09:30:17] INFO - Epoch: 6, Batch: 700, Loss: 0.0058
+[09:30:42] INFO - Epoch: 6, Batch: 800, Loss: 0.0065
+[09:31:06] INFO - Epoch: 6, Batch: 900, Loss: 0.0063
+[09:31:31] INFO - Epoch: 6, Batch: 1000, Loss: 0.0052
+[09:31:55] INFO - Epoch: 6, Batch: 1100, Loss: 0.0055
+[09:32:20] INFO - Epoch: 6, Batch: 1200, Loss: 0.0070
+[09:32:44] INFO - Epoch: 6, Batch: 1300, Loss: 0.0057
+[09:33:09] INFO - Epoch: 6, Batch: 1400, Loss: 0.0057
+[09:33:33] INFO - Epoch: 6, Batch: 1500, Loss: 0.0049
+[09:34:10] INFO - Validating ...
+[09:39:42] INFO - Jacquard index th25  5080/5449 = 0.932281
+[09:39:42] INFO - Jacquard index th30  4996/5449 = 0.916865
+[09:39:42] INFO - Jacquard index th35  4869/5449 = 0.893558
+[09:39:42] INFO - Jacquard index th40  4688/5449 = 0.860341
+[09:39:42] INFO - Beginning Epoch 07, lr=0.0005
+[09:40:11] INFO - Epoch: 7, Batch: 100, Loss: 0.0069
+[09:40:35] INFO - Epoch: 7, Batch: 200, Loss: 0.0048
+[09:41:00] INFO - Epoch: 7, Batch: 300, Loss: 0.0063
+[09:41:24] INFO - Epoch: 7, Batch: 400, Loss: 0.0053
+[09:41:49] INFO - Epoch: 7, Batch: 500, Loss: 0.0066
+[09:42:13] INFO - Epoch: 7, Batch: 600, Loss: 0.0050
+[09:42:38] INFO - Epoch: 7, Batch: 700, Loss: 0.0061
+[09:43:03] INFO - Epoch: 7, Batch: 800, Loss: 0.0038
+[09:43:28] INFO - Epoch: 7, Batch: 900, Loss: 0.0051
+[09:43:52] INFO - Epoch: 7, Batch: 1000, Loss: 0.0069
+[09:44:17] INFO - Epoch: 7, Batch: 1100, Loss: 0.0062
+[09:44:42] INFO - Epoch: 7, Batch: 1200, Loss: 0.0047
+[09:45:06] INFO - Epoch: 7, Batch: 1300, Loss: 0.0057
+[09:45:31] INFO - Epoch: 7, Batch: 1400, Loss: 0.0041
+[09:45:55] INFO - Epoch: 7, Batch: 1500, Loss: 0.0069
+[09:46:32] INFO - Validating ...
+[09:52:06] INFO - Jacquard index th25  5101/5449 = 0.936135
+[09:52:06] INFO - Jacquard index th30  5013/5449 = 0.919985
+[09:52:06] INFO - Jacquard index th35  4883/5449 = 0.896128
+[09:52:06] INFO - Jacquard index th40  4703/5449 = 0.863094
+[09:52:06] INFO - Beginning Epoch 08, lr=0.0005
+[09:52:34] INFO - Epoch: 8, Batch: 100, Loss: 0.0054
+[09:52:59] INFO - Epoch: 8, Batch: 200, Loss: 0.0053
+[09:53:23] INFO - Epoch: 8, Batch: 300, Loss: 0.0057
+[09:53:48] INFO - Epoch: 8, Batch: 400, Loss: 0.0040
+[09:54:12] INFO - Epoch: 8, Batch: 500, Loss: 0.0063
+[09:54:37] INFO - Epoch: 8, Batch: 600, Loss: 0.0058
+[09:55:02] INFO - Epoch: 8, Batch: 700, Loss: 0.0058
+[09:55:26] INFO - Epoch: 8, Batch: 800, Loss: 0.0055
+[09:55:51] INFO - Epoch: 8, Batch: 900, Loss: 0.0050
+[09:56:15] INFO - Epoch: 8, Batch: 1000, Loss: 0.0046
+[09:56:40] INFO - Epoch: 8, Batch: 1100, Loss: 0.0064
+[09:57:04] INFO - Epoch: 8, Batch: 1200, Loss: 0.0053
+[09:57:29] INFO - Epoch: 8, Batch: 1300, Loss: 0.0071
+[09:57:53] INFO - Epoch: 8, Batch: 1400, Loss: 0.0048
+[09:58:18] INFO - Epoch: 8, Batch: 1500, Loss: 0.0045
+[09:58:54] INFO - Validating ...
+[10:04:23] INFO - Jacquard index th25  5110/5449 = 0.937787
+[10:04:23] INFO - Jacquard index th30  5022/5449 = 0.921637
+[10:04:23] INFO - Jacquard index th35  4861/5449 = 0.892090
+[10:04:23] INFO - Jacquard index th40  4689/5449 = 0.860525
+[10:04:23] INFO - Beginning Epoch 09, lr=0.0005
+[10:04:52] INFO - Epoch: 9, Batch: 100, Loss: 0.0068
+[10:05:16] INFO - Epoch: 9, Batch: 200, Loss: 0.0042
+[10:05:41] INFO - Epoch: 9, Batch: 300, Loss: 0.0068
+[10:06:05] INFO - Epoch: 9, Batch: 400, Loss: 0.0039
+[10:06:30] INFO - Epoch: 9, Batch: 500, Loss: 0.0077
+[10:06:54] INFO - Epoch: 9, Batch: 600, Loss: 0.0045
+[10:07:19] INFO - Epoch: 9, Batch: 700, Loss: 0.0045
+[10:07:43] INFO - Epoch: 9, Batch: 800, Loss: 0.0043
+[10:08:08] INFO - Epoch: 9, Batch: 900, Loss: 0.0053
+[10:08:32] INFO - Epoch: 9, Batch: 1000, Loss: 0.0078
+[10:08:57] INFO - Epoch: 9, Batch: 1100, Loss: 0.0071
+[10:09:21] INFO - Epoch: 9, Batch: 1200, Loss: 0.0059
+[10:09:46] INFO - Epoch: 9, Batch: 1300, Loss: 0.0050
+[10:10:11] INFO - Epoch: 9, Batch: 1400, Loss: 0.0072
+[10:10:35] INFO - Epoch: 9, Batch: 1500, Loss: 0.0052
+[10:11:11] INFO - Validating ...
+[10:16:45] INFO - Jacquard index th25  5112/5449 = 0.938154
+[10:16:45] INFO - Jacquard index th30  5024/5449 = 0.922004
+[10:16:45] INFO - Jacquard index th35  4882/5449 = 0.895944
+[10:16:45] INFO - Jacquard index th40  4695/5449 = 0.861626
+[10:16:45] INFO - >>> save model: epoch_09_iou_0.9382
+[10:16:45] INFO - Beginning Epoch 10, lr=0.0005
+[10:17:14] INFO - Epoch: 10, Batch: 100, Loss: 0.0051
+[10:17:39] INFO - Epoch: 10, Batch: 200, Loss: 0.0057
+[10:18:03] INFO - Epoch: 10, Batch: 300, Loss: 0.0048
+[10:18:28] INFO - Epoch: 10, Batch: 400, Loss: 0.0033
+[10:18:52] INFO - Epoch: 10, Batch: 500, Loss: 0.0065
+[10:19:17] INFO - Epoch: 10, Batch: 600, Loss: 0.0067
+[10:19:41] INFO - Epoch: 10, Batch: 700, Loss: 0.0045
+[10:20:06] INFO - Epoch: 10, Batch: 800, Loss: 0.0049
+[10:20:30] INFO - Epoch: 10, Batch: 900, Loss: 0.0048
+[10:20:55] INFO - Epoch: 10, Batch: 1000, Loss: 0.0046
+[10:21:19] INFO - Epoch: 10, Batch: 1100, Loss: 0.0048
+[10:21:44] INFO - Epoch: 10, Batch: 1200, Loss: 0.0050
+[10:22:08] INFO - Epoch: 10, Batch: 1300, Loss: 0.0044
+[10:22:33] INFO - Epoch: 10, Batch: 1400, Loss: 0.0043
+[10:22:58] INFO - Epoch: 10, Batch: 1500, Loss: 0.0062
+[10:23:33] INFO - Validating ...
+[10:29:03] INFO - Jacquard index th25  5049/5449 = 0.926592
+[10:29:03] INFO - Jacquard index th30  4969/5449 = 0.911910
+[10:29:03] INFO - Jacquard index th35  4834/5449 = 0.887135
+[10:29:03] INFO - Jacquard index th40  4675/5449 = 0.857956
+[10:29:03] INFO - >>> save model: epoch_10_iou_0.9266
+[10:29:03] INFO - Beginning Epoch 11, lr=0.0005
+[10:29:31] INFO - Epoch: 11, Batch: 100, Loss: 0.0047
+[10:29:56] INFO - Epoch: 11, Batch: 200, Loss: 0.0059
+[10:30:20] INFO - Epoch: 11, Batch: 300, Loss: 0.0056
+[10:30:45] INFO - Epoch: 11, Batch: 400, Loss: 0.0046
+[10:31:10] INFO - Epoch: 11, Batch: 500, Loss: 0.0044
+[10:31:34] INFO - Epoch: 11, Batch: 600, Loss: 0.0058
+[10:31:59] INFO - Epoch: 11, Batch: 700, Loss: 0.0049
+[10:32:23] INFO - Epoch: 11, Batch: 800, Loss: 0.0045
+[10:32:48] INFO - Epoch: 11, Batch: 900, Loss: 0.0049
+[10:33:12] INFO - Epoch: 11, Batch: 1000, Loss: 0.0050
+[10:33:37] INFO - Epoch: 11, Batch: 1100, Loss: 0.0047
+[10:34:02] INFO - Epoch: 11, Batch: 1200, Loss: 0.0061
+[10:34:26] INFO - Epoch: 11, Batch: 1300, Loss: 0.0052
+[10:34:51] INFO - Epoch: 11, Batch: 1400, Loss: 0.0056
+[10:35:16] INFO - Epoch: 11, Batch: 1500, Loss: 0.0052
+[10:35:53] INFO - Validating ...
+[10:41:21] INFO - Jacquard index th25  5095/5449 = 0.935034
+[10:41:21] INFO - Jacquard index th30  5016/5449 = 0.920536
+[10:41:21] INFO - Jacquard index th35  4872/5449 = 0.894109
+[10:41:21] INFO - Jacquard index th40  4700/5449 = 0.862544
+[10:41:21] INFO - >>> save model: epoch_11_iou_0.9350
+[10:41:21] INFO - Beginning Epoch 12, lr=0.0005
+[10:41:50] INFO - Epoch: 12, Batch: 100, Loss: 0.0043
+[10:42:14] INFO - Epoch: 12, Batch: 200, Loss: 0.0045
+[10:42:39] INFO - Epoch: 12, Batch: 300, Loss: 0.0049
+[10:43:03] INFO - Epoch: 12, Batch: 400, Loss: 0.0062
+[10:43:28] INFO - Epoch: 12, Batch: 500, Loss: 0.0055
+[10:43:52] INFO - Epoch: 12, Batch: 600, Loss: 0.0062
+[10:44:17] INFO - Epoch: 12, Batch: 700, Loss: 0.0056
+[10:44:43] INFO - Epoch: 12, Batch: 800, Loss: 0.0052
+[10:45:10] INFO - Epoch: 12, Batch: 900, Loss: 0.0051
+[10:45:37] INFO - Epoch: 12, Batch: 1000, Loss: 0.0050
+[10:46:03] INFO - Epoch: 12, Batch: 1100, Loss: 0.0043
+[10:46:27] INFO - Epoch: 12, Batch: 1200, Loss: 0.0062
+[10:46:52] INFO - Epoch: 12, Batch: 1300, Loss: 0.0036
+[10:47:16] INFO - Epoch: 12, Batch: 1400, Loss: 0.0056
+[10:47:41] INFO - Epoch: 12, Batch: 1500, Loss: 0.0055
+[10:48:17] INFO - Validating ...
+[10:53:49] INFO - Jacquard index th25  5123/5449 = 0.940173
+[10:53:49] INFO - Jacquard index th30  5048/5449 = 0.926409
+[10:53:49] INFO - Jacquard index th35  4913/5449 = 0.901633
+[10:53:49] INFO - Jacquard index th40  4734/5449 = 0.868783
+[10:53:49] INFO - >>> save model: epoch_12_iou_0.9402
+[10:53:49] INFO - Beginning Epoch 13, lr=0.0005
+[10:54:18] INFO - Epoch: 13, Batch: 100, Loss: 0.0046
+[10:54:42] INFO - Epoch: 13, Batch: 200, Loss: 0.0064
+[10:55:07] INFO - Epoch: 13, Batch: 300, Loss: 0.0062
+[10:55:32] INFO - Epoch: 13, Batch: 400, Loss: 0.0055
+[10:55:56] INFO - Epoch: 13, Batch: 500, Loss: 0.0040
+[10:56:21] INFO - Epoch: 13, Batch: 600, Loss: 0.0036
+[10:56:45] INFO - Epoch: 13, Batch: 700, Loss: 0.0055
+[10:57:10] INFO - Epoch: 13, Batch: 800, Loss: 0.0074
+[10:57:34] INFO - Epoch: 13, Batch: 900, Loss: 0.0059
+[10:57:59] INFO - Epoch: 13, Batch: 1000, Loss: 0.0067
+[10:58:24] INFO - Epoch: 13, Batch: 1100, Loss: 0.0059
+[10:58:48] INFO - Epoch: 13, Batch: 1200, Loss: 0.0050
+[10:59:13] INFO - Epoch: 13, Batch: 1300, Loss: 0.0048
+[10:59:37] INFO - Epoch: 13, Batch: 1400, Loss: 0.0051
+[11:00:02] INFO - Epoch: 13, Batch: 1500, Loss: 0.0048
+[11:00:38] INFO - Validating ...
+[11:06:09] INFO - Jacquard index th25  5111/5449 = 0.937970
+[11:06:09] INFO - Jacquard index th30  5024/5449 = 0.922004
+[11:06:09] INFO - Jacquard index th35  4870/5449 = 0.893742
+[11:06:09] INFO - Jacquard index th40  4707/5449 = 0.863828
+[11:06:09] INFO - Beginning Epoch 14, lr=0.0005
+[11:06:37] INFO - Epoch: 14, Batch: 100, Loss: 0.0058
+[11:07:02] INFO - Epoch: 14, Batch: 200, Loss: 0.0050
+[11:07:26] INFO - Epoch: 14, Batch: 300, Loss: 0.0053
+[11:07:51] INFO - Epoch: 14, Batch: 400, Loss: 0.0047
+[11:08:16] INFO - Epoch: 14, Batch: 500, Loss: 0.0047
+[11:08:40] INFO - Epoch: 14, Batch: 600, Loss: 0.0044
+[11:09:05] INFO - Epoch: 14, Batch: 700, Loss: 0.0073
+[11:09:29] INFO - Epoch: 14, Batch: 800, Loss: 0.0043
+[11:09:54] INFO - Epoch: 14, Batch: 900, Loss: 0.0047
+[11:10:18] INFO - Epoch: 14, Batch: 1000, Loss: 0.0053
+[11:10:43] INFO - Epoch: 14, Batch: 1100, Loss: 0.0060
+[11:11:07] INFO - Epoch: 14, Batch: 1200, Loss: 0.0065
+[11:11:32] INFO - Epoch: 14, Batch: 1300, Loss: 0.0054
+[11:11:57] INFO - Epoch: 14, Batch: 1400, Loss: 0.0059
+[11:12:21] INFO - Epoch: 14, Batch: 1500, Loss: 0.0044
+[11:12:59] INFO - Validating ...
+[11:18:31] INFO - Jacquard index th25  5125/5449 = 0.940540
+[11:18:31] INFO - Jacquard index th30  5031/5449 = 0.923289
+[11:18:31] INFO - Jacquard index th35  4896/5449 = 0.898513
+[11:18:31] INFO - Jacquard index th40  4705/5449 = 0.863461
+[11:18:31] INFO - >>> save model: epoch_14_iou_0.9405
+[11:18:31] INFO - Beginning Epoch 15, lr=0.00025
+[11:19:00] INFO - Epoch: 15, Batch: 100, Loss: 0.0043
+[11:19:25] INFO - Epoch: 15, Batch: 200, Loss: 0.0037
+[11:19:49] INFO - Epoch: 15, Batch: 300, Loss: 0.0053
+[11:20:14] INFO - Epoch: 15, Batch: 400, Loss: 0.0064
+[11:20:38] INFO - Epoch: 15, Batch: 500, Loss: 0.0043
+[11:21:03] INFO - Epoch: 15, Batch: 600, Loss: 0.0053
+[11:21:27] INFO - Epoch: 15, Batch: 700, Loss: 0.0047
+[11:21:52] INFO - Epoch: 15, Batch: 800, Loss: 0.0053
+[11:22:16] INFO - Epoch: 15, Batch: 900, Loss: 0.0031
+[11:22:41] INFO - Epoch: 15, Batch: 1000, Loss: 0.0043
+[11:23:06] INFO - Epoch: 15, Batch: 1100, Loss: 0.0050
+[11:23:30] INFO - Epoch: 15, Batch: 1200, Loss: 0.0044
+[11:23:55] INFO - Epoch: 15, Batch: 1300, Loss: 0.0048
+[11:24:19] INFO - Epoch: 15, Batch: 1400, Loss: 0.0049
+[11:24:44] INFO - Epoch: 15, Batch: 1500, Loss: 0.0063
+[11:25:20] INFO - Validating ...
+[11:30:54] INFO - Jacquard index th25  5099/5449 = 0.935768
+[11:30:54] INFO - Jacquard index th30  5011/5449 = 0.919618
+[11:30:54] INFO - Jacquard index th35  4854/5449 = 0.890806
+[11:30:54] INFO - Jacquard index th40  4700/5449 = 0.862544
+[11:30:54] INFO - Beginning Epoch 16, lr=0.00025
+[11:31:23] INFO - Epoch: 16, Batch: 100, Loss: 0.0063
+[11:31:47] INFO - Epoch: 16, Batch: 200, Loss: 0.0044
+[11:32:12] INFO - Epoch: 16, Batch: 300, Loss: 0.0058
+[11:32:36] INFO - Epoch: 16, Batch: 400, Loss: 0.0055
+[11:33:01] INFO - Epoch: 16, Batch: 500, Loss: 0.0054
+[11:33:25] INFO - Epoch: 16, Batch: 600, Loss: 0.0070
+[11:33:50] INFO - Epoch: 16, Batch: 700, Loss: 0.0053
+[11:34:15] INFO - Epoch: 16, Batch: 800, Loss: 0.0054
+[11:34:39] INFO - Epoch: 16, Batch: 900, Loss: 0.0055
+[11:35:04] INFO - Epoch: 16, Batch: 1000, Loss: 0.0044
+[11:35:28] INFO - Epoch: 16, Batch: 1100, Loss: 0.0049
+[11:35:53] INFO - Epoch: 16, Batch: 1200, Loss: 0.0060
+[11:36:18] INFO - Epoch: 16, Batch: 1300, Loss: 0.0060
+[11:36:42] INFO - Epoch: 16, Batch: 1400, Loss: 0.0046
+[11:37:07] INFO - Epoch: 16, Batch: 1500, Loss: 0.0058
+[11:37:44] INFO - Validating ...
+[11:43:18] INFO - Jacquard index th25  5118/5449 = 0.939255
+[11:43:18] INFO - Jacquard index th30  5032/5449 = 0.923472
+[11:43:18] INFO - Jacquard index th35  4872/5449 = 0.894109
+[11:43:18] INFO - Jacquard index th40  4705/5449 = 0.863461
+[11:43:18] INFO - Beginning Epoch 17, lr=0.00025
+[11:43:46] INFO - Epoch: 17, Batch: 100, Loss: 0.0041
+[11:44:11] INFO - Epoch: 17, Batch: 200, Loss: 0.0045
+[11:44:35] INFO - Epoch: 17, Batch: 300, Loss: 0.0044
+[11:45:00] INFO - Epoch: 17, Batch: 400, Loss: 0.0047
+[11:45:24] INFO - Epoch: 17, Batch: 500, Loss: 0.0041
+[11:45:49] INFO - Epoch: 17, Batch: 600, Loss: 0.0051
+[11:46:14] INFO - Epoch: 17, Batch: 700, Loss: 0.0042
+[11:46:38] INFO - Epoch: 17, Batch: 800, Loss: 0.0047
+[11:47:03] INFO - Epoch: 17, Batch: 900, Loss: 0.0035
+[11:47:27] INFO - Epoch: 17, Batch: 1000, Loss: 0.0057
+[11:47:52] INFO - Epoch: 17, Batch: 1100, Loss: 0.0053
+[11:48:16] INFO - Epoch: 17, Batch: 1200, Loss: 0.0052
+[11:48:41] INFO - Epoch: 17, Batch: 1300, Loss: 0.0037
+[11:49:06] INFO - Epoch: 17, Batch: 1400, Loss: 0.0049
+[11:49:30] INFO - Epoch: 17, Batch: 1500, Loss: 0.0057
+[11:50:08] INFO - Validating ...
+[11:55:40] INFO - Jacquard index th25  5093/5449 = 0.934667
+[11:55:40] INFO - Jacquard index th30  5012/5449 = 0.919802
+[11:55:40] INFO - Jacquard index th35  4867/5449 = 0.893191
+[11:55:40] INFO - Jacquard index th40  4680/5449 = 0.858873
+[11:55:40] INFO - Beginning Epoch 18, lr=0.00025
+[11:56:08] INFO - Epoch: 18, Batch: 100, Loss: 0.0054
+[11:56:32] INFO - Epoch: 18, Batch: 200, Loss: 0.0039
+[11:56:57] INFO - Epoch: 18, Batch: 300, Loss: 0.0073
+[11:57:22] INFO - Epoch: 18, Batch: 400, Loss: 0.0037
+[11:57:46] INFO - Epoch: 18, Batch: 500, Loss: 0.0047
+[11:58:11] INFO - Epoch: 18, Batch: 600, Loss: 0.0051
+[11:58:35] INFO - Epoch: 18, Batch: 700, Loss: 0.0052
+[11:59:00] INFO - Epoch: 18, Batch: 800, Loss: 0.0076
+[11:59:24] INFO - Epoch: 18, Batch: 900, Loss: 0.0052
+[11:59:49] INFO - Epoch: 18, Batch: 1000, Loss: 0.0047
+[12:00:13] INFO - Epoch: 18, Batch: 1100, Loss: 0.0054
+[12:00:38] INFO - Epoch: 18, Batch: 1200, Loss: 0.0050
+[12:01:03] INFO - Epoch: 18, Batch: 1300, Loss: 0.0049
+[12:01:27] INFO - Epoch: 18, Batch: 1400, Loss: 0.0050
+[12:01:52] INFO - Epoch: 18, Batch: 1500, Loss: 0.0049
+[12:02:29] INFO - Validating ...
+[12:08:03] INFO - Jacquard index th25  5076/5449 = 0.931547
+[12:08:03] INFO - Jacquard index th30  4994/5449 = 0.916498
+[12:08:03] INFO - Jacquard index th35  4857/5449 = 0.891356
+[12:08:03] INFO - Jacquard index th40  4677/5449 = 0.858323
+[12:08:03] INFO - Beginning Epoch 19, lr=0.00025
+[12:08:31] INFO - Epoch: 19, Batch: 100, Loss: 0.0051
+[12:08:56] INFO - Epoch: 19, Batch: 200, Loss: 0.0042
+[12:09:20] INFO - Epoch: 19, Batch: 300, Loss: 0.0047
+[12:09:45] INFO - Epoch: 19, Batch: 400, Loss: 0.0040
+[12:10:10] INFO - Epoch: 19, Batch: 500, Loss: 0.0059
+[12:10:34] INFO - Epoch: 19, Batch: 600, Loss: 0.0051
+[12:10:59] INFO - Epoch: 19, Batch: 700, Loss: 0.0055
+[12:11:23] INFO - Epoch: 19, Batch: 800, Loss: 0.0045
+[12:11:48] INFO - Epoch: 19, Batch: 900, Loss: 0.0042
+[12:12:13] INFO - Epoch: 19, Batch: 1000, Loss: 0.0047
+[12:12:37] INFO - Epoch: 19, Batch: 1100, Loss: 0.0050
+[12:13:02] INFO - Epoch: 19, Batch: 1200, Loss: 0.0054
+[12:13:26] INFO - Epoch: 19, Batch: 1300, Loss: 0.0055
+[12:13:51] INFO - Epoch: 19, Batch: 1400, Loss: 0.0046
+[12:14:15] INFO - Epoch: 19, Batch: 1500, Loss: 0.0052
+[12:14:52] INFO - Validating ...
+[12:20:27] INFO - Jacquard index th25  5078/5449 = 0.931914
+[12:20:27] INFO - Jacquard index th30  4992/5449 = 0.916131
+[12:20:27] INFO - Jacquard index th35  4840/5449 = 0.888236
+[12:20:27] INFO - Jacquard index th40  4670/5449 = 0.857038
+[12:20:27] INFO - Beginning Epoch 20, lr=0.00025
+[12:20:56] INFO - Epoch: 20, Batch: 100, Loss: 0.0037
+[12:21:21] INFO - Epoch: 20, Batch: 200, Loss: 0.0053
+[12:21:45] INFO - Epoch: 20, Batch: 300, Loss: 0.0046
+[12:22:10] INFO - Epoch: 20, Batch: 400, Loss: 0.0039
+[12:22:34] INFO - Epoch: 20, Batch: 500, Loss: 0.0033
+[12:22:59] INFO - Epoch: 20, Batch: 600, Loss: 0.0044
+[12:23:24] INFO - Epoch: 20, Batch: 700, Loss: 0.0047
+[12:23:48] INFO - Epoch: 20, Batch: 800, Loss: 0.0055
+[12:24:13] INFO - Epoch: 20, Batch: 900, Loss: 0.0044
+[12:24:37] INFO - Epoch: 20, Batch: 1000, Loss: 0.0044
+[12:25:02] INFO - Epoch: 20, Batch: 1100, Loss: 0.0042
+[12:25:26] INFO - Epoch: 20, Batch: 1200, Loss: 0.0034
+[12:25:51] INFO - Epoch: 20, Batch: 1300, Loss: 0.0034
+[12:26:16] INFO - Epoch: 20, Batch: 1400, Loss: 0.0058
+[12:26:40] INFO - Epoch: 20, Batch: 1500, Loss: 0.0060
+[12:27:16] INFO - Validating ...
+[12:32:52] INFO - Jacquard index th25  5072/5449 = 0.930813
+[12:32:52] INFO - Jacquard index th30  4986/5449 = 0.915030
+[12:32:52] INFO - Jacquard index th35  4832/5449 = 0.886768
+[12:32:52] INFO - Jacquard index th40  4661/5449 = 0.855386
+[12:32:52] INFO - >>> save model: epoch_20_iou_0.9308
+[12:32:52] INFO - Beginning Epoch 21, lr=0.00025
+[12:33:20] INFO - Epoch: 21, Batch: 100, Loss: 0.0037
+[12:33:45] INFO - Epoch: 21, Batch: 200, Loss: 0.0049
+[12:34:09] INFO - Epoch: 21, Batch: 300, Loss: 0.0038
+[12:34:34] INFO - Epoch: 21, Batch: 400, Loss: 0.0038
+[12:34:58] INFO - Epoch: 21, Batch: 500, Loss: 0.0046
+[12:35:23] INFO - Epoch: 21, Batch: 600, Loss: 0.0031
+[12:35:47] INFO - Epoch: 21, Batch: 700, Loss: 0.0054
+[12:36:12] INFO - Epoch: 21, Batch: 800, Loss: 0.0037
+[12:36:37] INFO - Epoch: 21, Batch: 900, Loss: 0.0046
+[12:37:01] INFO - Epoch: 21, Batch: 1000, Loss: 0.0038
+[12:37:26] INFO - Epoch: 21, Batch: 1100, Loss: 0.0044
+[12:37:50] INFO - Epoch: 21, Batch: 1200, Loss: 0.0049
+[12:38:15] INFO - Epoch: 21, Batch: 1300, Loss: 0.0042
+[12:38:40] INFO - Epoch: 21, Batch: 1400, Loss: 0.0058
+[12:39:04] INFO - Epoch: 21, Batch: 1500, Loss: 0.0057
+[12:39:42] INFO - Validating ...
+[12:45:12] INFO - Jacquard index th25  5076/5449 = 0.931547
+[12:45:12] INFO - Jacquard index th30  4999/5449 = 0.917416
+[12:45:12] INFO - Jacquard index th35  4853/5449 = 0.890622
+[12:45:12] INFO - Jacquard index th40  4679/5449 = 0.858690
+[12:45:12] INFO - >>> save model: epoch_21_iou_0.9315
+[12:45:12] INFO - Beginning Epoch 22, lr=0.00025
+[12:45:40] INFO - Epoch: 22, Batch: 100, Loss: 0.0044
+[12:46:05] INFO - Epoch: 22, Batch: 200, Loss: 0.0038
+[12:46:29] INFO - Epoch: 22, Batch: 300, Loss: 0.0047
+[12:46:54] INFO - Epoch: 22, Batch: 400, Loss: 0.0049
+[12:47:18] INFO - Epoch: 22, Batch: 500, Loss: 0.0038
+[12:47:43] INFO - Epoch: 22, Batch: 600, Loss: 0.0051
+[12:48:08] INFO - Epoch: 22, Batch: 700, Loss: 0.0044
+[12:48:32] INFO - Epoch: 22, Batch: 800, Loss: 0.0052
+[12:48:57] INFO - Epoch: 22, Batch: 900, Loss: 0.0048
+[12:49:21] INFO - Epoch: 22, Batch: 1000, Loss: 0.0036
+[12:49:46] INFO - Epoch: 22, Batch: 1100, Loss: 0.0057
+[12:50:11] INFO - Epoch: 22, Batch: 1200, Loss: 0.0062
+[12:50:35] INFO - Epoch: 22, Batch: 1300, Loss: 0.0040
+[12:51:00] INFO - Epoch: 22, Batch: 1400, Loss: 0.0054
+[12:51:24] INFO - Epoch: 22, Batch: 1500, Loss: 0.0050
+[12:52:00] INFO - Validating ...
+[12:57:37] INFO - Jacquard index th25  5086/5449 = 0.933382
+[12:57:37] INFO - Jacquard index th30  5001/5449 = 0.917783
+[12:57:37] INFO - Jacquard index th35  4826/5449 = 0.885667
+[12:57:37] INFO - Jacquard index th40  4658/5449 = 0.854836
+[12:57:37] INFO - >>> save model: epoch_22_iou_0.9334
+[12:57:37] INFO - Beginning Epoch 23, lr=0.00025
+[12:58:06] INFO - Epoch: 23, Batch: 100, Loss: 0.0046
+[12:58:30] INFO - Epoch: 23, Batch: 200, Loss: 0.0042
+[12:58:55] INFO - Epoch: 23, Batch: 300, Loss: 0.0052
+[12:59:19] INFO - Epoch: 23, Batch: 400, Loss: 0.0047
+[12:59:44] INFO - Epoch: 23, Batch: 500, Loss: 0.0048
+[13:00:08] INFO - Epoch: 23, Batch: 600, Loss: 0.0042
+[13:00:33] INFO - Epoch: 23, Batch: 700, Loss: 0.0063
+[13:00:58] INFO - Epoch: 23, Batch: 800, Loss: 0.0045
+[13:01:22] INFO - Epoch: 23, Batch: 900, Loss: 0.0057
+[13:01:47] INFO - Epoch: 23, Batch: 1000, Loss: 0.0053
+[13:02:11] INFO - Epoch: 23, Batch: 1100, Loss: 0.0029
+[13:02:36] INFO - Epoch: 23, Batch: 1200, Loss: 0.0055
+[13:03:00] INFO - Epoch: 23, Batch: 1300, Loss: 0.0059
+[13:03:25] INFO - Epoch: 23, Batch: 1400, Loss: 0.0043
+[13:03:50] INFO - Epoch: 23, Batch: 1500, Loss: 0.0040
+[13:04:27] INFO - Validating ...
+[13:09:57] INFO - Jacquard index th25  5053/5449 = 0.927326
+[13:09:57] INFO - Jacquard index th30  4960/5449 = 0.910259
+[13:09:57] INFO - Jacquard index th35  4826/5449 = 0.885667
+[13:09:57] INFO - Jacquard index th40  4664/5449 = 0.855937
+[13:09:57] INFO - Beginning Epoch 24, lr=0.00025
+[13:10:26] INFO - Epoch: 24, Batch: 100, Loss: 0.0041
+[13:10:50] INFO - Epoch: 24, Batch: 200, Loss: 0.0037
+[13:11:15] INFO - Epoch: 24, Batch: 300, Loss: 0.0044
+[13:11:39] INFO - Epoch: 24, Batch: 400, Loss: 0.0043
+[13:12:04] INFO - Epoch: 24, Batch: 500, Loss: 0.0050
+[13:12:28] INFO - Epoch: 24, Batch: 600, Loss: 0.0044
+[13:12:53] INFO - Epoch: 24, Batch: 700, Loss: 0.0049
+[13:13:18] INFO - Epoch: 24, Batch: 800, Loss: 0.0043
+[13:13:42] INFO - Epoch: 24, Batch: 900, Loss: 0.0061
+[13:14:07] INFO - Epoch: 24, Batch: 1000, Loss: 0.0045
+[13:14:31] INFO - Epoch: 24, Batch: 1100, Loss: 0.0048
+[13:14:56] INFO - Epoch: 24, Batch: 1200, Loss: 0.0036
+[13:15:21] INFO - Epoch: 24, Batch: 1300, Loss: 0.0034
+[13:15:45] INFO - Epoch: 24, Batch: 1400, Loss: 0.0035
+[13:16:10] INFO - Epoch: 24, Batch: 1500, Loss: 0.0049
+[13:16:47] INFO - Validating ...
+[13:22:17] INFO - Jacquard index th25  5079/5449 = 0.932098
+[13:22:17] INFO - Jacquard index th30  4976/5449 = 0.913195
+[13:22:17] INFO - Jacquard index th35  4833/5449 = 0.886952
+[13:22:17] INFO - Jacquard index th40  4661/5449 = 0.855386
+[13:22:17] INFO - Beginning Epoch 25, lr=0.000125
+[13:22:46] INFO - Epoch: 25, Batch: 100, Loss: 0.0040
+[13:23:10] INFO - Epoch: 25, Batch: 200, Loss: 0.0042
+[13:23:35] INFO - Epoch: 25, Batch: 300, Loss: 0.0046
+[13:23:59] INFO - Epoch: 25, Batch: 400, Loss: 0.0045
+[13:24:24] INFO - Epoch: 25, Batch: 500, Loss: 0.0050
+[13:24:49] INFO - Epoch: 25, Batch: 600, Loss: 0.0048
+[13:25:13] INFO - Epoch: 25, Batch: 700, Loss: 0.0043
+[13:25:38] INFO - Epoch: 25, Batch: 800, Loss: 0.0059
+[13:26:02] INFO - Epoch: 25, Batch: 900, Loss: 0.0060
+[13:26:27] INFO - Epoch: 25, Batch: 1000, Loss: 0.0046
+[13:26:52] INFO - Epoch: 25, Batch: 1100, Loss: 0.0046
+[13:27:16] INFO - Epoch: 25, Batch: 1200, Loss: 0.0038
+[13:27:41] INFO - Epoch: 25, Batch: 1300, Loss: 0.0053
+[13:28:05] INFO - Epoch: 25, Batch: 1400, Loss: 0.0035
+[13:28:30] INFO - Epoch: 25, Batch: 1500, Loss: 0.0060
+[13:29:07] INFO - Validating ...
+[13:34:41] INFO - Jacquard index th25  5049/5449 = 0.926592
+[13:34:41] INFO - Jacquard index th30  4952/5449 = 0.908791
+[13:34:41] INFO - Jacquard index th35  4801/5449 = 0.881079
+[13:34:41] INFO - Jacquard index th40  4652/5449 = 0.853735
+[13:34:41] INFO - Beginning Epoch 26, lr=0.000125
+[13:35:09] INFO - Epoch: 26, Batch: 100, Loss: 0.0044
+[13:35:34] INFO - Epoch: 26, Batch: 200, Loss: 0.0041
+[13:35:59] INFO - Epoch: 26, Batch: 300, Loss: 0.0044
+[13:36:23] INFO - Epoch: 26, Batch: 400, Loss: 0.0038
+[13:36:48] INFO - Epoch: 26, Batch: 500, Loss: 0.0058
+[13:37:12] INFO - Epoch: 26, Batch: 600, Loss: 0.0043
+[13:37:37] INFO - Epoch: 26, Batch: 700, Loss: 0.0041
+[13:38:01] INFO - Epoch: 26, Batch: 800, Loss: 0.0054
+[13:38:26] INFO - Epoch: 26, Batch: 900, Loss: 0.0070
+[13:38:50] INFO - Epoch: 26, Batch: 1000, Loss: 0.0050
+[13:39:15] INFO - Epoch: 26, Batch: 1100, Loss: 0.0049
+[13:39:39] INFO - Epoch: 26, Batch: 1200, Loss: 0.0041
+[13:40:04] INFO - Epoch: 26, Batch: 1300, Loss: 0.0056
+[13:40:29] INFO - Epoch: 26, Batch: 1400, Loss: 0.0048
+[13:40:53] INFO - Epoch: 26, Batch: 1500, Loss: 0.0045
+[13:41:29] INFO - Validating ...
+[13:47:03] INFO - Jacquard index th25  5060/5449 = 0.928611
+[13:47:03] INFO - Jacquard index th30  4965/5449 = 0.911176
+[13:47:03] INFO - Jacquard index th35  4820/5449 = 0.884566
+[13:47:03] INFO - Jacquard index th40  4654/5449 = 0.854102
+[13:47:03] INFO - Beginning Epoch 27, lr=0.000125
+[13:47:32] INFO - Epoch: 27, Batch: 100, Loss: 0.0050
+[13:47:57] INFO - Epoch: 27, Batch: 200, Loss: 0.0049
+[13:48:21] INFO - Epoch: 27, Batch: 300, Loss: 0.0061
+[13:48:46] INFO - Epoch: 27, Batch: 400, Loss: 0.0059
+[13:49:10] INFO - Epoch: 27, Batch: 500, Loss: 0.0050
+[13:49:35] INFO - Epoch: 27, Batch: 600, Loss: 0.0045
+[13:49:59] INFO - Epoch: 27, Batch: 700, Loss: 0.0034
+[13:50:24] INFO - Epoch: 27, Batch: 800, Loss: 0.0046
+[13:50:49] INFO - Epoch: 27, Batch: 900, Loss: 0.0040
+[13:51:13] INFO - Epoch: 27, Batch: 1000, Loss: 0.0042
+[13:51:38] INFO - Epoch: 27, Batch: 1100, Loss: 0.0038
+[13:52:02] INFO - Epoch: 27, Batch: 1200, Loss: 0.0057
+[13:52:27] INFO - Epoch: 27, Batch: 1300, Loss: 0.0046
+[13:52:52] INFO - Epoch: 27, Batch: 1400, Loss: 0.0055
+[13:53:16] INFO - Epoch: 27, Batch: 1500, Loss: 0.0057
+[13:53:54] INFO - Validating ...
+[13:59:32] INFO - Jacquard index th25  5062/5449 = 0.928978
+[13:59:32] INFO - Jacquard index th30  4964/5449 = 0.910993
+[13:59:32] INFO - Jacquard index th35  4822/5449 = 0.884933
+[13:59:32] INFO - Jacquard index th40  4657/5449 = 0.854652
+[13:59:32] INFO - Beginning Epoch 28, lr=0.000125
+[14:00:00] INFO - Epoch: 28, Batch: 100, Loss: 0.0058
+[14:00:25] INFO - Epoch: 28, Batch: 200, Loss: 0.0043
+[14:00:49] INFO - Epoch: 28, Batch: 300, Loss: 0.0038
+[14:01:14] INFO - Epoch: 28, Batch: 400, Loss: 0.0042
+[14:01:39] INFO - Epoch: 28, Batch: 500, Loss: 0.0048
+[14:02:03] INFO - Epoch: 28, Batch: 600, Loss: 0.0051
+[14:02:28] INFO - Epoch: 28, Batch: 700, Loss: 0.0043
+[14:02:53] INFO - Epoch: 28, Batch: 800, Loss: 0.0067
+[14:03:17] INFO - Epoch: 28, Batch: 900, Loss: 0.0056
+[14:03:42] INFO - Epoch: 28, Batch: 1000, Loss: 0.0046
+[14:04:07] INFO - Epoch: 28, Batch: 1100, Loss: 0.0042

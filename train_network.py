@@ -94,7 +94,7 @@ def parse_args():
     parser.add_argument('--batches-per-epoch', type=int, default=1600,
                         help='Batches per Epoch')
     
-    parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
+    parser.add_argument('--goon-train', type=bool, default=True, help='是否从已有网络继续训练')
     parser.add_argument('--model', type=str, default='logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358', help='保存的模型')
     parser.add_argument('--start-epoch', type=int, default=4, help='继续训练开始的epoch')
     
@@ -277,7 +277,7 @@ def run():
     console = logging.StreamHandler()
     console.setLevel(logging.DEBUG)
     # set a format which is simpler for console use
-    formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
+    formatter = logging.Formatter('%(name)-2s: %(levelname)-2s %(message)s')
     console.setFormatter(formatter)
     # add the handler to the root logger
     logging.getLogger('').addHandler(console)
@@ -414,7 +414,7 @@ def run():
             tb.add_scalar('val_loss/' + n, l, epoch)
 
         # Save best performing network
-        iou = test_results['correct'] / (test_results['correct'] + test_results['failed'])
+        iou = test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25'])
         if iou > best_iou or epoch == 0 or (epoch % 10) == 0:
             logging.info('>>> save model: epoch_%02d_iou_%0.4f' % (epoch, iou))
             torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
