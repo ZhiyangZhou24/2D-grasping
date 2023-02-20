@@ -1,0 +1,28 @@
+[19:17:05] INFO - CUDA detected. Running with GPU acceleration.
+[19:17:05] INFO - Loading Graspnet1B Dataset...
+[19:17:07] WARNING - Failed to import geometry msgs in rigid_transformations.py.
+[19:17:07] WARNING - Failed to import ros dependencies in rigid_transforms.py
+[19:17:07] WARNING - autolab_core not installed as catkin package, RigidTransform ros methods will be unavailable
+[19:17:07] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[19:17:07] INFO - Using data from camera realsense
+[19:17:07] INFO - Graspnet 1Billion dataset created!! lenth is 25600
+[19:17:07] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[19:17:07] INFO - Using data from camera realsense
+[19:17:07] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[19:17:07] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[19:17:07] INFO - Using data from camera realsense
+[19:17:07] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[19:17:07] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[19:17:07] INFO - Using data from camera realsense
+[19:17:07] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[19:17:07] INFO - Done
+[19:17:07] INFO - Loading Network...
+[19:17:07] INFO - input channel is 4
+[19:17:07] INFO - Done from zero model
+[19:17:10] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [1000] || Gamma: 0.5
+[19:17:10] INFO - Dataset size 25600 ||rotate :False || zoom :False || ds_shuffle False || ds_rotate 0.0
+[19:17:10] INFO - Dataset train 25600 || seen 7680 || similar :7680 || novel :7680 
+[19:17:10] INFO - Beginning Epoch 00, lr=0.001
+[19:19:56] INFO - Epoch: 0, Batch: 100, Loss: 0.5222
+[19:22:21] INFO - Epoch: 0, Batch: 200, Loss: 0.4524
+[19:24:51] INFO - Epoch: 0, Batch: 300, Loss: 0.3542

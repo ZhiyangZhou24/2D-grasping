@@ -1,0 +1,33 @@
+[19:27:23] INFO - CUDA detected. Running with GPU acceleration.
+[19:27:23] INFO - Loading Graspnet1B Dataset...
+[19:27:24] WARNING - Failed to import geometry msgs in rigid_transformations.py.
+[19:27:24] WARNING - Failed to import ros dependencies in rigid_transforms.py
+[19:27:24] WARNING - autolab_core not installed as catkin package, RigidTransform ros methods will be unavailable
+[19:27:24] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[19:27:24] INFO - Using data from camera realsense
+[19:27:24] INFO - Graspnet 1Billion dataset created!! lenth is 25600
+[19:27:24] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[19:27:24] INFO - Using data from camera realsense
+[19:27:24] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[19:27:24] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[19:27:24] INFO - Using data from camera realsense
+[19:27:24] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[19:27:24] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[19:27:24] INFO - Using data from camera realsense
+[19:27:24] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[19:27:24] INFO - Done
+[19:27:24] INFO - Loading Network...
+[19:27:24] INFO - input channel is 4
+[19:27:24] INFO - Done from zero model
+[19:27:26] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [1000] || Gamma: 0.5
+[19:27:26] INFO - Dataset size 25600 ||rotate :False || zoom :False || ds_shuffle False || ds_rotate 0.0
+[19:27:26] INFO - Dataset train 25600 || seen 7680 || similar :7680 || novel :7680 
+[19:27:26] INFO - Beginning Epoch 00, lr=0.001
+[19:30:08] INFO - Epoch: 0, Batch: 100, Loss: 0.7228
+[19:32:42] INFO - Epoch: 0, Batch: 200, Loss: 0.4964
+[19:34:59] INFO - Epoch: 0, Batch: 300, Loss: 0.4069
+[19:37:31] INFO - Epoch: 0, Batch: 400, Loss: 0.3978
+[19:39:38] INFO - Epoch: 0, Batch: 500, Loss: 0.3463
+[19:42:12] INFO - Epoch: 0, Batch: 600, Loss: 0.3151
+[19:44:25] INFO - Epoch: 0, Batch: 700, Loss: 0.3145
+[19:47:33] INFO - Validating Novel...

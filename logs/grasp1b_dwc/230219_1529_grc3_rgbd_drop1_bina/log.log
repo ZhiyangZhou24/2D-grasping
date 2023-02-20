@@ -1,0 +1,43 @@
+[15:29:08] INFO - CUDA detected. Running with GPU acceleration.
+[15:29:08] INFO - Loading Graspnet1B Dataset...
+[15:29:09] WARNING - Failed to import geometry msgs in rigid_transformations.py.
+[15:29:09] WARNING - Failed to import ros dependencies in rigid_transforms.py
+[15:29:09] WARNING - autolab_core not installed as catkin package, RigidTransform ros methods will be unavailable
+[15:29:09] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[15:29:09] INFO - Using data from camera realsense
+[15:29:09] INFO - Graspnet 1Billion dataset created!! lenth is 25600
+[15:29:09] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[15:29:09] INFO - Using data from camera realsense
+[15:29:11] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[15:29:11] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[15:29:11] INFO - Using data from camera realsense
+[15:29:11] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[15:29:11] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[15:29:11] INFO - Using data from camera realsense
+[15:29:11] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[15:29:11] INFO - Done
+[15:29:11] INFO - Loading Network...
+[15:29:11] INFO - input channel is 4
+[15:29:11] INFO - Done from zero model
+[15:29:14] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [1000] || Gamma: 0.5
+[15:29:14] INFO - Dataset size 25600 ||rotate :False || zoom :False || ds_shuffle False || ds_rotate 0.0
+[15:29:14] INFO - Dataset train 25600 || seen 7680 || similar :7680 || novel :7680 
+[15:29:14] INFO - Beginning Epoch 00, lr=0.001
+[15:32:14] INFO - Epoch: 0, Batch: 100, Loss: 0.3767
+[15:34:42] INFO - Epoch: 0, Batch: 200, Loss: 0.3172
+[15:37:10] INFO - Epoch: 0, Batch: 300, Loss: 0.3220
+[15:39:30] INFO - Epoch: 0, Batch: 400, Loss: 0.3308
+[15:42:17] INFO - Epoch: 0, Batch: 500, Loss: 0.2893
+[15:44:45] INFO - Epoch: 0, Batch: 600, Loss: 0.2847
+[15:47:07] INFO - Epoch: 0, Batch: 700, Loss: 0.2669
+[15:50:07] INFO - Validating Seen...
+[15:57:59] INFO -  seen 179/199 = 0.899497
+[15:57:59] INFO - Validating Similar...
+[16:05:50] INFO -  Similar 161/199 = 0.809045
+[16:05:50] INFO - Validating Novel...
+[16:10:30] INFO -  Novel 168/199 = 0.844221
+[16:10:30] INFO - >>> save model: epoch_00_iou_0.8442
+[16:10:30] INFO - Beginning Epoch 01, lr=0.001
+[16:13:32] INFO - Epoch: 1, Batch: 100, Loss: 0.2706
+[16:15:56] INFO - Epoch: 1, Batch: 200, Loss: 0.2557
+[16:18:20] INFO - Epoch: 1, Batch: 300, Loss: 0.2279

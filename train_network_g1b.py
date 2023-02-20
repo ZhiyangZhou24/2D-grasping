@@ -51,7 +51,7 @@ def parse_args():
                         help='(  True  False  )')
     parser.add_argument('--posloss', type=bool, default=True,
                         help='(  True  False  )')
-    parser.add_argument('--upsamp', type=str, default='use_bilinear',
+    parser.add_argument('--upsamp', type=str, default='use_convt',
                         help='Use upsamp type (  use_duc  use_convt use_bilinear  )')
     parser.add_argument('--att', type=str, default='use_coora',
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
@@ -82,7 +82,7 @@ def parse_args():
     parser.add_argument('--scale', type=int, default=2,
                         help='the scale factor for the original images, only effective when using graspnet1b dataset')
 
-    parser.add_argument('--num-workers', type=int, default=16,
+    parser.add_argument('--num-workers', type=int, default=18,
                         help='Dataset workers')
 
     # Training
@@ -104,16 +104,16 @@ def parse_args():
 
     
     parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
-    parser.add_argument('--model', type=str, default='logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358', help='保存的模型')
-    parser.add_argument('--start-epoch', type=int, default=4, help='继续训练开始的epoch')
+    parser.add_argument('--model', type=str, default='logs/grasp1b_dwc/230219_1959_dwc1_rgbd_convt_drop1_bina/epoch_01_iou_0.6869', help='保存的模型')
+    parser.add_argument('--start-epoch', type=int, default=2, help='继续训练开始的epoch')
     
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='grc3_rgbd_bili_mish_ca32_drop5_bina',
+    parser.add_argument('--description', type=str, default='grc3_rgbd_convt_drop1_bina',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/grasp1b_dwc',
                         help='Log directory')
-    parser.add_argument('--vis', action='store_true',
+    parser.add_argument('--vis', type=bool, default=False,
                         help='Visualise the training process')
     parser.add_argument('--cpu', dest='force_cpu', action='store_true', default=False,
                         help='Force code to run in CPU mode')
@@ -364,21 +364,21 @@ def run():
     val_data_seen = torch.utils.data.DataLoader(
         val_dataset_seen,
         batch_size=1,  # do not modify
-        shuffle=True,
+        shuffle=False,
         num_workers=args.num_workers,
         pin_memory=True,
     )
     val_data_similar = torch.utils.data.DataLoader(
         val_dataset_similar,
         batch_size=1,  # do not modify
-        shuffle=True,
+        shuffle=False,
         num_workers=args.num_workers,
         pin_memory=True
     )
     val_data_novel = torch.utils.data.DataLoader(
         val_dataset_novel,
         batch_size=1,  # do not modify
-        shuffle=True,
+        shuffle=False,
         num_workers=args.num_workers,
         pin_memory=True
     )
@@ -448,37 +448,37 @@ def run():
         for n, l in train_results['losses'].items():
             tb.add_scalar('train_loss/' + n, l, epoch)
 
-        # Run Validation
-        logging.info('Validating Seen...')
-        test_results = validate(net, device, val_data_seen,batches_per_epoch=args.val_batches,iou_multi=args.iou_abla,posloss=args.posloss)
-        if args.iou_abla:
-            for result in test_results['correct']:
-                logging.info('seen Jacquard index %s  %d/%d = %f' % (result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
-                                        test_results['correct'][result] / (test_results['correct'][result] + test_results['failed'][result])))
-        else :
-             logging.info(' seen %d/%d = %f' % (test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
-                                     test_results['correct']['th25']/(test_results['correct']['th25']+test_results['failed']['th25'])))
-        # Log validation results to tensorbaord
-        tb.add_scalar('loss/seen_IOU', test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25']), epoch)
-        tb.add_scalar('loss/seen_loss', test_results['loss'], epoch)
-        for n, l in test_results['losses'].items():
-            tb.add_scalar('seen_loss/' + n, l, epoch)
+        # # Run Validation
+        # logging.info('Validating Seen...')
+        # test_results = validate(net, device, val_data_seen,batches_per_epoch=args.val_batches,iou_multi=args.iou_abla,posloss=args.posloss)
+        # if args.iou_abla:
+        #     for result in test_results['correct']:
+        #         logging.info('seen Jacquard index %s  %d/%d = %f' % (result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
+        #                                 test_results['correct'][result] / (test_results['correct'][result] + test_results['failed'][result])))
+        # else :
+        #      logging.info(' seen %d/%d = %f' % (test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
+        #                              test_results['correct']['th25']/(test_results['correct']['th25']+test_results['failed']['th25'])))
+        # # Log validation results to tensorbaord
+        # tb.add_scalar('loss/seen_IOU', test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25']), epoch)
+        # tb.add_scalar('loss/seen_loss', test_results['loss'], epoch)
+        # for n, l in test_results['losses'].items():
+        #     tb.add_scalar('seen_loss/' + n, l, epoch)
 
-        # Run Validation
-        logging.info('Validating Similar...')
-        test_results = validate(net, device, val_data_similar,batches_per_epoch=args.val_batches ,iou_multi=args.iou_abla,posloss=args.posloss)
-        if args.iou_abla:
-            for result in test_results['correct']:
-                logging.info('Similar Jacquard index %s  %d/%d = %f' % (result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
-                                        test_results['correct'][result] / (test_results['correct'][result] + test_results['failed'][result])))
-        else :
-             logging.info(' Similar %d/%d = %f' % (test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
-                                     test_results['correct']['th25']/(test_results['correct']['th25']+test_results['failed']['th25'])))
-        # Log validation results to tensorbaord
-        tb.add_scalar('loss/similar_IOU', test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25']), epoch)
-        tb.add_scalar('loss/similar_loss', test_results['loss'], epoch)
-        for n, l in test_results['losses'].items():
-            tb.add_scalar('similar_loss/' + n, l, epoch)
+        # # Run Validation
+        # logging.info('Validating Similar...')
+        # test_results = validate(net, device, val_data_similar,batches_per_epoch=args.val_batches ,iou_multi=args.iou_abla,posloss=args.posloss)
+        # if args.iou_abla:
+        #     for result in test_results['correct']:
+        #         logging.info('Similar Jacquard index %s  %d/%d = %f' % (result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
+        #                                 test_results['correct'][result] / (test_results['correct'][result] + test_results['failed'][result])))
+        # else :
+        #      logging.info(' Similar %d/%d = %f' % (test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
+        #                              test_results['correct']['th25']/(test_results['correct']['th25']+test_results['failed']['th25'])))
+        # # Log validation results to tensorbaord
+        # tb.add_scalar('loss/similar_IOU', test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25']), epoch)
+        # tb.add_scalar('loss/similar_loss', test_results['loss'], epoch)
+        # for n, l in test_results['losses'].items():
+        #     tb.add_scalar('similar_loss/' + n, l, epoch)
 
         # Run Validation
         logging.info('Validating Novel...')

@@ -1,0 +1,49 @@
+[16:19:58] INFO - CUDA detected. Running with GPU acceleration.
+[16:19:58] INFO - Loading Graspnet1B Dataset...
+[16:19:59] WARNING - Failed to import geometry msgs in rigid_transformations.py.
+[16:19:59] WARNING - Failed to import ros dependencies in rigid_transforms.py
+[16:19:59] WARNING - autolab_core not installed as catkin package, RigidTransform ros methods will be unavailable
+[16:19:59] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[16:19:59] INFO - Using data from camera realsense
+[16:19:59] INFO - Graspnet 1Billion dataset created!! lenth is 25600
+[16:19:59] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[16:19:59] INFO - Using data from camera realsense
+[16:19:59] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[16:19:59] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[16:19:59] INFO - Using data from camera realsense
+[16:19:59] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[16:19:59] INFO - Graspnet root = /media/lab/TOSHIBA480/0.Datasets/graspnet1bilion
+[16:19:59] INFO - Using data from camera realsense
+[16:19:59] INFO - Graspnet 1Billion dataset created!! lenth is 7680
+[16:19:59] INFO - Done
+[16:19:59] INFO - Loading Network...
+[16:19:59] INFO - input channel is 4
+[16:19:59] INFO - Done from zero model
+[16:20:02] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [1000] || Gamma: 0.5
+[16:20:02] INFO - Dataset size 25600 ||rotate :False || zoom :False || ds_shuffle False || ds_rotate 0.0
+[16:20:02] INFO - Dataset train 25600 || seen 7680 || similar :7680 || novel :7680 
+[16:20:02] INFO - Beginning Epoch 00, lr=0.001
+[16:22:44] INFO - Epoch: 0, Batch: 100, Loss: 0.7487
+[16:25:05] INFO - Epoch: 0, Batch: 200, Loss: 0.5335
+[16:27:25] INFO - Epoch: 0, Batch: 300, Loss: 0.4349
+[16:29:51] INFO - Epoch: 0, Batch: 400, Loss: 0.3863
+[16:32:18] INFO - Epoch: 0, Batch: 500, Loss: 0.3515
+[16:34:36] INFO - Epoch: 0, Batch: 600, Loss: 0.3458
+[16:36:55] INFO - Epoch: 0, Batch: 700, Loss: 0.2803
+[16:39:49] INFO - Validating Novel...
+[16:47:18] INFO -  Novel 138/199 = 0.693467
+[16:47:18] INFO - >>> save model: epoch_00_iou_0.6935
+[16:47:18] INFO - Beginning Epoch 01, lr=0.001
+[16:50:07] INFO - Epoch: 1, Batch: 100, Loss: 0.2705
+[16:52:29] INFO - Epoch: 1, Batch: 200, Loss: 0.2750
+[16:54:47] INFO - Epoch: 1, Batch: 300, Loss: 0.2685
+[16:57:14] INFO - Epoch: 1, Batch: 400, Loss: 0.2551
+[16:59:33] INFO - Epoch: 1, Batch: 500, Loss: 0.2502
+[17:02:11] INFO - Epoch: 1, Batch: 600, Loss: 0.2474
+[17:04:26] INFO - Epoch: 1, Batch: 700, Loss: 0.2179
+[17:07:37] INFO - Validating Novel...
+[17:13:08] INFO -  Novel 159/199 = 0.798995
+[17:13:08] INFO - >>> save model: epoch_01_iou_0.7990
+[17:13:08] INFO - Beginning Epoch 02, lr=0.001
+[17:15:51] INFO - Epoch: 2, Batch: 100, Loss: 0.2260
+[17:18:20] INFO - Epoch: 2, Batch: 200, Loss: 0.2124

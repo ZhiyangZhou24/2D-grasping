@@ -26,7 +26,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc1',
+    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc1_csp_pan',
                         help='Network name in inference/models  grconvnet')
     parser.add_argument('--input-size', type=int, default=320,
                         help='Input image size for the network')
@@ -69,7 +69,7 @@ def parse_args():
                         help='Path to dataset')
     parser.add_argument('--alfa', type=int, default=1,
                         help='len(Dataset)*alfa')
-    parser.add_argument('--split', type=float, default=0.9,
+    parser.add_argument('--split', type=float, default=0.95,
                         help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-shuffle', action='store_true', default=False,
                         help='Shuffle the dataset')
@@ -85,7 +85,7 @@ def parse_args():
     parser.add_argument('--optim', type=str, default='ranger',
                         help='Optmizer for the training. (adam or SGD)')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
-    parser.add_argument('--schedu-milestone', type=int, default=[5,15,25,35], help='学习率tiaozheng stone')
+    parser.add_argument('--schedu-milestone', type=int, default=[500,1500,2500,3500], help='学习率tiaozheng stone')
     parser.add_argument('--schedu-gamma', type=float, default=0.5, help='学习率 hsuaijian xishu ')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
 
@@ -94,15 +94,15 @@ def parse_args():
     parser.add_argument('--batches-per-epoch', type=int, default=1600,
                         help='Batches per Epoch')
     
-    parser.add_argument('--goon-train', type=bool, default=True, help='是否从已有网络继续训练')
+    parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
     parser.add_argument('--model', type=str, default='logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358', help='保存的模型')
     parser.add_argument('--start-epoch', type=int, default=4, help='继续训练开始的epoch')
     
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_d_bili_mish_ca32_drop2_bina',
+    parser.add_argument('--description', type=str, default='dwc1_csppan_d_bili_mish_ca32_drop2_bina',
                         help='Training description')
-    parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
+    parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc_pan',
                         help='Log directory')
     parser.add_argument('--vis', action='store_true',
                         help='Visualise the training process')
