@@ -1,0 +1,9 @@
+[14:23:39] INFO - CUDA detected. Running with GPU acceleration.
+[14:23:39] INFO - Loading Jacquard Dataset...
+[14:23:41] INFO - Training size: 54485
+[14:23:41] INFO - Validation size: 54485
+[14:23:41] INFO - Done
+[14:23:41] INFO - Loading Network...
+[14:23:41] INFO - input channel is 1
+[14:23:41] INFO - Done from zero model
+[14:23:43] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [500, 1500, 2500, 3500] || Gamma: 0.5

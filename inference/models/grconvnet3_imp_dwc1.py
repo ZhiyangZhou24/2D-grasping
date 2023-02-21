@@ -11,25 +11,13 @@ from inference.models.duc import DenseUpsamplingConvolution
 from torchsummary import summary
 
 
-class down(nn.Module):
-    """Downscaling with maxpool then double conv"""
-
-    def __init__(self, in_channels, out_channels,act="hard_swish",use_se=False):
-        super(down, self).__init__()
-        self.maxpool_conv = nn.Sequential(
-            DepthwiseSeparable(num_channels= in_channels, num_filters=in_channels,stride=1,use_se=use_se,act=act),
-            DepthwiseSeparable(num_channels= in_channels, num_filters=out_channels,stride=2,use_se=use_se,act=act)
-        )
-    def forward(self, x):
-        return self.maxpool_conv(x)
-
 class up(nn.Module):
     def __init__(self, in_ch, out_ch, upsample_type,num_blocks=2,act="leaky_relu"):
         super(up, self).__init__()
         self.upsample_type = upsample_type
         self.up = self._make_upconv(out_ch, out_ch, upscale_factor = 2)
 
-        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,num_blocks=num_blocks,act=act,use_depthwise=False)
+        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,act=act,use_depthwise=False,use_att=True)
         
     def _make_upconv(self, in_channels, out_channels, upscale_factor = 2):
         if self.upsample_type == 'use_duc':

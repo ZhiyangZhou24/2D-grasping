@@ -1,0 +1,13 @@
+[21:56:25] INFO - CUDA detected. Running with GPU acceleration.
+[21:56:25] INFO - Loading Jacquard Dataset...
+[21:56:26] INFO - Training size: 54485
+[21:56:26] INFO - Validation size: 54485
+[21:56:26] INFO - Done
+[21:56:26] INFO - Loading Network...
+[21:56:26] INFO - input channel is 1
+[21:56:26] INFO - Done from zero model
+[21:56:28] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [500, 1500, 2500, 3500] || Gamma: 0.5
+[21:56:28] INFO - Dataset size 54485||validat size 49037 ||rotate :False || zoom :False  || ds_shuffle False 
+[21:56:28] INFO - Beginning Epoch 00, lr=0.001
+[21:57:22] INFO - Epoch 00 train loss 0.1062
+[21:57:22] INFO - Validating ...

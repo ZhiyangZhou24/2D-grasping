@@ -1,0 +1,381 @@
+[10:41:02] INFO - CUDA detected. Running with GPU acceleration.
+[10:41:02] INFO - Loading Jacquard Dataset...
+[10:41:54] INFO - CUDA detected. Running with GPU acceleration.
+[10:41:54] INFO - Loading Jacquard Dataset...
+[10:42:04] INFO - Dataset len is 54485
+[10:42:04] INFO - Training size: 49036
+[10:42:04] INFO - Validation size: 5449
+[10:42:04] INFO - Done
+[10:42:04] INFO - Loading Network...
+[10:42:04] INFO - input channel is 1
+[10:42:04] INFO - Done from zero model
+[10:42:06] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [500, 1500, 2500, 3500] || Gamma: 0.5
+[10:42:06] INFO - Dataset size 54485   ||rotate :False   || zoom :False      || ds_shuffle False || ds_rotate 0.0
+[10:42:06] INFO - Beginning Epoch 00, lr=0.001
+[10:42:38] INFO - Epoch: 0, Batch: 100, Loss: 0.2624
+[10:43:04] INFO - Epoch: 0, Batch: 200, Loss: 0.1409
+[10:43:31] INFO - Epoch: 0, Batch: 300, Loss: 0.0814
+[10:43:58] INFO - Epoch: 0, Batch: 400, Loss: 0.0636
+[10:44:24] INFO - Epoch: 0, Batch: 500, Loss: 0.0479
+[10:44:51] INFO - Epoch: 0, Batch: 600, Loss: 0.0443
+[10:45:18] INFO - Epoch: 0, Batch: 700, Loss: 0.0477
+[10:45:44] INFO - Epoch: 0, Batch: 800, Loss: 0.0308
+[10:46:11] INFO - Epoch: 0, Batch: 900, Loss: 0.0331
+[10:46:38] INFO - Epoch: 0, Batch: 1000, Loss: 0.0269
+[10:47:04] INFO - Epoch: 0, Batch: 1100, Loss: 0.0293
+[10:47:31] INFO - Epoch: 0, Batch: 1200, Loss: 0.0286
+[10:47:58] INFO - Epoch: 0, Batch: 1300, Loss: 0.0234
+[10:48:25] INFO - Epoch: 0, Batch: 1400, Loss: 0.0273
+[10:48:51] INFO - Epoch: 0, Batch: 1500, Loss: 0.0308
+[10:49:30] INFO - Validating ...
+[10:53:06] INFO - Validating IOU 4059/5449 = 0.744907
+[10:53:06] INFO - >>> save model: epoch_00_iou_0.7449
+[10:53:06] INFO - Beginning Epoch 01, lr=0.001
+[10:53:36] INFO - Epoch: 1, Batch: 100, Loss: 0.0229
+[10:54:03] INFO - Epoch: 1, Batch: 200, Loss: 0.0217
+[10:54:29] INFO - Epoch: 1, Batch: 300, Loss: 0.0213
+[10:54:56] INFO - Epoch: 1, Batch: 400, Loss: 0.0190
+[10:55:23] INFO - Epoch: 1, Batch: 500, Loss: 0.0182
+[10:55:49] INFO - Epoch: 1, Batch: 600, Loss: 0.0129
+[10:56:16] INFO - Epoch: 1, Batch: 700, Loss: 0.0267
+[10:56:43] INFO - Epoch: 1, Batch: 800, Loss: 0.0173
+[10:57:10] INFO - Epoch: 1, Batch: 900, Loss: 0.0127
+[10:57:36] INFO - Epoch: 1, Batch: 1000, Loss: 0.0179
+[10:58:03] INFO - Epoch: 1, Batch: 1100, Loss: 0.0140
+[10:58:30] INFO - Epoch: 1, Batch: 1200, Loss: 0.0151
+[10:58:56] INFO - Epoch: 1, Batch: 1300, Loss: 0.0153
+[10:59:23] INFO - Epoch: 1, Batch: 1400, Loss: 0.0141
+[10:59:50] INFO - Epoch: 1, Batch: 1500, Loss: 0.0127
+[11:00:28] INFO - Validating ...
+[11:03:44] INFO - Validating IOU 4674/5449 = 0.857772
+[11:03:44] INFO - >>> save model: epoch_01_iou_0.8578
+[11:03:44] INFO - Beginning Epoch 02, lr=0.001
+[11:04:14] INFO - Epoch: 2, Batch: 100, Loss: 0.0129
+[11:04:41] INFO - Epoch: 2, Batch: 200, Loss: 0.0127
+[11:05:07] INFO - Epoch: 2, Batch: 300, Loss: 0.0115
+[11:05:34] INFO - Epoch: 2, Batch: 400, Loss: 0.0139
+[11:06:01] INFO - Epoch: 2, Batch: 500, Loss: 0.0140
+[11:06:27] INFO - Epoch: 2, Batch: 600, Loss: 0.0130
+[11:06:54] INFO - Epoch: 2, Batch: 700, Loss: 0.0118
+[11:07:21] INFO - Epoch: 2, Batch: 800, Loss: 0.0168
+[11:07:47] INFO - Epoch: 2, Batch: 900, Loss: 0.0130
+[11:08:14] INFO - Epoch: 2, Batch: 1000, Loss: 0.0200
+[11:08:41] INFO - Epoch: 2, Batch: 1100, Loss: 0.0136
+[11:09:07] INFO - Epoch: 2, Batch: 1200, Loss: 0.0115
+[11:09:34] INFO - Epoch: 2, Batch: 1300, Loss: 0.0149
+[11:10:01] INFO - Epoch: 2, Batch: 1400, Loss: 0.0129
+[11:10:27] INFO - Epoch: 2, Batch: 1500, Loss: 0.0154
+[11:11:06] INFO - Validating ...
+[11:14:22] INFO - Validating IOU 4860/5449 = 0.891907
+[11:14:22] INFO - >>> save model: epoch_02_iou_0.8919
+[11:14:22] INFO - Beginning Epoch 03, lr=0.001
+[11:14:53] INFO - Epoch: 3, Batch: 100, Loss: 0.0131
+[11:15:19] INFO - Epoch: 3, Batch: 200, Loss: 0.0139
+[11:15:46] INFO - Epoch: 3, Batch: 300, Loss: 0.0111
+[11:16:13] INFO - Epoch: 3, Batch: 400, Loss: 0.0131
+[11:16:39] INFO - Epoch: 3, Batch: 500, Loss: 0.0107
+[11:17:06] INFO - Epoch: 3, Batch: 600, Loss: 0.0124
+[11:17:33] INFO - Epoch: 3, Batch: 700, Loss: 0.0157
+[11:18:00] INFO - Epoch: 3, Batch: 800, Loss: 0.0073
+[11:18:26] INFO - Epoch: 3, Batch: 900, Loss: 0.0128
+[11:18:53] INFO - Epoch: 3, Batch: 1000, Loss: 0.0091
+[11:19:20] INFO - Epoch: 3, Batch: 1100, Loss: 0.0111
+[11:19:46] INFO - Epoch: 3, Batch: 1200, Loss: 0.0093
+[11:20:13] INFO - Epoch: 3, Batch: 1300, Loss: 0.0108
+[11:20:40] INFO - Epoch: 3, Batch: 1400, Loss: 0.0121
+[11:21:06] INFO - Epoch: 3, Batch: 1500, Loss: 0.0156
+[11:21:44] INFO - Validating ...
+[11:24:50] INFO - Validating IOU 4914/5449 = 0.901817
+[11:24:50] INFO - >>> save model: epoch_03_iou_0.9018
+[11:24:50] INFO - Beginning Epoch 04, lr=0.001
+[11:25:20] INFO - Epoch: 4, Batch: 100, Loss: 0.0093
+[11:25:47] INFO - Epoch: 4, Batch: 200, Loss: 0.0118
+[11:26:13] INFO - Epoch: 4, Batch: 300, Loss: 0.0156
+[11:26:40] INFO - Epoch: 4, Batch: 400, Loss: 0.0078
+[11:27:07] INFO - Epoch: 4, Batch: 500, Loss: 0.0109
+[11:27:33] INFO - Epoch: 4, Batch: 600, Loss: 0.0106
+[11:28:00] INFO - Epoch: 4, Batch: 700, Loss: 0.0079
+[11:28:27] INFO - Epoch: 4, Batch: 800, Loss: 0.0135
+[11:28:53] INFO - Epoch: 4, Batch: 900, Loss: 0.0098
+[11:29:20] INFO - Epoch: 4, Batch: 1000, Loss: 0.0097
+[11:29:47] INFO - Epoch: 4, Batch: 1100, Loss: 0.0088
+[11:30:14] INFO - Epoch: 4, Batch: 1200, Loss: 0.0147
+[11:30:40] INFO - Epoch: 4, Batch: 1300, Loss: 0.0091
+[11:31:07] INFO - Epoch: 4, Batch: 1400, Loss: 0.0119
+[11:31:34] INFO - Epoch: 4, Batch: 1500, Loss: 0.0105
+[11:32:11] INFO - Validating ...
+[11:35:19] INFO - Validating IOU 4854/5449 = 0.890806
+[11:35:19] INFO - Beginning Epoch 05, lr=0.001
+[11:35:50] INFO - Epoch: 5, Batch: 100, Loss: 0.0096
+[11:36:16] INFO - Epoch: 5, Batch: 200, Loss: 0.0075
+[11:36:43] INFO - Epoch: 5, Batch: 300, Loss: 0.0086
+[11:37:10] INFO - Epoch: 5, Batch: 400, Loss: 0.0102
+[11:37:36] INFO - Epoch: 5, Batch: 500, Loss: 0.0071
+[11:38:03] INFO - Epoch: 5, Batch: 600, Loss: 0.0080
+[11:38:30] INFO - Epoch: 5, Batch: 700, Loss: 0.0120
+[11:38:56] INFO - Epoch: 5, Batch: 800, Loss: 0.0102
+[11:39:23] INFO - Epoch: 5, Batch: 900, Loss: 0.0081
+[11:39:49] INFO - Epoch: 5, Batch: 1000, Loss: 0.0084
+[11:40:16] INFO - Epoch: 5, Batch: 1100, Loss: 0.0115
+[11:40:43] INFO - Epoch: 5, Batch: 1200, Loss: 0.0081
+[11:41:09] INFO - Epoch: 5, Batch: 1300, Loss: 0.0071
+[11:41:36] INFO - Epoch: 5, Batch: 1400, Loss: 0.0109
+[11:42:03] INFO - Epoch: 5, Batch: 1500, Loss: 0.0092
+[11:42:40] INFO - Validating ...
+[11:45:46] INFO - Validating IOU 5005/5449 = 0.918517
+[11:45:46] INFO - >>> save model: epoch_05_iou_0.9185
+[11:45:46] INFO - Beginning Epoch 06, lr=0.001
+[11:46:17] INFO - Epoch: 6, Batch: 100, Loss: 0.0076
+[11:46:44] INFO - Epoch: 6, Batch: 200, Loss: 0.0077
+[11:47:10] INFO - Epoch: 6, Batch: 300, Loss: 0.0111
+[11:47:37] INFO - Epoch: 6, Batch: 400, Loss: 0.0075
+[11:48:04] INFO - Epoch: 6, Batch: 500, Loss: 0.0104
+[11:48:30] INFO - Epoch: 6, Batch: 600, Loss: 0.0105
+[11:48:57] INFO - Epoch: 6, Batch: 700, Loss: 0.0114
+[11:49:24] INFO - Epoch: 6, Batch: 800, Loss: 0.0095
+[11:49:50] INFO - Epoch: 6, Batch: 900, Loss: 0.0059
+[11:50:17] INFO - Epoch: 6, Batch: 1000, Loss: 0.0067
+[11:50:44] INFO - Epoch: 6, Batch: 1100, Loss: 0.0106
+[11:51:10] INFO - Epoch: 6, Batch: 1200, Loss: 0.0076
+[11:51:37] INFO - Epoch: 6, Batch: 1300, Loss: 0.0090
+[11:52:04] INFO - Epoch: 6, Batch: 1400, Loss: 0.0088
+[11:52:30] INFO - Epoch: 6, Batch: 1500, Loss: 0.0117
+[11:53:09] INFO - Validating ...
+[11:56:13] INFO - Validating IOU 4905/5449 = 0.900165
+[11:56:13] INFO - Beginning Epoch 07, lr=0.001
+[11:56:44] INFO - Epoch: 7, Batch: 100, Loss: 0.0073
+[11:57:10] INFO - Epoch: 7, Batch: 200, Loss: 0.0097
+[11:57:37] INFO - Epoch: 7, Batch: 300, Loss: 0.0079
+[11:58:04] INFO - Epoch: 7, Batch: 400, Loss: 0.0089
+[11:58:30] INFO - Epoch: 7, Batch: 500, Loss: 0.0122
+[11:58:57] INFO - Epoch: 7, Batch: 600, Loss: 0.0100
+[11:59:24] INFO - Epoch: 7, Batch: 700, Loss: 0.0105
+[11:59:50] INFO - Epoch: 7, Batch: 800, Loss: 0.0092
+[12:00:17] INFO - Epoch: 7, Batch: 900, Loss: 0.0082
+[12:00:44] INFO - Epoch: 7, Batch: 1000, Loss: 0.0108
+[12:01:10] INFO - Epoch: 7, Batch: 1100, Loss: 0.0110
+[12:01:37] INFO - Epoch: 7, Batch: 1200, Loss: 0.0112
+[12:02:04] INFO - Epoch: 7, Batch: 1300, Loss: 0.0072
+[12:02:30] INFO - Epoch: 7, Batch: 1400, Loss: 0.0107
+[12:02:57] INFO - Epoch: 7, Batch: 1500, Loss: 0.0082
+[12:03:36] INFO - Validating ...
+[12:06:42] INFO - Validating IOU 4985/5449 = 0.914847
+[12:06:42] INFO - Beginning Epoch 08, lr=0.001
+[12:07:13] INFO - Epoch: 8, Batch: 100, Loss: 0.0071
+[12:07:39] INFO - Epoch: 8, Batch: 200, Loss: 0.0131
+[12:08:06] INFO - Epoch: 8, Batch: 300, Loss: 0.0076
+[12:08:33] INFO - Epoch: 8, Batch: 400, Loss: 0.0095
+[12:08:59] INFO - Epoch: 8, Batch: 500, Loss: 0.0137
+[12:09:26] INFO - Epoch: 8, Batch: 600, Loss: 0.0101
+[12:09:53] INFO - Epoch: 8, Batch: 700, Loss: 0.0121
+[12:10:19] INFO - Epoch: 8, Batch: 800, Loss: 0.0109
+[12:10:46] INFO - Epoch: 8, Batch: 900, Loss: 0.0076
+[12:11:13] INFO - Epoch: 8, Batch: 1000, Loss: 0.0064
+[12:11:39] INFO - Epoch: 8, Batch: 1100, Loss: 0.0103
+[12:12:06] INFO - Epoch: 8, Batch: 1200, Loss: 0.0091
+[12:12:33] INFO - Epoch: 8, Batch: 1300, Loss: 0.0115
+[12:12:59] INFO - Epoch: 8, Batch: 1400, Loss: 0.0116
+[12:13:26] INFO - Epoch: 8, Batch: 1500, Loss: 0.0138
+[12:14:04] INFO - Validating ...
+[12:17:09] INFO - Validating IOU 5027/5449 = 0.922555
+[12:17:09] INFO - >>> save model: epoch_08_iou_0.9226
+[12:17:09] INFO - Beginning Epoch 09, lr=0.001
+[12:17:40] INFO - Epoch: 9, Batch: 100, Loss: 0.0084
+[12:18:06] INFO - Epoch: 9, Batch: 200, Loss: 0.0060
+[12:18:33] INFO - Epoch: 9, Batch: 300, Loss: 0.0083
+[12:18:59] INFO - Epoch: 9, Batch: 400, Loss: 0.0089
+[12:19:26] INFO - Epoch: 9, Batch: 500, Loss: 0.0084
+[12:19:53] INFO - Epoch: 9, Batch: 600, Loss: 0.0088
+[12:20:20] INFO - Epoch: 9, Batch: 700, Loss: 0.0094
+[12:20:46] INFO - Epoch: 9, Batch: 800, Loss: 0.0066
+[12:21:13] INFO - Epoch: 9, Batch: 900, Loss: 0.0093
+[12:21:39] INFO - Epoch: 9, Batch: 1000, Loss: 0.0116
+[12:22:06] INFO - Epoch: 9, Batch: 1100, Loss: 0.0085
+[12:22:33] INFO - Epoch: 9, Batch: 1200, Loss: 0.0097
+[12:22:59] INFO - Epoch: 9, Batch: 1300, Loss: 0.0116
+[12:23:26] INFO - Epoch: 9, Batch: 1400, Loss: 0.0120
+[12:23:53] INFO - Epoch: 9, Batch: 1500, Loss: 0.0100
+[12:24:30] INFO - Validating ...
+[12:27:37] INFO - Validating IOU 5038/5449 = 0.924573
+[12:27:37] INFO - >>> save model: epoch_09_iou_0.9246
+[12:27:37] INFO - Beginning Epoch 10, lr=0.001
+[12:28:08] INFO - Epoch: 10, Batch: 100, Loss: 0.0106
+[12:28:34] INFO - Epoch: 10, Batch: 200, Loss: 0.0084
+[12:29:01] INFO - Epoch: 10, Batch: 300, Loss: 0.0103
+[12:29:27] INFO - Epoch: 10, Batch: 400, Loss: 0.0124
+[12:29:54] INFO - Epoch: 10, Batch: 500, Loss: 0.0060
+[12:30:21] INFO - Epoch: 10, Batch: 600, Loss: 0.0105
+[12:30:47] INFO - Epoch: 10, Batch: 700, Loss: 0.0079
+[12:31:14] INFO - Epoch: 10, Batch: 800, Loss: 0.0116
+[12:31:41] INFO - Epoch: 10, Batch: 900, Loss: 0.0075
+[12:32:07] INFO - Epoch: 10, Batch: 1000, Loss: 0.0074
+[12:32:34] INFO - Epoch: 10, Batch: 1100, Loss: 0.0093
+[12:33:01] INFO - Epoch: 10, Batch: 1200, Loss: 0.0096
+[12:33:27] INFO - Epoch: 10, Batch: 1300, Loss: 0.0078
+[12:33:54] INFO - Epoch: 10, Batch: 1400, Loss: 0.0110
+[12:34:21] INFO - Epoch: 10, Batch: 1500, Loss: 0.0115
+[12:34:59] INFO - Validating ...
+[12:38:06] INFO - Validating IOU 5028/5449 = 0.922738
+[12:38:06] INFO - >>> save model: epoch_10_iou_0.9227
+[12:38:06] INFO - Beginning Epoch 11, lr=0.001
+[12:38:37] INFO - Epoch: 11, Batch: 100, Loss: 0.0069
+[12:39:04] INFO - Epoch: 11, Batch: 200, Loss: 0.0097
+[12:39:30] INFO - Epoch: 11, Batch: 300, Loss: 0.0095
+[12:39:57] INFO - Epoch: 11, Batch: 400, Loss: 0.0089
+[12:40:24] INFO - Epoch: 11, Batch: 500, Loss: 0.0078
+[12:40:50] INFO - Epoch: 11, Batch: 600, Loss: 0.0082
+[12:41:17] INFO - Epoch: 11, Batch: 700, Loss: 0.0095
+[12:41:44] INFO - Epoch: 11, Batch: 800, Loss: 0.0097
+[12:42:10] INFO - Epoch: 11, Batch: 900, Loss: 0.0090
+[12:42:37] INFO - Epoch: 11, Batch: 1000, Loss: 0.0070
+[12:43:04] INFO - Epoch: 11, Batch: 1100, Loss: 0.0063
+[12:43:30] INFO - Epoch: 11, Batch: 1200, Loss: 0.0081
+[12:43:57] INFO - Epoch: 11, Batch: 1300, Loss: 0.0073
+[12:44:24] INFO - Epoch: 11, Batch: 1400, Loss: 0.0103
+[12:44:50] INFO - Epoch: 11, Batch: 1500, Loss: 0.0069
+[12:45:29] INFO - Validating ...
+[12:48:37] INFO - Validating IOU 5025/5449 = 0.922188
+[12:48:37] INFO - Beginning Epoch 12, lr=0.001
+[12:49:08] INFO - Epoch: 12, Batch: 100, Loss: 0.0086
+[12:49:34] INFO - Epoch: 12, Batch: 200, Loss: 0.0079
+[12:50:01] INFO - Epoch: 12, Batch: 300, Loss: 0.0085
+[12:50:28] INFO - Epoch: 12, Batch: 400, Loss: 0.0078
+[12:50:54] INFO - Epoch: 12, Batch: 500, Loss: 0.0064
+[12:51:21] INFO - Epoch: 12, Batch: 600, Loss: 0.0100
+[12:51:48] INFO - Epoch: 12, Batch: 700, Loss: 0.0080
+[12:52:14] INFO - Epoch: 12, Batch: 800, Loss: 0.0060
+[12:52:41] INFO - Epoch: 12, Batch: 900, Loss: 0.0082
+[12:53:08] INFO - Epoch: 12, Batch: 1000, Loss: 0.0087
+[12:53:34] INFO - Epoch: 12, Batch: 1100, Loss: 0.0100
+[12:54:01] INFO - Epoch: 12, Batch: 1200, Loss: 0.0090
+[12:54:28] INFO - Epoch: 12, Batch: 1300, Loss: 0.0087
+[12:54:54] INFO - Epoch: 12, Batch: 1400, Loss: 0.0081
+[12:55:21] INFO - Epoch: 12, Batch: 1500, Loss: 0.0084
+[12:55:59] INFO - Validating ...
+[12:59:06] INFO - Validating IOU 5060/5449 = 0.928611
+[12:59:06] INFO - >>> save model: epoch_12_iou_0.9286
+[12:59:06] INFO - Beginning Epoch 13, lr=0.001
+[12:59:37] INFO - Epoch: 13, Batch: 100, Loss: 0.0106
+[13:00:04] INFO - Epoch: 13, Batch: 200, Loss: 0.0095
+[13:00:30] INFO - Epoch: 13, Batch: 300, Loss: 0.0083
+[13:00:57] INFO - Epoch: 13, Batch: 400, Loss: 0.0072
+[13:01:24] INFO - Epoch: 13, Batch: 500, Loss: 0.0070
+[13:01:50] INFO - Epoch: 13, Batch: 600, Loss: 0.0131
+[13:02:17] INFO - Epoch: 13, Batch: 700, Loss: 0.0087
+[13:02:44] INFO - Epoch: 13, Batch: 800, Loss: 0.0079
+[13:03:10] INFO - Epoch: 13, Batch: 900, Loss: 0.0102
+[13:03:37] INFO - Epoch: 13, Batch: 1000, Loss: 0.0067
+[13:04:04] INFO - Epoch: 13, Batch: 1100, Loss: 0.0105
+[13:04:30] INFO - Epoch: 13, Batch: 1200, Loss: 0.0087
+[13:04:57] INFO - Epoch: 13, Batch: 1300, Loss: 0.0106
+[13:05:24] INFO - Epoch: 13, Batch: 1400, Loss: 0.0087
+[13:05:50] INFO - Epoch: 13, Batch: 1500, Loss: 0.0072
+[13:06:28] INFO - Validating ...
+[13:09:34] INFO - Validating IOU 5036/5449 = 0.924206
+[13:09:34] INFO - Beginning Epoch 14, lr=0.001
+[13:10:05] INFO - Epoch: 14, Batch: 100, Loss: 0.0097
+[13:10:32] INFO - Epoch: 14, Batch: 200, Loss: 0.0081
+[13:10:58] INFO - Epoch: 14, Batch: 300, Loss: 0.0083
+[13:11:25] INFO - Epoch: 14, Batch: 400, Loss: 0.0088
+[13:11:52] INFO - Epoch: 14, Batch: 500, Loss: 0.0092
+[13:12:18] INFO - Epoch: 14, Batch: 600, Loss: 0.0088
+[13:12:45] INFO - Epoch: 14, Batch: 700, Loss: 0.0072
+[13:13:11] INFO - Epoch: 14, Batch: 800, Loss: 0.0064
+[13:13:38] INFO - Epoch: 14, Batch: 900, Loss: 0.0088
+[13:14:05] INFO - Epoch: 14, Batch: 1000, Loss: 0.0082
+[13:14:31] INFO - Epoch: 14, Batch: 1100, Loss: 0.0052
+[13:14:58] INFO - Epoch: 14, Batch: 1200, Loss: 0.0074
+[13:15:25] INFO - Epoch: 14, Batch: 1300, Loss: 0.0107
+[13:15:51] INFO - Epoch: 14, Batch: 1400, Loss: 0.0073
+[13:16:18] INFO - Epoch: 14, Batch: 1500, Loss: 0.0093
+[13:16:56] INFO - Validating ...
+[13:20:05] INFO - Validating IOU 5039/5449 = 0.924757
+[13:20:05] INFO - Beginning Epoch 15, lr=0.001
+[13:20:35] INFO - Epoch: 15, Batch: 100, Loss: 0.0072
+[13:21:02] INFO - Epoch: 15, Batch: 200, Loss: 0.0064
+[13:21:28] INFO - Epoch: 15, Batch: 300, Loss: 0.0115
+[13:21:55] INFO - Epoch: 15, Batch: 400, Loss: 0.0078
+[13:22:22] INFO - Epoch: 15, Batch: 500, Loss: 0.0070
+[13:22:48] INFO - Epoch: 15, Batch: 600, Loss: 0.0093
+[13:23:15] INFO - Epoch: 15, Batch: 700, Loss: 0.0133
+[13:23:42] INFO - Epoch: 15, Batch: 800, Loss: 0.0081
+[13:24:08] INFO - Epoch: 15, Batch: 900, Loss: 0.0108
+[13:24:35] INFO - Epoch: 15, Batch: 1000, Loss: 0.0098
+[13:25:02] INFO - Epoch: 15, Batch: 1100, Loss: 0.0088
+[13:25:28] INFO - Epoch: 15, Batch: 1200, Loss: 0.0070
+[13:25:55] INFO - Epoch: 15, Batch: 1300, Loss: 0.0121
+[13:26:22] INFO - Epoch: 15, Batch: 1400, Loss: 0.0094
+[13:26:48] INFO - Epoch: 15, Batch: 1500, Loss: 0.0077
+[13:27:27] INFO - Validating ...
+[13:30:36] INFO - Validating IOU 5006/5449 = 0.918701
+[13:30:36] INFO - Beginning Epoch 16, lr=0.001
+[13:31:06] INFO - Epoch: 16, Batch: 100, Loss: 0.0049
+[13:31:33] INFO - Epoch: 16, Batch: 200, Loss: 0.0094
+[13:31:59] INFO - Epoch: 16, Batch: 300, Loss: 0.0092
+[13:32:26] INFO - Epoch: 16, Batch: 400, Loss: 0.0109
+[13:32:53] INFO - Epoch: 16, Batch: 500, Loss: 0.0098
+[13:33:19] INFO - Epoch: 16, Batch: 600, Loss: 0.0106
+[13:33:46] INFO - Epoch: 16, Batch: 700, Loss: 0.0071
+[13:34:13] INFO - Epoch: 16, Batch: 800, Loss: 0.0068
+[13:34:39] INFO - Epoch: 16, Batch: 900, Loss: 0.0072
+[13:35:06] INFO - Epoch: 16, Batch: 1000, Loss: 0.0069
+[13:35:33] INFO - Epoch: 16, Batch: 1100, Loss: 0.0083
+[13:35:59] INFO - Epoch: 16, Batch: 1200, Loss: 0.0076
+[13:36:26] INFO - Epoch: 16, Batch: 1300, Loss: 0.0108
+[13:36:53] INFO - Epoch: 16, Batch: 1400, Loss: 0.0072
+[13:37:19] INFO - Epoch: 16, Batch: 1500, Loss: 0.0089
+[13:37:59] INFO - Validating ...
+[13:41:09] INFO - Validating IOU 5091/5449 = 0.934300
+[13:41:09] INFO - >>> save model: epoch_16_iou_0.9343
+[13:41:09] INFO - Beginning Epoch 17, lr=0.001
+[13:41:40] INFO - Epoch: 17, Batch: 100, Loss: 0.0071
+[13:42:06] INFO - Epoch: 17, Batch: 200, Loss: 0.0105
+[13:42:33] INFO - Epoch: 17, Batch: 300, Loss: 0.0081
+[13:43:00] INFO - Epoch: 17, Batch: 400, Loss: 0.0082
+[13:43:26] INFO - Epoch: 17, Batch: 500, Loss: 0.0062
+[13:43:53] INFO - Epoch: 17, Batch: 600, Loss: 0.0107
+[13:44:20] INFO - Epoch: 17, Batch: 700, Loss: 0.0058
+[13:44:46] INFO - Epoch: 17, Batch: 800, Loss: 0.0090
+[13:45:13] INFO - Epoch: 17, Batch: 900, Loss: 0.0078
+[13:45:40] INFO - Epoch: 17, Batch: 1000, Loss: 0.0101
+[13:46:06] INFO - Epoch: 17, Batch: 1100, Loss: 0.0065
+[13:46:33] INFO - Epoch: 17, Batch: 1200, Loss: 0.0077
+[13:47:00] INFO - Epoch: 17, Batch: 1300, Loss: 0.0078
+[13:47:26] INFO - Epoch: 17, Batch: 1400, Loss: 0.0109
+[13:47:53] INFO - Epoch: 17, Batch: 1500, Loss: 0.0086
+[13:48:31] INFO - Validating ...
+[13:51:38] INFO - Validating IOU 5069/5449 = 0.930262
+[13:51:38] INFO - Beginning Epoch 18, lr=0.001
+[13:52:09] INFO - Epoch: 18, Batch: 100, Loss: 0.0067
+[13:52:36] INFO - Epoch: 18, Batch: 200, Loss: 0.0111
+[13:53:02] INFO - Epoch: 18, Batch: 300, Loss: 0.0078
+[13:53:29] INFO - Epoch: 18, Batch: 400, Loss: 0.0054
+[13:53:56] INFO - Epoch: 18, Batch: 500, Loss: 0.0076
+[13:54:23] INFO - Epoch: 18, Batch: 600, Loss: 0.0102
+[13:54:49] INFO - Epoch: 18, Batch: 700, Loss: 0.0064
+[13:55:16] INFO - Epoch: 18, Batch: 800, Loss: 0.0075
+[13:55:43] INFO - Epoch: 18, Batch: 900, Loss: 0.0075
+[13:56:09] INFO - Epoch: 18, Batch: 1000, Loss: 0.0060
+[13:56:36] INFO - Epoch: 18, Batch: 1100, Loss: 0.0092
+[13:57:03] INFO - Epoch: 18, Batch: 1200, Loss: 0.0077
+[13:57:30] INFO - Epoch: 18, Batch: 1300, Loss: 0.0102
+[13:57:56] INFO - Epoch: 18, Batch: 1400, Loss: 0.0098
+[13:58:23] INFO - Epoch: 18, Batch: 1500, Loss: 0.0101
+[13:59:01] INFO - Validating ...
+[14:02:11] INFO - Validating IOU 5046/5449 = 0.926041
+[14:02:11] INFO - Beginning Epoch 19, lr=0.001
+[14:02:41] INFO - Epoch: 19, Batch: 100, Loss: 0.0090
+[14:03:08] INFO - Epoch: 19, Batch: 200, Loss: 0.0103
+[14:03:34] INFO - Epoch: 19, Batch: 300, Loss: 0.0079
+[14:04:01] INFO - Epoch: 19, Batch: 400, Loss: 0.0075
+[14:04:28] INFO - Epoch: 19, Batch: 500, Loss: 0.0080
+[14:04:56] INFO - Epoch: 19, Batch: 600, Loss: 0.0060
+[14:05:23] INFO - Epoch: 19, Batch: 700, Loss: 0.0091
+[14:05:50] INFO - Epoch: 19, Batch: 800, Loss: 0.0070
+[14:06:18] INFO - Epoch: 19, Batch: 900, Loss: 0.0061
+[14:06:45] INFO - Epoch: 19, Batch: 1000, Loss: 0.0078
+[14:07:12] INFO - Epoch: 19, Batch: 1100, Loss: 0.0071
+[14:07:39] INFO - Epoch: 19, Batch: 1200, Loss: 0.0080
+[14:08:06] INFO - Epoch: 19, Batch: 1300, Loss: 0.0065
+[14:08:34] INFO - Epoch: 19, Batch: 1400, Loss: 0.0069
+[14:09:02] INFO - Epoch: 19, Batch: 1500, Loss: 0.0074

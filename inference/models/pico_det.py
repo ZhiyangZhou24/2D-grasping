@@ -393,6 +393,7 @@ class DarknetBottleneck(nn.Module):
                  expansion=0.5,
                  add_identity=True,
                  use_depthwise=False,
+                 use_att=False,
                  act="leaky_relu"):
         super(DarknetBottleneck, self).__init__()
         hidden_channels = int(out_channels * expansion)
@@ -408,12 +409,18 @@ class DarknetBottleneck(nn.Module):
             kernel_size=kernel_size,
             stride=1,
             act=act)
+        
+        self.use_att = use_att 
+        self.att = eca_block(hidden_channels)
+
         self.add_identity = \
             add_identity and in_channels == out_channels
 
     def forward(self, x):
         identity = x
         out = self.conv1(x)
+        if self.use_att:
+            out = self.att(out)
         out = self.conv2(out)
 
         if self.add_identity:
@@ -444,6 +451,7 @@ class CSPLayer(nn.Module):
                  num_blocks=1,
                  add_identity=True,
                  use_depthwise=False,
+                 use_att=False,
                  act="leaky_relu"):
         super().__init__()
         mid_channels = int(out_channels * expand_ratio)
@@ -460,6 +468,7 @@ class CSPLayer(nn.Module):
                 1.0,
                 add_identity,
                 use_depthwise,
+                use_att,
                 act=act) for _ in range(num_blocks)
         ])
 

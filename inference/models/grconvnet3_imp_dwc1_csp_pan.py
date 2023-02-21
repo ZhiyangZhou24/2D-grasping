@@ -58,12 +58,14 @@ class up(nn.Module):
 
 class GenerativeResnet(GraspModel):
 
-    def __init__(self, input_channels=1, output_channels=1, channel_size=32,use_mish=True,use_depthwise = True, att = 'use_eca',upsamp='use_bilinear',dropout=False, prob=0.0):
+    def __init__(self, input_channels=1, output_channels=1, channel_size=32,use_mish=True,use_depthwise = True,dbg=0, att = 'use_eca',upsamp='use_bilinear',dropout=False, prob=0.0):
         super(GenerativeResnet, self).__init__()
         print('Model is grc3_imp_dwc1')
         print('GRCNN upsamp {}'.format(upsamp))
         print('USE mish {}'.format(use_mish))
         print('USE att {}'.format(att))
+
+        self.dbg=dbg
         self.att = att
         if use_mish :
             self.act = "mish"
@@ -101,30 +103,31 @@ class GenerativeResnet(GraspModel):
                     # DepthwiseSeparable(num_channels= channel_size * 32, num_filters=channel_size * 32,dw_size = 5,stride=1,use_se=True),
         )
 
-        self.conv_1x1_1 = conv_1x1_bn(channel_size * 8, channel_size * 1,act=nn.Mish)  
-        self.conv_1x1_2 = conv_1x1_bn(channel_size * 4, channel_size * 1,act=nn.Mish)
-        self.conv_1x1_3 = conv_1x1_bn(channel_size * 2, channel_size * 1,act=nn.Mish)
-        self.conv_1x1_4 = conv_1x1_bn(channel_size * 1, channel_size * 1,act=nn.Mish)
+        self.conv_1x1_1 = conv_1x1_bn(channel_size * 8, channel_size * 2,act=nn.Mish)  
+        self.conv_1x1_2 = conv_1x1_bn(channel_size * 4, channel_size * 2,act=nn.Mish)
+        self.conv_1x1_3 = conv_1x1_bn(channel_size * 2, channel_size * 2,act=nn.Mish)
 
         self.upsample1 = self._make_upconv(in_channels=channel_size * 1,out_channels = channel_size * 1)#28 56
         self.upsample2 = self._make_upconv(in_channels=channel_size * 1,out_channels = channel_size * 1)#56 128
         self.upsample3 = self._make_upconv(in_channels=channel_size * 1,out_channels = channel_size * 1)#128 256
 
-        self.csp1 = CSPLayer(channel_size * 2, channel_size, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False)
-        self.csp2 = CSPLayer(channel_size * 2, channel_size, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False)
-        self.csp3 = CSPLayer(channel_size * 2, channel_size, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False)
+        self.csp1 = CSPLayer(channel_size * 4, channel_size * 2, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False,use_att=False)
+        self.csp2 = CSPLayer(channel_size * 4, channel_size * 2, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False,use_att=False)
+        self.csp3 = CSPLayer(channel_size * 4, channel_size * 2, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False)
 
-        self.csp4 = CSPLayer(channel_size * 2, channel_size, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False)
-        self.csp5 = CSPLayer(channel_size * 2, channel_size, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False)
-        self.csp6 = CSPLayer(channel_size * 2, channel_size, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False)
+        self.csp4 = CSPLayer(channel_size * 4, channel_size * 2, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False,use_att=False)
+        self.csp5 = CSPLayer(channel_size * 4, channel_size * 2, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False,use_att=False)
+        self.csp6 = CSPLayer(channel_size * 4, channel_size * 2, kernel_size=3,num_blocks=1,act=self.act,use_depthwise=False)
 
-        self.down1 = conv_func(channel_size,channel_size,kernel_size=3,stride=2,act=self.act) # 112
-        self.down2 = conv_func(channel_size,channel_size,kernel_size=3,stride=2,act=self.act) # 56
-        self.down3 = conv_func(channel_size,channel_size,kernel_size=3,stride=2,act=self.act) # 28
+        self.down1 = conv_func(channel_size * 2, channel_size * 2,kernel_size=3,stride=2,act=self.act) # 112
+        self.down2 = conv_func(channel_size * 2, channel_size * 2,kernel_size=3,stride=2,act=self.act) # 56
+        self.down3 = conv_func(channel_size * 2, channel_size * 2,kernel_size=3,stride=2,act=self.act) # 28
         
-        self.fuse = ConvBNLayer(channel_size * 3 , channel_size,kernel_size=3,act = self.act)
+        self.fuse = ConvBNLayer(channel_size * 6 , channel_size * 2,kernel_size=3,act = self.act)
 
-        self.up_final = self._make_upconv(in_channels=channel_size * 1,out_channels = channel_size * 1)#128 256
+        self.up_final = nn.Sequential(
+                nn.ConvTranspose2d(channel_size * 2, channel_size * 1, kernel_size = 2 * 2 , stride = 2, padding = 1, output_padding = 0)
+            )
         
         self.pos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
         self.cos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
@@ -157,26 +160,25 @@ class GenerativeResnet(GraspModel):
             print('upsample_type error , please check!!!!')
 
     def forward(self, x_in):
-        dbg=1
-        if dbg == 1:
+        if self.dbg == 1:
             print('x_in.shape  {}'.format(x_in.shape))
         stem = self.stem(x_in)
-        if dbg == 1:
+        if self.dbg == 1:
             print('stem.shape  {}'.format(stem.shape))
         d1 = self.dsc1(stem)
-        if dbg == 1:
+        if self.dbg == 1:
             print('d1.shape  {}'.format(d1.shape))
 
         d2 = self.dsc2(d1)
-        if dbg == 1:
+        if self.dbg == 1:
             print('d2.shape  {}'.format(d2.shape))
 
         d3 = self.dsc3(d2)
-        if dbg == 1:
+        if self.dbg == 1:
             print('d3.shape  {}'.format(d3.shape))
 
         d4 = self.dscBottleNeck(d3)
-        if dbg == 1:
+        if self.dbg == 1:
             print('d4.shape  {}'.format(d4.shape))
 
         d4 = self.conv_1x1_1(d4)

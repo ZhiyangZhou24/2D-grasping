@@ -26,7 +26,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc1_csp_pan',
+    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc1',
                         help='Network name in inference/models  grconvnet')
     parser.add_argument('--input-size', type=int, default=320,
                         help='Input image size for the network')
@@ -36,7 +36,7 @@ def parse_args():
                         help='Use RGB image for training (1/0)')
     parser.add_argument('--use-dropout', type=int, default=1,
                         help='Use dropout for training (1/0)')
-    parser.add_argument('--dropout-prob', type=float, default=0.2,
+    parser.add_argument('--dropout-prob', type=float, default=0.1,
                         help='Dropout prob for training (0-1)')
     parser.add_argument('--channel-size', type=int, default=32,
                         help='Internal channel size for the network')
@@ -60,7 +60,6 @@ def parse_args():
     parser.add_argument('--datazoom', type=bool, default=False,
                         help='Threshold albation for evaluation, need more time')
 
-    # Datasets
     # /media/lab/ChainGOAT/Jacquard
     # /media/lab/e/zzy/datasets/Cornell
     parser.add_argument('--dataset', type=str,default='jacquard',
@@ -69,7 +68,7 @@ def parse_args():
                         help='Path to dataset')
     parser.add_argument('--alfa', type=int, default=1,
                         help='len(Dataset)*alfa')
-    parser.add_argument('--split', type=float, default=0.95,
+    parser.add_argument('--split', type=float, default=0.9,
                         help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-shuffle', action='store_true', default=False,
                         help='Shuffle the dataset')
@@ -100,7 +99,7 @@ def parse_args():
     
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_csppan_d_bili_mish_ca32_drop2_bina',
+    parser.add_argument('--description', type=str, default='dwc1_pan_d_bili_mish_ca32_drop1_bina',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc_pan',
                         help='Log directory')
@@ -114,7 +113,7 @@ def parse_args():
     return args
 
 
-def validate(net, device, val_data, iou_threshold,posloss=True):
+def validate(net, device, val_data, iou_multi=False,posloss=True):
     """
     Run validation.
     :param net: Network
@@ -163,18 +162,30 @@ def validate(net, device, val_data, iou_threshold,posloss=True):
                                                         lossd['pred']['sin'], lossd['pred']['width'])
 
 
-            iou_results = evaluation.calculate_iou_match_multi(q_out,
-                                               ang_out,
-                                               val_data.dataset.get_gtbb(didx, rot, zoom_factor),
-                                               no_grasps=1,
-                                               grasp_width=w_out
-                                               )
+            if iou_multi:
+                iou_results = evaluation.calculate_iou_match_multi(q_out,
+                                                ang_out,
+                                                val_data.dataset.get_gtbb(didx, rot, zoom_factor),
+                                                no_grasps=1,
+                                                grasp_width=w_out
+                                                )
 
-            for iou in iou_results:
-                if iou_results[iou] == True:
-                    results['correct'][iou] +=1
-                else :
-                    results['failed'][iou] +=1
+                for iou in iou_results:
+                    if iou_results[iou] == True:
+                        results['correct'][iou] +=1
+                    else :
+                        results['failed'][iou] +=1
+            else :
+                s = evaluation.calculate_iou_match(q_out, ang_out,
+                                                val_data.dataset.get_gtbb(didx, rot, zoom_factor),
+                                                no_grasps=1,
+                                                grasp_width=w_out,
+                                                )
+
+                if s:
+                    results['correct']['th25'] += 1
+                else:
+                    results['failed']['th25'] += 1
 
     return results
 
@@ -386,7 +397,7 @@ def run():
     f.close()
 
     logging.info('Optimizer {} Done || Base LR: {} || Milestone: {} || Gamma: {}'.format(args.optim,args.lr,args.schedu_milestone,args.schedu_gamma))
-    logging.info('Dataset size {} ||rotate :{} || zoom :{} || ds_shuffle {} || ds_rotate {}'.format(dataset.length,args.datarotate,args.datazoom,args.ds_shuffle,args.ds_rotate))
+    logging.info('Dataset size {}   ||rotate :{}   || zoom :{}      || ds_shuffle {} || ds_rotate {}'.format(dataset.length,args.datarotate,args.datazoom,args.ds_shuffle,args.ds_rotate))
 
     best_iou = 0.0
     start_epoch = args.start_epoch if args.goon_train else 0
@@ -403,10 +414,14 @@ def run():
 
         # Run Validation
         logging.info('Validating ...')
-        test_results = validate(net, device, val_data, iou_threshold=args.iou_threshold,posloss=args.posloss)
-        for result in test_results['correct']:
-            logging.info('Jacquard index %s  %d/%d = %f' % (result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
-                                     test_results['correct'][result] / (test_results['correct'][result] + test_results['failed'][result])))
+        test_results = validate(net, device, val_data,  iou_multi=args.iou_abla,posloss=args.posloss)
+        if args.iou_abla:
+            for result in test_results['correct']:
+                logging.info('Jacquard index %s  %d/%d = %f' % (result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
+                                        test_results['correct'][result] / (test_results['correct'][result] + test_results['failed'][result])))
+        else :
+            logging.info('Validating IOU %d/%d = %f' % (test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
+                                     test_results['correct']['th25']/(test_results['correct']['th25']+test_results['failed']['th25'])))
         # Log validation results to tensorbaord
         tb.add_scalar('loss/IOU', test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25']), epoch)
         tb.add_scalar('loss/val_loss', test_results['loss'], epoch)
