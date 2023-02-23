@@ -43,7 +43,7 @@ class up(nn.Module):
         self.upsample_type = upsample_type
         self.up = self._make_upconv(out_ch, out_ch, upscale_factor = 2)
 
-        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,num_blocks=num_blocks,act=act,use_depthwise=False)
+        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,num_blocks=num_blocks,act=act,use_att=True)
         
     def _make_upconv(self, in_channels, out_channels, upscale_factor = 2):
         if self.upsample_type == 'use_duc':
@@ -112,11 +112,11 @@ class GenerativeResnet(GraspModel):
                     # DepthwiseSeparable(num_channels= channel_size * 32, num_filters=channel_size * 32,dw_size = 5,stride=1,use_se=True),
         )
 
-        self.up1 = up(channel_size * (8 + 8), channel_size * 4, upsamp,act=self.act)
+        self.up1 = up(channel_size * (8 + 8), channel_size * 4, upsamp,num_blocks=1,act=self.act)
 
-        self.up2 = up(channel_size * (4 + 4), channel_size * 2, upsamp,act=self.act)
+        self.up2 = up(channel_size * (4 + 4), channel_size * 2, upsamp,num_blocks=1,act=self.act)
 
-        self.up3 = up(channel_size * (2 + 2), channel_size * 1, upsamp,act=self.act)
+        self.up3 = up(channel_size * (2 + 2), channel_size * 1, upsamp,num_blocks=1,act=self.act)
 
         self.transition = transition()
 

@@ -26,7 +26,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3',
+    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc1',
                         help='Network name in inference/models  grconvnet')
     parser.add_argument('--input-size', type=int, default=320,
                         help='Input image size for the network')
@@ -36,7 +36,7 @@ def parse_args():
                         help='Use RGB image for training (1/0)')
     parser.add_argument('--use-dropout', type=int, default=1,
                         help='Use dropout for training (1/0)')
-    parser.add_argument('--dropout-prob', type=float, default=0.1,
+    parser.add_argument('--dropout-prob', type=float, default=0.2,
                         help='Dropout prob for training (0-1)')
     parser.add_argument('--channel-size', type=int, default=32,
                         help='Internal channel size for the network')
@@ -55,9 +55,9 @@ def parse_args():
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
     parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
                         help='Dataset gaussian progress 0.0 means not use gauss')
-    parser.add_argument('--datarotate', type=bool, default=False,
+    parser.add_argument('--datarotate', type=bool, default=True,
                         help='Threshold albation for evaluation, need more time')
-    parser.add_argument('--datazoom', type=bool, default=False,
+    parser.add_argument('--datazoom', type=bool, default=True,
                         help='Threshold albation for evaluation, need more time')
 
     # /media/lab/ChainGOAT/Jacquard
@@ -68,13 +68,13 @@ def parse_args():
                         help='Path to dataset')
     parser.add_argument('--alfa', type=int, default=1,
                         help='len(Dataset)*alfa')
-    parser.add_argument('--split', type=float, default=0.1,
+    parser.add_argument('--split', type=float, default=0.9,
                         help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-shuffle', action='store_true', default=False,
                         help='Shuffle the dataset')
     parser.add_argument('--ds-rotate', type=float, default=0.0,
                         help='Shift the start point of the dataset to use a different test/train split')
-    parser.add_argument('--num-workers', type=int, default=16,
+    parser.add_argument('--num-workers', type=int, default=18,
                         help='Dataset workers')
 
     # Training
@@ -84,8 +84,8 @@ def parse_args():
     parser.add_argument('--optim', type=str, default='ranger',
                         help='Optmizer for the training. (adam or SGD)')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
-    parser.add_argument('--schedu-milestone', type=int, default=[500,1500,2500,3500], help='学习率tiaozheng stone')
-    parser.add_argument('--schedu-gamma', type=float, default=0.5, help='学习率 hsuaijian xishu ')
+    parser.add_argument('--schedu-milestone', type=int, default=[5,15,25,35], help='学习率tiaozheng stone')
+    parser.add_argument('--schedu-gamma', type=float, default=0.8, help='学习率 hsuaijian xishu ')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
 
     parser.add_argument('--epochs', type=int, default=60,
@@ -99,9 +99,9 @@ def parse_args():
     
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_ecacsp_csppan_d_bili_mish_ca32_drop1',
+    parser.add_argument('--description', type=str, default='dwc1_ms5_wd0_ga0',
                         help='Training description')
-    parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc',
+    parser.add_argument('--logdir', type=str, default='logs/jacquard_ftn',
                         help='Log directory')
     parser.add_argument('--vis', action='store_true',
                         help='Visualise the training process')
@@ -145,47 +145,50 @@ def validate(net, device, val_data, iou_multi=False,posloss=True):
     ld = len(val_data)
 
     with torch.no_grad():
-        for x, y, didx, rot, zoom_factor in tqdm.tqdm(val_data,ncols=100):
-            xc = x.to(device)
-            yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc,pos_loss=posloss)
+        with tqdm.tqdm(total=val_data.__len__(),ncols=80) as pb:
+            for x, y, didx, rot, zoom_factor in val_data:
+                xc = x.to(device)
+                yc = [yy.to(device) for yy in y]
+                lossd = net.compute_loss(xc, yc,pos_loss=posloss)
 
-            loss = lossd['loss']
+                loss = lossd['loss']
 
-            results['loss'] += loss.item() / ld
-            for ln, l in lossd['losses'].items():
-                if ln not in results['losses']:
-                    results['losses'][ln] = 0
-                results['losses'][ln] += l.item() / ld
+                results['loss'] += loss.item() / ld
+                for ln, l in lossd['losses'].items():
+                    if ln not in results['losses']:
+                        results['losses'][ln] = 0
+                    results['losses'][ln] += l.item() / ld
 
-            q_out, ang_out, w_out = post_process_output(lossd['pred']['pos'], lossd['pred']['cos'],
-                                                        lossd['pred']['sin'], lossd['pred']['width'])
+                q_out, ang_out, w_out = post_process_output(lossd['pred']['pos'], lossd['pred']['cos'],
+                                                            lossd['pred']['sin'], lossd['pred']['width'])
 
 
-            if iou_multi:
-                iou_results = evaluation.calculate_iou_match_multi(q_out,
-                                                ang_out,
-                                                val_data.dataset.get_gtbb(didx, rot, zoom_factor),
-                                                no_grasps=1,
-                                                grasp_width=w_out
-                                                )
+                if iou_multi:
+                    iou_results = evaluation.calculate_iou_match_multi(q_out,
+                                                    ang_out,
+                                                    val_data.dataset.get_gtbb(didx, rot, zoom_factor),
+                                                    no_grasps=1,
+                                                    grasp_width=w_out
+                                                    )
 
-                for iou in iou_results:
-                    if iou_results[iou] == True:
-                        results['correct'][iou] +=1
-                    else :
-                        results['failed'][iou] +=1
-            else :
-                s = evaluation.calculate_iou_match(q_out, ang_out,
-                                                val_data.dataset.get_gtbb(didx, rot, zoom_factor),
-                                                no_grasps=1,
-                                                grasp_width=w_out,
-                                                )
+                    for iou in iou_results:
+                        if iou_results[iou] == True:
+                            results['correct'][iou] +=1
+                        else :
+                            results['failed'][iou] +=1
+                else :
+                    s = evaluation.calculate_iou_match(q_out, ang_out,
+                                                    val_data.dataset.get_gtbb(didx, rot, zoom_factor),
+                                                    no_grasps=1,
+                                                    grasp_width=w_out,
+                                                    )
 
-                if s:
-                    results['correct']['th25'] += 1
-                else:
-                    results['failed']['th25'] += 1
+                    if s:
+                        results['correct']['th25'] += 1
+                    else:
+                        results['failed']['th25'] += 1
+                pb.set_postfix(loss='{:0.4f}'.format(loss.item()))
+                pb.update(1)
 
     return results
 
@@ -213,19 +216,17 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
     batch_idx = 0
     # Use batches per epoch to make training on different sized datasets (cornell/jacquard) more equivalent.
     while batch_idx <= batches_per_epoch:
-        with tqdm.tqdm(total=batches_per_epoch,ncols=100) as t:
+        with tqdm.tqdm(total=batches_per_epoch,ncols=80) as t:
             for x, y, _, _, _ in train_data:
                 batch_idx += 1
                 if batch_idx >= batches_per_epoch:
                     break
-
+                
                 xc = x.to(device)
                 yc = [yy.to(device) for yy in y]
                 lossd = net.compute_loss(xc, yc,pos_loss=posloss)
 
                 loss = lossd['loss']
-
-                t.set_postfix(loss='{:0.4f}'.format(loss.item()))
 
                 results['loss'] += loss.item()
                 for ln, l in lossd['losses'].items():
@@ -250,7 +251,9 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
                                 (0.0, 1.0)] * 2 * n_img,
                                 [cv2.COLORMAP_BONE] * 10 * n_img, 10)
                     cv2.waitKey(2)
-                t.update()
+                
+                t.update(1)
+                t.set_postfix(loss='{:0.4f}'.format(loss.item()))
 
     results['loss'] /= batch_idx
     for l in results['losses']:
@@ -316,8 +319,8 @@ def run():
                       output_size=args.input_size,
                       ds_rotate=args.ds_rotate,
                       alfa=1,
-                      random_rotate=False,
-                      random_zoom=False,
+                      random_rotate=True,
+                      random_zoom=True,
                       start=args.split, 
                       end=1,
                       include_depth=args.use_depth,
@@ -332,7 +335,7 @@ def run():
         train_dataset,
         batch_size=args.batch_size,
         num_workers=args.num_workers,
-        shuffle=False,
+        shuffle=True,
         pin_memory=True
     )
 
@@ -340,7 +343,7 @@ def run():
         vali_dataset,
         batch_size=1,
         num_workers=args.num_workers,
-        shuffle=False,
+        shuffle=True,
         pin_memory=True
     )
     logging.info('Done')
@@ -380,7 +383,7 @@ def run():
         optimizer = optim.SGD(net.parameters(), lr=args.lr, momentum=0.9)
         scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.schedu_milestone, gamma=args.schedu_gamma)     # 学习率衰减    20, 30, 60
     elif args.optim.lower() == 'ranger':
-        optimizer = Ranger(net.parameters(), lr=args.lr)
+        optimizer = Ranger(net.parameters(), lr=args.lr,weight_decay=args.weight_decay)
         scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.schedu_milestone, gamma=args.schedu_gamma)
     else:
         raise NotImplementedError('Optimizer {} is not implemented'.format(args.optim))
@@ -402,7 +405,7 @@ def run():
         scheduler.step()
     for epoch in range(args.epochs)[start_epoch:]:
         logging.info('Beginning Epoch {:02d}, lr={}'.format(epoch, optimizer.state_dict()['param_groups'][0]['lr']))
-        train_results = train(epoch, net, device, train_data, optimizer, train_data.__len__(), vis=args.vis,posloss=args.posloss)
+        train_results = train(epoch, net, device, train_data, optimizer,train_data.__len__(), vis=args.vis,posloss=args.posloss)  #train_data.__len__()
         logging.info("Epoch {:02d} train loss {:0.4f}".format(epoch,train_results['loss']))
         scheduler.step()
         # Log training losses to tensorboard

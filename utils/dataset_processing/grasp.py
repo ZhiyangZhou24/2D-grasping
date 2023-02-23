@@ -248,6 +248,7 @@ class GraspRectangle:
 
     def __init__(self, points):
         self.points = points
+        # print("grasp point {}".format(points))
 
     def __str__(self):
         return str(self.points)
@@ -316,7 +317,8 @@ class GraspRectangle:
         """
         if abs((self.angle - gr.angle + np.pi / 2) % np.pi - np.pi / 2) > angle_threshold:
             return 0
-
+        if abs(self.points[0,0]) > 320:
+            return 0
         rr1, cc1 = self.polygon_coords()
         rr2, cc2 = polygon(gr.points[:, 0], gr.points[:, 1])
 
@@ -479,7 +481,6 @@ def detect_grasps(q_img, ang_img, width_img=None, no_grasps=1):
         grasp_point = tuple(grasp_point_array)
 
         grasp_angle = ang_img[grasp_point]
-
         g = Grasp(grasp_point, grasp_angle)
         if width_img is not None:
             g.length = width_img[grasp_point]

@@ -1,0 +1,36 @@
+[10:52:22] INFO - CUDA detected. Running with GPU acceleration.
+[10:52:22] INFO - Loading Jacquard Dataset...
+[10:52:23] INFO - Training size: 54485
+[10:52:23] INFO - Validation size: 54485
+[10:52:23] INFO - Done
+[10:52:23] INFO - Loading Network...
+[10:52:23] INFO - input channel is 1
+[10:52:24] INFO - Done from goon checkpoint logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358
+[10:52:35] INFO - CUDA detected. Running with GPU acceleration.
+[10:52:35] INFO - Loading Jacquard Dataset...
+[10:52:37] INFO - Training size: 54485
+[10:52:37] INFO - Validation size: 54485
+[10:52:37] INFO - Done
+[10:52:37] INFO - Loading Network...
+[10:52:37] INFO - input channel is 1
+[10:52:38] INFO - Done from goon checkpoint logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358
+[10:52:39] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [5, 15, 25, 35] || Gamma: 0.5
+[10:52:39] INFO - Dataset size 54485||validat size 5449 ||rotate :True || zoom :True  || ds_shuffle False 
+[10:52:39] INFO - Beginning Epoch 04, lr=0.001
+[10:59:11] INFO - Epoch 04 train loss 0.0119
+[10:59:11] INFO - Validating ...
+[11:02:27] INFO - Epoch 04 Vali loss 0.0065
+[11:02:27] INFO - Validating IOU 5036/5449 = 0.924206
+[11:02:27] INFO - >>> save model: epoch_04_iou_0.9242
+[11:02:27] INFO - Beginning Epoch 05, lr=0.0005
+[11:09:03] INFO - Epoch 05 train loss 0.0117
+[11:09:03] INFO - Validating ...
+[11:12:19] INFO - Epoch 05 Vali loss 0.0061
+[11:12:19] INFO - Validating IOU 5094/5449 = 0.934850
+[11:12:19] INFO - >>> save model: epoch_05_iou_0.9349
+[11:12:19] INFO - Beginning Epoch 06, lr=0.0005
+[11:18:53] INFO - Epoch 06 train loss 0.0116
+[11:18:53] INFO - Validating ...
+[11:22:10] INFO - Epoch 06 Vali loss 0.0067
+[11:22:10] INFO - Validating IOU 5085/5449 = 0.933199
+[11:22:10] INFO - Beginning Epoch 07, lr=0.0005

@@ -17,7 +17,7 @@ class up(nn.Module):
         self.upsample_type = upsample_type
         self.up = self._make_upconv(out_ch, out_ch, upscale_factor = 2)
 
-        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,act=act,use_depthwise=False,use_att=True)
+        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,act=act,use_depthwise=False)
         
     def _make_upconv(self, in_channels, out_channels, upscale_factor = 2):
         if self.upsample_type == 'use_duc':

@@ -1,0 +1,75 @@
+[11:22:09] INFO - CUDA detected. Running with GPU acceleration.
+[11:22:09] INFO - Loading Jacquard Dataset...
+[11:22:10] INFO - Dataset len is 54485
+[11:22:10] INFO - Training size: 49036
+[11:22:10] INFO - Validation size: 5449
+[11:22:10] INFO - Done
+[11:22:10] INFO - Loading Network...
+[11:22:10] INFO - input channel is 1
+[11:22:10] INFO - Done from zero model
+[11:22:11] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [5, 15, 25, 35] || Gamma: 0.8
+[11:22:11] INFO - Dataset size 54485   ||rotate :True   || zoom :True      || ds_shuffle False || ds_rotate 0.0
+[11:22:11] INFO - Beginning Epoch 00, lr=0.001
+[11:28:22] INFO - ====== Epoch 00 train loss 0.0385
+[11:28:22] INFO - Validating ...
+[11:32:06] INFO - ====== Epoch 00 Vali loss 0.0185
+[11:32:06] INFO - Validating IOU 4649/5449 = 0.853184
+[11:32:06] INFO - >>> save model: epoch_00_iou_0.8532
+[11:32:06] INFO - Beginning Epoch 01, lr=0.001
+[11:38:18] INFO - ====== Epoch 01 train loss 0.0155
+[11:38:18] INFO - Validating ...
+[11:42:06] INFO - ====== Epoch 01 Vali loss 0.0129
+[11:42:06] INFO - Validating IOU 4959/5449 = 0.910075
+[11:42:06] INFO - >>> save model: epoch_01_iou_0.9101
+[11:42:06] INFO - Beginning Epoch 02, lr=0.001
+[11:48:16] INFO - ====== Epoch 02 train loss 0.0136
+[11:48:16] INFO - Validating ...
+[11:52:02] INFO - ====== Epoch 02 Vali loss 0.0119
+[11:52:02] INFO - Validating IOU 5015/5449 = 0.920352
+[11:52:02] INFO - >>> save model: epoch_02_iou_0.9204
+[11:52:02] INFO - Beginning Epoch 03, lr=0.001
+[11:58:14] INFO - ====== Epoch 03 train loss 0.0129
+[11:58:14] INFO - Validating ...
+[12:02:00] INFO - ====== Epoch 03 Vali loss 0.0115
+[12:02:00] INFO - Validating IOU 5063/5449 = 0.929161
+[12:02:00] INFO - >>> save model: epoch_03_iou_0.9292
+[12:02:00] INFO - Beginning Epoch 04, lr=0.001
+[12:08:11] INFO - ====== Epoch 04 train loss 0.0124
+[12:08:11] INFO - Validating ...
+[12:11:55] INFO - ====== Epoch 04 Vali loss 0.0111
+[12:11:55] INFO - Validating IOU 5111/5449 = 0.937970
+[12:11:55] INFO - >>> save model: epoch_04_iou_0.9380
+[12:11:55] INFO - Beginning Epoch 05, lr=0.0008
+[12:18:07] INFO - ====== Epoch 05 train loss 0.0121
+[12:18:07] INFO - Validating ...
+[12:21:52] INFO - ====== Epoch 05 Vali loss 0.0110
+[12:21:52] INFO - Validating IOU 5091/5449 = 0.934300
+[12:21:52] INFO - Beginning Epoch 06, lr=0.0008
+[12:28:02] INFO - ====== Epoch 06 train loss 0.0118
+[12:28:02] INFO - Validating ...
+[12:31:51] INFO - ====== Epoch 06 Vali loss 0.0110
+[12:31:51] INFO - Validating IOU 5051/5449 = 0.926959
+[12:31:51] INFO - Beginning Epoch 07, lr=0.0008
+[12:38:01] INFO - ====== Epoch 07 train loss 0.0117
+[12:38:01] INFO - Validating ...
+[12:41:45] INFO - ====== Epoch 07 Vali loss 0.0107
+[12:41:45] INFO - Validating IOU 5086/5449 = 0.933382
+[12:41:45] INFO - Beginning Epoch 08, lr=0.0008
+[12:47:58] INFO - ====== Epoch 08 train loss 0.0115
+[12:47:58] INFO - Validating ...
+[12:51:43] INFO - ====== Epoch 08 Vali loss 0.0105
+[12:51:43] INFO - Validating IOU 5089/5449 = 0.933933
+[12:51:43] INFO - Beginning Epoch 09, lr=0.0008
+[12:57:55] INFO - ====== Epoch 09 train loss 0.0114
+[12:57:55] INFO - Validating ...
+[13:01:42] INFO - ====== Epoch 09 Vali loss 0.0105
+[13:01:42] INFO - Validating IOU 5101/5449 = 0.936135
+[13:01:42] INFO - Beginning Epoch 10, lr=0.0008
+[13:07:54] INFO - ====== Epoch 10 train loss 0.0113
+[13:07:54] INFO - Validating ...
+[13:11:41] INFO - ====== Epoch 10 Vali loss 0.0104
+[13:11:41] INFO - Validating IOU 5097/5449 = 0.935401
+[13:11:41] INFO - >>> save model: epoch_10_iou_0.9354
+[13:11:41] INFO - Beginning Epoch 11, lr=0.0008
+[13:17:51] INFO - ====== Epoch 11 train loss 0.0112
+[13:17:51] INFO - Validating ...

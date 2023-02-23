@@ -36,7 +36,7 @@ def parse_args():
                         help='Use RGB image for training (1/0)')
     parser.add_argument('--use-dropout', type=int, default=1,
                         help='Use dropout for training (1/0)')
-    parser.add_argument('--dropout-prob', type=float, default=0.1,
+    parser.add_argument('--dropout-prob', type=float, default=0.2,
                         help='Dropout prob for training (0-1)')
     parser.add_argument('--channel-size', type=int, default=32,
                         help='Internal channel size for the network')
@@ -55,9 +55,9 @@ def parse_args():
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
     parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
                         help='Dataset gaussian progress 0.0 means not use gauss')
-    parser.add_argument('--datarotate', type=bool, default=False,
+    parser.add_argument('--datarotate', type=bool, default=True,
                         help='Threshold albation for evaluation, need more time')
-    parser.add_argument('--datazoom', type=bool, default=False,
+    parser.add_argument('--datazoom', type=bool, default=True,
                         help='Threshold albation for evaluation, need more time')
 
     # /media/lab/ChainGOAT/Jacquard
@@ -74,7 +74,7 @@ def parse_args():
                         help='Shuffle the dataset')
     parser.add_argument('--ds-rotate', type=float, default=0.0,
                         help='Shift the start point of the dataset to use a different test/train split')
-    parser.add_argument('--num-workers', type=int, default=16,
+    parser.add_argument('--num-workers', type=int, default=18,
                         help='Dataset workers')
 
     # Training
@@ -84,8 +84,8 @@ def parse_args():
     parser.add_argument('--optim', type=str, default='ranger',
                         help='Optmizer for the training. (adam or SGD)')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
-    parser.add_argument('--schedu-milestone', type=int, default=[500,1500,2500,3500], help='学习率tiaozheng stone')
-    parser.add_argument('--schedu-gamma', type=float, default=0.5, help='学习率 hsuaijian xishu ')
+    parser.add_argument('--schedu-milestone', type=int, default=[5,15,25,35], help='学习率tiaozheng stone')
+    parser.add_argument('--schedu-gamma', type=float, default=0.8, help='学习率 hsuaijian xishu ')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
 
     parser.add_argument('--epochs', type=int, default=60,
@@ -99,9 +99,9 @@ def parse_args():
     
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_pan_d_bili_mish_ca32_drop1_bina',
+    parser.add_argument('--description', type=str, default='dwc1_drop2',
                         help='Training description')
-    parser.add_argument('--logdir', type=str, default='logs/jacquard_dwc_pan',
+    parser.add_argument('--logdir', type=str, default='logs/jacquard_ftn',
                         help='Log directory')
     parser.add_argument('--vis', action='store_true',
                         help='Visualise the training process')
@@ -145,47 +145,50 @@ def validate(net, device, val_data, iou_multi=False,posloss=True):
     ld = len(val_data)
 
     with torch.no_grad():
-        for x, y, didx, rot, zoom_factor in tqdm.tqdm(val_data):
-            xc = x.to(device)
-            yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc,pos_loss=posloss)
+        with tqdm.tqdm(total=val_data.__len__(),ncols=50,colour='blue') as pb:
+            for x, y, didx, rot, zoom_factor in val_data:
+                xc = x.to(device)
+                yc = [yy.to(device) for yy in y]
+                lossd = net.compute_loss(xc, yc,pos_loss=posloss)
 
-            loss = lossd['loss']
+                loss = lossd['loss']
 
-            results['loss'] += loss.item() / ld
-            for ln, l in lossd['losses'].items():
-                if ln not in results['losses']:
-                    results['losses'][ln] = 0
-                results['losses'][ln] += l.item() / ld
+                results['loss'] += loss.item() / ld
+                for ln, l in lossd['losses'].items():
+                    if ln not in results['losses']:
+                        results['losses'][ln] = 0
+                    results['losses'][ln] += l.item() / ld
 
-            q_out, ang_out, w_out = post_process_output(lossd['pred']['pos'], lossd['pred']['cos'],
-                                                        lossd['pred']['sin'], lossd['pred']['width'])
+                q_out, ang_out, w_out = post_process_output(lossd['pred']['pos'], lossd['pred']['cos'],
+                                                            lossd['pred']['sin'], lossd['pred']['width'])
 
 
-            if iou_multi:
-                iou_results = evaluation.calculate_iou_match_multi(q_out,
-                                                ang_out,
-                                                val_data.dataset.get_gtbb(didx, rot, zoom_factor),
-                                                no_grasps=1,
-                                                grasp_width=w_out
-                                                )
+                if iou_multi:
+                    iou_results = evaluation.calculate_iou_match_multi(q_out,
+                                                    ang_out,
+                                                    val_data.dataset.get_gtbb(didx, rot, zoom_factor),
+                                                    no_grasps=1,
+                                                    grasp_width=w_out
+                                                    )
 
-                for iou in iou_results:
-                    if iou_results[iou] == True:
-                        results['correct'][iou] +=1
-                    else :
-                        results['failed'][iou] +=1
-            else :
-                s = evaluation.calculate_iou_match(q_out, ang_out,
-                                                val_data.dataset.get_gtbb(didx, rot, zoom_factor),
-                                                no_grasps=1,
-                                                grasp_width=w_out,
-                                                )
+                    for iou in iou_results:
+                        if iou_results[iou] == True:
+                            results['correct'][iou] +=1
+                        else :
+                            results['failed'][iou] +=1
+                else :
+                    s = evaluation.calculate_iou_match(q_out, ang_out,
+                                                    val_data.dataset.get_gtbb(didx, rot, zoom_factor),
+                                                    no_grasps=1,
+                                                    grasp_width=w_out,
+                                                    )
 
-                if s:
-                    results['correct']['th25'] += 1
-                else:
-                    results['failed']['th25'] += 1
+                    if s:
+                        results['correct']['th25'] += 1
+                    else:
+                        results['failed']['th25'] += 1
+                pb.set_postfix(loss='{:0.4f}'.format(loss.item()))
+                pb.update(1)
 
     return results
 
@@ -212,44 +215,47 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
 
     batch_idx = 0
     # Use batches per epoch to make training on different sized datasets (cornell/jacquard) more equivalent.
-    while batch_idx <= batches_per_epoch:
-        for x, y, _, _, _ in train_data:
-            batch_idx += 1
-            if batch_idx >= batches_per_epoch:
-                break
+    with tqdm.tqdm(total=batches_per_epoch,ncols=50,colour='yellow') as pb:
+        while batch_idx <= batches_per_epoch:
+            for x, y, _, _, _ in train_data:
+                batch_idx += 1
+                if batch_idx >= batches_per_epoch:
+                    break
 
-            xc = x.to(device)
-            yc = [yy.to(device) for yy in y]
-            lossd = net.compute_loss(xc, yc,pos_loss=posloss)
+                xc = x.to(device)
+                yc = [yy.to(device) for yy in y]
+                lossd = net.compute_loss(xc, yc,pos_loss=posloss)
 
-            loss = lossd['loss']
+                loss = lossd['loss']
 
-            if batch_idx % 100 == 0:
-                logging.info('Epoch: {}, Batch: {}, Loss: {:0.4f}'.format(epoch, batch_idx, loss.item()))
+                # if batch_idx % 100 == 0:
+                #     logging.info('Epoch: {}, Batch: {}, Loss: {:0.4f}'.format(epoch, batch_idx, loss.item()))
 
-            results['loss'] += loss.item()
-            for ln, l in lossd['losses'].items():
-                if ln not in results['losses']:
-                    results['losses'][ln] = 0
-                results['losses'][ln] += l.item()
+                results['loss'] += loss.item()
+                for ln, l in lossd['losses'].items():
+                    if ln not in results['losses']:
+                        results['losses'][ln] = 0
+                    results['losses'][ln] += l.item()
 
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
 
-            # Display the images
-            if vis:
-                imgs = []
-                n_img = min(4, x.shape[0])
-                for idx in range(n_img):
-                    imgs.extend([x[idx,].numpy().squeeze()] + [yi[idx,].numpy().squeeze() for yi in y] + [
-                        x[idx,].numpy().squeeze()] + [pc[idx,].detach().cpu().numpy().squeeze() for pc in
-                                                      lossd['pred'].values()])
-                gridshow('Display', imgs,
-                         [(xc.min().item(), xc.max().item()), (0.0, 1.0), (0.0, 1.0), (-1.0, 1.0),
-                          (0.0, 1.0)] * 2 * n_img,
-                         [cv2.COLORMAP_BONE] * 10 * n_img, 10)
-                cv2.waitKey(2)
+                # Display the images
+                if vis:
+                    imgs = []
+                    n_img = min(4, x.shape[0])
+                    for idx in range(n_img):
+                        imgs.extend([x[idx,].numpy().squeeze()] + [yi[idx,].numpy().squeeze() for yi in y] + [
+                            x[idx,].numpy().squeeze()] + [pc[idx,].detach().cpu().numpy().squeeze() for pc in
+                                                        lossd['pred'].values()])
+                    gridshow('Display', imgs,
+                            [(xc.min().item(), xc.max().item()), (0.0, 1.0), (0.0, 1.0), (-1.0, 1.0),
+                            (0.0, 1.0)] * 2 * n_img,
+                            [cv2.COLORMAP_BONE] * 10 * n_img, 10)
+                    cv2.waitKey(2)
+                pb.update(1)
+                pb.set_postfix(loss='{:0.4f}'.format(loss.item()))
 
     results['loss'] /= batch_idx
     for l in results['losses']:
@@ -405,7 +411,8 @@ def run():
         scheduler.step()
     for epoch in range(args.epochs)[start_epoch:]:
         logging.info('Beginning Epoch {:02d}, lr={}'.format(epoch, optimizer.state_dict()['param_groups'][0]['lr']))
-        train_results = train(epoch, net, device, train_data, optimizer, args.batches_per_epoch, vis=args.vis,posloss=args.posloss)
+        train_results = train(epoch, net, device, train_data, optimizer, train_data.__len__(), vis=args.vis,posloss=args.posloss)
+        logging.info("====== Epoch {:02d} train loss {:0.4f} ========".format(epoch,train_results['loss']))
         scheduler.step()
         # Log training losses to tensorboard
         tb.add_scalar('loss/train_loss', train_results['loss'], epoch)
@@ -415,12 +422,13 @@ def run():
         # Run Validation
         logging.info('Validating ...')
         test_results = validate(net, device, val_data,  iou_multi=args.iou_abla,posloss=args.posloss)
+        logging.info("====== Epoch {:02d} Vali loss {:0.4f} ========".format(epoch,test_results['loss']))
         if args.iou_abla:
             for result in test_results['correct']:
-                logging.info('Jacquard index %s  %d/%d = %f' % (result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
+                logging.info('+++++ Epoch %d Jacquard index %s  %d/%d = %f' % (epoch,result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
                                         test_results['correct'][result] / (test_results['correct'][result] + test_results['failed'][result])))
         else :
-            logging.info('Validating IOU %d/%d = %f' % (test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
+            logging.info('+++++Epoch %d Validating IOU %d/%d = %f' % (epoch,test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
                                      test_results['correct']['th25']/(test_results['correct']['th25']+test_results['failed']['th25'])))
         # Log validation results to tensorbaord
         tb.add_scalar('loss/IOU', test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25']), epoch)
@@ -431,7 +439,7 @@ def run():
         # Save best performing network
         iou = test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25'])
         if iou > best_iou or epoch == 0 or (epoch % 10) == 0:
-            logging.info('>>> save model: epoch_%02d_iou_%0.4f' % (epoch, iou))
+            logging.info('>>>>>>>>>> save model: epoch_%02d_iou_%0.4f' % (epoch, iou))
             torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             best_iou = iou
 

@@ -1,9 +1,0 @@
-[21:49:14] INFO - CUDA detected. Running with GPU acceleration.
-[21:49:14] INFO - Loading Jacquard Dataset...
-[21:49:15] INFO - Dataset len is 54485
-[21:49:15] INFO - Training size: 49036
-[21:49:15] INFO - Validation size: 5449
-[21:49:15] INFO - Done
-[21:49:15] INFO - Loading Network...
-[21:49:15] INFO - input channel is 1
-[21:49:15] INFO - Done from zero model
