@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 import torch
-
+from inference.models.duc import DenseUpsamplingConvolution
 class Mish(nn.Module):
     def __init__(self):
         super(Mish, self).__init__()
@@ -13,7 +13,23 @@ class Mish(nn.Module):
 def mish(x):
     return x*(torch.tanh(F.softplus(x)))
 
-
+def _make_upconv(in_channels, out_channels, upscale_factor = 2,upsample_type = 'use_bilinear'):
+    if upsample_type == 'use_duc':
+        print('duc')
+        return DenseUpsamplingConvolution(in_channels, out_channels, upscale_factor = upscale_factor)
+    elif upsample_type == 'use_convt':
+        print('use_convt')
+        return nn.Sequential(
+            nn.ConvTranspose2d(in_channels, out_channels, kernel_size = upscale_factor * 2 , stride = upscale_factor, padding = 1, output_padding = 0)
+        )
+    elif upsample_type == 'use_bilinear':
+        print('use_bilinear')
+        return nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
+    elif upsample_type == 'use_nearest':
+        print('use_nearest')
+        return nn.Upsample(scale_factor=2, mode='nearest', align_corners=True)
+    else :
+        print('upsample_type error , please check!!!!')
 #---------------------------------------------------#
 #   SPP结构，利用不同大小的池化核进行池化
 #   池化后堆叠

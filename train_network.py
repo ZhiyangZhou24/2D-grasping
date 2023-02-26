@@ -36,13 +36,13 @@ def parse_args():
                         help='Use RGB image for training (1/0)')
     parser.add_argument('--use-dropout', type=int, default=1,
                         help='Use dropout for training (1/0)')
-    parser.add_argument('--dropout-prob', type=float, default=0.2,
+    parser.add_argument('--dropout-prob', type=float, default=0.1,
                         help='Dropout prob for training (0-1)')
     parser.add_argument('--channel-size', type=int, default=32,
                         help='Internal channel size for the network')
     parser.add_argument('--iou-threshold', type=float, default=0.25,
                         help='Threshold for IOU matching')
-    parser.add_argument('--iou-abla', type=bool, default=False,
+    parser.add_argument('--iou-abla', type=bool, default=True,
                         help='Threshold albation for evaluation, need more time')
     
     parser.add_argument('--use-mish', type=bool, default=True,
@@ -50,10 +50,10 @@ def parse_args():
     parser.add_argument('--posloss', type=bool, default=True,
                         help='(  True  False  )')
     parser.add_argument('--upsamp', type=str, default='use_bilinear',
-                        help='Use upsamp type (  use_duc  use_convt use_bilinear  )')
+                        help='Use upsamp type (  use_duc  use_convt use_bilinear use_nearest  )')
     parser.add_argument('--att', type=str, default='use_coora',
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
-    parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
+    parser.add_argument('--use_gauss_kernel', type=float, default= 2.0,
                         help='Dataset gaussian progress 0.0 means not use gauss')
     parser.add_argument('--datarotate', type=bool, default=True,
                         help='Threshold albation for evaluation, need more time')
@@ -84,8 +84,8 @@ def parse_args():
     parser.add_argument('--optim', type=str, default='ranger',
                         help='Optmizer for the training. (adam or SGD)')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
-    parser.add_argument('--schedu-milestone', type=int, default=[5,15,25,35], help='学习率tiaozheng stone')
-    parser.add_argument('--schedu-gamma', type=float, default=0.8, help='学习率 hsuaijian xishu ')
+    parser.add_argument('--schedu-milestone', type=int, default=[500,1500,2500,3500], help='学习率tiaozheng stone')
+    parser.add_argument('--schedu-gamma', type=float, default=0.5, help='学习率 hsuaijian xishu ')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
 
     parser.add_argument('--epochs', type=int, default=60,
@@ -99,7 +99,7 @@ def parse_args():
     
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_drop2',
+    parser.add_argument('--description', type=str, default='dwc1_drop1_ga2',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_ftn',
                         help='Log directory')
@@ -145,7 +145,7 @@ def validate(net, device, val_data, iou_multi=False,posloss=True):
     ld = len(val_data)
 
     with torch.no_grad():
-        with tqdm.tqdm(total=val_data.__len__(),ncols=50,colour='blue') as pb:
+        with tqdm.tqdm(total=val_data.__len__(),ncols=70,colour='blue') as pb:
             for x, y, didx, rot, zoom_factor in val_data:
                 xc = x.to(device)
                 yc = [yy.to(device) for yy in y]
@@ -215,11 +215,11 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
 
     batch_idx = 0
     # Use batches per epoch to make training on different sized datasets (cornell/jacquard) more equivalent.
-    with tqdm.tqdm(total=batches_per_epoch,ncols=50,colour='yellow') as pb:
+    with tqdm.tqdm(total=batches_per_epoch,ncols=70,colour='yellow') as pb:
         while batch_idx <= batches_per_epoch:
             for x, y, _, _, _ in train_data:
                 batch_idx += 1
-                if batch_idx >= batches_per_epoch:
+                if batch_idx > batches_per_epoch:
                     break
 
                 xc = x.to(device)
@@ -410,7 +410,7 @@ def run():
     for _ in range(start_epoch):
         scheduler.step()
     for epoch in range(args.epochs)[start_epoch:]:
-        logging.info('Beginning Epoch {:02d}, lr={}'.format(epoch, optimizer.state_dict()['param_groups'][0]['lr']))
+        logging.info('=================Beginning Epoch {:02d}, lr={}==============='.format(epoch, optimizer.state_dict()['param_groups'][0]['lr']))
         train_results = train(epoch, net, device, train_data, optimizer, train_data.__len__(), vis=args.vis,posloss=args.posloss)
         logging.info("====== Epoch {:02d} train loss {:0.4f} ========".format(epoch,train_results['loss']))
         scheduler.step()
@@ -428,7 +428,7 @@ def run():
                 logging.info('+++++ Epoch %d Jacquard index %s  %d/%d = %f' % (epoch,result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
                                         test_results['correct'][result] / (test_results['correct'][result] + test_results['failed'][result])))
         else :
-            logging.info('+++++Epoch %d Validating IOU %d/%d = %f' % (epoch,test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
+            logging.info('+++++ Epoch %d Validating IOU %d/%d = %f' % (epoch,test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
                                      test_results['correct']['th25']/(test_results['correct']['th25']+test_results['failed']['th25'])))
         # Log validation results to tensorbaord
         tb.add_scalar('loss/IOU', test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25']), epoch)

@@ -76,5 +76,11 @@ def get_network(network_name):
     elif network_name == 'grconvnet3_imp_dwc1_pan_ori':
         from .grconvnet3_imp_dwc1_pan_ori import GenerativeResnet
         return GenerativeResnet
+    elif network_name == 'grconvnet3_imp_dwc1_c2f':
+        from .grconvnet3_imp_dwc1_c2f import GenerativeResnet
+        return GenerativeResnet
+    elif network_name == 'grconvnet3_imp_dwc1_new':
+        from .grconvnet3_imp_dwc1_new import GenerativeResnet
+        return GenerativeResnet
     else:
         raise NotImplementedError('Network grconvnet3_imp_dwc1_pan_ori {} is not implemented'.format(network_name)) 

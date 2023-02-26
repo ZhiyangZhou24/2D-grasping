@@ -189,7 +189,7 @@ sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
 if __name__ == '__main__':
     model = GenerativeResnet()
     model.eval()
-    input = torch.rand(1, 1, 224, 224)
-    summary(model, (1, 224, 224),device='cpu')
+    input = torch.rand(1, 1, 320, 320)
+    summary(model, (1, 320, 320),device='cpu')
     sys.stdout = sys.__stdout__
     output = model(input)

@@ -111,13 +111,14 @@ def calculate_iou_match_multi(grasp_q, grasp_angle, ground_truth_bbs, no_grasps=
         gt_bbs = ground_truth_bbs
     gs = detect_grasps(grasp_q, grasp_angle, width_img=grasp_width, no_grasps=no_grasps)
     for g in gs:
-        if g.max_iou(gt_bbs) > 0.25:
+        max_iou = g.max_iou(gt_bbs)
+        if max_iou > 0.25:
             results_iou['th25'] = True
-        if g.max_iou(gt_bbs) > 0.30:
+        if max_iou > 0.30:
             results_iou['th30'] = True
-        if g.max_iou(gt_bbs) > 0.35:
+        if max_iou > 0.35:
             results_iou['th35'] = True
-        if g.max_iou(gt_bbs) > 0.40:
+        if max_iou > 0.40:
             results_iou['th40'] = True
     
     return results_iou

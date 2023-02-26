@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from torch.nn.parameter import Parameter
 import sys
 sys.path.append('/home/lab/zzy/grasp/2D-grasping-my')
-from inference.models.pico_det import CSPLayer, DepthwiseSeparable,ConvBNLayer
+from inference.models.pico_det import CSPLayer, DepthwiseSeparable,ConvBNLayer,C2f
 from inference.models.grasp_model import GraspModel
 from inference.models.attention import CoordAtt
 from inference.models.duc import DenseUpsamplingConvolution
@@ -12,12 +12,15 @@ from torchsummary import summary
 
 
 class up(nn.Module):
-    def __init__(self, in_ch, out_ch, upsample_type,num_blocks=2,act="leaky_relu"):
+    def __init__(self, in_ch, out_ch, upsample_type,c2f = True, num_blocks=2,act="leaky_relu"):
         super(up, self).__init__()
         self.upsample_type = upsample_type
         self.up = self._make_upconv(out_ch, out_ch, upscale_factor = 2)
 
-        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,act=act,use_depthwise=False)
+        if c2f:
+            self.conv = C2f(in_ch,out_ch,n=num_blocks)
+        else :
+            self.conv = CSPLayer(in_ch, out_ch,num_blocks=num_blocks, kernel_size=3,act=act,use_depthwise=False)
         
     def _make_upconv(self, in_channels, out_channels, upscale_factor = 2):
         if self.upsample_type == 'use_duc':
@@ -41,7 +44,7 @@ class up(nn.Module):
         
         x = torch.cat([x2, x1], dim=1)
         
-        x = self.CSPconv(x)
+        x = self.conv(x)
 
         x = self.up(x)
 

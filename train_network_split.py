@@ -26,7 +26,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train network')
 
     # Network
-    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc1',
+    parser.add_argument('--network', type=str, default='grconvnet3_imp_dwc1_pan_ori',
                         help='Network name in inference/models  grconvnet')
     parser.add_argument('--input-size', type=int, default=320,
                         help='Input image size for the network')
@@ -42,7 +42,7 @@ def parse_args():
                         help='Internal channel size for the network')
     parser.add_argument('--iou-threshold', type=float, default=0.25,
                         help='Threshold for IOU matching')
-    parser.add_argument('--iou-abla', type=bool, default=False,
+    parser.add_argument('--iou-abla', type=bool, default=True,
                         help='Threshold albation for evaluation, need more time')
     
     parser.add_argument('--use-mish', type=bool, default=True,
@@ -53,12 +53,18 @@ def parse_args():
                         help='Use upsamp type (  use_duc  use_convt use_bilinear  )')
     parser.add_argument('--att', type=str, default='use_coora',
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
-    parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
+    parser.add_argument('--use_gauss_kernel', type=float, default= 2.0,
                         help='Dataset gaussian progress 0.0 means not use gauss')
-    parser.add_argument('--datarotate', type=bool, default=True,
+    
+    parser.add_argument('--train_rotate', type=bool, default=True,
                         help='Threshold albation for evaluation, need more time')
-    parser.add_argument('--datazoom', type=bool, default=True,
+    parser.add_argument('--train_zoom', type=bool, default=False,
                         help='Threshold albation for evaluation, need more time')
+    parser.add_argument('--vali_rotate', type=bool, default=True,
+                        help='Threshold albation for evaluation, need more time')
+    parser.add_argument('--vali_zoom', type=bool, default=False,
+                        help='Threshold albation for evaluation, need more time')
+
 
     # /media/lab/ChainGOAT/Jacquard
     # /media/lab/e/zzy/datasets/Cornell
@@ -99,9 +105,9 @@ def parse_args():
     
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_ms5_wd0_ga0',
+    parser.add_argument('--description', type=str, default='224dwc1_pan_ori_ga2',
                         help='Training description')
-    parser.add_argument('--logdir', type=str, default='logs/jacquard_ftn',
+    parser.add_argument('--logdir', type=str, default='logs/split_jacquard_ftn',
                         help='Log directory')
     parser.add_argument('--vis', action='store_true',
                         help='Visualise the training process')
@@ -143,9 +149,8 @@ def validate(net, device, val_data, iou_multi=False,posloss=True):
     }
 
     ld = len(val_data)
-
     with torch.no_grad():
-        with tqdm.tqdm(total=val_data.__len__(),ncols=80) as pb:
+        with tqdm.tqdm(total=val_data.__len__(),ncols=70,colour='blue') as pb:
             for x, y, didx, rot, zoom_factor in val_data:
                 xc = x.to(device)
                 yc = [yy.to(device) for yy in y]
@@ -215,18 +220,21 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
 
     batch_idx = 0
     # Use batches per epoch to make training on different sized datasets (cornell/jacquard) more equivalent.
-    while batch_idx <= batches_per_epoch:
-        with tqdm.tqdm(total=batches_per_epoch,ncols=80) as t:
+    with tqdm.tqdm(total=batches_per_epoch,ncols=70,colour='yellow') as pb:
+        while batch_idx <= batches_per_epoch:
             for x, y, _, _, _ in train_data:
                 batch_idx += 1
-                if batch_idx >= batches_per_epoch:
+                if batch_idx > batches_per_epoch:
                     break
-                
+
                 xc = x.to(device)
                 yc = [yy.to(device) for yy in y]
                 lossd = net.compute_loss(xc, yc,pos_loss=posloss)
 
                 loss = lossd['loss']
+
+                # if batch_idx % 100 == 0:
+                #     logging.info('Epoch: {}, Batch: {}, Loss: {:0.4f}'.format(epoch, batch_idx, loss.item()))
 
                 results['loss'] += loss.item()
                 for ln, l in lossd['losses'].items():
@@ -245,16 +253,14 @@ def train(epoch, net, device, train_data, optimizer, batches_per_epoch, vis=Fals
                     for idx in range(n_img):
                         imgs.extend([x[idx,].numpy().squeeze()] + [yi[idx,].numpy().squeeze() for yi in y] + [
                             x[idx,].numpy().squeeze()] + [pc[idx,].detach().cpu().numpy().squeeze() for pc in
-                                                            lossd['pred'].values()])
+                                                        lossd['pred'].values()])
                     gridshow('Display', imgs,
-                                [(xc.min().item(), xc.max().item()), (0.0, 1.0), (0.0, 1.0), (-1.0, 1.0),
-                                (0.0, 1.0)] * 2 * n_img,
-                                [cv2.COLORMAP_BONE] * 10 * n_img, 10)
+                            [(xc.min().item(), xc.max().item()), (0.0, 1.0), (0.0, 1.0), (-1.0, 1.0),
+                            (0.0, 1.0)] * 2 * n_img,
+                            [cv2.COLORMAP_BONE] * 10 * n_img, 10)
                     cv2.waitKey(2)
-                
-                t.update(1)
-                t.set_postfix(loss='{:0.4f}'.format(loss.item()))
-
+                pb.update(1)
+                pb.set_postfix(loss='{:0.4f}'.format(loss.item()))
     results['loss'] /= batch_idx
     for l in results['losses']:
         results['losses'][l] /= batch_idx
@@ -307,8 +313,8 @@ def run():
                       output_size=args.input_size,
                       ds_rotate=args.ds_rotate,
                       alfa=1,
-                      random_rotate=args.datarotate,
-                      random_zoom=args.datazoom,
+                      random_rotate=args.train_rotate,
+                      random_zoom=args.train_zoom,
                       start=0.0, 
                       end=args.split,
                       include_depth=args.use_depth,
@@ -319,8 +325,8 @@ def run():
                       output_size=args.input_size,
                       ds_rotate=args.ds_rotate,
                       alfa=1,
-                      random_rotate=True,
-                      random_zoom=True,
+                      random_rotate=args.vali_rotate,
+                      random_zoom=args.vali_zoom,
                       start=args.split, 
                       end=1,
                       include_depth=args.use_depth,
@@ -404,9 +410,9 @@ def run():
     for _ in range(start_epoch):
         scheduler.step()
     for epoch in range(args.epochs)[start_epoch:]:
-        logging.info('Beginning Epoch {:02d}, lr={}'.format(epoch, optimizer.state_dict()['param_groups'][0]['lr']))
-        train_results = train(epoch, net, device, train_data, optimizer,train_data.__len__(), vis=args.vis,posloss=args.posloss)  #train_data.__len__()
-        logging.info("Epoch {:02d} train loss {:0.4f}".format(epoch,train_results['loss']))
+        logging.info('=================Beginning Epoch {:02d}, lr={}==============='.format(epoch, optimizer.state_dict()['param_groups'][0]['lr']))
+        train_results = train(epoch, net, device, train_data, optimizer, train_data.__len__(), vis=args.vis,posloss=args.posloss)
+        logging.info("====== Epoch {:02d} train loss {:0.4f} ========".format(epoch,train_results['loss']))
         scheduler.step()
         # Log training losses to tensorboard
         tb.add_scalar('loss/train_loss', train_results['loss'], epoch)
@@ -415,14 +421,14 @@ def run():
 
         # Run Validation
         logging.info('Validating ...')
-        test_results = validate(net, device, val_data, iou_multi=args.iou_abla,posloss=args.posloss)
-        logging.info("Epoch {:02d} Vali loss {:0.4f}".format(epoch,test_results['loss']))
+        test_results = validate(net, device, val_data,  iou_multi=args.iou_abla,posloss=args.posloss)
+        logging.info("====== Epoch {:02d} Vali loss {:0.4f} ========".format(epoch,test_results['loss']))
         if args.iou_abla:
             for result in test_results['correct']:
-                logging.info('Jacquard index %s  %d/%d = %f' % (result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
+                logging.info('+++++ Epoch %d Jacquard index %s  %d/%d = %f' % (epoch,result,test_results['correct'][result], test_results['correct'][result] + test_results['failed'][result],
                                         test_results['correct'][result] / (test_results['correct'][result] + test_results['failed'][result])))
         else :
-            logging.info('Validating IOU %d/%d = %f' % (test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
+            logging.info('+++++ Epoch %d Validating IOU %d/%d = %f' % (epoch,test_results['correct']['th25'], test_results['correct']['th25'] + test_results['failed']['th25'],
                                      test_results['correct']['th25']/(test_results['correct']['th25']+test_results['failed']['th25'])))
         # Log validation results to tensorbaord
         tb.add_scalar('loss/IOU', test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25']), epoch)
@@ -433,7 +439,7 @@ def run():
         # Save best performing network
         iou = test_results['correct']['th25'] / (test_results['correct']['th25'] + test_results['failed']['th25'])
         if iou > best_iou or epoch == 0 or (epoch % 10) == 0:
-            logging.info('>>> save model: epoch_%02d_iou_%0.4f' % (epoch, iou))
+            logging.info('>>>>>>>>>> save model: epoch_%02d_iou_%0.4f' % (epoch, iou))
             torch.save(net, os.path.join(save_folder, 'epoch_%02d_iou_%0.4f' % (epoch, iou)))
             best_iou = iou
 

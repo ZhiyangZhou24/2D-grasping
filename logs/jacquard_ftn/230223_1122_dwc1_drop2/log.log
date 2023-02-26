@@ -73,3 +73,42 @@
 [13:11:41] INFO - Beginning Epoch 11, lr=0.0008
 [13:17:51] INFO - ====== Epoch 11 train loss 0.0112
 [13:17:51] INFO - Validating ...
+[13:21:36] INFO - ====== Epoch 11 Vali loss 0.0103
+[13:21:36] INFO - Validating IOU 5140/5449 = 0.943292
+[13:21:36] INFO - >>> save model: epoch_11_iou_0.9433
+[13:21:36] INFO - Beginning Epoch 12, lr=0.0008
+[13:27:48] INFO - ====== Epoch 12 train loss 0.0112
+[13:27:48] INFO - Validating ...
+[13:31:31] INFO - ====== Epoch 12 Vali loss 0.0103
+[13:31:31] INFO - Validating IOU 5110/5449 = 0.937787
+[13:31:31] INFO - Beginning Epoch 13, lr=0.0008
+[13:37:41] INFO - ====== Epoch 13 train loss 0.0111
+[13:37:41] INFO - Validating ...
+[13:41:27] INFO - ====== Epoch 13 Vali loss 0.0103
+[13:41:27] INFO - Validating IOU 5120/5449 = 0.939622
+[13:41:27] INFO - Beginning Epoch 14, lr=0.0008
+[13:47:38] INFO - ====== Epoch 14 train loss 0.0110
+[13:47:38] INFO - Validating ...
+[13:51:21] INFO - ====== Epoch 14 Vali loss 0.0103
+[13:51:21] INFO - Validating IOU 5112/5449 = 0.938154
+[13:51:21] INFO - Beginning Epoch 15, lr=0.00064
+[13:57:33] INFO - ====== Epoch 15 train loss 0.0110
+[13:57:33] INFO - Validating ...
+[14:01:16] INFO - ====== Epoch 15 Vali loss 0.0104
+[14:01:16] INFO - Validating IOU 5075/5449 = 0.931364
+[14:01:16] INFO - Beginning Epoch 16, lr=0.00064
+[14:07:26] INFO - ====== Epoch 16 train loss 0.0109
+[14:07:26] INFO - Validating ...
+[14:11:10] INFO - ====== Epoch 16 Vali loss 0.0100
+[14:11:10] INFO - Validating IOU 5116/5449 = 0.938888
+[14:11:10] INFO - Beginning Epoch 17, lr=0.00064
+[14:17:22] INFO - ====== Epoch 17 train loss 0.0109
+[14:17:22] INFO - Validating ...
+[14:21:05] INFO - ====== Epoch 17 Vali loss 0.0101
+[14:21:05] INFO - Validating IOU 5122/5449 = 0.939989
+[14:21:05] INFO - Beginning Epoch 18, lr=0.00064
+[14:27:18] INFO - ====== Epoch 18 train loss 0.0108
+[14:27:18] INFO - Validating ...
+[14:31:02] INFO - ====== Epoch 18 Vali loss 0.0100
+[14:31:02] INFO - Validating IOU 5077/5449 = 0.931731
+[14:31:02] INFO - Beginning Epoch 19, lr=0.00064

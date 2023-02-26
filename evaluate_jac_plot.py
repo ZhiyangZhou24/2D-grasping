@@ -12,7 +12,7 @@ from inference.post_process import post_process_output
 from utils.data import get_dataset
 from utils.dataset_processing import evaluation, grasp
 from utils.visualisation.plot import save_results
-
+import tqdm
 logging.basicConfig(level=logging.INFO)
 
 
@@ -34,13 +34,13 @@ def parse_args():
                         help='Use Depth image for evaluation (1/0)')
     parser.add_argument('--use-rgb', type=int, default=0,
                         help='Use RGB image for evaluation (1/0)')
-    parser.add_argument('--augment', action='store_true',
+    parser.add_argument('--augment', type=bool,default=True,
                         help='Whether data augmentation should be applied')
-    parser.add_argument('--split', type=float, default=0.999,
+    parser.add_argument('--split', type=float, default=0.9,
                         help='Fraction of data for training (remainder is validation)')
     parser.add_argument('--ds-shuffle', action='store_true', default=False,
                         help='Shuffle the dataset')
-    parser.add_argument('--ds-rotate', type=float, default=0.5,
+    parser.add_argument('--ds-rotate', type=float, default=0.0,
                         help='Shift the start point of the dataset to use a different test/train split')
     parser.add_argument('--save_type', type=str, default='comp',
                         help='type of savd pics:    comp   all')
@@ -91,28 +91,21 @@ if __name__ == '__main__':
     test_dataset = Dataset(args.dataset_path,
                            output_size=args.input_size,
                            ds_rotate=args.ds_rotate,
-                           random_rotate=args.augment,
-                           random_zoom=args.augment,
+                           random_rotate=False,
+                           random_zoom=True,
+                           start=args.split, 
+                           end=1,
                            include_depth=args.use_depth,
                            include_rgb=args.use_rgb)
-
-    indices = list(range(test_dataset.length))
-    split = int(np.floor(args.split * test_dataset.length))
-    if args.ds_shuffle:
-        np.random.seed(args.random_seed)
-        np.random.shuffle(indices)
-    val_indices = indices[split:]
-    val_sampler = torch.utils.data.sampler.SequentialSampler(val_indices)
-    logging.info('Validation size: {}'.format(len(val_indices)))
-
+    
     test_data = torch.utils.data.DataLoader(
         test_dataset,
         batch_size=1,
         num_workers=args.num_workers,
-        sampler=val_sampler
+        shuffle=True
     )
     logging.info('Done')
-
+    logging.info('Validation size: {}'.format(test_dataset.length))
     if args.save:
         logging.info('save_type: {}'.format(args.save_type))
         logging.info('model_type: {}'.format(args.model_type))
@@ -137,7 +130,7 @@ if __name__ == '__main__':
 
         start_time = time.time()
         with torch.no_grad():
-            for idx, (x, y, didx, rot, zoom) in enumerate(test_data):
+            for idx, (x, y, didx, rot, zoom) in tqdm.tqdm(enumerate(test_data)):
                 xc = x.to(device)
                 yc = [yi.to(device) for yi in y]
                 lossd = net.compute_loss(xc, yc)

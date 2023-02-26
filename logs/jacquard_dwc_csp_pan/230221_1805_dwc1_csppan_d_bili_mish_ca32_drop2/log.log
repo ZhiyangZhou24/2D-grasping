@@ -1,7 +1,0 @@
-[18:05:51] INFO - CUDA detected. Running with GPU acceleration.
-[18:05:51] INFO - Loading Jacquard Dataset...
-[18:05:52] INFO - Training size: 54485
-[18:05:52] INFO - Validation size: 54485
-[18:05:52] INFO - Done
-[18:05:52] INFO - Loading Network...
-[18:05:52] INFO - input channel is 1

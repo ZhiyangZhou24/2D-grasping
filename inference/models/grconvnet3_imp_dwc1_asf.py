@@ -46,6 +46,25 @@ class up(nn.Module):
         x = self.up(x)
 
         return x
+    
+class asf_module(nn.Module):
+    def __init__(self, in_ch, out_ch,inter_type = 'nearest'):
+        super(asf_module, self).__init__()
+        self.inter_type = inter_type
+        assert self.inter_type in ['nearest', "bilinear"]
+        self.spatial_attention_conv = nn.Sequential(
+            nn.Conv2d(in_ch, out_ch, 1), 
+            nn.Mish(), 
+            nn.Conv2d(out_ch,out_ch, 3))
+        
+
+    def forward(self, x1, x2 ,x3):  #small middle big
+        x1 = F.interpolate(x1, x3.size()[-2:],mode=self.inter_type, align_corners=True)
+        x2 = F.interpolate(x2, x3.size()[-2:],mode=self.inter_type, align_corners=True)
+        concat = torch.cat([x3,x2,x1], dim=1)  # inch h w
+        concat = self.spatial_attention_conv(concat)
+
+        return x1
 
 class GenerativeResnet(GraspModel):
 
@@ -112,7 +131,7 @@ class GenerativeResnet(GraspModel):
         
         
     def forward(self, x_in):
-        dbg=0
+        dbg=1
         if dbg == 1:
             print('x_in.shape  {}'.format(x_in.shape))
         stem = self.stem(x_in)
