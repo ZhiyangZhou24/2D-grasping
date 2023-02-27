@@ -1,0 +1,709 @@
+[17:23:55] INFO - CUDA detected. Running with GPU acceleration.
+[17:23:55] INFO - Loading Cornell Dataset...
+[17:23:55] INFO - alfaed Dataset len is 3540
+[17:23:55] INFO - Training size: 2832
+[17:23:55] INFO - Validation size: 708
+[17:23:55] INFO - Done
+[17:23:55] INFO - Loading Network...
+[17:23:55] INFO - input channel is 1
+[17:23:55] INFO - Done from zero model
+[17:23:57] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [5, 15, 25, 35] || Gamma: 0.5
+[17:23:57] INFO - Dataset size 885   ||rotate :True   || zoom :True      || ds_shuffle True || ds_rotate 0.0
+[17:23:57] INFO - =================Beginning Epoch 00, lr=0.001===============
+[17:25:51] INFO - ====== Epoch 00 train loss 0.0839 ========
+[17:25:51] INFO - Validating ...
+[17:26:01] INFO - ====== Epoch 00 Vali loss 0.0374 ========
+[17:26:01] INFO - +++++ Epoch 0 Jacquard index th25  572/708 = 0.807910
+[17:26:01] INFO - +++++ Epoch 0 Jacquard index th30  529/708 = 0.747175
+[17:26:01] INFO - +++++ Epoch 0 Jacquard index th35  465/708 = 0.656780
+[17:26:01] INFO - +++++ Epoch 0 Jacquard index th40  396/708 = 0.559322
+[17:26:01] INFO - >>>>>>>>>> save model: epoch_00_iou_0.8079
+[17:26:01] INFO - =================Beginning Epoch 01, lr=0.001===============
+[17:27:55] INFO - ====== Epoch 01 train loss 0.0373 ========
+[17:27:55] INFO - Validating ...
+[17:28:04] INFO - ====== Epoch 01 Vali loss 0.0305 ========
+[17:28:04] INFO - +++++ Epoch 1 Jacquard index th25  604/708 = 0.853107
+[17:28:04] INFO - +++++ Epoch 1 Jacquard index th30  567/708 = 0.800847
+[17:28:04] INFO - +++++ Epoch 1 Jacquard index th35  521/708 = 0.735876
+[17:28:04] INFO - +++++ Epoch 1 Jacquard index th40  458/708 = 0.646893
+[17:28:04] INFO - >>>>>>>>>> save model: epoch_01_iou_0.8531
+[17:28:04] INFO - =================Beginning Epoch 02, lr=0.001===============
+[17:29:59] INFO - ====== Epoch 02 train loss 0.0313 ========
+[17:29:59] INFO - Validating ...
+[17:30:08] INFO - ====== Epoch 02 Vali loss 0.0273 ========
+[17:30:08] INFO - +++++ Epoch 2 Jacquard index th25  615/708 = 0.868644
+[17:30:08] INFO - +++++ Epoch 2 Jacquard index th30  583/708 = 0.823446
+[17:30:08] INFO - +++++ Epoch 2 Jacquard index th35  520/708 = 0.734463
+[17:30:08] INFO - +++++ Epoch 2 Jacquard index th40  470/708 = 0.663842
+[17:30:08] INFO - >>>>>>>>>> save model: epoch_02_iou_0.8686
+[17:30:08] INFO - =================Beginning Epoch 03, lr=0.001===============
+[17:32:02] INFO - ====== Epoch 03 train loss 0.0276 ========
+[17:32:02] INFO - Validating ...
+[17:32:12] INFO - ====== Epoch 03 Vali loss 0.0252 ========
+[17:32:12] INFO - +++++ Epoch 3 Jacquard index th25  653/708 = 0.922316
+[17:32:12] INFO - +++++ Epoch 3 Jacquard index th30  625/708 = 0.882768
+[17:32:12] INFO - +++++ Epoch 3 Jacquard index th35  584/708 = 0.824859
+[17:32:12] INFO - +++++ Epoch 3 Jacquard index th40  532/708 = 0.751412
+[17:32:12] INFO - >>>>>>>>>> save model: epoch_03_iou_0.9223
+[17:32:12] INFO - =================Beginning Epoch 04, lr=0.001===============
+[17:34:05] INFO - ====== Epoch 04 train loss 0.0243 ========
+[17:34:05] INFO - Validating ...
+[17:34:15] INFO - ====== Epoch 04 Vali loss 0.0238 ========
+[17:34:15] INFO - +++++ Epoch 4 Jacquard index th25  654/708 = 0.923729
+[17:34:15] INFO - +++++ Epoch 4 Jacquard index th30  626/708 = 0.884181
+[17:34:15] INFO - +++++ Epoch 4 Jacquard index th35  567/708 = 0.800847
+[17:34:15] INFO - +++++ Epoch 4 Jacquard index th40  505/708 = 0.713277
+[17:34:15] INFO - >>>>>>>>>> save model: epoch_04_iou_0.9237
+[17:34:15] INFO - =================Beginning Epoch 05, lr=0.0005===============
+[17:36:09] INFO - ====== Epoch 05 train loss 0.0213 ========
+[17:36:09] INFO - Validating ...
+[17:36:18] INFO - ====== Epoch 05 Vali loss 0.0202 ========
+[17:36:18] INFO - +++++ Epoch 5 Jacquard index th25  667/708 = 0.942090
+[17:36:18] INFO - +++++ Epoch 5 Jacquard index th30  645/708 = 0.911017
+[17:36:18] INFO - +++++ Epoch 5 Jacquard index th35  595/708 = 0.840395
+[17:36:18] INFO - +++++ Epoch 5 Jacquard index th40  518/708 = 0.731638
+[17:36:18] INFO - >>>>>>>>>> save model: epoch_05_iou_0.9421
+[17:36:18] INFO - =================Beginning Epoch 06, lr=0.0005===============
+[17:38:12] INFO - ====== Epoch 06 train loss 0.0199 ========
+[17:38:12] INFO - Validating ...
+[17:38:22] INFO - ====== Epoch 06 Vali loss 0.0192 ========
+[17:38:22] INFO - +++++ Epoch 6 Jacquard index th25  678/708 = 0.957627
+[17:38:22] INFO - +++++ Epoch 6 Jacquard index th30  651/708 = 0.919492
+[17:38:22] INFO - +++++ Epoch 6 Jacquard index th35  596/708 = 0.841808
+[17:38:22] INFO - +++++ Epoch 6 Jacquard index th40  531/708 = 0.750000
+[17:38:22] INFO - >>>>>>>>>> save model: epoch_06_iou_0.9576
+[17:38:22] INFO - =================Beginning Epoch 07, lr=0.0005===============
+[17:40:16] INFO - ====== Epoch 07 train loss 0.0186 ========
+[17:40:16] INFO - Validating ...
+[17:40:25] INFO - ====== Epoch 07 Vali loss 0.0185 ========
+[17:40:25] INFO - +++++ Epoch 7 Jacquard index th25  668/708 = 0.943503
+[17:40:25] INFO - +++++ Epoch 7 Jacquard index th30  637/708 = 0.899718
+[17:40:25] INFO - +++++ Epoch 7 Jacquard index th35  580/708 = 0.819209
+[17:40:25] INFO - +++++ Epoch 7 Jacquard index th40  511/708 = 0.721751
+[17:40:25] INFO - =================Beginning Epoch 08, lr=0.0005===============
+[17:42:20] INFO - ====== Epoch 08 train loss 0.0175 ========
+[17:42:20] INFO - Validating ...
+[17:42:29] INFO - ====== Epoch 08 Vali loss 0.0175 ========
+[17:42:29] INFO - +++++ Epoch 8 Jacquard index th25  680/708 = 0.960452
+[17:42:29] INFO - +++++ Epoch 8 Jacquard index th30  656/708 = 0.926554
+[17:42:29] INFO - +++++ Epoch 8 Jacquard index th35  616/708 = 0.870056
+[17:42:29] INFO - +++++ Epoch 8 Jacquard index th40  547/708 = 0.772599
+[17:42:29] INFO - >>>>>>>>>> save model: epoch_08_iou_0.9605
+[17:42:29] INFO - =================Beginning Epoch 09, lr=0.0005===============
+[17:44:23] INFO - ====== Epoch 09 train loss 0.0168 ========
+[17:44:23] INFO - Validating ...
+[17:44:33] INFO - ====== Epoch 09 Vali loss 0.0161 ========
+[17:44:33] INFO - +++++ Epoch 9 Jacquard index th25  673/708 = 0.950565
+[17:44:33] INFO - +++++ Epoch 9 Jacquard index th30  654/708 = 0.923729
+[17:44:33] INFO - +++++ Epoch 9 Jacquard index th35  609/708 = 0.860169
+[17:44:33] INFO - +++++ Epoch 9 Jacquard index th40  520/708 = 0.734463
+[17:44:33] INFO - =================Beginning Epoch 10, lr=0.0005===============
+[17:46:27] INFO - ====== Epoch 10 train loss 0.0160 ========
+[17:46:27] INFO - Validating ...
+[17:46:37] INFO - ====== Epoch 10 Vali loss 0.0158 ========
+[17:46:37] INFO - +++++ Epoch 10 Jacquard index th25  682/708 = 0.963277
+[17:46:37] INFO - +++++ Epoch 10 Jacquard index th30  656/708 = 0.926554
+[17:46:37] INFO - +++++ Epoch 10 Jacquard index th35  610/708 = 0.861582
+[17:46:37] INFO - +++++ Epoch 10 Jacquard index th40  538/708 = 0.759887
+[17:46:37] INFO - >>>>>>>>>> save model: epoch_10_iou_0.9633
+[17:46:37] INFO - =================Beginning Epoch 11, lr=0.0005===============
+[17:48:30] INFO - ====== Epoch 11 train loss 0.0153 ========
+[17:48:30] INFO - Validating ...
+[17:48:40] INFO - ====== Epoch 11 Vali loss 0.0156 ========
+[17:48:40] INFO - +++++ Epoch 11 Jacquard index th25  681/708 = 0.961864
+[17:48:40] INFO - +++++ Epoch 11 Jacquard index th30  662/708 = 0.935028
+[17:48:40] INFO - +++++ Epoch 11 Jacquard index th35  606/708 = 0.855932
+[17:48:40] INFO - +++++ Epoch 11 Jacquard index th40  532/708 = 0.751412
+[17:48:40] INFO - =================Beginning Epoch 12, lr=0.0005===============
+[17:50:34] INFO - ====== Epoch 12 train loss 0.0147 ========
+[17:50:34] INFO - Validating ...
+[17:50:44] INFO - ====== Epoch 12 Vali loss 0.0143 ========
+[17:50:44] INFO - +++++ Epoch 12 Jacquard index th25  686/708 = 0.968927
+[17:50:44] INFO - +++++ Epoch 12 Jacquard index th30  662/708 = 0.935028
+[17:50:44] INFO - +++++ Epoch 12 Jacquard index th35  623/708 = 0.879944
+[17:50:44] INFO - +++++ Epoch 12 Jacquard index th40  552/708 = 0.779661
+[17:50:44] INFO - >>>>>>>>>> save model: epoch_12_iou_0.9689
+[17:50:44] INFO - =================Beginning Epoch 13, lr=0.0005===============
+[17:52:38] INFO - ====== Epoch 13 train loss 0.0141 ========
+[17:52:38] INFO - Validating ...
+[17:52:47] INFO - ====== Epoch 13 Vali loss 0.0145 ========
+[17:52:47] INFO - +++++ Epoch 13 Jacquard index th25  685/708 = 0.967514
+[17:52:47] INFO - +++++ Epoch 13 Jacquard index th30  671/708 = 0.947740
+[17:52:47] INFO - +++++ Epoch 13 Jacquard index th35  634/708 = 0.895480
+[17:52:47] INFO - +++++ Epoch 13 Jacquard index th40  561/708 = 0.792373
+[17:52:47] INFO - =================Beginning Epoch 14, lr=0.0005===============
+[17:54:41] INFO - ====== Epoch 14 train loss 0.0137 ========
+[17:54:41] INFO - Validating ...
+[17:54:51] INFO - ====== Epoch 14 Vali loss 0.0135 ========
+[17:54:51] INFO - +++++ Epoch 14 Jacquard index th25  686/708 = 0.968927
+[17:54:51] INFO - +++++ Epoch 14 Jacquard index th30  671/708 = 0.947740
+[17:54:51] INFO - +++++ Epoch 14 Jacquard index th35  629/708 = 0.888418
+[17:54:51] INFO - +++++ Epoch 14 Jacquard index th40  575/708 = 0.812147
+[17:54:51] INFO - =================Beginning Epoch 15, lr=0.00025===============
+[17:56:45] INFO - ====== Epoch 15 train loss 0.0127 ========
+[17:56:45] INFO - Validating ...
+[17:56:54] INFO - ====== Epoch 15 Vali loss 0.0129 ========
+[17:56:54] INFO - +++++ Epoch 15 Jacquard index th25  696/708 = 0.983051
+[17:56:54] INFO - +++++ Epoch 15 Jacquard index th30  677/708 = 0.956215
+[17:56:54] INFO - +++++ Epoch 15 Jacquard index th35  632/708 = 0.892655
+[17:56:54] INFO - +++++ Epoch 15 Jacquard index th40  548/708 = 0.774011
+[17:56:54] INFO - >>>>>>>>>> save model: epoch_15_iou_0.9831
+[17:56:54] INFO - =================Beginning Epoch 16, lr=0.00025===============
+[17:58:48] INFO - ====== Epoch 16 train loss 0.0123 ========
+[17:58:48] INFO - Validating ...
+[17:58:57] INFO - ====== Epoch 16 Vali loss 0.0121 ========
+[17:58:57] INFO - +++++ Epoch 16 Jacquard index th25  695/708 = 0.981638
+[17:58:57] INFO - +++++ Epoch 16 Jacquard index th30  680/708 = 0.960452
+[17:58:57] INFO - +++++ Epoch 16 Jacquard index th35  634/708 = 0.895480
+[17:58:57] INFO - +++++ Epoch 16 Jacquard index th40  556/708 = 0.785311
+[17:58:57] INFO - =================Beginning Epoch 17, lr=0.00025===============
+[18:00:51] INFO - ====== Epoch 17 train loss 0.0121 ========
+[18:00:51] INFO - Validating ...
+[18:01:01] INFO - ====== Epoch 17 Vali loss 0.0119 ========
+[18:01:01] INFO - +++++ Epoch 17 Jacquard index th25  688/708 = 0.971751
+[18:01:01] INFO - +++++ Epoch 17 Jacquard index th30  664/708 = 0.937853
+[18:01:01] INFO - +++++ Epoch 17 Jacquard index th35  609/708 = 0.860169
+[18:01:01] INFO - +++++ Epoch 17 Jacquard index th40  550/708 = 0.776836
+[18:01:01] INFO - =================Beginning Epoch 18, lr=0.00025===============
+[18:02:55] INFO - ====== Epoch 18 train loss 0.0118 ========
+[18:02:55] INFO - Validating ...
+[18:03:04] INFO - ====== Epoch 18 Vali loss 0.0126 ========
+[18:03:04] INFO - +++++ Epoch 18 Jacquard index th25  689/708 = 0.973164
+[18:03:04] INFO - +++++ Epoch 18 Jacquard index th30  672/708 = 0.949153
+[18:03:04] INFO - +++++ Epoch 18 Jacquard index th35  635/708 = 0.896893
+[18:03:04] INFO - +++++ Epoch 18 Jacquard index th40  578/708 = 0.816384
+[18:03:04] INFO - =================Beginning Epoch 19, lr=0.00025===============
+[18:04:58] INFO - ====== Epoch 19 train loss 0.0117 ========
+[18:04:58] INFO - Validating ...
+[18:05:07] INFO - ====== Epoch 19 Vali loss 0.0119 ========
+[18:05:07] INFO - +++++ Epoch 19 Jacquard index th25  687/708 = 0.970339
+[18:05:07] INFO - +++++ Epoch 19 Jacquard index th30  672/708 = 0.949153
+[18:05:07] INFO - +++++ Epoch 19 Jacquard index th35  629/708 = 0.888418
+[18:05:07] INFO - +++++ Epoch 19 Jacquard index th40  578/708 = 0.816384
+[18:05:07] INFO - =================Beginning Epoch 20, lr=0.00025===============
+[18:07:02] INFO - ====== Epoch 20 train loss 0.0115 ========
+[18:07:02] INFO - Validating ...
+[18:07:11] INFO - ====== Epoch 20 Vali loss 0.0117 ========
+[18:07:11] INFO - +++++ Epoch 20 Jacquard index th25  696/708 = 0.983051
+[18:07:11] INFO - +++++ Epoch 20 Jacquard index th30  691/708 = 0.975989
+[18:07:11] INFO - +++++ Epoch 20 Jacquard index th35  649/708 = 0.916667
+[18:07:11] INFO - +++++ Epoch 20 Jacquard index th40  583/708 = 0.823446
+[18:07:11] INFO - >>>>>>>>>> save model: epoch_20_iou_0.9831
+[18:07:11] INFO - =================Beginning Epoch 21, lr=0.00025===============
+[18:09:05] INFO - ====== Epoch 21 train loss 0.0113 ========
+[18:09:05] INFO - Validating ...
+[18:09:15] INFO - ====== Epoch 21 Vali loss 0.0110 ========
+[18:09:15] INFO - +++++ Epoch 21 Jacquard index th25  691/708 = 0.975989
+[18:09:15] INFO - +++++ Epoch 21 Jacquard index th30  675/708 = 0.953390
+[18:09:15] INFO - +++++ Epoch 21 Jacquard index th35  639/708 = 0.902542
+[18:09:15] INFO - +++++ Epoch 21 Jacquard index th40  589/708 = 0.831921
+[18:09:15] INFO - =================Beginning Epoch 22, lr=0.00025===============
+[18:11:09] INFO - ====== Epoch 22 train loss 0.0111 ========
+[18:11:09] INFO - Validating ...
+[18:11:19] INFO - ====== Epoch 22 Vali loss 0.0113 ========
+[18:11:19] INFO - +++++ Epoch 22 Jacquard index th25  693/708 = 0.978814
+[18:11:19] INFO - +++++ Epoch 22 Jacquard index th30  671/708 = 0.947740
+[18:11:19] INFO - +++++ Epoch 22 Jacquard index th35  642/708 = 0.906780
+[18:11:19] INFO - +++++ Epoch 22 Jacquard index th40  572/708 = 0.807910
+[18:11:19] INFO - =================Beginning Epoch 23, lr=0.00025===============
+[18:13:12] INFO - ====== Epoch 23 train loss 0.0110 ========
+[18:13:12] INFO - Validating ...
+[18:13:22] INFO - ====== Epoch 23 Vali loss 0.0113 ========
+[18:13:22] INFO - +++++ Epoch 23 Jacquard index th25  680/708 = 0.960452
+[18:13:22] INFO - +++++ Epoch 23 Jacquard index th30  669/708 = 0.944915
+[18:13:22] INFO - +++++ Epoch 23 Jacquard index th35  633/708 = 0.894068
+[18:13:22] INFO - +++++ Epoch 23 Jacquard index th40  576/708 = 0.813559
+[18:13:22] INFO - =================Beginning Epoch 24, lr=0.00025===============
+[18:15:16] INFO - ====== Epoch 24 train loss 0.0108 ========
+[18:15:16] INFO - Validating ...
+[18:15:26] INFO - ====== Epoch 24 Vali loss 0.0111 ========
+[18:15:26] INFO - +++++ Epoch 24 Jacquard index th25  692/708 = 0.977401
+[18:15:26] INFO - +++++ Epoch 24 Jacquard index th30  673/708 = 0.950565
+[18:15:26] INFO - +++++ Epoch 24 Jacquard index th35  640/708 = 0.903955
+[18:15:26] INFO - +++++ Epoch 24 Jacquard index th40  588/708 = 0.830508
+[18:15:26] INFO - =================Beginning Epoch 25, lr=0.000125===============
+[18:17:20] INFO - ====== Epoch 25 train loss 0.0104 ========
+[18:17:20] INFO - Validating ...
+[18:17:30] INFO - ====== Epoch 25 Vali loss 0.0105 ========
+[18:17:30] INFO - +++++ Epoch 25 Jacquard index th25  692/708 = 0.977401
+[18:17:30] INFO - +++++ Epoch 25 Jacquard index th30  680/708 = 0.960452
+[18:17:30] INFO - +++++ Epoch 25 Jacquard index th35  645/708 = 0.911017
+[18:17:30] INFO - +++++ Epoch 25 Jacquard index th40  577/708 = 0.814972
+[18:17:30] INFO - =================Beginning Epoch 26, lr=0.000125===============
+[18:19:24] INFO - ====== Epoch 26 train loss 0.0102 ========
+[18:19:24] INFO - Validating ...
+[18:19:33] INFO - ====== Epoch 26 Vali loss 0.0108 ========
+[18:19:33] INFO - +++++ Epoch 26 Jacquard index th25  691/708 = 0.975989
+[18:19:33] INFO - +++++ Epoch 26 Jacquard index th30  675/708 = 0.953390
+[18:19:33] INFO - +++++ Epoch 26 Jacquard index th35  636/708 = 0.898305
+[18:19:33] INFO - +++++ Epoch 26 Jacquard index th40  576/708 = 0.813559
+[18:19:33] INFO - =================Beginning Epoch 27, lr=0.000125===============
+[18:21:27] INFO - ====== Epoch 27 train loss 0.0102 ========
+[18:21:27] INFO - Validating ...
+[18:21:36] INFO - ====== Epoch 27 Vali loss 0.0101 ========
+[18:21:36] INFO - +++++ Epoch 27 Jacquard index th25  691/708 = 0.975989
+[18:21:36] INFO - +++++ Epoch 27 Jacquard index th30  674/708 = 0.951977
+[18:21:36] INFO - +++++ Epoch 27 Jacquard index th35  636/708 = 0.898305
+[18:21:36] INFO - +++++ Epoch 27 Jacquard index th40  577/708 = 0.814972
+[18:21:36] INFO - =================Beginning Epoch 28, lr=0.000125===============
+[18:23:30] INFO - ====== Epoch 28 train loss 0.0101 ========
+[18:23:30] INFO - Validating ...
+[18:23:40] INFO - ====== Epoch 28 Vali loss 0.0100 ========
+[18:23:40] INFO - +++++ Epoch 28 Jacquard index th25  699/708 = 0.987288
+[18:23:40] INFO - +++++ Epoch 28 Jacquard index th30  684/708 = 0.966102
+[18:23:40] INFO - +++++ Epoch 28 Jacquard index th35  643/708 = 0.908192
+[18:23:40] INFO - +++++ Epoch 28 Jacquard index th40  577/708 = 0.814972
+[18:23:40] INFO - >>>>>>>>>> save model: epoch_28_iou_0.9873
+[18:23:40] INFO - =================Beginning Epoch 29, lr=0.000125===============
+[18:25:34] INFO - ====== Epoch 29 train loss 0.0100 ========
+[18:25:34] INFO - Validating ...
+[18:25:43] INFO - ====== Epoch 29 Vali loss 0.0104 ========
+[18:25:43] INFO - +++++ Epoch 29 Jacquard index th25  684/708 = 0.966102
+[18:25:43] INFO - +++++ Epoch 29 Jacquard index th30  665/708 = 0.939266
+[18:25:43] INFO - +++++ Epoch 29 Jacquard index th35  629/708 = 0.888418
+[18:25:43] INFO - +++++ Epoch 29 Jacquard index th40  580/708 = 0.819209
+[18:25:43] INFO - =================Beginning Epoch 30, lr=0.000125===============
+[18:27:37] INFO - ====== Epoch 30 train loss 0.0100 ========
+[18:27:37] INFO - Validating ...
+[18:27:47] INFO - ====== Epoch 30 Vali loss 0.0101 ========
+[18:27:47] INFO - +++++ Epoch 30 Jacquard index th25  689/708 = 0.973164
+[18:27:47] INFO - +++++ Epoch 30 Jacquard index th30  676/708 = 0.954802
+[18:27:47] INFO - +++++ Epoch 30 Jacquard index th35  646/708 = 0.912429
+[18:27:47] INFO - +++++ Epoch 30 Jacquard index th40  567/708 = 0.800847
+[18:27:47] INFO - >>>>>>>>>> save model: epoch_30_iou_0.9732
+[18:27:47] INFO - =================Beginning Epoch 31, lr=0.000125===============
+[18:29:41] INFO - ====== Epoch 31 train loss 0.0099 ========
+[18:29:41] INFO - Validating ...
+[18:29:51] INFO - ====== Epoch 31 Vali loss 0.0101 ========
+[18:29:51] INFO - +++++ Epoch 31 Jacquard index th25  693/708 = 0.978814
+[18:29:51] INFO - +++++ Epoch 31 Jacquard index th30  680/708 = 0.960452
+[18:29:51] INFO - +++++ Epoch 31 Jacquard index th35  639/708 = 0.902542
+[18:29:51] INFO - +++++ Epoch 31 Jacquard index th40  569/708 = 0.803672
+[18:29:51] INFO - >>>>>>>>>> save model: epoch_31_iou_0.9788
+[18:29:51] INFO - =================Beginning Epoch 32, lr=0.000125===============
+[18:31:45] INFO - ====== Epoch 32 train loss 0.0098 ========
+[18:31:45] INFO - Validating ...
+[18:31:55] INFO - ====== Epoch 32 Vali loss 0.0102 ========
+[18:31:55] INFO - +++++ Epoch 32 Jacquard index th25  696/708 = 0.983051
+[18:31:55] INFO - +++++ Epoch 32 Jacquard index th30  687/708 = 0.970339
+[18:31:55] INFO - +++++ Epoch 32 Jacquard index th35  654/708 = 0.923729
+[18:31:55] INFO - +++++ Epoch 32 Jacquard index th40  583/708 = 0.823446
+[18:31:55] INFO - >>>>>>>>>> save model: epoch_32_iou_0.9831
+[18:31:55] INFO - =================Beginning Epoch 33, lr=0.000125===============
+[18:33:49] INFO - ====== Epoch 33 train loss 0.0097 ========
+[18:33:49] INFO - Validating ...
+[18:33:58] INFO - ====== Epoch 33 Vali loss 0.0099 ========
+[18:33:58] INFO - +++++ Epoch 33 Jacquard index th25  686/708 = 0.968927
+[18:33:58] INFO - +++++ Epoch 33 Jacquard index th30  672/708 = 0.949153
+[18:33:58] INFO - +++++ Epoch 33 Jacquard index th35  644/708 = 0.909605
+[18:33:58] INFO - +++++ Epoch 33 Jacquard index th40  579/708 = 0.817797
+[18:33:58] INFO - =================Beginning Epoch 34, lr=0.000125===============
+[18:35:52] INFO - ====== Epoch 34 train loss 0.0097 ========
+[18:35:52] INFO - Validating ...
+[18:36:02] INFO - ====== Epoch 34 Vali loss 0.0100 ========
+[18:36:02] INFO - +++++ Epoch 34 Jacquard index th25  689/708 = 0.973164
+[18:36:02] INFO - +++++ Epoch 34 Jacquard index th30  676/708 = 0.954802
+[18:36:02] INFO - +++++ Epoch 34 Jacquard index th35  641/708 = 0.905367
+[18:36:02] INFO - +++++ Epoch 34 Jacquard index th40  587/708 = 0.829096
+[18:36:02] INFO - =================Beginning Epoch 35, lr=6.25e-05===============
+[18:37:56] INFO - ====== Epoch 35 train loss 0.0095 ========
+[18:37:56] INFO - Validating ...
+[18:38:05] INFO - ====== Epoch 35 Vali loss 0.0097 ========
+[18:38:05] INFO - +++++ Epoch 35 Jacquard index th25  694/708 = 0.980226
+[18:38:05] INFO - +++++ Epoch 35 Jacquard index th30  679/708 = 0.959040
+[18:38:05] INFO - +++++ Epoch 35 Jacquard index th35  648/708 = 0.915254
+[18:38:05] INFO - +++++ Epoch 35 Jacquard index th40  572/708 = 0.807910
+[18:38:05] INFO - =================Beginning Epoch 36, lr=6.25e-05===============
+[18:40:00] INFO - ====== Epoch 36 train loss 0.0095 ========
+[18:40:00] INFO - Validating ...
+[18:40:09] INFO - ====== Epoch 36 Vali loss 0.0097 ========
+[18:40:09] INFO - +++++ Epoch 36 Jacquard index th25  693/708 = 0.978814
+[18:40:09] INFO - +++++ Epoch 36 Jacquard index th30  676/708 = 0.954802
+[18:40:09] INFO - +++++ Epoch 36 Jacquard index th35  645/708 = 0.911017
+[18:40:09] INFO - +++++ Epoch 36 Jacquard index th40  600/708 = 0.847458
+[18:40:09] INFO - =================Beginning Epoch 37, lr=6.25e-05===============
+[18:42:04] INFO - ====== Epoch 37 train loss 0.0094 ========
+[18:42:04] INFO - Validating ...
+[18:42:13] INFO - ====== Epoch 37 Vali loss 0.0098 ========
+[18:42:13] INFO - +++++ Epoch 37 Jacquard index th25  690/708 = 0.974576
+[18:42:13] INFO - +++++ Epoch 37 Jacquard index th30  675/708 = 0.953390
+[18:42:13] INFO - +++++ Epoch 37 Jacquard index th35  644/708 = 0.909605
+[18:42:13] INFO - +++++ Epoch 37 Jacquard index th40  570/708 = 0.805085
+[18:42:13] INFO - =================Beginning Epoch 38, lr=6.25e-05===============
+[18:44:07] INFO - ====== Epoch 38 train loss 0.0093 ========
+[18:44:07] INFO - Validating ...
+[18:44:17] INFO - ====== Epoch 38 Vali loss 0.0093 ========
+[18:44:17] INFO - +++++ Epoch 38 Jacquard index th25  694/708 = 0.980226
+[18:44:17] INFO - +++++ Epoch 38 Jacquard index th30  673/708 = 0.950565
+[18:44:17] INFO - +++++ Epoch 38 Jacquard index th35  637/708 = 0.899718
+[18:44:17] INFO - +++++ Epoch 38 Jacquard index th40  568/708 = 0.802260
+[18:44:17] INFO - =================Beginning Epoch 39, lr=6.25e-05===============
+[18:46:11] INFO - ====== Epoch 39 train loss 0.0094 ========
+[18:46:11] INFO - Validating ...
+[18:46:21] INFO - ====== Epoch 39 Vali loss 0.0098 ========
+[18:46:21] INFO - +++++ Epoch 39 Jacquard index th25  694/708 = 0.980226
+[18:46:21] INFO - +++++ Epoch 39 Jacquard index th30  685/708 = 0.967514
+[18:46:21] INFO - +++++ Epoch 39 Jacquard index th35  640/708 = 0.903955
+[18:46:21] INFO - +++++ Epoch 39 Jacquard index th40  573/708 = 0.809322
+[18:46:21] INFO - =================Beginning Epoch 40, lr=6.25e-05===============
+[18:48:15] INFO - ====== Epoch 40 train loss 0.0093 ========
+[18:48:15] INFO - Validating ...
+[18:48:24] INFO - ====== Epoch 40 Vali loss 0.0093 ========
+[18:48:24] INFO - +++++ Epoch 40 Jacquard index th25  694/708 = 0.980226
+[18:48:24] INFO - +++++ Epoch 40 Jacquard index th30  682/708 = 0.963277
+[18:48:24] INFO - +++++ Epoch 40 Jacquard index th35  657/708 = 0.927966
+[18:48:24] INFO - +++++ Epoch 40 Jacquard index th40  599/708 = 0.846045
+[18:48:24] INFO - >>>>>>>>>> save model: epoch_40_iou_0.9802
+[18:48:24] INFO - =================Beginning Epoch 41, lr=6.25e-05===============
+[18:50:19] INFO - ====== Epoch 41 train loss 0.0093 ========
+[18:50:19] INFO - Validating ...
+[18:50:29] INFO - ====== Epoch 41 Vali loss 0.0092 ========
+[18:50:29] INFO - +++++ Epoch 41 Jacquard index th25  692/708 = 0.977401
+[18:50:29] INFO - +++++ Epoch 41 Jacquard index th30  678/708 = 0.957627
+[18:50:29] INFO - +++++ Epoch 41 Jacquard index th35  643/708 = 0.908192
+[18:50:29] INFO - +++++ Epoch 41 Jacquard index th40  567/708 = 0.800847
+[18:50:29] INFO - =================Beginning Epoch 42, lr=6.25e-05===============
+[18:52:22] INFO - ====== Epoch 42 train loss 0.0092 ========
+[18:52:22] INFO - Validating ...
+[18:52:32] INFO - ====== Epoch 42 Vali loss 0.0092 ========
+[18:52:32] INFO - +++++ Epoch 42 Jacquard index th25  696/708 = 0.983051
+[18:52:32] INFO - +++++ Epoch 42 Jacquard index th30  683/708 = 0.964689
+[18:52:32] INFO - +++++ Epoch 42 Jacquard index th35  655/708 = 0.925141
+[18:52:32] INFO - +++++ Epoch 42 Jacquard index th40  579/708 = 0.817797
+[18:52:32] INFO - >>>>>>>>>> save model: epoch_42_iou_0.9831
+[18:52:32] INFO - =================Beginning Epoch 43, lr=6.25e-05===============
+[18:54:26] INFO - ====== Epoch 43 train loss 0.0092 ========
+[18:54:26] INFO - Validating ...
+[18:54:36] INFO - ====== Epoch 43 Vali loss 0.0094 ========
+[18:54:36] INFO - +++++ Epoch 43 Jacquard index th25  690/708 = 0.974576
+[18:54:36] INFO - +++++ Epoch 43 Jacquard index th30  676/708 = 0.954802
+[18:54:36] INFO - +++++ Epoch 43 Jacquard index th35  639/708 = 0.902542
+[18:54:36] INFO - +++++ Epoch 43 Jacquard index th40  567/708 = 0.800847
+[18:54:36] INFO - =================Beginning Epoch 44, lr=6.25e-05===============
+[18:56:30] INFO - ====== Epoch 44 train loss 0.0092 ========
+[18:56:30] INFO - Validating ...
+[18:56:39] INFO - ====== Epoch 44 Vali loss 0.0094 ========
+[18:56:39] INFO - +++++ Epoch 44 Jacquard index th25  693/708 = 0.978814
+[18:56:39] INFO - +++++ Epoch 44 Jacquard index th30  680/708 = 0.960452
+[18:56:39] INFO - +++++ Epoch 44 Jacquard index th35  648/708 = 0.915254
+[18:56:39] INFO - +++++ Epoch 44 Jacquard index th40  586/708 = 0.827684
+[18:56:39] INFO - =================Beginning Epoch 45, lr=6.25e-05===============
+[18:58:34] INFO - ====== Epoch 45 train loss 0.0091 ========
+[18:58:34] INFO - Validating ...
+[18:58:43] INFO - ====== Epoch 45 Vali loss 0.0093 ========
+[18:58:43] INFO - +++++ Epoch 45 Jacquard index th25  691/708 = 0.975989
+[18:58:43] INFO - +++++ Epoch 45 Jacquard index th30  680/708 = 0.960452
+[18:58:43] INFO - +++++ Epoch 45 Jacquard index th35  648/708 = 0.915254
+[18:58:43] INFO - +++++ Epoch 45 Jacquard index th40  592/708 = 0.836158
+[18:58:43] INFO - =================Beginning Epoch 46, lr=6.25e-05===============
+[19:00:38] INFO - ====== Epoch 46 train loss 0.0091 ========
+[19:00:38] INFO - Validating ...
+[19:00:47] INFO - ====== Epoch 46 Vali loss 0.0095 ========
+[19:00:47] INFO - +++++ Epoch 46 Jacquard index th25  688/708 = 0.971751
+[19:00:47] INFO - +++++ Epoch 46 Jacquard index th30  673/708 = 0.950565
+[19:00:47] INFO - +++++ Epoch 46 Jacquard index th35  638/708 = 0.901130
+[19:00:47] INFO - +++++ Epoch 46 Jacquard index th40  574/708 = 0.810734
+[19:00:47] INFO - =================Beginning Epoch 47, lr=6.25e-05===============
+[19:02:42] INFO - ====== Epoch 47 train loss 0.0090 ========
+[19:02:42] INFO - Validating ...
+[19:02:51] INFO - ====== Epoch 47 Vali loss 0.0092 ========
+[19:02:51] INFO - +++++ Epoch 47 Jacquard index th25  695/708 = 0.981638
+[19:02:51] INFO - +++++ Epoch 47 Jacquard index th30  681/708 = 0.961864
+[19:02:51] INFO - +++++ Epoch 47 Jacquard index th35  650/708 = 0.918079
+[19:02:51] INFO - +++++ Epoch 47 Jacquard index th40  571/708 = 0.806497
+[19:02:51] INFO - =================Beginning Epoch 48, lr=6.25e-05===============
+[19:04:45] INFO - ====== Epoch 48 train loss 0.0091 ========
+[19:04:45] INFO - Validating ...
+[19:04:55] INFO - ====== Epoch 48 Vali loss 0.0092 ========
+[19:04:55] INFO - +++++ Epoch 48 Jacquard index th25  694/708 = 0.980226
+[19:04:55] INFO - +++++ Epoch 48 Jacquard index th30  682/708 = 0.963277
+[19:04:55] INFO - +++++ Epoch 48 Jacquard index th35  647/708 = 0.913842
+[19:04:55] INFO - +++++ Epoch 48 Jacquard index th40  580/708 = 0.819209
+[19:04:55] INFO - =================Beginning Epoch 49, lr=6.25e-05===============
+[19:06:49] INFO - ====== Epoch 49 train loss 0.0090 ========
+[19:06:49] INFO - Validating ...
+[19:06:59] INFO - ====== Epoch 49 Vali loss 0.0091 ========
+[19:06:59] INFO - +++++ Epoch 49 Jacquard index th25  686/708 = 0.968927
+[19:06:59] INFO - +++++ Epoch 49 Jacquard index th30  672/708 = 0.949153
+[19:06:59] INFO - +++++ Epoch 49 Jacquard index th35  642/708 = 0.906780
+[19:06:59] INFO - +++++ Epoch 49 Jacquard index th40  577/708 = 0.814972
+[19:06:59] INFO - =================Beginning Epoch 50, lr=6.25e-05===============
+[19:08:53] INFO - ====== Epoch 50 train loss 0.0090 ========
+[19:08:53] INFO - Validating ...
+[19:09:03] INFO - ====== Epoch 50 Vali loss 0.0094 ========
+[19:09:03] INFO - +++++ Epoch 50 Jacquard index th25  690/708 = 0.974576
+[19:09:03] INFO - +++++ Epoch 50 Jacquard index th30  678/708 = 0.957627
+[19:09:03] INFO - +++++ Epoch 50 Jacquard index th35  655/708 = 0.925141
+[19:09:03] INFO - +++++ Epoch 50 Jacquard index th40  568/708 = 0.802260
+[19:09:03] INFO - >>>>>>>>>> save model: epoch_50_iou_0.9746
+[19:09:03] INFO - =================Beginning Epoch 51, lr=6.25e-05===============
+[19:10:57] INFO - ====== Epoch 51 train loss 0.0090 ========
+[19:10:57] INFO - Validating ...
+[19:11:06] INFO - ====== Epoch 51 Vali loss 0.0090 ========
+[19:11:06] INFO - +++++ Epoch 51 Jacquard index th25  699/708 = 0.987288
+[19:11:06] INFO - +++++ Epoch 51 Jacquard index th30  690/708 = 0.974576
+[19:11:06] INFO - +++++ Epoch 51 Jacquard index th35  667/708 = 0.942090
+[19:11:06] INFO - +++++ Epoch 51 Jacquard index th40  623/708 = 0.879944
+[19:11:06] INFO - >>>>>>>>>> save model: epoch_51_iou_0.9873
+[19:11:06] INFO - =================Beginning Epoch 52, lr=6.25e-05===============
+[19:13:01] INFO - ====== Epoch 52 train loss 0.0090 ========
+[19:13:01] INFO - Validating ...
+[19:13:11] INFO - ====== Epoch 52 Vali loss 0.0091 ========
+[19:13:11] INFO - +++++ Epoch 52 Jacquard index th25  696/708 = 0.983051
+[19:13:11] INFO - +++++ Epoch 52 Jacquard index th30  673/708 = 0.950565
+[19:13:11] INFO - +++++ Epoch 52 Jacquard index th35  644/708 = 0.909605
+[19:13:11] INFO - +++++ Epoch 52 Jacquard index th40  596/708 = 0.841808
+[19:13:11] INFO - =================Beginning Epoch 53, lr=6.25e-05===============
+[19:15:05] INFO - ====== Epoch 53 train loss 0.0090 ========
+[19:15:05] INFO - Validating ...
+[19:15:14] INFO - ====== Epoch 53 Vali loss 0.0092 ========
+[19:15:14] INFO - +++++ Epoch 53 Jacquard index th25  695/708 = 0.981638
+[19:15:14] INFO - +++++ Epoch 53 Jacquard index th30  680/708 = 0.960452
+[19:15:14] INFO - +++++ Epoch 53 Jacquard index th35  653/708 = 0.922316
+[19:15:14] INFO - +++++ Epoch 53 Jacquard index th40  604/708 = 0.853107
+[19:15:14] INFO - =================Beginning Epoch 54, lr=6.25e-05===============
+[19:17:08] INFO - ====== Epoch 54 train loss 0.0089 ========
+[19:17:08] INFO - Validating ...
+[19:17:17] INFO - ====== Epoch 54 Vali loss 0.0091 ========
+[19:17:17] INFO - +++++ Epoch 54 Jacquard index th25  699/708 = 0.987288
+[19:17:17] INFO - +++++ Epoch 54 Jacquard index th30  684/708 = 0.966102
+[19:17:17] INFO - +++++ Epoch 54 Jacquard index th35  657/708 = 0.927966
+[19:17:17] INFO - +++++ Epoch 54 Jacquard index th40  598/708 = 0.844633
+[19:17:17] INFO - =================Beginning Epoch 55, lr=6.25e-05===============
+[19:19:12] INFO - ====== Epoch 55 train loss 0.0089 ========
+[19:19:12] INFO - Validating ...
+[19:19:21] INFO - ====== Epoch 55 Vali loss 0.0096 ========
+[19:19:21] INFO - +++++ Epoch 55 Jacquard index th25  692/708 = 0.977401
+[19:19:21] INFO - +++++ Epoch 55 Jacquard index th30  682/708 = 0.963277
+[19:19:21] INFO - +++++ Epoch 55 Jacquard index th35  651/708 = 0.919492
+[19:19:21] INFO - +++++ Epoch 55 Jacquard index th40  590/708 = 0.833333
+[19:19:21] INFO - =================Beginning Epoch 56, lr=6.25e-05===============
+[19:21:15] INFO - ====== Epoch 56 train loss 0.0089 ========
+[19:21:15] INFO - Validating ...
+[19:21:25] INFO - ====== Epoch 56 Vali loss 0.0092 ========
+[19:21:25] INFO - +++++ Epoch 56 Jacquard index th25  688/708 = 0.971751
+[19:21:25] INFO - +++++ Epoch 56 Jacquard index th30  680/708 = 0.960452
+[19:21:25] INFO - +++++ Epoch 56 Jacquard index th35  645/708 = 0.911017
+[19:21:25] INFO - +++++ Epoch 56 Jacquard index th40  568/708 = 0.802260
+[19:21:25] INFO - =================Beginning Epoch 57, lr=6.25e-05===============
+[19:23:19] INFO - ====== Epoch 57 train loss 0.0088 ========
+[19:23:19] INFO - Validating ...
+[19:23:29] INFO - ====== Epoch 57 Vali loss 0.0088 ========
+[19:23:29] INFO - +++++ Epoch 57 Jacquard index th25  694/708 = 0.980226
+[19:23:29] INFO - +++++ Epoch 57 Jacquard index th30  679/708 = 0.959040
+[19:23:29] INFO - +++++ Epoch 57 Jacquard index th35  648/708 = 0.915254
+[19:23:29] INFO - +++++ Epoch 57 Jacquard index th40  583/708 = 0.823446
+[19:23:29] INFO - =================Beginning Epoch 58, lr=6.25e-05===============
+[19:25:23] INFO - ====== Epoch 58 train loss 0.0088 ========
+[19:25:23] INFO - Validating ...
+[19:25:32] INFO - ====== Epoch 58 Vali loss 0.0092 ========
+[19:25:32] INFO - +++++ Epoch 58 Jacquard index th25  689/708 = 0.973164
+[19:25:32] INFO - +++++ Epoch 58 Jacquard index th30  676/708 = 0.954802
+[19:25:32] INFO - +++++ Epoch 58 Jacquard index th35  641/708 = 0.905367
+[19:25:32] INFO - +++++ Epoch 58 Jacquard index th40  584/708 = 0.824859
+[19:25:32] INFO - =================Beginning Epoch 59, lr=6.25e-05===============
+[19:27:26] INFO - ====== Epoch 59 train loss 0.0088 ========
+[19:27:26] INFO - Validating ...
+[19:27:36] INFO - ====== Epoch 59 Vali loss 0.0088 ========
+[19:27:36] INFO - +++++ Epoch 59 Jacquard index th25  691/708 = 0.975989
+[19:27:36] INFO - +++++ Epoch 59 Jacquard index th30  682/708 = 0.963277
+[19:27:36] INFO - +++++ Epoch 59 Jacquard index th35  659/708 = 0.930791
+[19:27:36] INFO - +++++ Epoch 59 Jacquard index th40  596/708 = 0.841808
+[19:27:36] INFO - =================Beginning Epoch 60, lr=6.25e-05===============
+[19:29:30] INFO - ====== Epoch 60 train loss 0.0088 ========
+[19:29:30] INFO - Validating ...
+[19:29:40] INFO - ====== Epoch 60 Vali loss 0.0086 ========
+[19:29:40] INFO - +++++ Epoch 60 Jacquard index th25  692/708 = 0.977401
+[19:29:40] INFO - +++++ Epoch 60 Jacquard index th30  681/708 = 0.961864
+[19:29:40] INFO - +++++ Epoch 60 Jacquard index th35  645/708 = 0.911017
+[19:29:40] INFO - +++++ Epoch 60 Jacquard index th40  580/708 = 0.819209
+[19:29:40] INFO - >>>>>>>>>> save model: epoch_60_iou_0.9774
+[19:29:40] INFO - =================Beginning Epoch 61, lr=6.25e-05===============
+[19:31:34] INFO - ====== Epoch 61 train loss 0.0087 ========
+[19:31:34] INFO - Validating ...
+[19:31:43] INFO - ====== Epoch 61 Vali loss 0.0089 ========
+[19:31:43] INFO - +++++ Epoch 61 Jacquard index th25  696/708 = 0.983051
+[19:31:43] INFO - +++++ Epoch 61 Jacquard index th30  685/708 = 0.967514
+[19:31:43] INFO - +++++ Epoch 61 Jacquard index th35  649/708 = 0.916667
+[19:31:43] INFO - +++++ Epoch 61 Jacquard index th40  589/708 = 0.831921
+[19:31:43] INFO - >>>>>>>>>> save model: epoch_61_iou_0.9831
+[19:31:43] INFO - =================Beginning Epoch 62, lr=6.25e-05===============
+[19:33:38] INFO - ====== Epoch 62 train loss 0.0088 ========
+[19:33:38] INFO - Validating ...
+[19:33:47] INFO - ====== Epoch 62 Vali loss 0.0091 ========
+[19:33:47] INFO - +++++ Epoch 62 Jacquard index th25  692/708 = 0.977401
+[19:33:47] INFO - +++++ Epoch 62 Jacquard index th30  680/708 = 0.960452
+[19:33:47] INFO - +++++ Epoch 62 Jacquard index th35  643/708 = 0.908192
+[19:33:47] INFO - +++++ Epoch 62 Jacquard index th40  589/708 = 0.831921
+[19:33:47] INFO - =================Beginning Epoch 63, lr=6.25e-05===============
+[19:35:42] INFO - ====== Epoch 63 train loss 0.0087 ========
+[19:35:42] INFO - Validating ...
+[19:35:51] INFO - ====== Epoch 63 Vali loss 0.0091 ========
+[19:35:51] INFO - +++++ Epoch 63 Jacquard index th25  694/708 = 0.980226
+[19:35:51] INFO - +++++ Epoch 63 Jacquard index th30  685/708 = 0.967514
+[19:35:51] INFO - +++++ Epoch 63 Jacquard index th35  649/708 = 0.916667
+[19:35:51] INFO - +++++ Epoch 63 Jacquard index th40  575/708 = 0.812147
+[19:35:51] INFO - =================Beginning Epoch 64, lr=6.25e-05===============
+[19:37:45] INFO - ====== Epoch 64 train loss 0.0086 ========
+[19:37:45] INFO - Validating ...
+[19:37:55] INFO - ====== Epoch 64 Vali loss 0.0090 ========
+[19:37:55] INFO - +++++ Epoch 64 Jacquard index th25  691/708 = 0.975989
+[19:37:55] INFO - +++++ Epoch 64 Jacquard index th30  678/708 = 0.957627
+[19:37:55] INFO - +++++ Epoch 64 Jacquard index th35  650/708 = 0.918079
+[19:37:55] INFO - +++++ Epoch 64 Jacquard index th40  585/708 = 0.826271
+[19:37:55] INFO - =================Beginning Epoch 65, lr=6.25e-05===============
+[19:39:49] INFO - ====== Epoch 65 train loss 0.0087 ========
+[19:39:49] INFO - Validating ...
+[19:39:59] INFO - ====== Epoch 65 Vali loss 0.0087 ========
+[19:39:59] INFO - +++++ Epoch 65 Jacquard index th25  696/708 = 0.983051
+[19:39:59] INFO - +++++ Epoch 65 Jacquard index th30  679/708 = 0.959040
+[19:39:59] INFO - +++++ Epoch 65 Jacquard index th35  650/708 = 0.918079
+[19:39:59] INFO - +++++ Epoch 65 Jacquard index th40  601/708 = 0.848870
+[19:39:59] INFO - =================Beginning Epoch 66, lr=6.25e-05===============
+[19:41:54] INFO - ====== Epoch 66 train loss 0.0087 ========
+[19:41:54] INFO - Validating ...
+[19:42:03] INFO - ====== Epoch 66 Vali loss 0.0089 ========
+[19:42:03] INFO - +++++ Epoch 66 Jacquard index th25  692/708 = 0.977401
+[19:42:03] INFO - +++++ Epoch 66 Jacquard index th30  676/708 = 0.954802
+[19:42:03] INFO - +++++ Epoch 66 Jacquard index th35  638/708 = 0.901130
+[19:42:03] INFO - +++++ Epoch 66 Jacquard index th40  571/708 = 0.806497
+[19:42:03] INFO - =================Beginning Epoch 67, lr=6.25e-05===============
+[19:43:57] INFO - ====== Epoch 67 train loss 0.0086 ========
+[19:43:57] INFO - Validating ...
+[19:44:07] INFO - ====== Epoch 67 Vali loss 0.0088 ========
+[19:44:07] INFO - +++++ Epoch 67 Jacquard index th25  686/708 = 0.968927
+[19:44:07] INFO - +++++ Epoch 67 Jacquard index th30  675/708 = 0.953390
+[19:44:07] INFO - +++++ Epoch 67 Jacquard index th35  646/708 = 0.912429
+[19:44:07] INFO - +++++ Epoch 67 Jacquard index th40  593/708 = 0.837571
+[19:44:07] INFO - =================Beginning Epoch 68, lr=6.25e-05===============
+[19:46:02] INFO - ====== Epoch 68 train loss 0.0086 ========
+[19:46:02] INFO - Validating ...
+[19:46:11] INFO - ====== Epoch 68 Vali loss 0.0087 ========
+[19:46:11] INFO - +++++ Epoch 68 Jacquard index th25  687/708 = 0.970339
+[19:46:11] INFO - +++++ Epoch 68 Jacquard index th30  678/708 = 0.957627
+[19:46:11] INFO - +++++ Epoch 68 Jacquard index th35  650/708 = 0.918079
+[19:46:11] INFO - +++++ Epoch 68 Jacquard index th40  589/708 = 0.831921
+[19:46:11] INFO - =================Beginning Epoch 69, lr=6.25e-05===============
+[19:48:05] INFO - ====== Epoch 69 train loss 0.0086 ========
+[19:48:05] INFO - Validating ...
+[19:48:15] INFO - ====== Epoch 69 Vali loss 0.0087 ========
+[19:48:15] INFO - +++++ Epoch 69 Jacquard index th25  690/708 = 0.974576
+[19:48:15] INFO - +++++ Epoch 69 Jacquard index th30  676/708 = 0.954802
+[19:48:15] INFO - +++++ Epoch 69 Jacquard index th35  645/708 = 0.911017
+[19:48:15] INFO - +++++ Epoch 69 Jacquard index th40  575/708 = 0.812147
+[19:48:15] INFO - =================Beginning Epoch 70, lr=6.25e-05===============
+[19:50:09] INFO - ====== Epoch 70 train loss 0.0086 ========
+[19:50:09] INFO - Validating ...
+[19:50:19] INFO - ====== Epoch 70 Vali loss 0.0086 ========
+[19:50:19] INFO - +++++ Epoch 70 Jacquard index th25  687/708 = 0.970339
+[19:50:19] INFO - +++++ Epoch 70 Jacquard index th30  671/708 = 0.947740
+[19:50:19] INFO - +++++ Epoch 70 Jacquard index th35  642/708 = 0.906780
+[19:50:19] INFO - +++++ Epoch 70 Jacquard index th40  576/708 = 0.813559
+[19:50:19] INFO - >>>>>>>>>> save model: epoch_70_iou_0.9703
+[19:50:19] INFO - =================Beginning Epoch 71, lr=6.25e-05===============
+[19:52:12] INFO - ====== Epoch 71 train loss 0.0085 ========
+[19:52:12] INFO - Validating ...
+[19:52:22] INFO - ====== Epoch 71 Vali loss 0.0083 ========
+[19:52:22] INFO - +++++ Epoch 71 Jacquard index th25  696/708 = 0.983051
+[19:52:22] INFO - +++++ Epoch 71 Jacquard index th30  683/708 = 0.964689
+[19:52:22] INFO - +++++ Epoch 71 Jacquard index th35  650/708 = 0.918079
+[19:52:22] INFO - +++++ Epoch 71 Jacquard index th40  584/708 = 0.824859
+[19:52:22] INFO - >>>>>>>>>> save model: epoch_71_iou_0.9831
+[19:52:22] INFO - =================Beginning Epoch 72, lr=6.25e-05===============
+[19:54:16] INFO - ====== Epoch 72 train loss 0.0085 ========
+[19:54:16] INFO - Validating ...
+[19:54:26] INFO - ====== Epoch 72 Vali loss 0.0084 ========
+[19:54:26] INFO - +++++ Epoch 72 Jacquard index th25  692/708 = 0.977401
+[19:54:26] INFO - +++++ Epoch 72 Jacquard index th30  664/708 = 0.937853
+[19:54:26] INFO - +++++ Epoch 72 Jacquard index th35  641/708 = 0.905367
+[19:54:26] INFO - +++++ Epoch 72 Jacquard index th40  574/708 = 0.810734
+[19:54:26] INFO - =================Beginning Epoch 73, lr=6.25e-05===============
+[19:56:20] INFO - ====== Epoch 73 train loss 0.0085 ========
+[19:56:20] INFO - Validating ...
+[19:56:29] INFO - ====== Epoch 73 Vali loss 0.0084 ========
+[19:56:29] INFO - +++++ Epoch 73 Jacquard index th25  693/708 = 0.978814
+[19:56:29] INFO - +++++ Epoch 73 Jacquard index th30  684/708 = 0.966102
+[19:56:29] INFO - +++++ Epoch 73 Jacquard index th35  650/708 = 0.918079
+[19:56:29] INFO - +++++ Epoch 73 Jacquard index th40  582/708 = 0.822034
+[19:56:29] INFO - =================Beginning Epoch 74, lr=6.25e-05===============
+[19:58:23] INFO - ====== Epoch 74 train loss 0.0085 ========
+[19:58:23] INFO - Validating ...
+[19:58:33] INFO - ====== Epoch 74 Vali loss 0.0085 ========
+[19:58:33] INFO - +++++ Epoch 74 Jacquard index th25  692/708 = 0.977401
+[19:58:33] INFO - +++++ Epoch 74 Jacquard index th30  676/708 = 0.954802
+[19:58:33] INFO - +++++ Epoch 74 Jacquard index th35  642/708 = 0.906780
+[19:58:33] INFO - +++++ Epoch 74 Jacquard index th40  579/708 = 0.817797
+[19:58:33] INFO - =================Beginning Epoch 75, lr=6.25e-05===============
+[20:00:27] INFO - ====== Epoch 75 train loss 0.0085 ========
+[20:00:27] INFO - Validating ...
+[20:00:37] INFO - ====== Epoch 75 Vali loss 0.0087 ========
+[20:00:37] INFO - +++++ Epoch 75 Jacquard index th25  691/708 = 0.975989
+[20:00:37] INFO - +++++ Epoch 75 Jacquard index th30  674/708 = 0.951977
+[20:00:37] INFO - +++++ Epoch 75 Jacquard index th35  643/708 = 0.908192
+[20:00:37] INFO - +++++ Epoch 75 Jacquard index th40  572/708 = 0.807910
+[20:00:37] INFO - =================Beginning Epoch 76, lr=6.25e-05===============
+[20:02:31] INFO - ====== Epoch 76 train loss 0.0084 ========
+[20:02:31] INFO - Validating ...
+[20:02:41] INFO - ====== Epoch 76 Vali loss 0.0087 ========
+[20:02:41] INFO - +++++ Epoch 76 Jacquard index th25  689/708 = 0.973164
+[20:02:41] INFO - +++++ Epoch 76 Jacquard index th30  678/708 = 0.957627
+[20:02:41] INFO - +++++ Epoch 76 Jacquard index th35  642/708 = 0.906780
+[20:02:41] INFO - +++++ Epoch 76 Jacquard index th40  578/708 = 0.816384
+[20:02:41] INFO - =================Beginning Epoch 77, lr=6.25e-05===============
+[20:04:35] INFO - ====== Epoch 77 train loss 0.0084 ========
+[20:04:35] INFO - Validating ...
+[20:04:45] INFO - ====== Epoch 77 Vali loss 0.0085 ========
+[20:04:45] INFO - +++++ Epoch 77 Jacquard index th25  685/708 = 0.967514
+[20:04:45] INFO - +++++ Epoch 77 Jacquard index th30  675/708 = 0.953390
+[20:04:45] INFO - +++++ Epoch 77 Jacquard index th35  651/708 = 0.919492
+[20:04:45] INFO - +++++ Epoch 77 Jacquard index th40  594/708 = 0.838983
+[20:04:45] INFO - =================Beginning Epoch 78, lr=6.25e-05===============
+[20:06:39] INFO - ====== Epoch 78 train loss 0.0084 ========
+[20:06:39] INFO - Validating ...
+[20:06:49] INFO - ====== Epoch 78 Vali loss 0.0083 ========
+[20:06:49] INFO - +++++ Epoch 78 Jacquard index th25  693/708 = 0.978814
+[20:06:49] INFO - +++++ Epoch 78 Jacquard index th30  678/708 = 0.957627
+[20:06:49] INFO - +++++ Epoch 78 Jacquard index th35  648/708 = 0.915254
+[20:06:49] INFO - +++++ Epoch 78 Jacquard index th40  584/708 = 0.824859
+[20:06:49] INFO - =================Beginning Epoch 79, lr=6.25e-05===============
+[20:08:43] INFO - ====== Epoch 79 train loss 0.0083 ========
+[20:08:43] INFO - Validating ...
+[20:08:52] INFO - ====== Epoch 79 Vali loss 0.0084 ========
+[20:08:52] INFO - +++++ Epoch 79 Jacquard index th25  693/708 = 0.978814
+[20:08:52] INFO - +++++ Epoch 79 Jacquard index th30  679/708 = 0.959040
+[20:08:52] INFO - +++++ Epoch 79 Jacquard index th35  648/708 = 0.915254
+[20:08:52] INFO - +++++ Epoch 79 Jacquard index th40  569/708 = 0.803672
+[20:08:52] INFO - =================Beginning Epoch 80, lr=6.25e-05===============
+[20:10:46] INFO - ====== Epoch 80 train loss 0.0084 ========
+[20:10:46] INFO - Validating ...
+[20:10:56] INFO - ====== Epoch 80 Vali loss 0.0086 ========
+[20:10:56] INFO - +++++ Epoch 80 Jacquard index th25  693/708 = 0.978814
+[20:10:56] INFO - +++++ Epoch 80 Jacquard index th30  683/708 = 0.964689
+[20:10:56] INFO - +++++ Epoch 80 Jacquard index th35  654/708 = 0.923729
+[20:10:56] INFO - +++++ Epoch 80 Jacquard index th40  592/708 = 0.836158
+[20:10:56] INFO - >>>>>>>>>> save model: epoch_80_iou_0.9788
+[20:10:56] INFO - =================Beginning Epoch 81, lr=6.25e-05===============
+[20:12:50] INFO - ====== Epoch 81 train loss 0.0084 ========
+[20:12:50] INFO - Validating ...
+[20:13:00] INFO - ====== Epoch 81 Vali loss 0.0084 ========
+[20:13:00] INFO - +++++ Epoch 81 Jacquard index th25  689/708 = 0.973164
+[20:13:00] INFO - +++++ Epoch 81 Jacquard index th30  679/708 = 0.959040
+[20:13:00] INFO - +++++ Epoch 81 Jacquard index th35  648/708 = 0.915254
+[20:13:00] INFO - +++++ Epoch 81 Jacquard index th40  596/708 = 0.841808
+[20:13:00] INFO - =================Beginning Epoch 82, lr=6.25e-05===============
+[20:14:54] INFO - ====== Epoch 82 train loss 0.0083 ========
+[20:14:54] INFO - Validating ...
+[20:15:04] INFO - ====== Epoch 82 Vali loss 0.0082 ========
+[20:15:04] INFO - +++++ Epoch 82 Jacquard index th25  693/708 = 0.978814
+[20:15:04] INFO - +++++ Epoch 82 Jacquard index th30  682/708 = 0.963277
+[20:15:04] INFO - +++++ Epoch 82 Jacquard index th35  654/708 = 0.923729
+[20:15:04] INFO - +++++ Epoch 82 Jacquard index th40  595/708 = 0.840395
+[20:15:04] INFO - =================Beginning Epoch 83, lr=6.25e-05===============
+[20:16:58] INFO - ====== Epoch 83 train loss 0.0083 ========
+[20:16:58] INFO - Validating ...
+[20:17:08] INFO - ====== Epoch 83 Vali loss 0.0081 ========
+[20:17:08] INFO - +++++ Epoch 83 Jacquard index th25  692/708 = 0.977401
+[20:17:08] INFO - +++++ Epoch 83 Jacquard index th30  682/708 = 0.963277
+[20:17:08] INFO - +++++ Epoch 83 Jacquard index th35  655/708 = 0.925141
+[20:17:08] INFO - +++++ Epoch 83 Jacquard index th40  593/708 = 0.837571
+[20:17:08] INFO - =================Beginning Epoch 84, lr=6.25e-05===============

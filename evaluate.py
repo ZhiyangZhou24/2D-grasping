@@ -38,7 +38,7 @@ def parse_args():
                         help='Whether data augmentation should be applied')
     parser.add_argument('--split', type=float, default=0.8,
                         help='Fraction of data for training (remainder is validation)')
-    parser.add_argument('--ds-shuffle', action='store_true', default=False,
+    parser.add_argument('--ds-shuffle', action='store_true', default=True,
                         help='Shuffle the dataset')
     parser.add_argument('--ds-rotate', type=float, default=0.0,
                         help='Shift the start point of the dataset to use a different test/train split')
@@ -50,7 +50,7 @@ def parse_args():
                         help='Number of grasps to consider per image')
     parser.add_argument('--iou-threshold', type=float, default=0.25,
                         help='Threshold for IOU matching')
-    parser.add_argument('--iou-eval', action='store_true',
+    parser.add_argument('--iou-eval', type=bool,default=True,
                         help='Compute success based on IoU metric.')
     parser.add_argument('--jacquard-output', action='store_true',
                         help='Jacquard-dataset style output')

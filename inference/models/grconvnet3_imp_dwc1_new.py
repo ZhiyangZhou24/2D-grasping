@@ -37,8 +37,8 @@ class transition(nn.Module):
         x2 = F.interpolate(x2, x1.size()[-2:],mode='bilinear', align_corners=True)
         x1 = torch.cat([x2, x1], dim=1)
         x1 = self.out_conv(x1)
-        x1 = F.interpolate(x1,scale_factor=2,mode='bilinear', align_corners=True)
-        return x1
+        x = F.interpolate(x1,scale_factor=2,mode='bilinear', align_corners=True)
+        return x
 
 class up(nn.Module):
     def __init__(self, in_ch, out_ch, upsample_type,num_blocks=2,act="leaky_relu"):
@@ -70,7 +70,7 @@ class up(nn.Module):
     def forward(self, x_high, x_low):
         x_high = self.conv(x_high)
         x_high = self.up(x_high)
-        x_low += x_high
+        x_low = x_low + x_high
         return x_low
 
 class GenerativeResnet(GraspModel):
@@ -145,7 +145,7 @@ class GenerativeResnet(GraspModel):
         
         
     def forward(self, x_in):
-        dbg=1
+        dbg=0
         if dbg == 1:
             print('x_in.shape  {}'.format(x_in.shape))
         stem = self.stem(x_in) #224 32

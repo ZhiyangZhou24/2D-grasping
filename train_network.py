@@ -36,7 +36,7 @@ def parse_args():
                         help='Use RGB image for training (1/0)')
     parser.add_argument('--use-dropout', type=int, default=1,
                         help='Use dropout for training (1/0)')
-    parser.add_argument('--dropout-prob', type=float, default=0.1,
+    parser.add_argument('--dropout-prob', type=float, default=0.2,
                         help='Dropout prob for training (0-1)')
     parser.add_argument('--channel-size', type=int, default=32,
                         help='Internal channel size for the network')
@@ -53,7 +53,7 @@ def parse_args():
                         help='Use upsamp type (  use_duc  use_convt use_bilinear use_nearest  )')
     parser.add_argument('--att', type=str, default='use_coora',
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
-    parser.add_argument('--use_gauss_kernel', type=float, default= 2.0,
+    parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
                         help='Dataset gaussian progress 0.0 means not use gauss')
     parser.add_argument('--datarotate', type=bool, default=True,
                         help='Threshold albation for evaluation, need more time')
@@ -84,7 +84,7 @@ def parse_args():
     parser.add_argument('--optim', type=str, default='ranger',
                         help='Optmizer for the training. (adam or SGD)')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
-    parser.add_argument('--schedu-milestone', type=int, default=[500,1500,2500,3500], help='学习率tiaozheng stone')
+    parser.add_argument('--schedu-milestone', type=int, default=[5,15,25,35], help='学习率tiaozheng stone')
     parser.add_argument('--schedu-gamma', type=float, default=0.5, help='学习率 hsuaijian xishu ')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
 
@@ -94,12 +94,12 @@ def parse_args():
                         help='Batches per Epoch')
     
     parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
-    parser.add_argument('--model', type=str, default='logs/jacquard_dwc/230215_0137_dwc1_d_bili_mish_coora32_drop2_ranger_bina_pos1/epoch_05_iou_0.9358', help='保存的模型')
-    parser.add_argument('--start-epoch', type=int, default=4, help='继续训练开始的epoch')
+    parser.add_argument('--model', type=str, default='logs/jacquard_ftn/230226_1444_dwc1_new_drop2_ga0/epoch_01_iou_0.8811', help='保存的模型')
+    parser.add_argument('--start-epoch', type=int, default=2, help='继续训练开始的epoch')
     
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_drop1_ga2',
+    parser.add_argument('--description', type=str, default='dwc1_322_drop2_ga0_gama',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_ftn',
                         help='Log directory')
@@ -411,7 +411,10 @@ def run():
         scheduler.step()
     for epoch in range(args.epochs)[start_epoch:]:
         logging.info('=================Beginning Epoch {:02d}, lr={}==============='.format(epoch, optimizer.state_dict()['param_groups'][0]['lr']))
-        train_results = train(epoch, net, device, train_data, optimizer, train_data.__len__(), vis=args.vis,posloss=args.posloss)
+        if args.dataset.title() != 'Jacquard':
+            train_results = train(epoch, net, device, train_data, optimizer, train_data.__len__()*10, vis=args.vis,posloss=args.posloss)
+        else :
+            train_results = train(epoch, net, device, train_data, optimizer, train_data.__len__(), vis=args.vis,posloss=args.posloss)
         logging.info("====== Epoch {:02d} train loss {:0.4f} ========".format(epoch,train_results['loss']))
         scheduler.step()
         # Log training losses to tensorboard

@@ -1,0 +1,206 @@
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_00_iou_0.7218
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_07_iou_0.9590
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_10_iou_0.9590
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_24_iou_0.9831
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_20_iou_0.9718
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_06_iou_0.9548
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_05_iou_0.9393
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_19_iou_0.9831
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_30_iou_0.9845
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_12_iou_0.9661
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_02_iou_0.8757
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_03_iou_0.8983
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_13_iou_0.9732
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_01_iou_0.8093
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_25_iou_0.9859
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_18_iou_0.9760
+[22:26:30] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_21_iou_0.9774
+[22:27:58] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_00_iou_0.7218
+[22:28:15] INFO - Average evaluation time per image: 74.47469032416909ms
+[22:28:15] INFO - IOU Results: 99/177 = 0.559322
+[22:28:15] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_07_iou_0.9590
+[22:28:19] INFO - Average evaluation time per image: 20.17935790584586ms
+[22:28:19] INFO - IOU Results: 167/177 = 0.943503
+[22:28:19] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_10_iou_0.9590
+[22:32:00] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_00_iou_0.7218
+[22:32:24] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_00_iou_0.7218
+[22:32:40] INFO - Average evaluation time per image: 68.25874484865005ms
+[22:32:40] INFO - IOU Results: 99/177 = 0.559322
+[22:32:40] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_07_iou_0.9590
+[22:32:50] INFO - Average evaluation time per image: 55.04248910031076ms
+[22:32:50] INFO - IOU Results: 167/177 = 0.943503
+[22:32:50] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_10_iou_0.9590
+[22:32:55] INFO - Average evaluation time per image: 26.821657762689107ms
+[22:32:55] INFO - IOU Results: 171/177 = 0.966102
+[22:32:55] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_24_iou_0.9831
+[22:33:02] INFO - Average evaluation time per image: 40.439469666130805ms
+[22:33:02] INFO - IOU Results: 174/177 = 0.983051
+[22:33:02] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_20_iou_0.9718
+[22:33:11] INFO - Average evaluation time per image: 48.62910340734794ms
+[22:33:11] INFO - IOU Results: 175/177 = 0.988701
+[22:33:11] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_06_iou_0.9548
+[22:33:18] INFO - Average evaluation time per image: 37.01992627591063ms
+[22:33:18] INFO - IOU Results: 159/177 = 0.898305
+[22:33:18] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_05_iou_0.9393
+[22:33:25] INFO - Average evaluation time per image: 37.885053009636664ms
+[22:33:25] INFO - IOU Results: 160/177 = 0.903955
+[22:33:25] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_19_iou_0.9831
+[22:33:35] INFO - Average evaluation time per image: 53.649045653262384ms
+[22:33:35] INFO - IOU Results: 172/177 = 0.971751
+[22:33:35] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_30_iou_0.9845
+[22:33:41] INFO - Average evaluation time per image: 35.3482591230317ms
+[22:33:41] INFO - IOU Results: 174/177 = 0.983051
+[22:33:41] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_12_iou_0.9661
+[22:33:48] INFO - Average evaluation time per image: 37.140469093107235ms
+[22:33:48] INFO - IOU Results: 171/177 = 0.966102
+[22:33:48] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_02_iou_0.8757
+[22:33:58] INFO - Average evaluation time per image: 52.41399969758287ms
+[22:33:58] INFO - IOU Results: 153/177 = 0.864407
+[22:33:58] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_03_iou_0.8983
+[22:34:05] INFO - Average evaluation time per image: 36.90618444970772ms
+[22:34:05] INFO - IOU Results: 153/177 = 0.864407
+[22:34:05] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_13_iou_0.9732
+[22:34:11] INFO - Average evaluation time per image: 34.89865421575342ms
+[22:34:11] INFO - IOU Results: 172/177 = 0.971751
+[22:34:11] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_01_iou_0.8093
+[22:34:21] INFO - Average evaluation time per image: 53.81648553966802ms
+[22:34:21] INFO - IOU Results: 136/177 = 0.768362
+[22:34:21] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_25_iou_0.9859
+[22:34:28] INFO - Average evaluation time per image: 37.03118178804042ms
+[22:34:28] INFO - IOU Results: 174/177 = 0.983051
+[22:34:28] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_18_iou_0.9760
+[22:34:34] INFO - Average evaluation time per image: 32.28038852497683ms
+[22:34:34] INFO - IOU Results: 176/177 = 0.994350
+[22:34:34] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_21_iou_0.9774
+[22:34:37] INFO - Average evaluation time per image: 17.570689573126323ms
+[22:34:37] INFO - IOU Results: 174/177 = 0.983051
+[23:21:26] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_00_iou_0.7218
+[23:21:41] INFO - Average evaluation time per image: 60.99301138840153ms
+[23:21:41] INFO - IOU Results: 99/177 = 0.559322
+[23:21:41] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_07_iou_0.9590
+[23:21:48] INFO - Average evaluation time per image: 36.219474286009365ms
+[23:21:48] INFO - IOU Results: 167/177 = 0.943503
+[23:21:48] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_43_iou_0.9887
+[23:21:57] INFO - Average evaluation time per image: 49.95237231928076ms
+[23:21:57] INFO - IOU Results: 176/177 = 0.994350
+[23:21:57] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_10_iou_0.9590
+[23:22:04] INFO - Average evaluation time per image: 39.742652979274254ms
+[23:22:04] INFO - IOU Results: 171/177 = 0.966102
+[23:22:04] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_24_iou_0.9831
+[23:22:11] INFO - Average evaluation time per image: 35.954738067368325ms
+[23:22:11] INFO - IOU Results: 174/177 = 0.983051
+[23:22:11] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_20_iou_0.9718
+[23:22:21] INFO - Average evaluation time per image: 57.59277720909334ms
+[23:22:21] INFO - IOU Results: 175/177 = 0.988701
+[23:22:21] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_06_iou_0.9548
+[23:22:28] INFO - Average evaluation time per image: 35.397657566824876ms
+[23:22:28] INFO - IOU Results: 159/177 = 0.898305
+[23:22:28] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_38_iou_0.9859
+[23:22:35] INFO - Average evaluation time per image: 41.25184797297763ms
+[23:22:35] INFO - IOU Results: 175/177 = 0.988701
+[23:22:35] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_05_iou_0.9393
+[23:22:45] INFO - Average evaluation time per image: 51.7993660296424ms
+[23:22:45] INFO - IOU Results: 160/177 = 0.903955
+[23:22:45] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_19_iou_0.9831
+[23:22:51] INFO - Average evaluation time per image: 34.73266639278434ms
+[23:22:51] INFO - IOU Results: 172/177 = 0.971751
+[23:22:51] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_30_iou_0.9845
+[23:22:59] INFO - Average evaluation time per image: 40.20608077614994ms
+[23:22:59] INFO - IOU Results: 174/177 = 0.983051
+[23:22:59] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_40_iou_0.9760
+[23:23:09] INFO - Average evaluation time per image: 54.531822096830034ms
+[23:23:09] INFO - IOU Results: 176/177 = 0.994350
+[23:23:09] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_50_iou_0.9802
+[23:23:15] INFO - Average evaluation time per image: 33.51026874477581ms
+[23:23:15] INFO - IOU Results: 173/177 = 0.977401
+[23:23:15] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_41_iou_0.9802
+[23:23:23] INFO - Average evaluation time per image: 43.00736168683585ms
+[23:23:23] INFO - IOU Results: 175/177 = 0.988701
+[23:23:23] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_12_iou_0.9661
+[23:23:32] INFO - Average evaluation time per image: 51.34169799459856ms
+[23:23:32] INFO - IOU Results: 171/177 = 0.966102
+[23:23:32] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_42_iou_0.9859
+[23:23:38] INFO - Average evaluation time per image: 32.90772168649792ms
+[23:23:38] INFO - IOU Results: 176/177 = 0.994350
+[23:23:38] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_02_iou_0.8757
+[23:23:46] INFO - Average evaluation time per image: 39.70463127739685ms
+[23:23:46] INFO - IOU Results: 153/177 = 0.864407
+[23:23:46] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_03_iou_0.8983
+[23:23:55] INFO - Average evaluation time per image: 52.26226445645262ms
+[23:23:55] INFO - IOU Results: 153/177 = 0.864407
+[23:23:55] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_13_iou_0.9732
+[23:24:02] INFO - Average evaluation time per image: 34.685563232939124ms
+[23:24:02] INFO - IOU Results: 172/177 = 0.971751
+[23:24:02] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_01_iou_0.8093
+[23:24:10] INFO - Average evaluation time per image: 43.69077035936259ms
+[23:24:10] INFO - IOU Results: 136/177 = 0.768362
+[23:24:10] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_25_iou_0.9859
+[23:24:19] INFO - Average evaluation time per image: 50.26880091866531ms
+[23:24:19] INFO - IOU Results: 174/177 = 0.983051
+[23:24:19] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_18_iou_0.9760
+[23:24:25] INFO - Average evaluation time per image: 33.01526328264657ms
+[23:24:25] INFO - IOU Results: 176/177 = 0.994350
+[23:24:25] INFO - 
+Evaluating model logs/cornell_ftn/230227_2018_dwc1_rgbd_near_drop1_ga0_gama/epoch_21_iou_0.9774
+[23:24:33] INFO - Average evaluation time per image: 42.461930021727824ms
+[23:24:33] INFO - IOU Results: 174/177 = 0.983051

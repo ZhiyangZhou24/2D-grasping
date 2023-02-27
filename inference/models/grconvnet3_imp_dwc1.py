@@ -17,7 +17,7 @@ class up(nn.Module):
         self.upsample_type = upsample_type
         self.up = self._make_upconv(out_ch, out_ch, upscale_factor = 2)
 
-        self.CSPconv = CSPLayer(in_ch, out_ch, kernel_size=3,act=act,use_depthwise=False)
+        self.CSPconv = CSPLayer(in_ch, out_ch,num_blocks=num_blocks, kernel_size=3,act=act,use_depthwise=False)
         
     def _make_upconv(self, in_channels, out_channels, upscale_factor = 2):
         if self.upsample_type == 'use_duc':
@@ -33,7 +33,7 @@ class up(nn.Module):
             return nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
         elif self.upsample_type == 'use_nearest':
             print('use_nearest')
-            return nn.Upsample(scale_factor=2, mode='nearest', align_corners=True)
+            return nn.Upsample(scale_factor=2, mode='nearest')
         else :
             print('upsample_type error , please check!!!!')
 
@@ -89,11 +89,11 @@ class GenerativeResnet(GraspModel):
                     # DepthwiseSeparable(num_channels= channel_size * 32, num_filters=channel_size * 32,dw_size = 5,stride=1,use_se=True),
         )
 
-        self.up1 = up(channel_size * (8 + 8), channel_size * 4, upsamp,act=self.act)
+        self.up1 = up(channel_size * (8 + 8), channel_size * 4, upsamp,num_blocks=3, act=self.act)
 
-        self.up2 = up(channel_size * (4 + 4), channel_size * 2, upsamp,act=self.act)
+        self.up2 = up(channel_size * (4 + 4), channel_size * 2, upsamp,num_blocks=2,act=self.act)
 
-        self.up3 = up(channel_size * (2 + 2), channel_size * 1, upsamp,act=self.act)
+        self.up3 = up(channel_size * (2 + 2), channel_size * 1, upsamp,num_blocks=2,act=self.act)
 
         self.pos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
         self.cos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)

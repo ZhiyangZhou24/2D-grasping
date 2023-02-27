@@ -3,6 +3,8 @@ We present a novel generative residual convolutional neural network based model 
 
 This repository contains the implementation of the Generative Residual Convolutional Neural Network (GR-ConvNet) from the paper:
 
+python -m onnxsim onnx_files/dsc_rdbd_1.onnx onnx_files/dsc_rdbd_1_sim.onnx
+onnx2trt onnx_files/dsc_rdbd_1_sim.onnx -o onnx_files/dsc_rdbd_1_sim.trt
 #### Antipodal Robotic Grasping using Generative Residual Convolutional Neural Network
 
 Sulabh Kumra, Shirin Joshi, Ferat Sahin
