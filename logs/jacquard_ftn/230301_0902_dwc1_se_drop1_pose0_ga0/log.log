@@ -1,0 +1,21 @@
+[09:02:54] INFO - CUDA detected. Running with GPU acceleration.
+[09:02:54] INFO - Loading Jacquard Dataset...
+[09:02:55] INFO - Dataset len is 54485
+[09:02:55] INFO - Training size: 49036
+[09:02:55] INFO - Validation size: 5449
+[09:02:55] INFO - Done
+[09:02:55] INFO - Loading Network...
+[09:02:55] INFO - input channel is 1
+[09:02:56] INFO - Done from goon checkpoint logs/jacquard_ftn/230228_2104_dwc1_se_drop1_pose0_ga0/epoch_27_iou_0.9347
+[09:02:57] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [500, 1500, 2500, 3500] || Gamma: 0.5
+[09:02:57] INFO - Dataset size 54485   ||rotate :False   || zoom :False      || ds_shuffle False || ds_rotate 0.0
+[09:02:57] INFO - =================Beginning Epoch 28, lr=0.001===============
+[09:08:24] INFO - ====== Epoch 28 train loss 0.0074 ========
+[09:08:24] INFO - Validating ...
+[09:13:19] INFO - ====== Epoch 28 Vali loss 0.0093 ========
+[09:13:19] INFO - +++++ Epoch 28 Jacquard index th25  5047/5449 = 0.926225
+[09:13:19] INFO - +++++ Epoch 28 Jacquard index th30  4941/5449 = 0.906772
+[09:13:19] INFO - +++++ Epoch 28 Jacquard index th35  4770/5449 = 0.875390
+[09:13:19] INFO - +++++ Epoch 28 Jacquard index th40  4585/5449 = 0.841439
+[09:13:19] INFO - >>>>>>>>>> save model: epoch_28_iou_0.9262
+[09:13:19] INFO - =================Beginning Epoch 29, lr=0.001===============

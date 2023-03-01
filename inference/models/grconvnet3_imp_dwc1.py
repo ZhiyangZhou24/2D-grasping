@@ -89,11 +89,11 @@ class GenerativeResnet(GraspModel):
                     # DepthwiseSeparable(num_channels= channel_size * 32, num_filters=channel_size * 32,dw_size = 5,stride=1,use_se=True),
         )
 
-        self.up1 = up(channel_size * (8 + 8), channel_size * 4, upsamp,num_blocks=3, act=self.act)
+        self.up1 = up(channel_size * (8 + 8), channel_size * 4, upsamp,num_blocks=1, act=self.act)
 
-        self.up2 = up(channel_size * (4 + 4), channel_size * 2, upsamp,num_blocks=2,act=self.act)
+        self.up2 = up(channel_size * (4 + 4), channel_size * 2, upsamp,num_blocks=1,act=self.act)
 
-        self.up3 = up(channel_size * (2 + 2), channel_size * 1, upsamp,num_blocks=2,act=self.act)
+        self.up3 = up(channel_size * (2 + 2), channel_size * 1, upsamp,num_blocks=1,act=self.act)
 
         self.pos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)
         self.cos_output = nn.Conv2d(in_channels=channel_size, out_channels=output_channels, kernel_size=1)

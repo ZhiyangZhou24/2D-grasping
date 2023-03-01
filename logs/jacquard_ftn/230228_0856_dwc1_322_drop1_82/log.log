@@ -1,0 +1,21 @@
+[08:56:47] INFO - CUDA detected. Running with GPU acceleration.
+[08:56:47] INFO - Loading Jacquard Dataset...
+[08:56:48] INFO - Dataset len is 54485
+[08:56:48] INFO - Training size: 43588
+[08:56:48] INFO - Validation size: 10897
+[08:56:48] INFO - Done
+[08:56:48] INFO - Loading Network...
+[08:56:48] INFO - input channel is 1
+[08:56:48] INFO - Done from zero model
+[08:56:50] INFO - Optimizer ranger Done || Base LR: 0.001 || Milestone: [500, 1500, 2500, 3500] || Gamma: 0.5
+[08:56:50] INFO - Dataset size 54485   ||rotate :True   || zoom :True      || ds_shuffle False || ds_rotate 0.0
+[08:56:50] INFO - =================Beginning Epoch 00, lr=0.001===============
+[09:02:40] INFO - ====== Epoch 00 train loss 0.0394 ========
+[09:02:40] INFO - Validating ...
+[09:10:59] INFO - ====== Epoch 00 Vali loss 0.1426 ========
+[09:10:59] INFO - +++++ Epoch 0 Jacquard index th25  8766/10897 = 0.804442
+[09:10:59] INFO - +++++ Epoch 0 Jacquard index th30  8456/10897 = 0.775993
+[09:10:59] INFO - +++++ Epoch 0 Jacquard index th35  8057/10897 = 0.739378
+[09:10:59] INFO - +++++ Epoch 0 Jacquard index th40  7672/10897 = 0.704047
+[09:10:59] INFO - >>>>>>>>>> save model: epoch_00_iou_0.8044
+[09:10:59] INFO - =================Beginning Epoch 01, lr=0.001===============

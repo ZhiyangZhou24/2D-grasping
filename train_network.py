@@ -36,7 +36,7 @@ def parse_args():
                         help='Use RGB image for training (1/0)')
     parser.add_argument('--use-dropout', type=int, default=1,
                         help='Use dropout for training (1/0)')
-    parser.add_argument('--dropout-prob', type=float, default=0.2,
+    parser.add_argument('--dropout-prob', type=float, default=0.1,
                         help='Dropout prob for training (0-1)')
     parser.add_argument('--channel-size', type=int, default=32,
                         help='Internal channel size for the network')
@@ -47,17 +47,17 @@ def parse_args():
     
     parser.add_argument('--use-mish', type=bool, default=True,
                         help='(  True  False  )')
-    parser.add_argument('--posloss', type=bool, default=True,
+    parser.add_argument('--posloss', type=bool, default=False,
                         help='(  True  False  )')
     parser.add_argument('--upsamp', type=str, default='use_bilinear',
                         help='Use upsamp type (  use_duc  use_convt use_bilinear use_nearest  )')
-    parser.add_argument('--att', type=str, default='use_coora',
+    parser.add_argument('--att', type=str, default='use_se',
                         help='Use att type (  use_eca  use_se use_coora use_cba)')
     parser.add_argument('--use_gauss_kernel', type=float, default= 0.0,
                         help='Dataset gaussian progress 0.0 means not use gauss')
-    parser.add_argument('--datarotate', type=bool, default=True,
+    parser.add_argument('--datarotate', type=bool, default=False,
                         help='Threshold albation for evaluation, need more time')
-    parser.add_argument('--datazoom', type=bool, default=True,
+    parser.add_argument('--datazoom', type=bool, default=False,
                         help='Threshold albation for evaluation, need more time')
 
     # /media/lab/ChainGOAT/Jacquard
@@ -84,7 +84,7 @@ def parse_args():
     parser.add_argument('--optim', type=str, default='ranger',
                         help='Optmizer for the training. (adam or SGD)')
     parser.add_argument('--lr', type=float, default=1e-3, help='学习率')
-    parser.add_argument('--schedu-milestone', type=int, default=[5,15,25,35], help='学习率tiaozheng stone')
+    parser.add_argument('--schedu-milestone', type=int, default=[500,1500,2500,3500], help='学习率tiaozheng stone')
     parser.add_argument('--schedu-gamma', type=float, default=0.5, help='学习率 hsuaijian xishu ')
     parser.add_argument('--weight-decay', type=float, default=0, help='权重衰减 L2正则化系数')
 
@@ -93,13 +93,13 @@ def parse_args():
     parser.add_argument('--batches-per-epoch', type=int, default=1600,
                         help='Batches per Epoch')
     
-    parser.add_argument('--goon-train', type=bool, default=False, help='是否从已有网络继续训练')
-    parser.add_argument('--model', type=str, default='logs/jacquard_ftn/230226_1444_dwc1_new_drop2_ga0/epoch_01_iou_0.8811', help='保存的模型')
-    parser.add_argument('--start-epoch', type=int, default=2, help='继续训练开始的epoch')
+    parser.add_argument('--goon-train', type=bool, default=True, help='是否从已有网络继续训练')
+    parser.add_argument('--model', type=str, default='logs/jacquard_ftn/230228_2104_dwc1_se_drop1_pose0_ga0/epoch_27_iou_0.9347', help='保存的模型')
+    parser.add_argument('--start-epoch', type=int, default=28, help='继续训练开始的epoch')
     
 
     # Logging etc.
-    parser.add_argument('--description', type=str, default='dwc1_322_drop2_ga0_gama',
+    parser.add_argument('--description', type=str, default='dwc1_se_drop1_pose0_ga0',
                         help='Training description')
     parser.add_argument('--logdir', type=str, default='logs/jacquard_ftn',
                         help='Log directory')
@@ -107,7 +107,7 @@ def parse_args():
                         help='Visualise the training process')
     parser.add_argument('--cpu', dest='force_cpu', action='store_true', default=False,
                         help='Force code to run in CPU mode')
-    parser.add_argument('--random-seed', type=int, default=123,
+    parser.add_argument('--random-seed', type=int, default=123, 
                         help='Random seed for numpy')
     args = parser.parse_args()
     return args
